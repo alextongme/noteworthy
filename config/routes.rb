@@ -5,9 +5,18 @@ Rails.application.routes.draw do
   # api routes for database manipulation
   namespace :api, defaults: { format: :json } do
     resource :session, only: [:create, :destroy]
+
     resource :user, only: [:create]
-    resources :notebooks, only: [:destroy]
+    resources :user_notebooks, only: [:index, :create, :destroy, :update]
+    resources :user_notes, only: [:index, :create, :destroy, :update]
+
+    resources :notebooks, only: [:index, :create, :destroy]
+    resources :notebook_tags, only: [:index, :create, :destroy, :update]
+    resources :notebook_notes, only: [:index, :create, :destroy, :update]
+
     resources :notes, only: [:create, :show, :update, :destroy]
+    resources :note_tags, only: [:index, :create, :destroy, :update]
+    
     resources :tags, only: [:create, :show, :update, :destroy]
   end
 

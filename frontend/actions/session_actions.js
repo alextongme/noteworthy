@@ -27,19 +27,22 @@ export const receiveErrors = (errors) => {
 
 // action thunk creators for signing up, logging in, and logging out
 export const signup = (user) => (dispatch) => {
+    // take in callback functions for (success, failure)
+    // dispatch current user on success
+    // dispatch errors on reject
     return APIUtil.signup(user).then((user) => {
-        return dispatch(receiveCurrentUser(user))
-    }), (error) => {
-        return dispatch(receiveErrors(error.responseJSON))
-    }
+        return dispatch(receiveCurrentUser(user));
+    }, (error) => {
+        return dispatch(receiveErrors(error.responseJSON));
+    });
 };
 
 export const login = (user) => (dispatch) => {
     return APIUtil.login(user).then((user) => {
-        return dispatch(receiveCurrentUser(user))
-    }), (error) => {
-        return dispatch(receiveErrors(error.responseJSON))
-    }
+        return dispatch(receiveCurrentUser(user));
+    }, (error) => {
+        return dispatch(receiveErrors(error.responseJSON));
+    });
 };
 
 export const logout = () => (dispatch) => {

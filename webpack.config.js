@@ -18,11 +18,17 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           query: {
-            presets: ['@babel/env', '@babel/react']
+            presets: ['@babel/env', '@babel/react'],
+            // trying to fix this generatorRuntime error
+            // presets: [[
+            //   "@babel/preset-env", {
+            //     useBuiltIns: "entry"
+            //   }],
+            //   "@babel/preset-react"]
           }
         },
       }
     ]
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
 };

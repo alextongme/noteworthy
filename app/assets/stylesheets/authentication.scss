@@ -1,0 +1,23 @@
+.authentication-navbar {
+    height: inherit;
+    width: 15%;
+    // border: 1px solid black;
+    margin-right: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.authentication-navbar-download {
+    background-color: white;
+    border: 0.1vw solid #01A82D;
+    padding: .8vw;
+    border-radius: 0.1vw;
+    font-family: 'CaeciliaLTStd-Bold';
+    color: #01A82D;
+}
+
+.authentication-navbar-login {
+    text-decoration: none;
+    color: #01A82D;
+}

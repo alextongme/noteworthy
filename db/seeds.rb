@@ -44,3 +44,33 @@ UserNotebook.create!(
         shortcut: false
     }
 )
+
+Note.create!(
+    {
+        title: 'my first note',
+        body: 'lorem ipsum goes here',
+        notebook_id: 1
+    }
+)
+
+UserNotebook.create!(
+    {
+        notebook_id: 1,
+        user_id: 1,
+        shortcut: false
+    }
+)
+
+UserNote.create!(
+    {
+        user_id: 1,
+        note_id: 1,
+        shortcut: false
+    }
+)
+
+Tag.create!(
+    {
+        name: 'appAcademy',
+    }
+)

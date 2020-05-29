@@ -1,11 +1,12 @@
 // our ajax calls to our backend routes
-export const signup = user => (
-    $.ajax({
+export const signup = user => {
+    // debugger
+    return $.ajax({
         method: 'POST',
         url: '/api/user',
         data: { user }
     })
-);
+};
 
 export const login = user => (
     $.ajax({
