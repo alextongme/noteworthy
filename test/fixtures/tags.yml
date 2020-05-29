@@ -1,0 +1,19 @@
+# == Schema Information
+#
+# Table name: tags
+#
+#  id         :bigint           not null, primary key
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  name: MyString
+  notebook_id: 1
+  note_id: 1
+
+two:
+  name: MyString
+  notebook_id: 1
+  note_id: 1

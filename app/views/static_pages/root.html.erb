@@ -1,0 +1,10 @@
+<%# ensure user is logged in, if they are, set the window user to the current user  %>
+<% if logged_in? %>
+  <script id="bootstrap-current-user" type="text/javascript">
+  	window.currentUser = <%= render("api/users/user.json.jbuilder",
+  		user: current_user).html_safe %>
+  </script>
+<% end %>
+
+<%# root div we are injecting the entire react app into %>
+<main id="root"></main>

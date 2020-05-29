@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: notebook_tags
+#
+#  id          :bigint           not null, primary key
+#  tag_id      :integer
+#  notebook_id :integer
+#  shortcut    :boolean
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  user_id: 1
+  notebook_id: 1
+  shortcut: false
+
+two:
+  user_id: 1
+  notebook_id: 1
+  shortcut: false

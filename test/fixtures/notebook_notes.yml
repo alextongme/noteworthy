@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: notebook_notes
+#
+#  id          :bigint           not null, primary key
+#  note_id     :integer          not null
+#  notebook_id :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  user_id: 1
+  notebook_id: 1
+  shortcut: false
+
+two:
+  user_id: 1
+  notebook_id: 1
+  shortcut: false
