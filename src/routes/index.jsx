@@ -6,6 +6,7 @@ import { GuestRoute } from '../state/util/route';
 
 import SignupContainer from '../views/components/Session/SignupContainer';
 import LoginContainer from '../views/components/Session/LoginContainer';
+import MainContainer from '../views/components/Main/MainContainer';
 
 const App = () => {
     return (

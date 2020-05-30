@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-const Sidebar = () => {
+const NoteNav = () => {
     return (
-        <div className="sidebar">
+        <div className="noteNav">
+            
         </div>
     );
 }
 
-export default Sidebar;
+export default NoteNav;

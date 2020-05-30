@@ -1,8 +1,9 @@
 .noteEditor {
-    width: 80vw;
+    width: 65vw;
     height: 100vh;
 }
 
 .noteEditor__quill {
-    height: 100%;
+    // why is there padding on this height?
+    height: 95%;
 }
