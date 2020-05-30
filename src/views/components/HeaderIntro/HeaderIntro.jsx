@@ -18,6 +18,7 @@ const HeaderIntro = ({currentUser, logout}) => {
         return (
             <div className="headerIntro__container headerIntro__container--loggedIn">
                 <h2>Hi {currentUser.username}!</h2>
+                <Link className="headerIntro__button--login" to="/app">go to app</Link>
                 <button className="headerIntro__button--logout" onClick={logout}>logout</button>
             </div>
         );
