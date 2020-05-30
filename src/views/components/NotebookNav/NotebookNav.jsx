@@ -1,4 +1,5 @@
 import React from 'react';
+import NotebookNavItem from './NotebookNavItem';
 
 class NotebookNav extends React.Component {
     componentDidMount() {
@@ -6,16 +7,16 @@ class NotebookNav extends React.Component {
     }
     
     render() {
-        const nbs = this.props.notebooks.map((obj, idx) => {
+        const nbs = this.props.notebooks.map((notebook, idx) => {
             return (
-                <li key={idx}>{obj.name}</li>
+                <NotebookNavItem key={idx} notebook={notebook} />
             );
         });
         
         return (
             <div className="notebookNav">
-            <h1>notebooks</h1>
-            {nbs}
+                <h1>notebooks</h1>
+                {nbs}
             </div>
         );
     }

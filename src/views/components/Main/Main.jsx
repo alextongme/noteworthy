@@ -9,8 +9,8 @@ const Main = () => {
         <div className="main">
             <Sidebar />
             <NotebookNavContainer />
-            {/* <NoteNav />
-            <NoteEditor /> */}
+            <NoteNav />
+            <NoteEditor />
         </div>
     );
 }

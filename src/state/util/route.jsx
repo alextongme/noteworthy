@@ -14,6 +14,16 @@ const Guest = ({ component: Component, path, loggedIn, exact }) => {
     />);
 };
 
+const Private = ({ component: Component, path, loggedIn, exact }) => {
+    return (<Route
+        path={path}
+        exact={exact}
+        render={props =>
+            loggedIn ? <Component {...props} /> : <Redirect to="/" />
+        }
+    />);
+};
+
 // checks if session id is present, meaning user is logged in, and passes to Auth
 const mapStateToProps = (state) => {
     return { loggedIn: Boolean(state.session.id) };
@@ -23,4 +33,10 @@ export const GuestRoute = withRouter(
     connect(
         mapStateToProps
     )(Guest)
+);
+
+export const PrivateRoute = withRouter(
+    connect(
+        mapStateToProps
+    )(Private)
 );
