@@ -1,9 +1,4 @@
-@font-face {
-    font-family: 'CaeciliaLTStd-Bold';
-    src: url('../fonts/CaeciliaLTStd-Bold.otf')
-}
-
-.home-nav {
+.home__navbar {
     width: 100vw;
     height: 10vh;
     display: flex;
@@ -11,14 +6,25 @@
     background-color: #FFFFFF;
 }
 
-.home-content {
+.home__navbar--left {
+    margin-left: 5vw;
+    display: flex;
+    align-items: center;
+}
+
+.home__logo {
+    // font-family: 'CaeciliaLTStd-Bold';
+    font-size: 2vw;
+}
+
+.home__content {
     width: 100vw;
     height: 80vh;
     background-color:#01A82D;
     display: flex;
 }
 
-.home-content-left {
+.home__content--left {
     width: 60%;
     height: 100%;
     display: flex;
@@ -27,15 +33,15 @@
     align-items: center;
 }
 
-.home-content-left-text {
-    font-family: 'CaeciliaLTStd-Bold';
+.home__text--left {
+    // font-family: 'CaeciliaLTStd-Bold';
     font-size: 4vw;
     text-align: center;
     color: white;
 }
 
-.home-content-left-signup-button {
-    font-family: 'CaeciliaLTStd-Bold';
+.home__signupButton {
+    // font-family: 'CaeciliaLTStd-Bold';
     width: 20vw;
     height: 7vh;
     background-color: white;
@@ -48,27 +54,16 @@
     border-radius: .5em;
 }
 
-.home-content-left-signup-button:hover {
+.home__signupButton:hover {
     opacity: .7;
 }
 
-.home-content-right {
+.home__content--right {
     width: 40%;
     height: 100%;
 }
 
-.home-logo-container {
-    margin-left: 5vw;
-    display: flex;
-    align-items: center;
-}
-
-.home-logo-text {
-    font-family: 'CaeciliaLTStd-Bold';
-    font-size: 2vw;
-}
-
-.home-footer {
+.home__footer {
     width: 100vw;
     height: 10vh;
     background-color: black;
