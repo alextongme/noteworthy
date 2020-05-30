@@ -1,0 +1,10 @@
+<%# when root loads, backend doesnt know who currnet user is for a split second, this bootstraps the current user to load when root does %>
+<% if logged_in? %>
+  <script id="bootstrap-current-user" type="text/javascript">
+  	window.currentUser = <%= render("api/users/user.json.jbuilder",
+  		user: current_user).html_safe %>
+  </script>
+<% end %>
+
+<%# root div we are injecting the entire react app into %>
+<main id="root"></main>

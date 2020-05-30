@@ -1,3 +1,23 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # root page goes to our static page root route
+  root "static_pages#root"
+
+  # api routes for database manipulation
+  namespace :api, defaults: { format: :json } do
+    resource :session, only: [:create, :destroy]
+
+    resource :user, only: [:create]
+    resources :user_notebooks, only: [:index, :create, :destroy, :update]
+    resources :user_notes, only: [:index, :create, :destroy, :update]
+
+    resources :notebooks, only: [:index, :create, :destroy]
+    resources :notebook_tags, only: [:index, :create, :destroy, :update]
+    resources :notebook_notes, only: [:index, :create, :destroy, :update]
+
+    resources :notes, only: [:create, :show, :update, :destroy]
+    resources :note_tags, only: [:index, :create, :destroy, :update]
+    
+    resources :tags, only: [:create, :show, :update, :destroy]
+  end
+
 end
