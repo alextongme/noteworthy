@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchNotebooks } from '../../../state/actions/notebook';
-import NotebookNav from './NotebookNav';
+import { fetchNotebooks } from '../../../../../state/actions/notebook';
+import Notebook from './Notebooks';
 
 const mapStateToProps = (state) => {
     return {
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotebookNav)
+export default connect(mapStateToProps, mapDispatchToProps)(Notebook)

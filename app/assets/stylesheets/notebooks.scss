@@ -1,0 +1,27 @@
+.notebooks {
+    width: 86vw;
+    height: 100%;
+    font-size: 1em;
+    color: black;
+    background-color: #F8F8F8;
+    // background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.notebooks__header {
+    width: 100%;
+    height: 15vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: red;
+}
+
+.notebooks__table {
+    border: 1px solid black;
+    width: 80%;
+    height: 20vh;
+}
