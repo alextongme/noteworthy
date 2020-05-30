@@ -15,8 +15,8 @@
  */
 
 @font-face {
-    font-family: 'CaeciliaLTStd-Bold';
-    src: url('../fonts/CaeciliaLTStd-Bold.otf')
+  font-family: 'CaeciliaLTStd-Bold';
+  src:font-url('../fonts/CaeciliaLTStd-Bold.otf');
 }
 
 body {
