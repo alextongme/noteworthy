@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../../../../state/actions/session';
+import { logout } from '../../../../state/actions/session';
 import Sidebar from './Sidebar';
 
 // takes in the current session and the entire users entities slice to match the logged in user to the specific user

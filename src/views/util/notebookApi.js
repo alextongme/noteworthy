@@ -14,11 +14,14 @@ export const fetchNotebook = (id) => {
     );
 }
 
-export const createNotebook = (notebookForm) => {
+export const createNotebook = (notebook) => {
+    debugger
     return ($.ajax({
         method: "POST",
         url: `api/notebooks`,
-        data: notebookForm,
+        data: {notebook},
+        contentType: false,
+        processData: false
     })
     );
 }

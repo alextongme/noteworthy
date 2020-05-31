@@ -7,27 +7,34 @@ class Api::NotebooksController < ApplicationController
     end
 
     def create
+        # debugger
         @notebook = Notebook.new(notebook_params)
-        @notebook.user_id = params[:user_id]
-
+        # @notebook.user_id = params[:user_id]
+        # debugger
         if @notebook.save
+            # UserNotebook.create({
+            #     user_id: current_user.id,
+            #     notebook_id: @notebook.id
+            # })
         else
-            flash[:errors] = @goal.errors.full_messages
+            render json: @notebook.errors.full_messages, status: 422
         end
 
-        redirect_to user_url(@notebook.user)
+        render :show
+        # redirect_to user_url(@notebook.user)
     end
 
     def destroy
-        @notebook = current_user.notebooks.find_by(id: params[:id])
-        if @notebook && @notebook.delete 
-            redirect_to users_url
-        end
+        # @notebook = current_user.notebooks.find_by(id: params[:id])
+        # if @notebook && @notebook.delete 
+        #     redirect_to users_url
+        # end
     end
  
     private
 
     def notebook_params
+        # debugger
         params.require(:notebook).permit(:name)
     end
     

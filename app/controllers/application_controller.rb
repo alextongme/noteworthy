@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
     # protect from CSRF attacks
     ### cb
+    # for postman testing, uncomment:
+    # protect_from_forgery with: :null_session
     protect_from_forgery with: :exception
 
     # provide these methods to our front end views

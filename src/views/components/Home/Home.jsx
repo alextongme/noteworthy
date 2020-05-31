@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderIntroContainer from "../HeaderIntro/HeaderIntroContainer";
+import HeaderIntroContainer from "./HeaderIntro/HeaderIntroContainer";
 import { Link } from 'react-router-dom';
 // import logo from '../../../app/assets/images/evernote-logo.png';
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import NotebookItem from './components/NotebookItem/NotebookItem';
+import NotebookItem from './NotebookItem/NotebookItem';
+import NotebookFormContainer from './NotebookForm/NotebookFormContainer';
 
 class Notebooks extends React.Component {
     componentDidMount() {
@@ -32,6 +33,7 @@ class Notebooks extends React.Component {
                     </tbody>
                 </table>
                 
+                <NotebookFormContainer />
             </div>
         );
     }

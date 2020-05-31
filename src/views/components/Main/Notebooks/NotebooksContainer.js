@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchNotebooks } from '../../../../../state/actions/notebook';
+import { fetchNotebooks } from '../../../../state/actions/notebook';
 import Notebook from './Notebooks';
 
 const mapStateToProps = (state) => {

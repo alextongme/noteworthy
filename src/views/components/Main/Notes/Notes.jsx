@@ -1,6 +1,6 @@
 import React from 'react';
-import NotesNav from './components/NotesNav/NotesNav';
-import NoteEditor from './components/NoteEditor/NoteEditor';
+import NotesNav from './NotesNav/NotesNav';
+import NoteEditor from './NoteEditor/NoteEditor';
 // import NotebookItem from './components/NotebookItem/NotebookItem';
 
 class Notes extends React.Component {
