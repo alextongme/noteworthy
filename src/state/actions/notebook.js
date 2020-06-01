@@ -41,9 +41,9 @@ export const fetchNotebook = (id) => (dispatch) => {
 };
 
 export const createNotebook = (notebook) => (dispatch) => {
-    debugger
+    // debugger
     return APIUtil.createNotebook(notebook).then((notebook) => {
-        debugger
+        // debugger
         return dispatch(receiveNotebook(notebook));
     });
 };

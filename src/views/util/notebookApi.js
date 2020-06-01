@@ -1,7 +1,7 @@
 export const fetchNotebooks = () => {
     return ($.ajax({
         method: "GET",
-        url: "api/notebooks"
+        url: "/api/notebooks"
     })
     );
 }
@@ -9,19 +9,18 @@ export const fetchNotebooks = () => {
 export const fetchNotebook = (id) => {
     return ($.ajax({
         method: "GET",
-        url: `api/notebooks/${id}`,
+        url: "/api/notebooks/${id}",
     })
     );
 }
 
 export const createNotebook = (notebook) => {
-    debugger
+    // debugger
     return ($.ajax({
         method: "POST",
         url: `api/notebooks`,
-        data: {notebook},
-        contentType: false,
-        processData: false
-    })
-    );
+        data: { notebook }
+        // contentType: false,
+        // processData: false
+    }));
 }

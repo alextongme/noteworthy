@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Noteworthy</title>
+    <title>Bestest Note Taking App  - Organize Your Notes with Noteworthy </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="//cdn.quilljs.com/1.2.6/quill.snow.css">
+    <%# is there a better way to use images? besides bootstrapping %>
+    <script type="text/javascript">
+      window.nLogo = "<%= image_url('lionhead.png')%>"
+      window.rick = "<%= image_url('rickSanchez.png')%>"
+      window.github = "<%= image_url('github.png')%>"
+      window.linkedin = "<%= image_url('linkedin.png')%>"
+    </script>
   </head>
 
   <body>

@@ -1,0 +1,33 @@
+.sessionForm {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgreen;
+}
+
+.sessionForm__section--form {
+    width: 30vw;
+    height: 70vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sessionForm__form {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sessionForm__input {
+    font-size: 1.3vw;
+}
+
+.sessionForm__button {
+    font-size: 1.3vw;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './state/store/store';
 import Root from './routes/root';
+// const imagePaths = JSON.parse(rootElement.dataset.images);
 // import fetchNotebooks from "./state/actions/notebook"
 // import fetchNotebooks from "./state/util/notebookApi";
 

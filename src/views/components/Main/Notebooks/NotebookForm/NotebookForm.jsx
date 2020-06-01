@@ -14,7 +14,7 @@ class NotebookForm extends React.Component {
         event.preventDefault();
         const notebook = Object.assign({}, this.state);
         // formData.append('notebook[name]', this.state.name);
-        debugger
+        // debugger
         // const notebook = {
         //     notebook: {
         //         name: "hello"
@@ -39,7 +39,7 @@ class NotebookForm extends React.Component {
                     <label>
                         Name
                     </label>
-                        <input type="text" value={this.state.name} onChange ={this.handleChange('name')}>
+                        <input type="text" value={this.state.name} onChange ={this.handleChange('name')} className="notebookForm__input" placeholder="notebook name">
                     </input>
 
                     <input

@@ -11,11 +11,9 @@ class Api::NotebooksController < ApplicationController
         @notebook = Notebook.new(notebook_params)
         # @notebook.user_id = params[:user_id]
         # debugger
+        # @notebook.author = current_user
         if @notebook.save
-            # UserNotebook.create({
-            #     user_id: current_user.id,
-            #     notebook_id: @notebook.id
-            # })
+            create_user_notebook_association(current_user.id, @notebook.id)
         else
             render json: @notebook.errors.full_messages, status: 422
         end
@@ -36,6 +34,14 @@ class Api::NotebooksController < ApplicationController
     def notebook_params
         # debugger
         params.require(:notebook).permit(:name)
+    end
+
+    def create_user_notebook_association(user_id, ntbk_id)
+        association = UserNotebook.new({
+            user_id: user_id,
+            notebook_id: ntbk_id
+        })
+        association.save
     end
     
 end

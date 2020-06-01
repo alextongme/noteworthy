@@ -4,10 +4,27 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = ({logout}) => {
     return (
         <div className="sidebar">
-            <NavLink to="/main/notebooks">Notebooks</NavLink>
-            <NavLink to="/main/notes">Notes</NavLink>
+            <ul className="sidebar__listContainer">
+                {/* <li className="sidebar__list"> */}
+                    <NavLink 
+                        to="/main/notebooks" 
+                        className="sidebar__navlink"
+                        activeClassName="sidebar__navlink--active">
+                        Notebooks
+                    </NavLink>
+                {/* </li> */}
+                {/* <li className="sidebar__list"> */}
+                    <NavLink 
+                        to="/main/notes" 
+                        className="sidebar__navlink" activeClassName="sidebar__navlink--active">
+                        Notes
+                    </NavLink>
+                {/* </li> */}
+                <li className="sidebar__list">
+                    <button onClick={logout}>logout</button>
+                </li>
+            </ul>
 
-            <button onClick={logout}>logout</button>
 
         </div>
     );
