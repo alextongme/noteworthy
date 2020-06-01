@@ -32,17 +32,25 @@ User.create!(
 
 
 Notebook.create!(
-    {
-        name: 'my first notebook'
-    }
+    [
+        {name: 'my first notebook'},
+        {name: 'my 2 notebook'},
+        {name: 'my 3 notebook'},
+        {name: 'my 4 notebook'},
+        {name: 'my 5 notebook'},
+        {name: 'my 6 notebook'},
+    ]
 )
 
 UserNotebook.create!(
-    {
-        user_id: 1,
-        notebook_id: 1,
-        shortcut: false
-    }
+    [
+        {user_id: 1, notebook_id: 1},
+        {user_id: 1, notebook_id: 2},
+        {user_id: 1, notebook_id: 3},
+        {user_id: 1, notebook_id: 4},
+        {user_id: 1, notebook_id: 5},
+        {user_id: 1, notebook_id: 6},
+    ]
 )
 
 Note.create!(
@@ -53,19 +61,10 @@ Note.create!(
     }
 )
 
-UserNotebook.create!(
-    {
-        notebook_id: 1,
-        user_id: 1,
-        shortcut: false
-    }
-)
-
 UserNote.create!(
     {
         user_id: 1,
         note_id: 1,
-        shortcut: false
     }
 )
 

@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
     # protect from CSRF attacks
     ### cb
+    # for postman testing, uncomment:
+    # protect_from_forgery with: :null_session
     protect_from_forgery with: :exception
 
     # provide these methods to our front end views
@@ -9,6 +11,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?
 
     private
+
     def current_user
         @current_user ||= User.find_by(session_token: session[:session_token])
     end

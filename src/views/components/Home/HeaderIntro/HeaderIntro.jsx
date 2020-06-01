@@ -6,10 +6,8 @@ const HeaderIntro = ({currentUser, logout}) => {
     const sessionLinks = () => {
         return (
             <div className="headerIntro__container headerIntro__container--loggedOut">
-                {/* <Link to="/download">Download</Link> */}
-                <button className="headerIntro__button--download">download</button>
+                {/* <button className="headerIntro__button--download">download</button> */}
                 <Link className="headerIntro__button--login" to="/login">login</Link>
-                {/* <Link to="/signup">Sign up!</Link> */}
             </div>
         );
     }
@@ -18,7 +16,7 @@ const HeaderIntro = ({currentUser, logout}) => {
         return (
             <div className="headerIntro__container headerIntro__container--loggedIn">
                 <h2>Hi {currentUser.username}!</h2>
-                <Link className="headerIntro__button--login" to="/app">go to app</Link>
+                <Link className="headerIntro__button--login" to="/main/notes">go to app</Link>
                 <button className="headerIntro__button--logout" onClick={logout}>logout</button>
             </div>
         );

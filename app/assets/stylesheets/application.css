@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require reset.css.scss
+ *= require application.css
  *= require_tree .
  */
 
@@ -21,4 +22,13 @@
 
 body {
     font-family: 'CaeciliaLTStd-Bold';
+}
+
+button, input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'Signerica_Medium';
+  src:font-url('../fonts/Signerica_Medium.ttf') format('truetype');
 }

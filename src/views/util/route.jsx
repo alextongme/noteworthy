@@ -9,7 +9,18 @@ const Guest = ({ component: Component, path, loggedIn, exact }) => {
         path={path}
         exact={exact}
         render={props =>
-            !loggedIn ? <Component {...props} /> : <Redirect to="/app" />
+            !loggedIn ? <Component {...props} /> : <Redirect to="/main/notes" />
+        }
+    />);
+};
+
+const Private = ({ component: Component, path, loggedIn, exact }) => {
+    // debugger
+    return (<Route
+        path={path}
+        exact={exact}
+        render={props =>
+            loggedIn ? <Component {...props} /> : <Redirect to="/" />
         }
     />);
 };
@@ -23,4 +34,10 @@ export const GuestRoute = withRouter(
     connect(
         mapStateToProps
     )(Guest)
+);
+
+export const PrivateRoute = withRouter(
+    connect(
+        mapStateToProps
+    )(Private)
 );

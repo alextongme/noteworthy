@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #
 class Notebook < ApplicationRecord
+
     # user associations
     has_many :user_notebooks,
     primary_key: :id,

@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './state/store/store';
-import Root from './routes/root'
+import Root from './routes/root';
+// const imagePaths = JSON.parse(rootElement.dataset.images);
+// import fetchNotebooks from "./state/actions/notebook"
+// import fetchNotebooks from "./state/util/notebookApi";
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -20,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.getState = store.getState
+  window.getState = store.getState;
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :user_notebooks, only: [:index, :create, :destroy, :update]
     resources :user_notes, only: [:index, :create, :destroy, :update]
 
-    resources :notebooks, only: [:index, :create, :destroy]
+    resources :notebooks, only: [:index, :show, :create, :destroy, :update]
     resources :notebook_tags, only: [:index, :create, :destroy, :update]
     resources :notebook_notes, only: [:index, :create, :destroy, :update]
 

@@ -10,11 +10,17 @@
     margin-left: 5vw;
     display: flex;
     align-items: center;
+    // justify-items: space-between;
 }
 
-.home__logo {
+.home__image--logo {
+    width: 3vw;
+}
+
+.home__h1--logo {
     // font-family: 'CaeciliaLTStd-Bold';
-    font-size: 2vw;
+    margin-left: 0.5vw;
+    font-size: 1.5vw;
 }
 
 .home__content {
@@ -59,16 +65,48 @@
 }
 
 .home__content--right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40%;
     height: 100%;
+}
+
+.home__image--rick {
+    height: 70vh;
 }
 
 .home__footer {
     width: 100vw;
     height: 10vh;
     background-color: black;
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
+    align-items: center;
     color:white;
 }
 
+.home__button {
+    height: 2.5vw;
+    opacity: 0.3;
+}
+
+.home__button:hover {
+    opacity: 1;
+}
+
+.home__link--personalWeb {
+    font-family: 'Signerica-Medium';
+    text-decoration: none;
+    color: white;
+    font-size: 2.5vw;
+}
+
+.home__footer--left {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    //  display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
