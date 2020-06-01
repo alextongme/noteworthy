@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_023245) do
+ActiveRecord::Schema.define(version: 2020_06_01_195954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_05_31_023245) do
     t.integer "note_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["note_id", "tag_id"], name: "index_note_tags_on_note_id_and_tag_id", unique: true
   end
 
   create_table "notebook_notes", force: :cascade do |t|
@@ -27,13 +28,7 @@ ActiveRecord::Schema.define(version: 2020_05_31_023245) do
     t.integer "notebook_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "notebook_tags", force: :cascade do |t|
-    t.integer "tag_id"
-    t.integer "notebook_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["notebook_id", "note_id"], name: "index_notebook_notes_on_notebook_id_and_note_id", unique: true
   end
 
   create_table "notebooks", force: :cascade do |t|
@@ -54,6 +49,8 @@ ActiveRecord::Schema.define(version: 2020_05_31_023245) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "author_id"
+    t.index ["author_id", "name"], name: "index_tags_on_author_id_and_name", unique: true
   end
 
   create_table "user_notebooks", force: :cascade do |t|
@@ -61,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_05_31_023245) do
     t.integer "notebook_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "notebook_id"], name: "index_user_notebooks_on_user_id_and_notebook_id", unique: true
   end
 
   create_table "user_notes", force: :cascade do |t|
@@ -68,13 +66,7 @@ ActiveRecord::Schema.define(version: 2020_05_31_023245) do
     t.integer "note_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "user_tags", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "tag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id", "note_id"], name: "index_user_notes_on_user_id_and_note_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

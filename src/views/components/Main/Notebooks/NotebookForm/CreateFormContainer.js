@@ -5,14 +5,17 @@ import NotebookForm from './NotebookForm';
 
 const mapStateToProps = (state) => {
     return {
-        
+        notebook: {
+            name: "",
+        },
+        formType: "Create Notebook"
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     // debugger
     return {
-        createNotebook: (notebook) => dispatch(createNotebook(notebook)),
+        action: (notebook) => dispatch(createNotebook(notebook)),
     }
 }
 

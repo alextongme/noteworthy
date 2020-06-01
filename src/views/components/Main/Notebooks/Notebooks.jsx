@@ -1,6 +1,9 @@
 import React from 'react';
 import NotebookItem from './NotebookItem/NotebookItem';
-import NotebookFormContainer from './NotebookForm/NotebookFormContainer';
+import CreateFormContainer from './NotebookForm/CreateFormContainer';
+import EditFormContainer from './NotebookForm/EditFormContainer';
+import { PrivateRoute } from '../../../util/route';
+import {Switch} from 'react-router-dom';
 
 class Notebooks extends React.Component {
     componentDidMount() {
@@ -10,7 +13,7 @@ class Notebooks extends React.Component {
     render() {
         const notebookItems = this.props.notebooks.map((notebook, idx) => {
             return (
-                <NotebookItem key={idx} notebook={notebook} />
+                <NotebookItem key={idx} notebook={notebook} idx={idx + 1} />
             );
         });
         
@@ -23,17 +26,25 @@ class Notebooks extends React.Component {
                     <table className="notebooks__table">
                         <tbody>
                             <tr className="notebooks__row">
+                                <th>
+                                    number
+                                </th>
                                 <th className="notebooks__column--header">
                                     name
                                 </th>
                                 <th>
-                                    created at
+                                    updated at
                                 </th>
                             </tr>
-                            {notebookItems}
+                                {notebookItems}
                         </tbody>
                     </table>
-                    <NotebookFormContainer />
+                    <CreateFormContainer />
+                    {/* conditional render of create form: */}
+                    {/* <Route exact path="/main/notebooks/create" component={CreateFormContainer} /> */}
+                    
+                    <PrivateRoute exact path="/main/notebooks/:notebookId/edit" component={EditFormContainer} />
+                    
                 </section>
             </div>
         );

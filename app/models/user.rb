@@ -20,31 +20,37 @@ class User < ApplicationRecord
 
     # notebook associations
     has_many :user_notebooks,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :UserNotebook
 
-    has_many :notebooks, 
+    has_many :notebooks,
+    dependent: :destroy,
     through: :user_notebooks, 
     source: :notebook
 
     # note associations
     has_many :user_notes,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :UserNote
 
-    has_many :notes, 
+    has_many :notes,
+    dependent: :destroy,
     through: :user_notes, 
     source: :note
 
     # tag associations
     has_many :user_tags,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :UserTag
 
-    has_many :tags, 
+    has_many :tags,
+    dependent: :destroy,
     through: :user_tags, 
     source: :tag
     

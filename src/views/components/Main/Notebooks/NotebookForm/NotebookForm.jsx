@@ -3,25 +3,19 @@ import React from 'react';
 class NotebookForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            name: '',
-        }
+        // debugger
+        this.state = props.notebook;
+        // debugger
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(event) {
+        // debugger
         event.preventDefault();
         const notebook = Object.assign({}, this.state);
-        // formData.append('notebook[name]', this.state.name);
-        // debugger
-        // const notebook = {
-        //     notebook: {
-        //         name: "hello"
-        //     }
-        // }
 
-        this.props.createNotebook(notebook);
+        this.props.action(notebook);
     }
 
     handleChange(field) {
@@ -35,18 +29,16 @@ class NotebookForm extends React.Component {
     render() {
         return (
             <div className="notebookForm">
+                {this.props.formType}
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Name
                     </label>
-                        <input type="text" value={this.state.name} onChange ={this.handleChange('name')} className="notebookForm__input" placeholder="notebook name">
-                    </input>
+                        <input type="text" value={this.state.name} onChange ={this.handleChange('name')} className="notebookForm__input" placeholder="notebook name" />
 
-                    <input
-                        type="submit"
-                        value="create new notebook"
+                    <button type="submit"
                         className="notebookForm__button--submit"
-                     />
+                        >{this.props.formType}</button>
                 </form>
             </div>
         );

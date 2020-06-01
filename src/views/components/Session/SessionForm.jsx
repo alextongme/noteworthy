@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
             <div className="sessionForm">
                 <section className="sessionForm__section--form">
                     <form onSubmit={this.handleSubmit} className="sessionForm__form">
-                        <img src={window.nLogo} />
+                        <img src={window.nLogo} className="sessionForm__logo" />
                         <h1>noteworthy</h1>
                         <h2>Never miss a beat.</h2>
                         {/* Please {this.props.formType} or {this.props.navLink} */}

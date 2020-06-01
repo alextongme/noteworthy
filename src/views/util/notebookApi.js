@@ -1,15 +1,15 @@
 export const fetchNotebooks = () => {
     return ($.ajax({
         method: "GET",
-        url: "/api/notebooks"
+        url: "api/notebooks"
     })
     );
 }
 
-export const fetchNotebook = (id) => {
+export const fetchNotebook = (notebookId) => {
     return ($.ajax({
         method: "GET",
-        url: "/api/notebooks/${id}",
+        url: `api/notebooks/${notebookId}`,
     })
     );
 }
@@ -20,7 +20,21 @@ export const createNotebook = (notebook) => {
         method: "POST",
         url: `api/notebooks`,
         data: { notebook }
-        // contentType: false,
-        // processData: false
+    }));
+}
+
+export const updateNotebook = (notebook) => {
+    // debugger
+    return ($.ajax({
+        method: "PATCH",
+        url: `api/notebooks/${notebook.id}`,
+        data: { notebook }
+    }));
+}
+
+export const deleteNotebook = (notebook) => {
+    return ($.ajax({
+        method: "DELETE",
+        url: `api/notebooks/${notebookId}`,
     }));
 }

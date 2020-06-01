@@ -3,30 +3,34 @@ class Api::NotebooksController < ApplicationController
 
     def index
         @notebooks = current_user.notebooks
-        render :index
     end
 
     def create
-        # debugger
         @notebook = Notebook.new(notebook_params)
-        # @notebook.user_id = params[:user_id]
-        # debugger
-        # @notebook.author = current_user
+
         if @notebook.save
             create_user_notebook_association(current_user.id, @notebook.id)
         else
             render json: @notebook.errors.full_messages, status: 422
         end
-
         render :show
-        # redirect_to user_url(@notebook.user)
+    end
+
+    def show
+        @notebook = Notebook.find(params[:id])
+    end
+
+    def update
+        @notebook = Notebook.find(params[:id])
+
+        if @notebook.update(notebook_params)
+            render :show
+        else
+            render json: @notebook.errors.full_messages, status: 422
+        end
     end
 
     def destroy
-        # @notebook = current_user.notebooks.find_by(id: params[:id])
-        # if @notebook && @notebook.delete 
-        #     redirect_to users_url
-        # end
     end
  
     private
