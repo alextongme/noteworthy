@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: 'CaeciliaLTStd-Bold';
-  src:url('../fonts/CaeciliaLTStd-Bold.otf');
+  src:font-url('../fonts/CaeciliaLTStd-Bold.otf');
 }
 
 body {
@@ -30,5 +30,5 @@ button, input {
 
 @font-face {
   font-family: 'Signerica_Medium';
-  src:url('../fonts/Signerica_Medium.ttf') format('truetype');
+  src:font-url('../fonts/Signerica_Medium.ttf') format('truetype');
 }
