@@ -60,7 +60,7 @@
 
 .sessionForm__input:focus {
     outline: none;
-    background-color: whitesmoke;
+    background-color: #fcf3cc;
     box-shadow: 0.01vw 0.01vw 0.1vw 0.1vw #ccc;
 }
 
@@ -79,6 +79,10 @@
 }
 
 .sessionForm__button:hover {
+    background-color: #CE4FB7;
+}
+
+.sessionForm__button:active {
     background-color: #FFBF88;
 }
 
@@ -114,4 +118,8 @@
 
 .sessionForm__signup:hover {
     color: #CE4FB7;
+}
+
+.sessionForm__signup:active {
+    color: #FFBF88;
 }
