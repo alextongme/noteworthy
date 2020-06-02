@@ -5,6 +5,10 @@ class Api::NotebooksController < ApplicationController
         @notebooks = current_user.notebooks
     end
 
+    def show
+        @notebook = Notebook.find(params[:id])
+    end
+
     def create
         @notebook = Notebook.new(notebook_params)
 
@@ -15,11 +19,6 @@ class Api::NotebooksController < ApplicationController
         end
         render :show
     end
-
-    # not needed for now
-    # def show
-    #     @notebook = Notebook.find(params[:id])
-    # end
 
     def update
         @notebook = Notebook.find(params[:id])

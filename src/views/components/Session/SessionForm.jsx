@@ -79,14 +79,13 @@ class SessionForm extends React.Component {
                         <input type="password" className="sessionForm__input sessionForm__input--password" value={this.state.password} onChange={this.handleChange('password')} placeholder="password" />
                         {this.renderErrors()}
                         <input type="submit" className="sessionForm__button" value={this.props.formType} />
-                        
-                        <h1>
-                            or {this.props.navLink} instead
-                        </h1>
-                            
+                        <button className="sessionForm__button" onClick={this.loginAsDemo}>login as demo</button>
                     </form>
 
-                    <button className="sessionForm__button" onClick={this.loginAsDemo}>login as demo</button>
+                    <h2 className="sessionForm__h3">
+                        Don't have an account?<br/>
+                        {this.props.navLink}
+                    </h2>
                 </section>
             </div>
         );

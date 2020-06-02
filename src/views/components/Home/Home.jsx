@@ -17,8 +17,13 @@ const Home = () => {
 
             <div className="home__content">
                 <section className="home__content--left">
-                    <h2 className="home__text--left">Notes worthy for Morty. Effortless.</h2>
-                    <Link to="/signup" className="home__signupButton">SIGN UP FOR FREE</Link>
+                    <h2 className="home__h2--left">
+                        Notes worthy for even Morty. Effortless.
+                    </h2>
+                    <p className="home__p--left">
+                        To note is to risk it all; otherwise you're just an inert chunk of randomly assembled molecules drifting wherever the universe blows you...
+                    </p>
+                    <Link to="/signup" className="home__signupButton">SO SIGN UP FOR FREE</Link>
                 </section>
                 <section className="home__content--right">
                     <img src={window.rick} className="home__image--rick" />
@@ -26,8 +31,6 @@ const Home = () => {
             </div>
 
             <footer className="home__footer">
-                <section className="home__footer--left">
-                </section>
                 <section className="home__footer--right">
                     <a href='http://www.tongsalex.com' className ="home__link--personalWeb">
                         aT
@@ -39,7 +42,7 @@ const Home = () => {
                         <img src={window.linkedin} alt='linkedin' className="home__button" />
                     </a>
                 </section>
-                
+                {/* <hr className"home__divider"></hr> */}
             </footer>
         </div>
     );

@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {login} from '../../../state/actions/session';
 import SessionForm from './SessionForm.jsx';
 
@@ -8,7 +8,7 @@ const mapStateToProps = ({errors}) => {
     return {
         errors: errors.session,
         formType: 'login',
-        navLink: <Link to="/signup">SignUp</Link>
+        navLink: <NavLink to="/signup" className="sessionForm__signup">Create Account</NavLink>
     }
 };
 

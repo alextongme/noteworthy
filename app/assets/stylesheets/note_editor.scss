@@ -8,3 +8,14 @@
     // why is there padding on this height?
     height: 100%;
 }
+
+// quill editor styles for showing to user
+// bold
+strong {
+    font-weight: bolder;
+}
+
+// italics
+em {
+    font-style: italic;
+}

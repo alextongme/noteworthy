@@ -7,50 +7,67 @@
 }
 
 .home__navbar--left {
-    margin-left: 5vw;
+    margin-left: 4vw;
     display: flex;
     align-items: center;
     // justify-items: space-between;
 }
 
 .home__image--logo {
-    width: 3vw;
+    width: 4vw;
 }
 
 .home__h1--logo {
     font-family: 'CaeciliaLTStd-Bold';
-    margin-left: 0.5vw;
-    font-size: 1.5vw;
+    margin-left: 1.5vw;
+    font-size: 2vw;
 }
 
 .home__content {
     width: 100vw;
     height: 80vh;
-    // background-color:#01A82D;
+    // background-color:#2ECC40;
     background-image: image-url('evernoteWallpaper.jpg');
+    
     display: flex;
-}
-
-.home__content--left {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-.home__text--left {
-    font-family: 'Indie Flower', cursive;
+.home__content--left {
+    padding-left: 7vw;
+    box-sizing: border-box;
+    width: 50%;
+    height: 73%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
-    width: 60%;
-    font-size: 6vw;
-    text-align: center;
+.home__h2--left {
+    // font-family: 'Indie Flower', cursive;
+    font-family: 'CaeciliaLTStd-Bold';
+    line-height: 130%;
+    width: 70%;
+    font-size: 4vw;
+    // text-align: center;
+    color: white;
+}
+
+.home__p--left {
+    // font-family: 'Indie Flower', cursive;
+    font-family: 'Raleway';
+    font-weight: 400;
+    line-height: 140%;
+    width: 70%;
+    font-size: 2vw;
+    // text-align: center;
     color: white;
 }
 
 .home__signupButton {
-    // font-family: 'CaeciliaLTStd-Bold';
+    font-family: 'Raleway';
+    font-weight: 700;
     width: 20vw;
     height: 7vh;
     background-color: white;
@@ -58,11 +75,9 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    color: #01A82D;
+    color: #269814;
     text-decoration: none;
     border-radius: .5em;
-    // font-family: Arial, Helvetica, sans-serif;
-    font-family: 'CaeciliaLTStd-Bold';
 }
 
 .home__signupButton:hover {
@@ -71,52 +86,22 @@
 
 .home__content--right {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 40%;
+    width: 50%;
     height: 100%;
 }
 
 .home__image--rick {
-    height: 70vh;
+    height: 77vh;
 }
 
 .home__footer {
     width: 100vw;
     height: 10vh;
-    background-color: #B9D2E7;
-    // background-color: #01A82D;
-    align-items: center;
-    // color:white;
-}
-
-.home__button {
-    height: 2.5vw;
-    opacity: 0.6;
-}
-
-.home__button:hover {
-    opacity: 1;
-}
-
-.home__link--personalWeb {
-    font-family: 'Signerica_Fat';
-    text-decoration: none;
-    color: #F148FB;
-    font-size: 2.5vw;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #F148FB, 0 0 0.5em #F148FB, 0 0 0.1em #F148FB, 0 10px 3px purple;
-    animation: blink linear infinite 30s;
-}
-
-.home__link--personalWeb:hover {
-    color: #F148FB;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #F148FB, 0 0 0.5em #F148FB, 0 0 0.1em #F148FB, 0 10px 3px #000;
-    animation: blink linear infinite 5s;
-}
-
-.home__footer {
+    background-color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .home__footer--right {
@@ -126,4 +111,29 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.home__button {
+    height: 1.9vw;
+    opacity: 1;
+
+}
+
+.home__button:hover {
+    opacity: 0.5;
+}
+
+.home__link--personalWeb {
+    font-family: 'Signerica_Fat';
+    text-decoration: none;
+    color: #ff073a;
+    font-size: 1.9vw;
+    
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff073a, 0 0 0.5em #ff073a, 0 0 0.1em #ff073a, 0 10px 3px #ff073a;
+    animation: blink linear infinite 20s;
+}
+
+.home__link--personalWeb:hover {
+    color: #269814;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #269814, 0 0 0.5em #269814, 0 0 0.1em #269814, 0 10px 3px #269814;
 }
