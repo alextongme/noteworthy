@@ -1,6 +1,6 @@
 import React from "react";
 import NotebooksContainer from './Notebooks/NotebooksContainer'
-import { PrivateRoute } from '../../util/route';
+import { PrivateRoute } from '../../../state/util/route';
 import NotesContainer from "./Notes/NotesContainer";
 import SidebarContainer from "./Sidebar/SidebarContainer";
 
