@@ -17,18 +17,48 @@
 
 @font-face {
   font-family: 'CaeciliaLTStd-Bold';
-  src:font-url('../fonts/CaeciliaLTStd-Bold.otf');
-}
-
-body {
-    font-family: 'CaeciliaLTStd-Bold';
-}
-
-button, input {
-  font-family: Arial, Helvetica, sans-serif;
+  src:font-url('CaeciliaLTStd-Bold.otf');
 }
 
 @font-face {
-  font-family: 'Signerica_Medium';
-  src:font-url('../fonts/Signerica_Medium.ttf') format('truetype');
+  font-family: 'Signerica_Fat';
+  src:font-url('Signerica_Fat.ttf') format('truetype');
+}
+
+body {
+  font-family: 'CaeciliaLTStd-Bold';
+}
+
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+     color: #333;
+  }
+  80% {
+    
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
 }

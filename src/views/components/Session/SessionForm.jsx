@@ -63,19 +63,16 @@ class SessionForm extends React.Component {
 
 
     render() {
-        // const signupEmail = () => {
-        //     if(this.props.formType === "signup") {
-        //         return <input type="text" className="sessionForm__input sessionForm__input--email" value={this.state.email} onChange={this.handleChange('email')} placeholder="email" />
-        //     }
-        // }
-
         return (
             <div className="sessionForm">
                 <section className="sessionForm__section--form">
+                    <section className="sessionForm__section--header">
+                        <img src={window.rickDancing} className="sessionForm__logo" />
+                        <h1 className="sessionForm__h1">noteworthy</h1>
+                        <h2 className="sessionForm__h2">Let's get schwif-tay.</h2>
+                    </section>
+
                     <form onSubmit={this.handleSubmit} className="sessionForm__form">
-                        <img src={window.nLogo} className="sessionForm__logo" />
-                        <h1>noteworthy</h1>
-                        <h2>Never miss a beat.</h2>
                         {/* Please {this.props.formType} or {this.props.navLink} */}
                         {this.signup()}
                         <input type="text" className="sessionForm__input sessionForm__input--username" value={this.state.username} onChange={this.handleChange('username')} placeholder="username" />

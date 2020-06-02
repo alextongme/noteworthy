@@ -39,10 +39,15 @@
     color: red;
 }
 
+.sidebar__navlink.active {
+    background-color: green;
+    // color: red;
+}
+
 // .sidebar__list:hover > .sidebar__navlink {
 //     color: black;
 // }
 
-.sidebar__navlink--active{
-    background-color: forestgreen;
-}
+// .sidebar__navlink--active{
+//     background-color: forestgreen;
+// }

@@ -2,11 +2,12 @@ import React from 'react';
 import NotebookItem from './NotebookItem/NotebookItem';
 import CreateFormContainer from './NotebookForm/CreateFormContainer';
 import EditFormContainer from './NotebookForm/EditFormContainer';
-import { PrivateRoute } from '../../../util/route';
+import { PrivateRoute } from '../../../../state/util/route';
 import {Switch} from 'react-router-dom';
 
 class Notebooks extends React.Component {
     componentDidMount() {
+        this.props.fetchNotes();
         this.props.fetchNotebooks();
     }
     
