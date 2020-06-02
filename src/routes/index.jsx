@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from 'react-router-dom';
 
 import Home from '../views/components/Home/Home'
-import { GuestRoute, PrivateRoute } from '../views/util/route';
+import { GuestRoute, PrivateRoute } from '../state/util/route';
 
 import SignupContainer from '../views/components/Session/SignupContainer';
 import LoginContainer from '../views/components/Session/LoginContainer';
