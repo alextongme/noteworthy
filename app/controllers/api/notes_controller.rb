@@ -16,9 +16,9 @@ class Api::NotesController < ApplicationController
     #     render :show
     # end
 
-    # def show
-    #     @note = Note.find(params[:id])
-    # end
+    def show
+        @note = Note.find(params[:id])
+    end
 
     # def update
     #     @notebook = Notebook.find(params[:id])

@@ -4,44 +4,37 @@ import ReactQuill from 'react-quill';
 class NoteEditor extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            body: "",
-        };
+        
+        this.state = props.note;
+        // debugger
         this.handleQuillChange = this.handleQuillChange.bind(this);
-        // this.handleChange = this.handleChange.bind(this);
-        // this.modules = {
-        //     toolbar: [
-        //     [{ 'header': [1, 2, false] }],
-        //     ['bold', 'italic', 'underline','strike', 'blockquote'],
-        //     [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-        //     ['link', 'image'],
-        //     ['clean']
-        //     ],
-        // };
+       
     }
-
-    // handleChange(value) {
-    //     return (() => {
-    //         this.setState({
-    //             text: value,
-    //         });
-    //     });
-    // }
-
-    // const formats = [
-    //     'header',
-    //     'bold', 'italic', 'underline', 'strike', 'blockquote',
-    //     'list', 'bullet', 'indent',
-    //     'link', 'image'
-    // ];
 
     handleQuillChange(value) {
         this.setState({
             body : value
-        });
+        })
     }
 
     render() {
+    const modules = {
+        toolbar: [
+            [{ 'header': [1, 2, false] }],
+            ['bold', 'italic', 'underline','strike', 'blockquote'],
+            [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+            ['link', 'image'],
+            ['clean']
+        ],
+        };
+    
+    const formats = [
+        'header',
+        'bold', 'italic', 'underline', 'strike', 'blockquote',
+        'list', 'bullet', 'indent',
+        'link', 'image'
+    ];
+
         return (
             <div className="noteEditor">
                 <header>
@@ -56,7 +49,10 @@ class NoteEditor extends React.Component {
                     className="noteEditor__quill" 
                     theme="snow" 
                     value={this.state.body} 
-                    onChange={this.handleQuillChange} 
+                    onChange={this.handleQuillChange}
+                    placeholder={"Start your note..."}
+                    modules={modules}
+                    formats={formats}
                 />
             </div>
         );

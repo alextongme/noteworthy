@@ -11,21 +11,20 @@
 .headerIntro__button--download {
     // display: none;
     background-color: white;
-    border: 0.1vw solid #01A82D;
+    border: 0.1vw solid #269814;
     padding: .8vw;
     border-radius: 0.1vw;
     // font-family: 'CaeciliaLTStd-Bold';
-    color: #01A82D;
+    color: #269814;
 }
 
 .headerIntro__button--login {
     text-decoration: none;
-    font-size: 1.8vw;
-    color: #01A82D;
+    font-size: 1.6vw;
+    color: #269814;
 }
 
 .headerIntro__button--login:hover {
     text-decoration: none;
-    font-size: 1.8vw;
     color: crimson;
 }

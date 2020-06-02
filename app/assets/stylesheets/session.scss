@@ -4,23 +4,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-color: whitesmoke;
-    background-color: #dcedc8;
+    background-image: image-url('rmWallpaper.png');
+    background-size: cover;
 }
 
 .sessionForm__section--form {
-    width: 30vw;
-    height: 70vh;
+    width: 27vw;
+    height: 65vh;
+    box-sizing: border-box;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    border-radius: 1vw;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.12), 
-                0 4px 4px rgba(0,0,0,0.12), 
-                0 6px 6px rgba(0,0,0,0.12), 
-                0 10px 10px rgba(0,0,0,0.12),
-                0 18px 18px rgba(0,0,0,0.12);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.7vw;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.12), 
+                4px 4px 4px rgba(0,0,0,0.12), 
+                6px 6px 6px rgba(0,0,0,0.12), 
+                10px 10px 10px rgba(0,0,0,0.12),
+                18px 18px 18px rgba(0,0,0,0.12);
+}
+
+.sessionForm__section--form:hover {
+    box-shadow: none;
 }
 
 .sessionForm__section--header {
@@ -39,21 +47,71 @@
 }
 
 .sessionForm__input {
-    font-size: 1.3vw;
+    width: 15vw;
+    border: 0.01vw solid gainsboro;
+    // box-shadow: 0 2px 2px rgba(0,0,0,0.12);
+    border-radius: 0.3vw;
+    font-family: "Raleway";
+    font-size: 1vw;
+    padding: 0.6vw;
+    box-sizing: border-box;
+    margin: 0.5vw;
+}
+
+.sessionForm__input:focus {
+    outline: none;
+    background-color: whitesmoke;
+    box-shadow: 0.01vw 0.01vw 0.1vw 0.1vw #ccc;
 }
 
 .sessionForm__button {
-    font-size: 1.3vw;
+    outline: none;
+    font-family: 'Raleway';
+    font-weight: 400;
+    border: none;
+    border-radius: 0.3vw;
+    height: 5vh;
+    width: 15vw;
+    background-color: #01A82D;
+    color: white;
+    font-size: 1vw;
+    margin: 0.5vw;
+}
+
+.sessionForm__button:hover {
+    background-color: #FFBF88;
 }
 
 .sessionForm__logo {
-    height: 20vh;
+    height: 12vh;
 }
 
 .sessionForm__h1 {
     font-size: 3vw;
+    line-height: 150%;
 }
 
 .sessionForm__h2 {
     font-size: 1.2vw;
+    font-family: "Raleway";
+    line-height: 110%;
+}
+
+.sessionForm__h3 {
+    text-align: center;
+    font-size: 1.3vw;
+    font-family: "Raleway";
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.sessionForm__signup {
+    text-decoration: none;
+    color: #01A82D;
+    line-height: 160%;
+    font-size: 1.5vw;
+}
+
+.sessionForm__signup:hover {
+    color: #CE4FB7;
 }
