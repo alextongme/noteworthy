@@ -18,7 +18,7 @@
 }
 
 .home__h1--logo {
-    // font-family: 'CaeciliaLTStd-Bold';
+    font-family: 'CaeciliaLTStd-Bold';
     margin-left: 0.5vw;
     font-size: 1.5vw;
 }
@@ -26,7 +26,8 @@
 .home__content {
     width: 100vw;
     height: 80vh;
-    background-color:#01A82D;
+    // background-color:#01A82D;
+    background-image: image-url('evernoteWallpaper.jpg');
     display: flex;
 }
 
@@ -40,8 +41,10 @@
 }
 
 .home__text--left {
-    // font-family: 'CaeciliaLTStd-Bold';
-    font-size: 4vw;
+    font-family: 'Indie Flower', cursive;
+
+    width: 60%;
+    font-size: 6vw;
     text-align: center;
     color: white;
 }
@@ -58,6 +61,8 @@
     color: #01A82D;
     text-decoration: none;
     border-radius: .5em;
+    // font-family: Arial, Helvetica, sans-serif;
+    font-family: 'CaeciliaLTStd-Bold';
 }
 
 .home__signupButton:hover {
@@ -79,16 +84,15 @@
 .home__footer {
     width: 100vw;
     height: 10vh;
-    background-color: black;
-    // display: flex;
-    // justify-content: space-between;
+    background-color: #B9D2E7;
+    // background-color: #01A82D;
     align-items: center;
-    color:white;
+    // color:white;
 }
 
 .home__button {
     height: 2.5vw;
-    opacity: 0.3;
+    opacity: 0.6;
 }
 
 .home__button:hover {
@@ -96,17 +100,30 @@
 }
 
 .home__link--personalWeb {
-    font-family: 'Signerica-Medium';
+    font-family: 'Signerica_Fat';
     text-decoration: none;
-    color: white;
+    color: #F148FB;
     font-size: 2.5vw;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #F148FB, 0 0 0.5em #F148FB, 0 0 0.1em #F148FB, 0 10px 3px purple;
+    animation: blink linear infinite 30s;
 }
 
-.home__footer--left {
+.home__link--personalWeb:hover {
+    color: #F148FB;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #F148FB, 0 0 0.5em #F148FB, 0 0 0.1em #F148FB, 0 10px 3px #000;
+    animation: blink linear infinite 5s;
+}
+
+.home__footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home__footer--right {
+    margin-right: 3vw;
     width: 15%;
     height: 100%;
     display: flex;
-    //  display: flex;
     justify-content: space-around;
     align-items: center;
 }

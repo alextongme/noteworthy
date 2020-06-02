@@ -54,18 +54,48 @@ UserNotebook.create!(
 )
 
 Note.create!(
-    {
+    [{
         title: 'my first note',
-        body: 'lorem ipsum goes here',
-        notebook_id: 1
-    }
+        body: 'Consequat esse dolore minim eiusmod ut. Consequat qui dolor nisi veniam do duis id excepteur aliqua cupidatat. Quis aute sunt velit cillum consectetur elit est pariatur. Sint reprehenderit laboris fugiat aute est ullamco adipisicing minim incididunt ex.'
+    },
+    {
+        title: 'my second note',
+        body: 'Amet Lorem aute enim ex excepteur adipisicing ullamco cillum sunt excepteur proident incididunt est culpa. Laboris quis minim cillum mollit. Aliquip nulla cillum dolore ullamco. Ea laboris consequat amet esse Lorem ullamco eu laboris incididunt. Non amet occaecat ullamco dolore dolor laborum sunt id magna culpa et voluptate officia aliquip. Culpa pariatur sit incididunt nisi consectetur ea dolor. Consequat magna veniam qui non voluptate qui officia esse adipisicing enim.'
+    },
+    {
+        title: 'my third note',
+        body: 'Laboris occaecat sit excepteur non culpa ipsum culpa do aliquip labore do. Amet esse aliquip officia aliquip sint cupidatat officia nostrud qui. Enim deserunt mollit minim eiusmod ut veniam minim elit anim commodo. Eiusmod velit officia non consequat excepteur irure dolor voluptate dolor. Labore elit qui nulla est duis id aliqua do officia exercitation do non ullamco culpa.'
+    }]
 )
 
 UserNote.create!(
-    {
+    [{
         user_id: 1,
         note_id: 1,
-    }
+    },
+    {
+        user_id: 1,
+        note_id: 2,
+    },
+    {
+        user_id: 1,
+        note_id: 3,
+    }]
+)
+
+NotebookNote.create!(
+    [{
+        notebook_id: 1,
+        note_id: 1,
+    },
+    {
+        notebook_id: 1,
+        note_id: 2,
+    },
+    {
+        notebook_id: 1,
+        note_id: 3,
+    }]
 )
 
 Tag.create!(

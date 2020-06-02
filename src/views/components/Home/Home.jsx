@@ -17,7 +17,7 @@ const Home = () => {
 
             <div className="home__content">
                 <section className="home__content--left">
-                    <h2 className="home__text--left">Your notes. Organized. Effortless.</h2>
+                    <h2 className="home__text--left">Notes worthy for Morty. Effortless.</h2>
                     <Link to="/signup" className="home__signupButton">SIGN UP FOR FREE</Link>
                 </section>
                 <section className="home__content--right">
@@ -27,8 +27,10 @@ const Home = () => {
 
             <footer className="home__footer">
                 <section className="home__footer--left">
+                </section>
+                <section className="home__footer--right">
                     <a href='http://www.tongsalex.com' className ="home__link--personalWeb">
-                        at
+                        aT
                     </a>
                     <a href='http://www.github.com/tongsalex'>
                         <img src={window.github} alt='github' className="home__button" />

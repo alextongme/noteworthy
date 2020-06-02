@@ -4,7 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgreen;
+    // background-color: whitesmoke;
+    background-color: #dcedc8;
 }
 
 .sessionForm__section--form {
@@ -12,8 +13,21 @@
     height: 70vh;
     background-color: white;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 1vw;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.12), 
+                0 4px 4px rgba(0,0,0,0.12), 
+                0 6px 6px rgba(0,0,0,0.12), 
+                0 10px 10px rgba(0,0,0,0.12),
+                0 18px 18px rgba(0,0,0,0.12);
+}
+
+.sessionForm__section--header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .sessionForm__form {
@@ -33,5 +47,13 @@
 }
 
 .sessionForm__logo {
-    width: 15vw;
+    height: 20vh;
+}
+
+.sessionForm__h1 {
+    font-size: 3vw;
+}
+
+.sessionForm__h2 {
+    font-size: 1.2vw;
 }

@@ -3,3 +3,38 @@
     width: 21vw;
     height: 100%;
 }
+
+.noteNav__header {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    // flex-direction: column;
+    padding-left: 1vw;
+    align-items: flex-end;
+    font-size: 1.8vw;
+    // padding-bottom: 5vh;
+}
+
+.noteNav__navbar {
+    width: 21vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    height: 8vh;
+}
+
+.noteNav__indexSection {
+    width: 100%;
+    // height: 100%;
+    border: 1px solid red;
+    overflow: scroll;
+}
+
+.noteNav__navbar--left {
+    margin-left: 1vw;
+}
+
+.noteNav__navbar--right {
+    margin-right: 1vw;
+}

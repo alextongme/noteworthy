@@ -1,4 +1,4 @@
-import * as APIUtil from '../../views/util/notebookApi';
+import * as APIUtil from '../util/notebookApi';
 
 export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";

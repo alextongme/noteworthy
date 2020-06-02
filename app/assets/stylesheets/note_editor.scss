@@ -1,9 +1,10 @@
 .noteEditor {
+    display: block;
     width: 65vw;
     height: 100vh;
 }
 
 .noteEditor__quill {
     // why is there padding on this height?
-    height: 95%;
+    height: 100%;
 }

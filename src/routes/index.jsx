@@ -6,18 +6,19 @@ import { GuestRoute, PrivateRoute } from '../views/util/route';
 
 import SignupContainer from '../views/components/Session/SignupContainer';
 import LoginContainer from '../views/components/Session/LoginContainer';
-import MainContainer from '../views/components/Main/MainContainer';
+// import MainContainer from '../views/components/Main/MainContainer';
+import Main from '../views/components/Main/Main'
 
 const App = () => {
     return (
-        // <div>
+    
             <Switch>
                 <GuestRoute exact path="/" component={Home} />
                 <GuestRoute exact path="/login" component={LoginContainer} />
                 <GuestRoute exact path="/signup" component={SignupContainer} />
-                <PrivateRoute path="/main" component={MainContainer} />
+                <PrivateRoute path="/main" component={Main} />
             </Switch>
-        // </div>
+        
     );
 }
 

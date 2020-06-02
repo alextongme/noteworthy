@@ -16,9 +16,10 @@ class Api::NotebooksController < ApplicationController
         render :show
     end
 
-    def show
-        @notebook = Notebook.find(params[:id])
-    end
+    # not needed for now
+    # def show
+    #     @notebook = Notebook.find(params[:id])
+    # end
 
     def update
         @notebook = Notebook.find(params[:id])
