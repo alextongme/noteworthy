@@ -34,8 +34,13 @@
     font-size: 0.9vw;
 }
 
-.fa-chevron-circle-right {
+.chevron-right--sidebar {
+    color: white;
     padding-left: 3%;
+}
+
+.chevron-right--sidebar:hover {
+    color: #046D02;
 }
 
 .fas:hover {

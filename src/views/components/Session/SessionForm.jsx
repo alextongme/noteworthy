@@ -4,8 +4,8 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: '',
-            lastName: '',
+            first_name: '',
+            last_name: '',
             username: '',
             password: '',
             email: '',
@@ -68,14 +68,14 @@ class SessionForm extends React.Component {
                     <input 
                         type="text" 
                         className="sessionForm__input sessionForm__input--fName" 
-                        value={this.state.firstName} 
-                        onChange={this.handleChange('firstName')} placeholder="first name" 
+                        value={this.state.first_name} 
+                        onChange={this.handleChange('first_name')} placeholder="first name" 
                     />
                     <input 
                         type="text" 
                         className="sessionForm__input sessionForm__input--lName" 
-                        value={this.state.lastName} 
-                        onChange={this.handleChange('lastName')} placeholder="last name"
+                        value={this.state.last_name} 
+                        onChange={this.handleChange('last_name')} placeholder="last name"
                     />
                     <input 
                         type="text" 
