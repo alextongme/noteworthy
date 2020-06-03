@@ -15,6 +15,7 @@
     // justify-content: space-evenly;
 }
 
+/////////////////////////////// USER MENU //////////////////////////////
 .sidebar__userContainer {
     display: flex;
     justify-content: space between;
@@ -33,6 +34,15 @@
     font-size: 0.9vw;
 }
 
+.fa-chevron-circle-right {
+    padding-left: 3%;
+}
+
+.fas:hover {
+    cursor: pointer;
+}
+
+/////////////////////////////// SEARCH //////////////////////////////
 .sidebar__searchContainer {
     display: flex;
     justify-content: center;
@@ -65,6 +75,8 @@
 //     background-color: forestgreen;
 // }
 
+
+/////////////////////////////// SIDEBAR NAVIGATION//////////////////////////////
 .sidebar__navlink {
     height: 6vh;
     width: 100%;
@@ -101,8 +113,13 @@
 }
 
 .sidebar__button--add {
+    padding-left: 10%;
     width: 3vw;
     filter: brightness(0) saturate(100%) invert(30%) sepia(59%) saturate(5655%) hue-rotate(116deg) brightness(95%) contrast(74%);
+}
+
+.sidebar__button--add:hover {
+    filter: brightness(0) saturate(100%) invert(65%) sepia(91%) saturate(798%) hue-rotate(358deg) brightness(99%) contrast(90%);
 }
 
 .sidebar__add {
@@ -111,10 +128,15 @@
 }
 
 .sidebar__addContainer:hover .sidebar__add {
-    color: red
+    color: #EFAD0F;
 }
 
 .sidebar__navlink:hover {
+    color: black;
+    background-color: #EFAD0F;
+}
+
+.sidebar__navlink:active {
     color: red;
     background-color: #EFAD0F;
 }
@@ -131,4 +153,18 @@
     background-color: transparent;
     color: white;
     font-size: 1vw;
+}
+
+.sidebar__button--logout:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.sidebar__button--logout:active {
+    color: red;
+    outline: none;
+}
+
+.sidebar__button--logout:focus {
+    outline: none;
 }

@@ -5,9 +5,9 @@ import NotebookForm from './NotebookForm';
 
 class EditFormContainer extends React.Component {
     componentDidMount() {
-        debugger
+        // debugger
         this.props.fetchNotebook(this.props.match.params.notebookId);
-        debugger
+        // debugger
     }
 
     render() {
