@@ -2,6 +2,7 @@ import React from 'react';
 import NotesNav from './NotesNav/NotesNav';
 import NoteEditorContainer from './NoteEditor/NoteEditorContainer';
 import { PrivateRoute } from '../../../../state/util/route';
+import {Route} from 'react-router-dom';
 // import NotebookItem from './components/NotebookItem/NotebookItem';
 
 class Notes extends React.Component {
@@ -14,10 +15,7 @@ class Notes extends React.Component {
         return (
             <div className="notes">
                 <NotesNav notes={this.props.notes} />
-                {/* <NoteEditor notes={this.props.notes} /> */}
-                <PrivateRoute path="/main/notes/:noteId/edit" component={NoteEditorContainer} />
-                {/* <NoteEditorContainer /> */}
-                
+                <PrivateRoute exact path="/main/notes/:noteId/edit" component={NoteEditorContainer} />
             </div>
         );
     }

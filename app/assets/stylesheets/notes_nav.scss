@@ -1,10 +1,10 @@
-.noteNav {
+.notesNav {
     background-color: #F8F8F8;
-    width: 21vw;
+    width: 30%;
     height: 100%;
 }
 
-.noteNav__header {
+.notesNav__header {
     width: 100%;
     height: 8vh;
     display: flex;
@@ -15,8 +15,8 @@
     // padding-bottom: 5vh;
 }
 
-.noteNav__navbar {
-    width: 21vw;
+.notesNav__navbar {
+    // width: 21vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,17 +24,17 @@
     height: 8vh;
 }
 
-.noteNav__indexSection {
+.notesNav__indexSection {
     width: 100%;
     // height: 100%;
     border: 1px solid red;
     overflow: scroll;
 }
 
-.noteNav__navbar--left {
+.notesNav__navbar--left {
     margin-left: 1vw;
 }
 
-.noteNav__navbar--right {
+.notesNav__navbar--right {
     margin-right: 1vw;
 }

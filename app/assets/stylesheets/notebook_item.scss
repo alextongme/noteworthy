@@ -1,0 +1,65 @@
+.notebooks__tableRow {
+    height: 7vh;
+}
+
+.notebooks__tableRow:hover {
+    // background-color: #404040;
+    background-color: #fcf3cc;
+}
+
+.notebooks__tableRow--even {
+    // height: 7vh;
+    // background-color: #fcf3cc;
+    background-color: #F2F2F2;
+
+    // border: 2px solid green;
+}
+
+.notebooks__tableRow--odd {
+    // height: 6vh;
+    background-color: white;
+}
+
+.notebooks__tableCol {
+    vertical-align: middle;
+    // border: 1px solid red;
+}
+
+.notebooks__links {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    padding-left: 2%;
+}
+
+.notebooks__links:hover {
+    text-decoration: underline;
+}
+
+.notebooks__tableCol:first-child {
+    width: 40%;
+    padding-left: 2%;
+}
+
+.notebooks__tableCol:last-child {
+    padding-right: 2%;
+    text-align: right;
+}
+
+// ICONS
+.fa-running {
+    color: black;
+    font-size: 1vw;
+}
+
+.fa-running:hover {
+    color: #016d00;
+}
+
+.fa-chevron-circle-right {
+    font-size: 1vw;
+}
+
+.fa-chevron-circle-right:hover {
+    color: #016d00;
+}

@@ -11,7 +11,7 @@
 
 .sessionForm__section--form {
     width: 27vw;
-    height: 65vh;
+    height: 80vh;
     box-sizing: border-box;
     padding-top: 4vh;
     padding-bottom: 4vh;
@@ -40,11 +40,10 @@
 }
 
 .sessionForm__form {
+    height: 50vh;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .sessionForm__input {
@@ -92,6 +91,7 @@
 }
 
 .sessionForm__h1 {
+    font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 150%;
 }
