@@ -17,7 +17,7 @@ const Sidebar = ({session, users, logout}) => {
                             {currentUser.first_name} {currentUser.last_name}
                         </h1>
                         <i 
-                            className="fas fa-chevron-circle-right"></i>
+                            className="fas fa-chevron-circle-right chevron-right--sidebar"></i>
                     </div>
                     <div className="sidebar__searchContainer">
                         <input 

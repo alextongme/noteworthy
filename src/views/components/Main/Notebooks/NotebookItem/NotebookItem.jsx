@@ -8,11 +8,13 @@ class NotebookItem extends React.Component {
         // debugger
         this.state = {
             expanded: false,
+            expandButton: "fas fa-chevron-circle-right chevron-right--notebooks"
         }
         this.cssName = props.cssName;
         this.idx = props.idx;
         this.notebook = props.notebook;
 
+        // this.expandButton = this.expandButton.bind(this);
         this.time = this.time.bind(this);
         this.noteItems = this.noteItems.bind(this);
         this.toggleNoteIndex = this.toggleNoteIndex.bind(this);
@@ -28,6 +30,20 @@ class NotebookItem extends React.Component {
             </td>);
     }
 
+    ////// changing button showing/hiding notes
+    // expandButton() {
+    //     if(this.state.expanded == true) {
+    //         return (
+    //             <i className="fas fa-chevron-circle-down" onClick={this.toggleNoteIndex} />
+    //         );
+    //     } else {
+    //         return (
+    //             <i className="fas fa-chevron-circle-right" onClick={this.toggleNoteIndex} />
+    //         );
+    //     }
+    // }
+
+    ////// showing/hiding notes
     noteItems() {
         if(this.state.expanded === true) {
             return (
@@ -39,11 +55,13 @@ class NotebookItem extends React.Component {
     toggleNoteIndex(){
         if (this.state.expanded == true){
             this.setState({
-                expanded: false
+                expanded: false,
+                expandButton: "fas fa-chevron-circle-right chevron-right--notebooks"
             });
         } else {
             this.setState({
-                expanded: true
+                expanded: true,
+                expandButton: "fas fa-chevron-circle-down chevron-down--notebooks"
             });
         }
     }
@@ -60,8 +78,11 @@ class NotebookItem extends React.Component {
 
                     <td
                         className="notebooks__tableCol">
-                        <i className="fas fa-chevron-circle-right" onClick={this.toggleNoteIndex} />
-                        
+
+                        {/* {this.expandButton()} */}
+                        <i className={this.state.expandButton} onClick={this.toggleNoteIndex} />
+
+
                         <Link
                             // to={`/main/notebooks/${notebook.id}/edit`}
                             to={`/main/notes`}
