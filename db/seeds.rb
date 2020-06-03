@@ -21,12 +21,16 @@ User.create!(
     [{
         username: 'demo', 
         password: '123456', 
-        email: 'demo@gmail.com'
+        email: 'demo@gmail.com',
+        first_name: 'demo',
+        last_name: 'greatest'
     },
     {
         username: 'alex', 
         password: '123456', 
-        email: 'alex@gmail.com'
+        email: 'alex@gmail.com',
+        first_name: 'alex',
+        last_name: 'tong'
     }]
 )
 

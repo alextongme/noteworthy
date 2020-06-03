@@ -18,7 +18,7 @@ const Home = () => {
             <div className="home__content">
                 <section className="home__content--left">
                     <h2 className="home__h2--left">
-                        Notes worthy for even Morty. Effortless.
+                        Notes worthy for any day. Effortless.
                     </h2>
                     <p className="home__p--left">
                         To note is to risk it all; otherwise you're just an inert chunk of randomly assembled molecules drifting wherever the universe blows you...

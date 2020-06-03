@@ -18,12 +18,10 @@ class NoteEditorContainer extends React.Component {
         if(!note) return null;
         
         return (
-            <>
             <NoteEditor
                 action={action}
                 note={note}
             />
-            </>
         )
     }
 }
@@ -43,4 +41,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NoteEditorContainer)
+export default connect(
+    mapStateToProps, 
+    mapDispatchToProps,
+    null,
+    {pure: false}
+    )(NoteEditorContainer)

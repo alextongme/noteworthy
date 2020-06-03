@@ -1,15 +1,56 @@
 .sidebar {
+    font-family: "Raleway";
     height: 100%;
-    width: 14vw;
+    width: 20vw;
     background-color: #1B1B1B;
+    // background-color: white;
+    color: white;
 }
 
 .sidebar__listContainer {
-    width: 100%;
+    width: 50;
     height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
+}
+
+.sidebar__userContainer {
+    display: flex;
+    justify-content: space between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    padding-left: 1vw;
+}
+
+.sidebar__userLogo {
+    width: 3vw;
+}
+
+.sidebar__username {
+    padding-left: 1vw;
+    font-size: 0.9vw;
+}
+
+.sidebar__searchContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+}
+
+.sidebar__search {
+    width: 75%;
+    border: none;
+    border-radius: 1vw;
+    padding: 0.7vw;
+    font-size: 1vw;
+}
+
+.sidebar__search:focus {
+    outline: none;
 }
 
 // .sidebar__list {
@@ -25,7 +66,7 @@
 // }
 
 .sidebar__navlink {
-    height: 5vh;
+    height: 6vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -34,20 +75,60 @@
     color: white;
 }
 
-.sidebar__navlink:hover {
-    background-color: green;
-    color: red;
-}
+// .sidebar__navlink:hover {
+//     background-color: green;
+//     color: red;
+// }
 
-.sidebar__navlink.active {
-    background-color: green;
-    // color: red;
-}
+// .sidebar__navlink.active {
+//     background-color: green;
+//     // color: red;
+// }
 
 // .sidebar__list:hover > .sidebar__navlink {
 //     color: black;
 // }
 
-// .sidebar__navlink--active{
-//     background-color: forestgreen;
-// }
+
+.sidebar__addContainer {
+    padding-left: 1.3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 56%;
+    height: 10vh;
+    text-decoration: none;
+}
+
+.sidebar__button--add {
+    width: 3vw;
+    filter: brightness(0) saturate(100%) invert(30%) sepia(59%) saturate(5655%) hue-rotate(116deg) brightness(95%) contrast(74%);
+}
+
+.sidebar__add {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar__addContainer:hover .sidebar__add {
+    color: red
+}
+
+.sidebar__navlink:hover {
+    color: red;
+    background-color: #EFAD0F;
+}
+
+.sidebar__navlink--active{
+    background-color: #404040;
+}
+
+.sidebar__button--logout {
+    width: 100%;
+    height: 100%;
+    font-family: "Raleway";
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1vw;
+}

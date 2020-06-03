@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%# <%= favicon_link_tag asset_path('favicon.ico') %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
     <link rel="shortcut icon" href="" />
     <link rel="stylesheet" href="//cdn.quilljs.com/1.2.6/quill.snow.css">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
@@ -14,6 +14,8 @@
 
     <%# <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> %>
     <script type="text/javascript">
+      window.addButton = "<%= image_url('addButton.png')%>"
+      window.userLogo = "<%= image_url('moving-logo.gif')%>"
       window.nLogo = "<%= image_url('logo.png')%>"
       window.rick = "<%= image_url('home-lion.png')%>"
       window.rickDancing = "<%= image_url('session-lion.gif')%>"

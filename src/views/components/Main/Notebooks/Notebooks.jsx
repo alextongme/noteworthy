@@ -22,30 +22,39 @@ class Notebooks extends React.Component {
             <div className="notebooks">
                 <header className="notebooks__header">
                     <h1 className="notebooks__h1--title">notebooks</h1>
+                    <input className="notebooks__search" placeholder="search for notebooks" />
                 </header>
                 <section className="notebooks__section--bottom">
+                    <nav className="notebooks__nav">
+                        <h2 className="notebooks__h2--title">my notebook list</h2>
+                        <button>new notebook</button>
+                    </nav>
                     <table className="notebooks__table">
-                        <tbody>
-                            <tr className="notebooks__row">
-                                <th>
-                                    number
+                        <tbody className="notebooks__tableBody">
+                            <tr className="notebooks__tableRow--header">
+                                <th className="notebooks__tableCol--header">
+                                    NUMBER
                                 </th>
-                                <th className="notebooks__column--header">
-                                    name
+                                <th className="notebooks__tableCol--header">
+                                    NAME
                                 </th>
-                                <th>
-                                    updated at
+                                <th className="notebooks__tableCol--header">
+                                    UPDATED AT
                                 </th>
                             </tr>
                                 {notebookItems}
                         </tbody>
                     </table>
-                    <CreateFormContainer />
+                    {/* <CreateFormContainer /> */}
+
+
                     {/* conditional render of create form: */}
                     {/* <Route exact path="/main/notebooks/create" component={CreateFormContainer} /> */}
                     
-                    <PrivateRoute exact path="/main/notebooks/:notebookId/edit" component={EditFormContainer} />
-                    
+                    <PrivateRoute 
+                        exact path="/main/notebooks/:notebookId/edit" 
+                        component={EditFormContainer} 
+                    />
                 </section>
             </div>
         );

@@ -8,9 +8,14 @@ const Main = () => {
     return (
         <div className="main">
             <SidebarContainer />
-            
-            <PrivateRoute path='/main/notebooks' component={NotebooksContainer}/>
-            <PrivateRoute path='/main/notes' component={NotesContainer}/>
+            <PrivateRoute 
+                path='/main/notebooks' 
+                component={NotebooksContainer}
+            />
+            <PrivateRoute 
+                path='/main/notes' 
+                component={NotesContainer}
+            />
         </div>
     );
 }

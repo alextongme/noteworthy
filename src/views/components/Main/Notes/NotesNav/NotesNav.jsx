@@ -9,22 +9,20 @@ const NoteNav = ({notes}) => {
     });
     
     return (
-        
-        <div className="noteNav">
-            <header className="noteNav__header">
+        <div className="notesNav">
+            <header className="notesNav__header">
                 All notes
             </header>
-            <nav className="noteNav__navbar">
-                <div className="noteNav__navbar--l"># notes</div>
-                <div className="noteNav__navbar--right">sort - filter</div>
+            <nav className="notesNav__navbar">
+                <div className="notesNav__navbar--l"># notes</div>
+                <div className="notesNav__navbar--right">sort - filter</div>
             </nav>
-            <section className="noteNav__indexSection">
+            <section className="notesNav__indexSection">
                 <ul>
                     {noteItems}
                 </ul>
             </section>
         </div>
-       
     );
 }
 
