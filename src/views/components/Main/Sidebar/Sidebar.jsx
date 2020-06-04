@@ -34,7 +34,7 @@ const Sidebar = ({session, users, logout}) => {
                             <h1 
                                 className="sidebar__add"
                             >
-                                new note
+                                New note
                             </h1>
                     </NavLink>
                     <NavLink 
@@ -42,22 +42,24 @@ const Sidebar = ({session, users, logout}) => {
                         className="sidebar__navlink"
                         activeClassName="sidebar__navlink--active"
                     >
-                        notebooks
+                        Notebooks
                     </NavLink>
                     <NavLink 
                         exact to="/main/notes" 
                         className="sidebar__navlink" 
                         activeClassName="sidebar__navlink--active"
                     >
-                        notes
+                        Notes
                     </NavLink>
-                <li className="sidebar__navlink">
+            </ul>
+            <li className="sidebar__navlink">
                     <button 
                         onClick={logout} 
                         className="sidebar__button--logout"
-                    >logout</button>
-                </li>
-            </ul>
+                    >
+                        Logout
+                    </button>
+            </li>
         </div>
     );
 }

@@ -29,6 +29,11 @@ class User < ApplicationRecord
     through: :user_notebooks, 
     source: :notebook
 
+    # # Does it make sense to do this?
+    # has_many :notebook_note_ids,
+    # through: :notebooks,
+    # source: :notebook_notes
+
     # note associations
     has_many :user_notes,
     dependent: :destroy,
@@ -54,6 +59,16 @@ class User < ApplicationRecord
     source: :tag
     
     after_initialize :ensure_session_token
+
+    # capitalizes first and last name before CREATION
+    def first_name=(s)
+        super s.titleize
+    end
+
+    def last_name=(s)
+        super s.titleize
+    end
+    # 
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

@@ -1,8 +1,11 @@
 import React from "react";
 import HeaderIntroContainer from "./HeaderIntro/HeaderIntroContainer";
 import { Link } from 'react-router-dom';
+import Typist from "react-typist";
 // import logo from '../../../../app/assets/images/evernote-logo.png';
+// import 'react-typist/dist/Typist.css';
 
+// import Styles from 'css-loader?modules!./react-typist/dist/Typist.css';
 
 const Home = () => {
     return (
@@ -17,15 +20,17 @@ const Home = () => {
 
             <div className="home__content">
                 <section className="home__content--left">
-                    <h2 className="home__h2--left">
-                        Notes worthy for any moment.
-                    </h2>
+                    <Typist className="home__h2--left">
+                        Notes worthy 
+                        <Typist.Delay ms={800} />
+                        <br />
+                        for any moment.
+                    </Typist>
                     <p className="home__p--left">
                         A new editor, made for the kings and queens of all jungles. Share your notes, store your files, and work from anywhere. With noteworthy, you'll never need a pen.
                     </p>
-                    {/* <div class="home__signupButtonContainer"> */}
                         <Link to="/signup" className="home__signupButton">SIGN UP FOR FREE</Link>
-                    {/* </div> */}
+                   
                 </section>
                 <section className="home__content--right">
                     <img src={window.lionHome} className="home__image--rick" />

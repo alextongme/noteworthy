@@ -11,9 +11,10 @@ class NotebookItem extends React.Component {
             expandButton: "fas fa-chevron-circle-right chevron-right--notebooks"
         }
         this.cssName = props.cssName;
-        this.idx = props.idx;
+        // this.idx = props.idx;
         this.notebook = props.notebook;
-
+        this.currentUser = props.users;
+        window.currentUser1 = this.currentUser;
         // this.expandButton = this.expandButton.bind(this);
         this.time = this.time.bind(this);
         this.noteItems = this.noteItems.bind(this);
@@ -69,7 +70,7 @@ class NotebookItem extends React.Component {
     render() {
         return (
             <>
-                <tr className={this.cssName} idx={this.idx}>
+                <tr className={this.cssName}>
                 {/* <td 
                     className="notebooks__tableCol"
                 >
@@ -93,7 +94,8 @@ class NotebookItem extends React.Component {
 
                     <td
                         className="notebooks__tableCol">
-                        Alex Tong
+                        {/* {this.currentUser.first_name} {this.currentUser.last_name} */}
+                        {/* Alex Tong */}
                     </td>
 
                     {this.time()}

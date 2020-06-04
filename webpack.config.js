@@ -12,16 +12,18 @@ module.exports = {
   },
   module: {
     rules: [
+      { test: /\.css$/, use: 'css-loader' },
       {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
+        // include: __dirname + "/app/",
         use: {
           loader: 'babel-loader',
           query: {
             presets: ['@babel/env', '@babel/react'],
           }
         },
-      }
+      },
     ]
   },
   devtool: 'source-map',

@@ -43,6 +43,8 @@ Notebook.create!(
         {name: 'my 4 notebook'},
         {name: 'my 5 notebook'},
         {name: 'my 6 notebook'},
+        {name: 'my 1st notebook'},
+        {name: 'my 2nd notebook'},
     ]
 )
 
@@ -54,6 +56,8 @@ UserNotebook.create!(
         {user_id: 1, notebook_id: 4},
         {user_id: 1, notebook_id: 5},
         {user_id: 1, notebook_id: 6},
+        {user_id: 2, notebook_id: 7},
+        {user_id: 2, notebook_id: 8},
     ]
 )
 

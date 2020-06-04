@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: image-url('sessionWallpaper.jpg');
+    background-image: image-url('sessionWallpaper.jpeg');
     // background-color: #01A82D;
     background-size: cover;
 }
@@ -15,12 +15,12 @@
     box-sizing: border-box;
     padding-top: 4vh;
     padding-bottom: 4vh;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border-radius: 0.2vw;
+    border-radius: 3vw;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.12), 
                 4px 4px 4px 4px rgba(0,0,0,0.12), 
                 6px 6px 6px 6px rgba(0,0,0,0.12), 
