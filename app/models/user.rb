@@ -55,6 +55,16 @@ class User < ApplicationRecord
     
     after_initialize :ensure_session_token
 
+    # capitalizes first and last name before CREATION
+    def first_name=(s)
+        super s.titleize
+    end
+
+    def last_name=(s)
+        super s.titleize
+    end
+    # 
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
 

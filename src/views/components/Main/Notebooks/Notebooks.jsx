@@ -1,5 +1,5 @@
 import React from 'react';
-import NotebookItem from './NotebookItem/NotebookItem';
+import NotebookItemContainer from './NotebookItem/NotebookItemContainer';
 import CreateFormContainer from './NotebookForm/CreateFormContainer';
 import EditFormContainer from './NotebookForm/EditFormContainer';
 import { PrivateRoute } from '../../../../state/util/route';
@@ -20,14 +20,14 @@ class Notebooks extends React.Component {
             }
 
             return (
-                <NotebookItem key={idx} notebook={notebook} idx={idx + 1} cssName={className} />
+                <NotebookItemContainer key={idx} notebook={notebook} cssName={className} />
             );
         });
         
         return (
             <div className="notebooks">
                 <header className="notebooks__header">
-                    <h1 className="notebooks__h1--title">notebooks</h1>
+                    <h1 className="notebooks__h1--title">Notebooks</h1>
                     <div className="notebooks__header--right">
                         <img 
                                 src={window.lionStationary}
@@ -40,7 +40,7 @@ class Notebooks extends React.Component {
                 </header>
                 <section className="notebooks__section--bottom">
                     <nav className="notebooks__nav">
-                        <h2 className="notebooks__h2--title">my notebook list</h2>
+                        <h2 className="notebooks__h2--title">My notebook list</h2>
 
                         <div 
                             className="notebooks__addContainer">
@@ -48,7 +48,7 @@ class Notebooks extends React.Component {
                                 src={window.addButton} className="notebooks__button--addImage" />
                             <button 
                                 className="notebooks__button--add">
-                                new notebook
+                                New notebook
                             </button>
                         </div>
                     </nav>

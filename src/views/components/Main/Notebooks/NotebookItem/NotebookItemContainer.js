@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import NotebookItem from './NotebookItem';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         notebooks: Object.values(state.entities.notebooks),
-        notes: Object.values(state.entities.notes)
+        notes: Object.values(state.entities.notes),
+        users: Object.values(state.entities.users)
     }
 }
 

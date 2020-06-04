@@ -18,15 +18,15 @@
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #1B1B1B;
+    align-items: flex-end;
+    // background-color: #1B1B1B;
 }
 
 .notebooks__h1--title {
     // font-family: 'CaeciliaLTStd-Bold';
-    color: white;
+    color: black;
     font-size: 2vw;
-    padding-left: 2vw;
+    padding-left: 4vw;
 }
 
 .notebooks__header--right {
@@ -35,7 +35,7 @@
 }
 
 .notebooks__headerLion {
-    width: 5vw;
+    width: 4vw;
 }
 
 .notebooks__search {
@@ -45,7 +45,7 @@
     margin-right: 2vw;
     padding: 0.7vw;
     border-radius: 1vw;
-    border: none;
+    border: 0.01vw solid black;
 }
 
 .notebooks__search:focus {
