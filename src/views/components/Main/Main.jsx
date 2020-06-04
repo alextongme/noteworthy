@@ -5,7 +5,7 @@ import NotesContainer from "./Notes/NotesContainer";
 import SidebarContainer from "./Sidebar/SidebarContainer";
 
 class Main extends React.Component {
-    componentDidMount() {
+    componentDidUpdate() {
         this.props.fetchNotes();
         this.props.fetchNotebooks();
     }

@@ -1,9 +1,13 @@
+.home {
+    // background-image: image-url('lion-king-wallpaper.png');
+    background-size: cover;
+}
 .home__navbar {
     width: 100vw;
     height: 10vh;
     display: flex;
     justify-content: space-between;
-    background-color: #FFFFFF;
+    // background-color: #FFFFFF;
 }
 
 .home__navbar--left {
@@ -27,8 +31,9 @@
     width: 100vw;
     height: 80vh;
     // background-color:#2ECC40;
-    background-image: image-url('evernoteWallpaper.jpg');
-    
+    // background-image: image-url('evernoteWallpaper.jpg');
+    // background-image: image-url('lion-king-wallpaper.png');
+    background-size: contain;
     display: flex;
     align-items: center;
 }
@@ -51,7 +56,7 @@
     width: 70%;
     font-size: 4vw;
     // text-align: center;
-    color: white;
+    color: black;
 }
 
 .home__p--left {
@@ -62,7 +67,7 @@
     width: 70%;
     font-size: 2vw;
     // text-align: center;
-    color: white;
+    color: black;
 }
 
 .home__signupButton {
@@ -70,12 +75,12 @@
     font-weight: 700;
     width: 20vw;
     height: 7vh;
-    background-color: white;
+    background-color: #269814;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    color: #269814;
+    color: white;
     text-decoration: none;
     border-radius: .5em;
 }
@@ -93,13 +98,13 @@
 }
 
 .home__image--rick {
-    height: 60vh;
+    height: 65vh;
 }
 
 .home__footer {
     width: 100vw;
     height: 10vh;
-    background-color: white;
+    // background-color: white;
     display: flex;
     justify-content: flex-end;
 }

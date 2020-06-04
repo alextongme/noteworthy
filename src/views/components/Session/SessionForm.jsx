@@ -62,26 +62,26 @@ class SessionForm extends React.Component {
     };
 
     signup() {
-        if(this.props.formType === "signup") {
+        if(this.props.formType === "Signup") {
             return (
                 <>
                     <input 
                         type="text" 
                         className="sessionForm__input sessionForm__input--fName" 
                         value={this.state.first_name} 
-                        onChange={this.handleChange('first_name')} placeholder="first name" 
+                        onChange={this.handleChange('first_name')} placeholder="First name" 
                     />
                     <input 
                         type="text" 
                         className="sessionForm__input sessionForm__input--lName" 
                         value={this.state.last_name} 
-                        onChange={this.handleChange('last_name')} placeholder="last name"
+                        onChange={this.handleChange('last_name')} placeholder="Last name"
                     />
                     <input 
                         type="text" 
                         className="sessionForm__input sessionForm__input--email" 
                         value={this.state.email} 
-                        onChange={this.handleChange('email')} placeholder="email"
+                        onChange={this.handleChange('email')} placeholder="Email"
                     />
                 </>
             );
@@ -97,7 +97,7 @@ class SessionForm extends React.Component {
                     <section className="sessionForm__section--header">
                         <img src={window.rickDancing} className="sessionForm__logo" />
                         <h1 className="sessionForm__h1">noteworthy</h1>
-                        <h2 className="sessionForm__h2">never miss a roar</h2>
+                        <h2 className="sessionForm__h2">Never miss a roar.</h2>
                     </section>
 
                     <form onSubmit={this.handleSubmit} className="sessionForm__form">
@@ -107,13 +107,13 @@ class SessionForm extends React.Component {
                             type="text" 
                             className="sessionForm__input sessionForm__input--username" 
                             value={this.state.username} 
-                            onChange={this.handleChange('username')} placeholder="username" 
+                            onChange={this.handleChange('username')} placeholder="Username" 
                         />
                         <input 
                             type="current-password" 
                             className="sessionForm__input sessionForm__input--password" 
                             value={this.state.password} 
-                            onChange={this.handleChange('password')} placeholder="password" 
+                            onChange={this.handleChange('password')} placeholder="Password" 
                         />
 
                         {this.renderErrors()}
@@ -128,7 +128,7 @@ class SessionForm extends React.Component {
                     {this.demoButton()}
 
                     <h2 className="sessionForm__h3">
-                        don't have an account?<br/>
+                        Don't have an account?<br/>
                         {this.props.navLink}
                     </h2>
                 </section>
