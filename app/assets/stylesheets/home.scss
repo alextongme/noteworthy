@@ -1,9 +1,13 @@
+.home {
+    // background-image: image-url('lion-king-wallpaper.png');
+    background-size: cover;
+}
 .home__navbar {
     width: 100vw;
     height: 10vh;
     display: flex;
     justify-content: space-between;
-    background-color: #FFFFFF;
+    // background-color: #FFFFFF;
 }
 
 .home__navbar--left {
@@ -19,16 +23,17 @@
 
 .home__h1--logo {
     font-family: 'CaeciliaLTStd-Bold';
-    margin-left: 1.5vw;
-    font-size: 2vw;
+    margin-left: 1vw;
+    font-size: 1.7vw;
 }
 
 .home__content {
     width: 100vw;
     height: 80vh;
     // background-color:#2ECC40;
-    background-image: image-url('evernoteWallpaper.jpg');
-    
+    // background-image: image-url('evernoteWallpaper.jpg');
+    // background-image: image-url('lion-king-wallpaper.png');
+    background-size: contain;
     display: flex;
     align-items: center;
 }
@@ -40,7 +45,7 @@
     height: 73%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: flex-start;
 }
 
@@ -48,40 +53,43 @@
     // font-family: 'Indie Flower', cursive;
     font-family: 'CaeciliaLTStd-Bold';
     line-height: 130%;
-    width: 70%;
-    font-size: 4vw;
+    width: 60%;
+    font-size: 3.8vw;
     // text-align: center;
-    color: white;
+    color: black;
 }
 
 .home__p--left {
     // font-family: 'Indie Flower', cursive;
+    padding-top: 2vh;
     font-family: 'Raleway';
     font-weight: 400;
     line-height: 140%;
-    width: 70%;
-    font-size: 2vw;
+    width: 50%;
+    font-size: 1.2vw;
     // text-align: center;
-    color: white;
+    color: black;
 }
 
 .home__signupButton {
+    color: white;
+    background: #269814;
+    margin-top: 3vh;
     font-family: 'Raleway';
-    font-weight: 700;
-    width: 20vw;
-    height: 7vh;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    color: #269814;
+    font-weight: 400;
+    font-size: 1vw;
     text-decoration: none;
-    border-radius: .5em;
+    padding: 1vw;
+    border: 0.8vw solid #269814;
+    border-radius: 0.8vw;
+    transition: all 0.5s ease 0s;
 }
 
 .home__signupButton:hover {
-    opacity: .7;
+    border-color: #EFA802;
+    border-radius: 2vw;
+    color: #EFA802;
+    transition: all 0.5s ease 0s;
 }
 
 .home__content--right {
@@ -93,13 +101,13 @@
 }
 
 .home__image--rick {
-    height: 60vh;
+    height: 65vh;
 }
 
 .home__footer {
     width: 100vw;
     height: 10vh;
-    background-color: white;
+    // background-color: white;
     display: flex;
     justify-content: flex-end;
 }

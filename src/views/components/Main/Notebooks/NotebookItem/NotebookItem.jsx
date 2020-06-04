@@ -105,8 +105,13 @@ class NotebookItem extends React.Component {
 
                     <td
                         className="notebooks__tableCol">
+                        
                         <i 
                             className="fas fa-running"></i>
+                        {/* <img 
+                            src={window.runStationary}
+                            onMouseOver={this.src = window.runMoving}
+                            onMouseOut={this.src = window.runStationary}/> */}
                     </td>
 
                 {/* <td>{notebook.created_at}</td> */}

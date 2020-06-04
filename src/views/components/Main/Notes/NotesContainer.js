@@ -7,20 +7,20 @@ const mapStateToProps = (state) => {
     return {
         notes: Object.values(state.entities.notes),
         notebooks: Object.values(state.entities.notebooks),
-        users: Object.values(state.entities.users),
+        // users: Object.values(state.entities.users),
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchNotebooks: () => dispatch(fetchNotebooks()),
-        fetchNotes: () => dispatch(fetchNotes())
+        // fetchNotebooks: () => dispatch(fetchNotebooks()),
+        // fetchNotes: () => dispatch(fetchNotes())
     }
 }
 
 export default connect(
     mapStateToProps, 
-    mapDispatchToProps,
+    null,
     // null,
     // {pure: false}
     )(Notes)

@@ -18,15 +18,18 @@ const Home = () => {
             <div className="home__content">
                 <section className="home__content--left">
                     <h2 className="home__h2--left">
-                        Notes worthy for any day. Effortless.
+                        Notes worthy for any moment.
                     </h2>
                     <p className="home__p--left">
-                        To note is to risk it all; otherwise you're just an inert chunk of randomly assembled molecules drifting wherever the universe blows you...
+                        A new editor, made for the kings and queens of all jungles. Share your notes, store your files, and work from anywhere. With noteworthy, you'll never need a pen.
                     </p>
-                    <Link to="/signup" className="home__signupButton">SO SIGN UP FOR FREE</Link>
+                    {/* <div class="home__signupButtonContainer"> */}
+                        <Link to="/signup" className="home__signupButton">SIGN UP FOR FREE</Link>
+                    {/* </div> */}
                 </section>
                 <section className="home__content--right">
-                    <img src={window.rick} className="home__image--rick" />
+                    <img src={window.lionHome} className="home__image--rick" />
+
                 </section>
             </div>
 

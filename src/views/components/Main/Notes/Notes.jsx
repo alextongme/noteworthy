@@ -7,8 +7,8 @@ import {Route} from 'react-router-dom';
 
 class Notes extends React.Component {
     componentDidMount() {
-        this.props.fetchNotes();
-        this.props.fetchNotebooks();
+        // this.props.fetchNotes();
+        // this.props.fetchNotebooks();
     }
 
     render() {

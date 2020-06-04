@@ -31,7 +31,7 @@
     text-shadow: inherit;
   }
   79%{
-     color: #333;
+     color: white;
   }
   80% {
     
@@ -42,7 +42,7 @@
     text-shadow: inherit;
   }
   82% {
-    color: #333;
+    color: white;
     text-shadow: none;
   }
   83% {
@@ -50,11 +50,20 @@
     text-shadow: inherit;
   }
   92% {
-    color: #333;
+    color: white;
     text-shadow: none;
   }
-  92.5% {
+  94% {
     color: inherit;
     text-shadow: inherit;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }

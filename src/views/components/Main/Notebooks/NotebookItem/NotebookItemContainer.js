@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { fetchNotesByNotebookId } from '../../../../state/actions/note';
 import NotebookItem from './NotebookItem';
 
 const mapStateToProps = (state) => {
@@ -9,10 +8,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchNotesByNotebookId: () => dispatch(fetchNotesByNotebookId()),
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotebookItem)
+export default connect(mapStateToProps, null)(NotebookItem)

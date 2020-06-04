@@ -4,11 +4,23 @@ import session from './session';
 import errors from './errors';
 import ui from './ui'
 
-export default combineReducers({
+const appReducer = combineReducers({
     entities,
     session,
     errors,
     ui,
 })
 
-// export default rootReducer;
+const rootReducer = (state, action) => {
+    // reset redux state
+    // we dont want last users info in state
+    if (action.type == 'LOGOUT_CURRENT_USER') {
+      state = undefined;
+    }
+  
+    return appReducer(state, action);
+};
+  
+
+
+export default rootReducer;

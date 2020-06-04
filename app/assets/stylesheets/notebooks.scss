@@ -29,6 +29,15 @@
     padding-left: 2vw;
 }
 
+.notebooks__header--right {
+    display: flex;
+    align-items: center;
+}
+
+.notebooks__headerLion {
+    width: 5vw;
+}
+
 .notebooks__search {
     font-size: 0.8vw;
     font-family: "Raleway";

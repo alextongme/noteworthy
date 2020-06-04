@@ -49,39 +49,39 @@ class SessionForm extends React.Component {
     }
 
     demoButton() {
-        if(this.props.formType === "login") {
+        if(this.props.formType === "Login") {
             return (
                 <button 
                         className="sessionForm__button" 
                         onClick={this.loginAsDemo}
                 >
-                    login as demo
+                    Demo
                 </button>
             );
         }
     };
 
     signup() {
-        if(this.props.formType === "signup") {
+        if(this.props.formType === "Signup") {
             return (
                 <>
                     <input 
                         type="text" 
                         className="sessionForm__input sessionForm__input--fName" 
                         value={this.state.first_name} 
-                        onChange={this.handleChange('first_name')} placeholder="first name" 
+                        onChange={this.handleChange('first_name')} placeholder="First name" 
                     />
                     <input 
                         type="text" 
                         className="sessionForm__input sessionForm__input--lName" 
                         value={this.state.last_name} 
-                        onChange={this.handleChange('last_name')} placeholder="last name"
+                        onChange={this.handleChange('last_name')} placeholder="Last name"
                     />
                     <input 
                         type="text" 
                         className="sessionForm__input sessionForm__input--email" 
                         value={this.state.email} 
-                        onChange={this.handleChange('email')} placeholder="email"
+                        onChange={this.handleChange('email')} placeholder="Email"
                     />
                 </>
             );
@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
             <div className="sessionForm">
                 <section className="sessionForm__section--form">
                     <section className="sessionForm__section--header">
-                        <img src={window.rickDancing} className="sessionForm__logo" />
+                        <img src={window.nLogo} className="sessionForm__logo" />
                         <h1 className="sessionForm__h1">noteworthy</h1>
                         <h2 className="sessionForm__h2">Never miss a roar.</h2>
                     </section>
@@ -107,13 +107,13 @@ class SessionForm extends React.Component {
                             type="text" 
                             className="sessionForm__input sessionForm__input--username" 
                             value={this.state.username} 
-                            onChange={this.handleChange('username')} placeholder="username" 
+                            onChange={this.handleChange('username')} placeholder="Username" 
                         />
                         <input 
-                            type="password" 
+                            type="current-password" 
                             className="sessionForm__input sessionForm__input--password" 
                             value={this.state.password} 
-                            onChange={this.handleChange('password')} placeholder="password" 
+                            onChange={this.handleChange('password')} placeholder="Password" 
                         />
 
                         {this.renderErrors()}
