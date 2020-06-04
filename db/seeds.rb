@@ -37,8 +37,8 @@ User.create!(
 
 Notebook.create!(
     [
-        {name: 'my first notebook'},
-        {name: 'my 2 notebook'},
+        {name: 'my first notebook'}, #1
+        {name: 'my 2 notebook'}, #2
         {name: 'my 3 notebook'},
         {name: 'my 4 notebook'},
         {name: 'my 5 notebook'},
@@ -52,10 +52,10 @@ UserNotebook.create!(
     [
         {user_id: 1, notebook_id: 1},
         {user_id: 1, notebook_id: 2},
-        {user_id: 1, notebook_id: 3},
-        {user_id: 1, notebook_id: 4},
-        {user_id: 1, notebook_id: 5},
-        {user_id: 1, notebook_id: 6},
+        {user_id: 2, notebook_id: 3},
+        {user_id: 2, notebook_id: 4},
+        {user_id: 2, notebook_id: 5},
+        {user_id: 2, notebook_id: 6},
         {user_id: 2, notebook_id: 7},
         {user_id: 2, notebook_id: 8},
     ]
@@ -73,41 +73,56 @@ Note.create!(
     {
         title: 'my third note',
         body: 'Laboris occaecat sit excepteur non culpa ipsum culpa do aliquip labore do. Amet esse aliquip officia aliquip sint cupidatat officia nostrud qui. Enim deserunt mollit minim eiusmod ut veniam minim elit anim commodo. Eiusmod velit officia non consequat excepteur irure dolor voluptate dolor. Labore elit qui nulla est duis id aliqua do officia exercitation do non ullamco culpa.'
-    }]
+    },
+    {
+        title: 'my first note',
+        body: 'Laboris occaecat sit excepteur non culpa ipsum culpa do aliquip labore do. Amet esse aliquip officia aliquip sint cupidatat officia nostrud qui. Enim deserunt mollit minim eiusmod ut veniam minim elit anim commodo. Eiusmod velit officia non consequat excepteur irure dolor voluptate dolor. Labore elit qui nulla est duis id aliqua do officia exercitation do non ullamco culpa.'
+    }
+]
 )
 
 UserNote.create!(
     [{
-        user_id: 1,
-        note_id: 1,
+        user_id: 2,
+        note_id: 1
     },
     {
         user_id: 1,
-        note_id: 2,
+        note_id: 2
     },
     {
         user_id: 1,
-        note_id: 3,
-    }]
+        note_id: 3
+    },
+    {
+        user_id: 1,
+        note_id: 4
+    }
+]
 )
 
 NotebookNote.create!(
     [{
-        notebook_id: 1,
         note_id: 1,
+        notebook_id: 4,
     },
     {
-        notebook_id: 1,
         note_id: 2,
+        notebook_id: 1,
     },
     {
-        notebook_id: 1,
         note_id: 3,
-    }]
+        notebook_id: 1,
+    },
+    {
+        note_id: 4,
+        notebook_id: 2,
+    }
+]
 )
 
-Tag.create!(
-    {
-        name: 'appAcademy',
-    }
-)
+# Tag.create!(
+#     {
+#         name: 'appAcademy',
+#     }
+# )

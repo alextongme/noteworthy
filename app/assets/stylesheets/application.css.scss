@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require reset.css.scss
+ *= require universal.scss
  *= require application.css
  *= require_tree .
  */
@@ -31,7 +32,7 @@
     text-shadow: inherit;
   }
   79%{
-     color: white;
+     color: #333;
   }
   80% {
     
@@ -42,7 +43,7 @@
     text-shadow: inherit;
   }
   82% {
-    color: white;
+    color: #333;
     text-shadow: none;
   }
   83% {
@@ -50,7 +51,7 @@
     text-shadow: inherit;
   }
   92% {
-    color: white;
+    color: #333;
     text-shadow: none;
   }
   94% {
@@ -66,4 +67,27 @@
   to {
     transform: rotate(359deg);
   }
+}
+
+// h1 {
+//   font-size: 3vw;
+//   line-height: 8vh;
+// }
+
+h2 {
+  font-size: 1.4vw;
+  line-height: 4.5vh;
+}
+
+h3 {
+  font-size: 0.95vw;
+  line-height: 4.5vh;
+}
+
+button {
+  padding: 1.2vw;
+}
+
+html {
+  scroll-behavior: smooth;
 }

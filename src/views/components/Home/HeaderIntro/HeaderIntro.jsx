@@ -7,7 +7,7 @@ const HeaderIntro = ({currentUser, logout}) => {
         return (
             <div className="headerIntro__container headerIntro__container--loggedOut">
                 {/* <button className="headerIntro__button--download">download</button> */}
-                <Link className="headerIntro__button--login" to="/login">login</Link>
+                <Link className="headerIntro__button--login" to="/login">Log in</Link>
             </div>
         );
     }

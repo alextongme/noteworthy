@@ -1,6 +1,6 @@
 import React from "react";
-import { Switch, NavLink, Link } from 'react-router-dom';
-import NotebookNoteItems from '../NotebookNoteItems/NotebookNoteItems'
+import { NavLink } from 'react-router-dom';
+import NoteItemsContainer from '../NoteItems/NoteItemsContainer'
 
 class NotebookItem extends React.Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class NotebookItem extends React.Component {
         // this.idx = props.idx;
         this.notebook = props.notebook;
         this.currentUser = props.users;
-        window.currentUser1 = this.currentUser;
+        // window.currentUser1 = this.currentUser;
         // this.expandButton = this.expandButton.bind(this);
         this.time = this.time.bind(this);
         this.noteItems = this.noteItems.bind(this);
@@ -48,7 +48,7 @@ class NotebookItem extends React.Component {
     noteItems() {
         if(this.state.expanded === true) {
             return (
-                <NotebookNoteItems />
+                <NoteItemsContainer notebook={this.notebook} cssName={this.cssName} />
             );
         }
     }
@@ -84,12 +84,12 @@ class NotebookItem extends React.Component {
                         <i className={this.state.expandButton} onClick={this.toggleNoteIndex} />
 
 
-                        <Link
+                        <NavLink
                             // to={`/main/notebooks/${notebook.id}/edit`}
                             to={`/main/notes`}
                             className="notebooks__links">
                             {this.notebook.name}
-                        </Link>
+                        </NavLink>
                     </td>
 
                     <td

@@ -1,98 +1,117 @@
 .home {
     // background-image: image-url('lion-king-wallpaper.png');
     background-size: cover;
+    // mix-blend-mode: screen;
 }
+//////// TOP NAVBAR
 .home__navbar {
     width: 100vw;
-    height: 10vh;
+    height: 8.5vh;
     display: flex;
     justify-content: space-between;
     // background-color: #FFFFFF;
+    // background-color: rgba(0,0,0,0.2);
+    // background-color: rgba(0, 0, 0,0.4);
+    // background-color: #054404;
+    text-shadow: 0.1vw 0.1vw 0.1vw #000000;
+    color: white;
+    position: fixed;
 }
 
 .home__navbar--left {
-    margin-left: 4vw;
+    margin-left: 13vw;
     display: flex;
     align-items: center;
-    // justify-items: space-between;
 }
 
 .home__image--logo {
-    width: 4vw;
+    width: 2.8vw;
+    -webkit-filter: drop-shadow(5px 5px 5px #222 );
+  filter: drop-shadow(5px 5px 5px #222);
 }
 
 .home__h1--logo {
     font-family: 'CaeciliaLTStd-Bold';
     margin-left: 1vw;
-    font-size: 1.7vw;
+    font-size: 1.4vw;
+    // color: black;
+}
+
+///////////////////// snap container and universal div rules
+.home__snapContainer {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 .home__content {
     width: 100vw;
-    height: 80vh;
-    // background-color:#2ECC40;
-    // background-image: image-url('evernoteWallpaper.jpg');
-    // background-image: image-url('lion-king-wallpaper.png');
-    background-size: contain;
     display: flex;
     align-items: center;
+    scroll-snap-align: start;
+}
+
+/////////// FIRST MIDDLE DIV CONTENT
+.home__content--first {
+    height: 100vh;
+    scroll-snap-align: start;
+    background-color: white;
+    // background-color: #A073BB;
+    color: black;
 }
 
 .home__content--left {
-    padding-left: 7vw;
+    padding-top: 8vh;
+    padding-left: 13vw;
     box-sizing: border-box;
     width: 50%;
-    height: 73%;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     align-items: flex-start;
 }
 
-.home__h2--left {
-    // font-family: 'Indie Flower', cursive;
+.home__h1--left {
     font-family: 'CaeciliaLTStd-Bold';
-    line-height: 130%;
-    width: 60%;
-    font-size: 3.8vw;
-    // text-align: center;
+    line-height: 8vh;
+    width: 65%;
+    font-size: 3vw;
+}
+
+.home__h2--left {
+    display: block;
+    margin-top: 3.7vh;
+    font-family: 'Raleway';
+    font-weight: 100;
+    width: 90%;
     color: black;
 }
 
-.home__p--left {
-    // font-family: 'Indie Flower', cursive;
-    padding-top: 2vh;
-    font-family: 'Raleway';
-    font-weight: 400;
-    line-height: 140%;
-    width: 50%;
-    font-size: 1.2vw;
-    // text-align: center;
-    color: black;
-}
+// .home__signupButton {
+//     text-align: center;
+//     color: white;
+//     // background-color: #F4791F;
+//     background-color:#F5B625;
+//     margin-top: 3.7vh;
+//     font-family: 'Raleway';
+//     font-weight: 700;
+//     font-size: 0.95vw;
+//     text-decoration: none;
+//     width: 10vw;
+//     padding: 1.2vw;
+//     // border: 0.8vw solid #CB4454;
+//     border-radius: 0.4vw;
+//     transition: all 0.5s ease 0s;
+//     letter-spacing: 0.2vw;
+// }
 
-.home__signupButton {
-    color: white;
-    background: #269814;
-    margin-top: 3vh;
-    font-family: 'Raleway';
-    font-weight: 400;
-    font-size: 1vw;
-    text-decoration: none;
-    padding: 1vw;
-    border: 0.8vw solid #269814;
-    border-radius: 0.8vw;
-    transition: all 0.5s ease 0s;
-}
-
-.home__signupButton:hover {
-    border-color: #EFA802;
-    border-radius: 2vw;
-    color: #EFA802;
-    transition: all 0.5s ease 0s;
-}
+// .home__signupButton:hover {
+//     opacity: 0.8;
+//     border-radius: 1.3vw;
+//     transition: all 0.5s ease 0s;
+// }
 
 .home__content--right {
+    margin-top: 15vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -101,13 +120,246 @@
 }
 
 .home__image--rick {
-    height: 65vh;
+    height: 98vh;
+    
+}
+
+/////////////// SECOND MIDDLE DIV CONTENT
+.home__content--second {
+    height: 100vh;
+    scroll-snap-align: start;
+    background-color: #f9e1c2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 13vw;
+    padding-right: 13vw;
+    box-sizing: border-box;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+}
+
+.home__secondDiv__img {
+    font-size: 15vw;
+    color: #F783AC;
+    cursor: none;
+}
+
+.home__secondDiv__h1 {
+    padding-top: 3.7vh;
+    font-family: 'CaeciliaLTStd-Bold';
+    font-size: 3vw;
+    line-height: 8vh;
+    color: black;
+}
+
+.home__secondDiv__section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home__secondDiv__h2 {
+    width: 20vw;
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 1.6vw;
+    line-height: 6vh;
+    color: black;
+    text-align: center;
+}
+
+
+///////////// THIRD DIV CONTENT
+.home__content--third {
+    height: 100vh;
+    scroll-snap-align: start;
+    background-color: #AC2F39;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 13vw;
+    padding-right: 13vw;
+    box-sizing: border-box;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+}
+
+.home__thirdDiv__img {
+    font-size: 15vw;
+    // width: 15vw;
+    color: #16AABF;
+}
+
+.home__thirdDiv__h1 {
+    margin-top: 3.7vh;
+    font-family: 'CaeciliaLTStd-Bold';
+    font-size: 3vw;
+    line-height: 8vh;
+    color: #F5B625;
+}
+
+.home__thirdDiv__h2 {
+    width: 100vw;
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-size: 1.8vw;
+    line-height: 8vh;
+    color: white;
+    text-align: center;
+}
+
+///////////// FOURTH DIV CONTENT
+.home__content--fourth {
+    height: 100vh;
+    scroll-snap-align: start;
+    // background-color: #A073BB;
+    background-color: #054404;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    padding-left: 13vw;
+    padding-right: 13vw;
+    box-sizing: border-box;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+}
+
+.home__fourthDiv__h1 {
+    margin-top: 3.7vh;
+    font-family: 'CaeciliaLTStd-Bold';
+    font-size: 3vw;
+    line-height: 8vh;
+    color: white;
+}
+
+.home__fourthDiv__h2 {
+    margin-top: 3.7vh;
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 1.4vw;
+    // line-height: 8vh;
+    color: white;
+    text-align: center;
+}
+
+.home__fourthDiv__h3 {
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 3vh;
+    letter-spacing: 0.1vw;
+    color: white;
+    text-align: center;
+}
+
+.home__fourthDiv__stepsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.home__fourthDiv__steps {
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+}
+
+.home__fourthDiv__icons--logo {
+    width: 4vw;
+    border: 0.5vw solid #F5B625;
+    padding: 2vw;
+    border-radius: 20vw;
+}
+
+.home__fourthDiv__icons {
+    font-size: 4vw;
+    border: 0.5vw solid #F5B625;
+    padding: 2vw;
+    border-radius: 20vw;
+    color: #F5B625;
+}
+
+//////////// FIFTH DIV
+.home__content--fifth {
+    height: 100vh;
+    scroll-snap-align: start;
+    // background-color: #054404;
+    background-color: #A073BB;
+    display: flex;
+
+    padding-left: 13vw;
+    padding-right: 13vw;
+    box-sizing: border-box;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+}
+
+.home__fifthDiv__section--left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    // height: 100%;
+}
+
+.home__fifthDiv__section--right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    // height: 100%;
+}
+
+.home__fifthDiv__signupForm {
+    width: 65%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home__signupForm__input {
+    // margin-top: 3.7vh;
+    width: 100%;
+    padding: 1.2vw;
+}
+
+.home__signupForm__button {
+    margin-top: 2vh;
+    width: 100%;
+    color: #A073BB;
+}
+
+.home__fifthDiv__h1 {
+    color: white;
+}
+
+.home__fifthDiv__h2 {
+    margin-top: 3.7vh;
+    font-weight: 400;
+    color: white;
+}
+
+.home__fifthDiv__h3 {
+    font-size: 0.8vw;
+    color: white;
+}
+
+//////FOOTER CONTENT
+.home__content--footer {
+    height: 30vh;
+    scroll-snap-align: end;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .home__footer {
-    width: 100vw;
-    height: 10vh;
-    // background-color: white;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
 }
@@ -124,7 +376,7 @@
 .home__button {
     height: 1.9vw;
     opacity: 1;
-
+    filter: invert(1);
 }
 
 .home__button:hover {
