@@ -29,6 +29,11 @@ class User < ApplicationRecord
     through: :user_notebooks, 
     source: :notebook
 
+    # # Does it make sense to do this?
+    # has_many :notebook_note_ids,
+    # through: :notebooks,
+    # source: :notebook_notes
+
     # note associations
     has_many :user_notes,
     dependent: :destroy,
