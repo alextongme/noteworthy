@@ -118,13 +118,14 @@
 }
 
 .sidebar__button--add {
-    padding-left: 10%;
+    margin-left: 10%;
     width: 3vw;
     filter: brightness(0) saturate(100%) invert(30%) sepia(59%) saturate(5655%) hue-rotate(116deg) brightness(95%) contrast(74%);
 }
 
 .sidebar__button--add:hover {
     filter: brightness(0) saturate(100%) invert(65%) sepia(91%) saturate(798%) hue-rotate(358deg) brightness(99%) contrast(90%);
+    animation: rotation 1.5s infinite linear;
 }
 
 .sidebar__add {

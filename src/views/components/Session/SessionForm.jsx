@@ -97,7 +97,7 @@ class SessionForm extends React.Component {
                     <section className="sessionForm__section--header">
                         <img src={window.rickDancing} className="sessionForm__logo" />
                         <h1 className="sessionForm__h1">noteworthy</h1>
-                        <h2 className="sessionForm__h2">Never miss a roar.</h2>
+                        <h2 className="sessionForm__h2">never miss a roar</h2>
                     </section>
 
                     <form onSubmit={this.handleSubmit} className="sessionForm__form">
@@ -110,7 +110,7 @@ class SessionForm extends React.Component {
                             onChange={this.handleChange('username')} placeholder="username" 
                         />
                         <input 
-                            type="password" 
+                            type="current-password" 
                             className="sessionForm__input sessionForm__input--password" 
                             value={this.state.password} 
                             onChange={this.handleChange('password')} placeholder="password" 
@@ -128,7 +128,7 @@ class SessionForm extends React.Component {
                     {this.demoButton()}
 
                     <h2 className="sessionForm__h3">
-                        Don't have an account?<br/>
+                        don't have an account?<br/>
                         {this.props.navLink}
                     </h2>
                 </section>

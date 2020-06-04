@@ -11,7 +11,7 @@
 
 .sessionForm__section--form {
     width: 27vw;
-    height: 80vh;
+    height: auto;
     box-sizing: border-box;
     padding-top: 4vh;
     padding-bottom: 4vh;
@@ -32,6 +32,8 @@
     box-shadow: none;
 }
 
+
+//////////// session form image and title
 .sessionForm__section--header {
     display: flex;
     flex-direction: column;
@@ -39,20 +41,25 @@
     flex-wrap: wrap;
 }
 
+
+/////////// div container for input
 .sessionForm__form {
-    height: 50vh;
+    padding-top: 1vh;
+    width: 100%;
+    height: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    align-items: center;
 }
 
 .sessionForm__input {
-    width: 15vw;
+    display: block;
+    width: 13vw;
     border: 0.01vw solid gainsboro;
     // box-shadow: 0 2px 2px rgba(0,0,0,0.12);
     border-radius: 0.3vw;
     font-family: "Raleway";
-    font-size: 1vw;
+    font-size: 0.9vw;
     padding: 0.6vw;
     box-sizing: border-box;
     margin: 0.5vw;
@@ -71,7 +78,7 @@
     border: none;
     border-radius: 0.3vw;
     height: 5vh;
-    width: 15vw;
+    width: 8vw;
     background-color: #01A82D;
     color: white;
     font-size: 1vw;
@@ -79,11 +86,15 @@
 }
 
 .sessionForm__button:hover {
-    background-color: #CE4FB7;
+    background-color: #ff9900;
+    color: #CE4FB7;
+    cursor: pointer;
+    
 }
 
 .sessionForm__button:active {
-    background-color: #FFBF88;
+    color: black;
+    background-color: #CE4FB7;
 }
 
 .sessionForm__logo {
@@ -104,21 +115,38 @@
 
 .sessionForm__h3 {
     text-align: center;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     font-family: "Raleway";
     font-weight: 400;
     line-height: 160%;
+}
+
+.sessionForm__login {
+    text-decoration: none;
+    color: #01A82D;
+    line-height: 160%;
+    font-size: 1vw;
+}
+
+.sessionForm__login:hover {
+    color: #CE4FB7;
+    cursor: pointer;
+}
+
+.sessionForm__login:active {
+    color: #FFBF88;
 }
 
 .sessionForm__signup {
     text-decoration: none;
     color: #01A82D;
     line-height: 160%;
-    font-size: 1.5vw;
+    font-size: 1vw;
 }
 
 .sessionForm__signup:hover {
     color: #CE4FB7;
+    cursor: pointer;
 }
 
 .sessionForm__signup:active {

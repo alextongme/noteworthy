@@ -7,7 +7,7 @@ import {Switch} from 'react-router-dom';
 
 class Notebooks extends React.Component {
     componentDidMount() {
-        this.props.fetchNotebooks();
+        // this.props.fetchNotebooks();
     }
     
     render() {
@@ -28,7 +28,15 @@ class Notebooks extends React.Component {
             <div className="notebooks">
                 <header className="notebooks__header">
                     <h1 className="notebooks__h1--title">notebooks</h1>
-                    <input className="notebooks__search" placeholder="search for notebooks" />
+                    <div className="notebooks__header--right">
+                        <img 
+                                src={window.lionStationary}
+                                onMouseEnter={(e) => (e.currentTarget.src = window.lionWalking)}
+                                onMouseLeave={(e) => (e.currentTarget.src = window.lionStationary)}
+                                className="notebooks__headerLion"
+                                />
+                        <input className="notebooks__search" placeholder="search for notebooks" />
+                    </div>
                 </header>
                 <section className="notebooks__section--bottom">
                     <nav className="notebooks__nav">
