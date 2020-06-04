@@ -49,13 +49,13 @@ class SessionForm extends React.Component {
     }
 
     demoButton() {
-        if(this.props.formType === "login") {
+        if(this.props.formType === "Login") {
             return (
                 <button 
                         className="sessionForm__button" 
                         onClick={this.loginAsDemo}
                 >
-                    login as demo
+                    Demo
                 </button>
             );
         }
@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
             <div className="sessionForm">
                 <section className="sessionForm__section--form">
                     <section className="sessionForm__section--header">
-                        <img src={window.rickDancing} className="sessionForm__logo" />
+                        <img src={window.nLogo} className="sessionForm__logo" />
                         <h1 className="sessionForm__h1">noteworthy</h1>
                         <h2 className="sessionForm__h2">Never miss a roar.</h2>
                     </section>

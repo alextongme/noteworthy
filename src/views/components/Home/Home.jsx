@@ -21,9 +21,11 @@ const Home = () => {
                         Notes worthy for any moment.
                     </h2>
                     <p className="home__p--left">
-                        An editor made for the king of all jungles.
+                        A new editor, made for the kings and queens of all jungles. Share your notes, store your files, and work from anywhere. With noteworthy, you'll never need a pen.
                     </p>
-                    <Link to="/signup" className="home__signupButton">SO SIGN UP FOR FREE</Link>
+                    {/* <div class="home__signupButtonContainer"> */}
+                        <Link to="/signup" className="home__signupButton">SIGN UP FOR FREE</Link>
+                    {/* </div> */}
                 </section>
                 <section className="home__content--right">
                     <img src={window.lionHome} className="home__image--rick" />

@@ -23,8 +23,8 @@
 
 .home__h1--logo {
     font-family: 'CaeciliaLTStd-Bold';
-    margin-left: 1.5vw;
-    font-size: 2vw;
+    margin-left: 1vw;
+    font-size: 1.7vw;
 }
 
 .home__content {
@@ -45,7 +45,7 @@
     height: 73%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: flex-start;
 }
 
@@ -53,40 +53,43 @@
     // font-family: 'Indie Flower', cursive;
     font-family: 'CaeciliaLTStd-Bold';
     line-height: 130%;
-    width: 70%;
-    font-size: 4vw;
+    width: 60%;
+    font-size: 3.8vw;
     // text-align: center;
     color: black;
 }
 
 .home__p--left {
     // font-family: 'Indie Flower', cursive;
+    padding-top: 2vh;
     font-family: 'Raleway';
     font-weight: 400;
     line-height: 140%;
-    width: 70%;
-    font-size: 2vw;
+    width: 50%;
+    font-size: 1.2vw;
     // text-align: center;
     color: black;
 }
 
 .home__signupButton {
-    font-family: 'Raleway';
-    font-weight: 700;
-    width: 20vw;
-    height: 7vh;
-    background-color: #269814;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
     color: white;
+    background: #269814;
+    margin-top: 3vh;
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 1vw;
     text-decoration: none;
-    border-radius: .5em;
+    padding: 1vw;
+    border: 0.8vw solid #269814;
+    border-radius: 0.8vw;
+    transition: all 0.5s ease 0s;
 }
 
 .home__signupButton:hover {
-    opacity: .7;
+    border-color: #EFA802;
+    border-radius: 2vw;
+    color: #EFA802;
+    transition: all 0.5s ease 0s;
 }
 
 .home__content--right {
