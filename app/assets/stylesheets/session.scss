@@ -71,6 +71,13 @@
     box-shadow: 0.01vw 0.01vw 0.1vw 0.1vw #ccc;
 }
 
+.sessionForm__errors {
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 0.9vw;
+    line-height: 150%;
+}
+
 .sessionForm__button {
     width: 8vw;
     margin-top: 2vh;
