@@ -1,10 +1,16 @@
 import React from "react";
-import NoteNavItem from '../NoteNavItem/NoteNavItem'
+import {NavLink} from 'react-router-dom';
 
 const NoteNav = ({notes}) => {
+
     const noteItems = notes.map((note, idx) => {
         return (
-            <NoteNavItem key={idx} note={note} />
+            <NavLink to={`/main/notes/${note.id}/edit`} style={{ textDecoration: 'none' }} key={idx}>
+                <li className="noteNavItem">
+                    <h1 className="noteNavItem__title">{note.title}</h1>
+                    <p className="noteNavItem__body">{note.body}</p>
+                </li>
+            </NavLink>
         );
     });
     

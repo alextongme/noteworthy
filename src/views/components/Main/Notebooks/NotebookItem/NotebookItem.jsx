@@ -73,12 +73,6 @@ class NotebookItem extends React.Component {
         return (
             <>
                 <tr className={this.cssName}>
-                {/* <td 
-                    className="notebooks__tableCol"
-                >
-                    {idx}
-                </td> */}
-
                     <td
                         className="notebooks__tableCol">
                         <i className={this.state.expandButton} onClick={this.toggleNoteIndex} />

@@ -9,7 +9,7 @@ const Sidebar = ({session, users, logout}) => {
 
             <ul className="sidebar__listContainer">
                 <div className="sidebar__userContainer">
-                    <i class="fas fa-user-circle sidebar__userLogo" />
+                    <i className="fas fa-user-circle sidebar__userLogo" />
                     <h1 
                         className="sidebar__username">
                         {currentUser.first_name} {currentUser.last_name}

@@ -2,7 +2,7 @@ import React from "react";
 
 import Modal from './Modal/Modal'
 import NotebooksContainer from './Notebooks/NotebooksContainer'
-import NotesContainer from "./Notes/NotesContainer";
+import Notes from "./Notes/Notes";
 import SidebarContainer from "./Sidebar/SidebarContainer";
 
 import { PrivateRoute } from '../../../state/util/route';
@@ -18,17 +18,20 @@ class Main extends React.Component {
             <div className="main">
                 <Modal />
                 <SidebarContainer />
+
                 <PrivateRoute 
-                    path='/main/notebooks' 
+                    exact path='/main/notebooks' 
                     component={NotebooksContainer}
                 />
-                <PrivateRoute 
-                    path='/main/notebooks/:notebookId/notes' 
-                    component={NotesContainer}
-                />
+
+                {/* <PrivateRoute 
+                    exact path='/main/notebooks/:notebookId' 
+                    component={Notes}
+                /> */}
+
                 <PrivateRoute 
                     path='/main/notes' 
-                    component={NotesContainer}
+                    component={Notes}
                 />
         </div>
         );

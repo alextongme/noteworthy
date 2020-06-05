@@ -4,7 +4,7 @@ import { closeModal } from '../../../../state/actions/modal';
 import NotebookCreateContainer from '../Notebooks/NotebookForm/CreateFormContainer';
 import NotebookEditContainer from '../Notebooks/NotebookForm/EditFormContainer';
 
-function Modal({modal, closeModal}) {
+const Modal = ({modal, closeModal}) => {
     
     if (!modal) {
       return null;

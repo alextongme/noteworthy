@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import NotebookItem from './NotebookItem';
+import { openDropdown } from '../../../../../state/actions/dropdown';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -9,9 +10,10 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        openDropdown: (dropdown) => dispatch(openDropdown(dropdown)),
+    }
+};
 
-export default connect(mapStateToProps, null)(NotebookItem)
+export default connect(mapStateToProps, mapDispatchToProps)(NotebookItem)
