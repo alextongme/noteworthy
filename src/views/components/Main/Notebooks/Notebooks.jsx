@@ -1,28 +1,40 @@
 import React from 'react';
 import NotebookItemContainer from './NotebookItem/NotebookItemContainer';
-import CreateFormContainer from './NotebookForm/CreateFormContainer';
-import EditFormContainer from './NotebookForm/EditFormContainer';
-import { PrivateRoute } from '../../../../state/util/route';
-import {Switch} from 'react-router-dom';
+// import CreateFormContainer from './NotebookForm/CreateFormContainer';
+// import EditFormContainer from './NotebookForm/EditFormContainer';
+// import { PrivateRoute } from '../../../../state/util/route';
 
-class Notebooks extends React.Component {
-    componentDidMount() {
-        // this.props.fetchNotebooks();
+const Notebooks = ({ openModal, notebooks }) => {
+
+    const createNotebookButton = () => {
+        return (
+            <div 
+                className="notebooks__addContainer">
+                <img 
+                    src={window.addButton} className="notebooks__button--addImage"
+                    onClick={() => openModal("create notebook")} />
+                <button 
+                    className="notebooks__button--add"
+                    onClick={() => openModal("create notebook")}
+                    >
+                    New notebook
+                </button>
+            </div>
+        );
     }
-    
-    render() {
-        const notebookItems = this.props.notebooks.map((notebook, idx) => {
-            let className;
-            if(idx % 2 == 0) {
-                className = "notebooks__tableRow notebooks__tableRow--even";
-            } else {
-                className = "notebooks__tableRow notebooks__tableRow--odd";
-            }
 
-            return (
-                <NotebookItemContainer key={idx} notebook={notebook} cssName={className} />
-            );
-        });
+    const notebookItems = notebooks.map((notebook, idx) => {
+        let className;
+        if(idx % 2 == 0) {
+            className = "notebooks__tableRow notebooks__tableRow--even";
+        } else {
+            className = "notebooks__tableRow notebooks__tableRow--odd";
+        }
+
+        return (
+            <NotebookItemContainer key={idx} notebook={notebook} cssName={className} />
+        );
+    });
         
         return (
             <div className="notebooks">
@@ -42,15 +54,8 @@ class Notebooks extends React.Component {
                     <nav className="notebooks__nav">
                         <h2 className="notebooks__h2--title">My notebook list</h2>
 
-                        <div 
-                            className="notebooks__addContainer">
-                            <img 
-                                src={window.addButton} className="notebooks__button--addImage" />
-                            <button 
-                                className="notebooks__button--add">
-                                New notebook
-                            </button>
-                        </div>
+                        {createNotebookButton()}
+
                     </nav>
                     <table className="notebooks__table">
                         <tbody className="notebooks__tableBody">
@@ -80,14 +85,14 @@ class Notebooks extends React.Component {
                     {/* conditional render of create form: */}
                     {/* <Route exact path="/main/notebooks/create" component={CreateFormContainer} /> */}
                     
-                    <PrivateRoute 
+                    {/* <PrivateRoute 
                         exact path="/main/notebooks/:notebookId/edit" 
                         component={EditFormContainer} 
-                    />
+                    /> */}
                 </section>
             </div>
         );
-    }
+    
 };
 
 export default Notebooks;

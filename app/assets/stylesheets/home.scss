@@ -33,8 +33,8 @@
     margin-left: 1vw;
     font-size: 1.4vw;
     // color: black;
-    text-shadow: 0.1vw 0.1vw 0.1vw #000000;
-    color: white;
+    text-shadow: 0.05vw 0.05vw 0.05vw #000000;
+    color: #01A82D;
 }
 
 ///////////////////// snap container and universal div rules
@@ -55,8 +55,8 @@
 .home__content--first {
     height: 100vh;
     scroll-snap-align: start;
-    // background-color: white;
-    background-color: #A073BB;
+    background-color: white;
+    // background-color: #A073BB;
     color: black;
     overflow: hidden;
 }
@@ -76,7 +76,7 @@
     line-height: 8vh;
     width: 65%;
     font-size: 3vw;
-    color: white;
+    color: black;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
@@ -88,7 +88,7 @@
     font-weight: 100;
     width: 90%;
     // color: black;
-    color: white;
+    color: black;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
@@ -97,14 +97,15 @@
 //     color: white;
 //     // background-color: #F4791F;
     // background-color:#8dbb73;
-    background-color: #53a834;
+    background-color: #01A82D;
+    // background-color: #20a9f2;
     margin-top: 3.7vh;
 //     font-family: 'Raleway';
 //     font-weight: 700;
 //     font-size: 0.95vw;
 //     text-decoration: none;
     width: 10vw;
-    padding: 1.2vw;
+    // padding: 1vw;
 //     // border: 0.8vw solid #CB4454;
 //     border-radius: 0.4vw;
 //     transition: all 0.5s ease 0s;

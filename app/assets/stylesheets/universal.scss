@@ -1,17 +1,17 @@
-html {
+body {
     scroll-behavior: smooth;
-  }
+}
 
 .universal__button {
     text-align: center;
     color: white;
     // background-color: #F4791F;
-    background-color: #269814;
+    background-color: #01A82D;
     font-family: 'Raleway';
     font-weight: 400;
     font-size: 0.95vw;
     text-decoration: none;
-    padding: 0.8vw;
+    padding: 1vw;
     border: none;
     border-radius: 0.4vw;
     transition: all 0.5s ease 0s;
@@ -26,6 +26,10 @@ html {
     cursor: pointer;
 }
 
+.universal__button:active {
+    background-color: #EE1C24;
+}
+
 .universal__input {
     width: 100%;
     // padding: 1vw;
@@ -36,6 +40,7 @@ html {
     font-family: "Raleway";
     font-size: 0.9vw;
     box-sizing: border-box;
+    
 }
 
 .universal__input:focus {

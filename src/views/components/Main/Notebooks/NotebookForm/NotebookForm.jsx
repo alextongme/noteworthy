@@ -3,10 +3,9 @@ import React from 'react';
 class NotebookForm extends React.Component {
     constructor(props) {
         super(props);
-        // debugger
         this.state = props.notebook;
-        // debugger
 
+        // this.closeModal = props.closeModal;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -29,16 +28,35 @@ class NotebookForm extends React.Component {
     render() {
         return (
             <div className="notebookForm">
-                {this.props.formType}
+                <div className="notebookForm__topContainer">
+                    <h3>
+                        {this.props.formType}
+                    </h3>
+                    <i className="fas fa-times-circle" onClick={this.props.closeModal} />
+                </div>
+                
+                <h2>
+                    Notebooks are useful for grouping notes around a common topic. They can be private or shared.
+                </h2>
+
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Name
                     </label>
                         <input type="text" value={this.state.name} onChange ={this.handleChange('name')} className="notebookForm__input" placeholder="notebook name" />
-
-                    <button type="submit"
+                    <hr></hr>
+                    <button
                         className="notebookForm__button--submit"
-                        >{this.props.formType}</button>
+                        // onClick={this.closeModal}>
+                    >
+                    </button>
+
+                    <button 
+                        type="submit"
+                        className="notebookForm__button--submit">
+                        Continue
+                    </button>
+                    
                 </form>
             </div>
         );

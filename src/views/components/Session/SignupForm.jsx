@@ -41,7 +41,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="sessionForm">
-                <section className="sessionForm__section--form">
+                <section className="sessionForm__section--form threed">
                     <section className="sessionForm__section--header">
                         <img src={window.nLogo} className="sessionForm__logo" />
                         <h1 className="sessionForm__h1">noteworthy</h1>
