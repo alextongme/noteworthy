@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { fetchNotebook, updateNotebook } from '../../../../../state/actions/notebook';
+import {closeModal} from '../../../../../state/actions/modal';
 import NotebookForm from './NotebookForm';
 
 class EditFormContainer extends React.Component {
@@ -37,6 +38,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
         action: (notebook) => dispatch(updateNotebook(notebook)),
+        closeModal: () => dispatch(closeModal())
     }
 }
 

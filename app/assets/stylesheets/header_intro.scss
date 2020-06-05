@@ -21,15 +21,22 @@
 .headerIntro__button--login {
     text-decoration: none;
     font-family: "Raleway";
-    font-size: 1vw;
+    font-size: 1.2vw;
     font-weight: 400;
-    text-shadow: 0.1vw 0.1vw 0.1vw #000000;
+    text-shadow: 0.05vw 0.05vw 0.05vw #000000;
+    color: #01A82D;
     // color: white;
-    color: white;
+
 }
 
 .headerIntro__button--login:hover {
     text-decoration: none;
     text-shadow: none;
-    color: #53a834;
+    color: #F5B625;
+}
+
+.headerIntro__button--login:focus {
+    text-decoration: none;
+    text-shadow: none;
+    color: #EE1C24;
 }

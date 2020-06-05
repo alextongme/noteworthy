@@ -59,7 +59,7 @@ class LoginForm extends React.Component {
             return (
                 <input 
                     type="current-password" 
-                    className="universal__input sessionForm__input" 
+                    className="universal__input sessionForm__input sessionForm__input--login" 
                     value={this.state.password} 
                     onChange={this.handleChange('password')} placeholder="Password" 
                 >
@@ -78,7 +78,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="sessionForm">
-                <section className="sessionForm__section--form">
+                <section className="sessionForm__section--form threed">
                     <section className="sessionForm__section--header">
                         <img src={window.nLogo} className="sessionForm__logo" />
                         <h1 className="sessionForm__h1">noteworthy</h1>
@@ -92,7 +92,7 @@ class LoginForm extends React.Component {
                                 type="text" 
                                 className="universal__input sessionForm__input" 
                                 value={this.state.email} 
-                                onChange={this.handleChange('email')} placeholder="email" 
+                                onChange={this.handleChange('email')} placeholder="Email" 
                             />
 
                             {this.showPasswordField()}

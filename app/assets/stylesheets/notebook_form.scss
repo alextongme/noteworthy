@@ -1,7 +1,18 @@
-.notebookForm__input {
-    font-size: 2vw;
+// .notebookForm__input {
+//     font-size: 2vw;
+// }
+
+// .notebookForm__button--submit{
+//     font-size: 2vw;
+// }
+
+.notebookForm {
+    background-color: white;
+    width: 40vw;
+    height: 40vh;
 }
 
-.notebookForm__button--submit{
-    font-size: 2vw;
+.notebookForm__topContainer {
+    display: flex;
+    justify-content: space-between;
 }
