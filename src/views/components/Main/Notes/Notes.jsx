@@ -15,7 +15,9 @@ class Notes extends React.Component {
         return (
             <div className="notes">
                 <NotesNav notes={this.props.notes} />
-                <PrivateRoute exact path="/main/notes/:noteId/edit" component={NoteEditorContainer} />
+                <PrivateRoute 
+                    path="/main/notes/:noteId/edit" 
+                    component={NoteEditorContainer} />
             </div>
         );
     }

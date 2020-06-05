@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps, 
     null,
-    // null,
-    // {pure: false}
+    null,
+    {pure: false}
     )(Notes)
 

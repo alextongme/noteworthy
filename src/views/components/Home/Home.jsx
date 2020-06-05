@@ -58,8 +58,10 @@ class Home extends React.Component {
                     <li className="home__content home__content--first">
                         <section className="home__content--left">
                             <Typist className="home__h1--left">
-                                Notes worthy 
-                                <Typist.Delay ms={800} />
+                                Notes<Typist.Delay ms={300} />
+                                <br />
+                                worthy 
+                                <Typist.Delay ms={300} />
                                 <br />
                                 for any moment.
                             </Typist>
