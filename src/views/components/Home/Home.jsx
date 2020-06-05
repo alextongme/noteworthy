@@ -33,7 +33,7 @@ class Home extends React.Component {
             <>
                 {this.props.errors.map((error, idx) => {
                     return (
-                        <p key={idx} className="sessionForm__errors">{error}</p>
+                        <p key={idx} className="universal__h3 home__errors">{error}</p>
                     );
                 })}
             </>
@@ -192,7 +192,7 @@ class Home extends React.Component {
                                 <input 
                                     type="submit" 
                                     className="universal__button home__signupForm__button" 
-                                    value="Signup"
+                                    value="SIGN UP"
                                 />
                             </form>
                         </section>

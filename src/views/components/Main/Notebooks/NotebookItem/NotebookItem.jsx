@@ -13,7 +13,9 @@ class NotebookItem extends React.Component {
         this.cssName = props.cssName;
         // this.idx = props.idx;
         this.notebook = props.notebook;
-        this.currentUser = props.users;
+        // window.currentUser = props.users;
+        this.currentUser = Object.values(props.users)[0];
+        // debugger
         // window.currentUser1 = this.currentUser;
         // this.expandButton = this.expandButton.bind(this);
         this.time = this.time.bind(this);
@@ -79,14 +81,9 @@ class NotebookItem extends React.Component {
 
                     <td
                         className="notebooks__tableCol">
-
-                        {/* {this.expandButton()} */}
                         <i className={this.state.expandButton} onClick={this.toggleNoteIndex} />
-
-
                         <NavLink
-                            // to={`/main/notebooks/${notebook.id}/edit`}
-                            to={`/main/notes`}
+                            to={`/main/notebooks/${this.notebook.id}/notes`}
                             className="notebooks__links">
                             {this.notebook.name}
                         </NavLink>
@@ -94,7 +91,7 @@ class NotebookItem extends React.Component {
 
                     <td
                         className="notebooks__tableCol">
-                        {/* {this.currentUser.first_name} {this.currentUser.last_name} */}
+                        {this.currentUser.first_name} {this.currentUser.last_name}
                         {/* Alex Tong */}
                     </td>
 

@@ -26,32 +26,32 @@ const NoteItems = ({notebook, notes, users}) => {
         return (
             <tr key={idx} className={cssName}>
                 <td
-                    className="notebooks__tableCol">
+                    className="notebooks__tableCol notebookNoteItems__tableCol">
                     <NavLink
                         // to={`/main/notebooks/${notebook.id}/notes`}
                         to={`/main/notes/${note_id}/edit`}
-                        className="notebooks__links">
+                        className="notebookNoteItems__links">
                             {currNote.title}
                     </NavLink>
                 </td>
 
                 <td
-                    className="notebooks__tableCol">
+                    className="notebooks__tableCol notebookNoteItems__tableCol">
                     {currUser.first_name} {currUser.last_name}
                 </td>
 
                 <td
-                    className="notebooks__tableCol">
+                    className="notebooks__tableCol notebookNoteItems__tableCol">
                     {currNote.updated_at}
                 </td>
 
                 <td
-                    className="notebooks__tableCol">
+                    className="notebooks__tableCol notebookNoteItems__tableCol">
                     Only you
                 </td>
 
                 <td
-                    className="notebooks__tableCol">
+                    className="notebooks__tableCol notebookNoteItems__tableCol">
                     <i className="fas fa-running" />
                 </td>
             </tr>

@@ -102,7 +102,7 @@ class LoginForm extends React.Component {
                             <input 
                                 type="submit" 
                                 className="universal__button sessionForm__button" 
-                                value="Login"
+                                value="LOG IN"
                             />
 
                         </form>
@@ -110,7 +110,7 @@ class LoginForm extends React.Component {
                         <button 
                             className="universal__button sessionForm__button" 
                             onClick={this.loginAsDemo}>
-                            Demo
+                            DEMO
                         </button>
                     </div>
 

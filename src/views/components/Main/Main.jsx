@@ -23,6 +23,10 @@ class Main extends React.Component {
                     component={NotebooksContainer}
                 />
                 <PrivateRoute 
+                    path='/main/notebooks/:notebookId/notes' 
+                    component={NotesContainer}
+                />
+                <PrivateRoute 
                     path='/main/notes' 
                     component={NotesContainer}
                 />

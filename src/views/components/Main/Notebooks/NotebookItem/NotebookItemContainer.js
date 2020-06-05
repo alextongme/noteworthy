@@ -5,7 +5,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         notebooks: Object.values(state.entities.notebooks),
         // notes: Object.values(state.entities.notes),
-        users: Object.values(state.entities.users)
+        users: state.entities.users
     }
 }
 

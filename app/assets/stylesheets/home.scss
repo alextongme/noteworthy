@@ -145,7 +145,8 @@
     height: 100vh;
     scroll-snap-align: start;
     // background-color: #f9e1c2;
-    background-color: transparent;
+    // background-color: transparent;
+    background-color: #F7F7F7;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -221,7 +222,7 @@
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 8vh;
-    color: #EE1C24;
+    color: #01A82D;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
@@ -240,11 +241,12 @@
 
 ///////////// FOURTH DIV CONTENT
 .home__content--fourth {
+    background-color: #F7F7F7;
     height: 100vh;
     scroll-snap-align: start;
     // background-color: #A073BB;
     // background-color: #054404;
-    background-color: white;
+    // background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -351,15 +353,22 @@
 
 .home__fifthDiv__signupForm {
     width: 65%;
-    height: 35vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
 }
 
 .home__signupForm__input {
+    margin-top: 3vh;
     padding: 1.2vw;
+}
+
+.home__errors {
+    font-weight: 400;
+    color: #EE1C24;
+    line-height: 150%;
 }
 
 .home__signupForm__button {
@@ -367,7 +376,6 @@
     width: 100%;
     // background-color: #B53F5C;
     // color: #FFF8C1;
-    color: white;
 }
 
 .home__fifthDiv__h1 {
@@ -386,6 +394,7 @@
 }
 
 .home__fifthDiv__h3 {
+    margin-top: 3.7vh;
     font-size: 0.8vw;
     color: white;
     // color: #B53F5C;

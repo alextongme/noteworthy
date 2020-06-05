@@ -60,7 +60,7 @@ class SignupForm extends React.Component {
                                 type="current-password" 
                                 className="universal__input sessionForm__input" 
                                 value={this.state.password} 
-                                onChange={this.handleChange('password')} placeholder="6 character minimum" 
+                                onChange={this.handleChange('password')} placeholder="New password: 6 characters minimum" 
                             />
 
                             {this.renderErrors()}
@@ -68,7 +68,7 @@ class SignupForm extends React.Component {
                             <input 
                                 type="submit" 
                                 className="universal__button sessionForm__button" 
-                                value="Signup"
+                                value="SIGN UP"
                             />
 
                         </form>

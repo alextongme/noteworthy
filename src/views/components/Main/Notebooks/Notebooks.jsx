@@ -40,15 +40,8 @@ const Notebooks = ({ openModal, notebooks }) => {
             <div className="notebooks">
                 <header className="notebooks__header">
                     <h1 className="notebooks__h1--title">Notebooks</h1>
-                    {/* <div className="notebooks__header--right"> */}
-                        {/* <img 
-                                src={window.lionStationary}
-                                onMouseEnter={(e) => (e.currentTarget.src = window.lionWalking)}
-                                onMouseLeave={(e) => (e.currentTarget.src = window.lionStationary)}
-                                className="notebooks__headerLion"
-                                /> */}
+
                         <input className="notebooks__search" placeholder="search for notebooks" />
-                    {/* </div> */}
                 </header>
                 <section className="notebooks__section--bottom">
                     <nav className="notebooks__nav">
@@ -57,33 +50,30 @@ const Notebooks = ({ openModal, notebooks }) => {
                         {createNotebookButton()}
 
                     </nav>
-                    <table className="notebooks__table">
-                        <tbody className="notebooks__tableBody">
-                            <tr className="notebooks__tableRow--header">
-                                <th className="notebooks__tableCol--header">
-                                    NAME
-                                </th>
-                                <th className="notebooks__tableCol--header">
-                                    CREATED BY
-                                </th>
-                                <th className="notebooks__tableCol--header">
-                                    UPDATED AT
-                                </th>
-                                <th className="notebooks__tableCol--header">
-                                    SHARED WITH
-                                </th>
-                                <th className="notebooks__tableCol--header">
-                                    ACTIONS
-                                </th>
-                            </tr>
-                                {notebookItems}
-                        </tbody>
-                    </table>
-                    {/* <CreateFormContainer /> */}
-
-
-                    {/* conditional render of create form: */}
-                    {/* <Route exact path="/main/notebooks/create" component={CreateFormContainer} /> */}
+                    <div className="notebooks__tableContainer">
+                        <table className="notebooks__table">
+                            <tbody className="notebooks__tableBody">
+                                <tr className="notebooks__tableRow--header">
+                                    <th className="notebooks__tableCol--header">
+                                        NAME
+                                    </th>
+                                    <th className="notebooks__tableCol--header">
+                                        CREATED BY
+                                    </th>
+                                    <th className="notebooks__tableCol--header">
+                                        UPDATED AT
+                                    </th>
+                                    <th className="notebooks__tableCol--header">
+                                        SHARED WITH
+                                    </th>
+                                    <th className="notebooks__tableCol--header">
+                                        ACTIONS
+                                    </th>
+                                </tr>
+                                    {notebookItems}
+                            </tbody>
+                        </table>
+                    </div>
                     
                     {/* <PrivateRoute 
                         exact path="/main/notebooks/:notebookId/edit" 
