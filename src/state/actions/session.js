@@ -3,8 +3,15 @@ import * as APIUtil from '../util/sessionApi';
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const EMAIL_EXISTS = "EMAIL_EXISTS";
 
 // actions for receiving a user during login/signup, logging out, and any errors associated
+export const receiveEmailExists = () => {
+    return {
+        type: EMAIL_EXISTS
+    }
+};
+
 export const receiveCurrentUser = (currentUser) => {
     return {
         type: RECEIVE_CURRENT_USER,
@@ -49,4 +56,12 @@ export const logout = () => (dispatch) => {
     return APIUtil.logout().then((user) => {
         return dispatch(logoutCurrentUser())
     })
+};
+
+export const lookForUser = (email) => (dispatch) => {
+    return APIUtil.lookForUser(email).then(() => {
+        return dispatch(receiveEmailExists());
+    }, (error) => {
+        return dispatch(receiveErrors(error.responseJSON));
+    });
 };

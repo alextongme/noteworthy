@@ -1,6 +1,7 @@
 import {
     RECEIVE_SESSION_ERRORS,
     RECEIVE_CURRENT_USER,
+    EMAIL_EXISTS
 } from "../actions/session";
 
 // checking for session errors and updating slice of state
@@ -12,6 +13,8 @@ export default (state = [], action) => {
         case RECEIVE_SESSION_ERRORS:
             return action.errors;
         case RECEIVE_CURRENT_USER:
+            return [];
+        case EMAIL_EXISTS:
             return [];
         default:
             return state;

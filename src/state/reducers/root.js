@@ -17,7 +17,7 @@ const rootReducer = (state, action) => {
     if (action.type == 'LOGOUT_CURRENT_USER') {
       state = undefined;
     }
-  
+    
     return appReducer(state, action);
 };
   

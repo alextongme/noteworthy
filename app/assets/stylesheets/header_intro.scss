@@ -2,30 +2,34 @@
     height: inherit;
     width: 10%;
     // border: 1px solid black;
-    margin-right: 2vw;
+    margin-right: 11vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.headerIntro__button--download {
-    // display: none;
-    background-color: white;
-    border: 0.1vw solid #269814;
-    padding: .8vw;
-    border-radius: 0.1vw;
-    // font-family: 'CaeciliaLTStd-Bold';
-    color: #269814;
-}
+// .headerIntro__button--download {
+//     // display: none;
+//     background-color: white;
+//     border: 0.1vw solid #269814;
+//     padding: .8vw;
+//     border-radius: 0.1vw;
+//     // font-family: 'CaeciliaLTStd-Bold';
+//     color: #269814;
+// }
 
 .headerIntro__button--login {
     text-decoration: none;
-    font-family: "CaeciliaLTStd-Bold";
-    font-size: 1.6vw;
-    color: #269814;
+    font-family: "Raleway";
+    font-size: 1vw;
+    font-weight: 400;
+    text-shadow: 0.1vw 0.1vw 0.1vw #000000;
+    // color: white;
+    color: white;
 }
 
 .headerIntro__button--login:hover {
     text-decoration: none;
-    color: crimson;
+    text-shadow: none;
+    color: #53a834;
 }

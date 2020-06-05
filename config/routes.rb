@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resource :session, only: [:create, :destroy]
 
+    get 'session/lookForUser', to: 'sessions#lookForUser'
+
     resource :user, only: [:create]
     # resources :user_notebooks, only: [:index, :create, :destroy, :update]
     # resources :user_notes, only: [:index, :create, :destroy, :update]
