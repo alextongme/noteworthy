@@ -10,17 +10,19 @@
 }
 
 .sessionForm__section--form {
-    width: 27vw;
-    height: auto;
-    box-sizing: border-box;
-    padding-top: 4vh;
-    padding-bottom: 4vh;
+    width: 30vw;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
+    // height: auto;
+    // box-sizing: border-box;
+    // padding-top: 4vh;
+    // padding-bottom: 4vh;
     background-color: rgba(255, 255, 255, 0.7);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
-    border-radius: 3vw;
+    border-radius: 0.1vw;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.12), 
                 4px 4px 4px 4px rgba(0,0,0,0.12), 
                 6px 6px 6px 6px rgba(0,0,0,0.12), 
@@ -36,108 +38,93 @@
 
 //////////// session form image and title
 .sessionForm__section--header {
+    // margin-top: 6vh;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 }
 
+.sessionForm__logo {
+    // margin-top: 6vh;
+    height: 7vh;
+    animation: rotation 10s infinite linear;
+    margin-top: 3vh;
+}
 
-/////////// div container for input
+.sessionForm__h1 {
+    font-family: 'CaeciliaLTStd-Bold';
+    font-size: 2vw;
+    margin-top: 2vh;
+}
+
+.sessionForm__h3 {
+    line-height: 150%;
+    margin-top: 2vh;
+    font-size: 1.1vw;
+    font-weight: 400;
+    text-align: center;
+}
+
+.sessionForm__h3--create {
+    // padding-top: 2vh;
+    margin-top: 4vh;
+    font-size: 1vw;
+    font-weight: 400;
+    text-align: center;
+}
+
+////////// THE FORM CONTAINER
+.sessionForm__formContainer {
+    text-align: center;
+    margin-top: 3vh;
+    width: 60%;
+}
+
+/////////// ACTUAL FORM 
 .sessionForm__form {
-    padding-top: 1vh;
+    margin-top: 1vh;
     width: 100%;
-    height: 60%;
+    // height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .sessionForm__input {
-    display: block;
-    width: 13vw;
-    border: 0.01vw solid gainsboro;
-    // box-shadow: 0 2px 2px rgba(0,0,0,0.12);
-    border-radius: 0.3vw;
-    font-family: "Raleway";
-    font-size: 0.9vw;
-    padding: 0.6vw;
-    box-sizing: border-box;
-    margin: 0.5vw;
-}
-
-.sessionForm__input:focus {
-    outline: none;
-    background-color: #fcf3cc;
-    box-shadow: 0.01vw 0.01vw 0.1vw 0.1vw #ccc;
+    padding: 0.7vw;
+    margin-top: 1.4vh;
 }
 
 .sessionForm__errors {
     font-family: 'Raleway';
     font-weight: 400;
     font-size: 0.9vw;
-    line-height: 150%;
+    padding: 1vh;
+    // line-height: 200%;
 }
 
 .sessionForm__button {
-    width: 8vw;
-    margin-top: 2vh;
+    width: 100%;
+    margin-top: 1.4vh;
+    // margin-top: 2vh;
     outline: none;
     color: white;
     background: #269814;
-    font-family: 'Raleway';
-    font-weight: 400;
-    font-size: 0.9vw;
-    text-decoration: none;
-    padding: 0.2vw;
-    border: 0.5vw solid #269814;
-    border-radius: 0.8vw;
-    transition: all 0.5s ease 0s;
+    // height: 5vh;
 }
 
-.sessionForm__button:hover {
-    border-color: #EFA802;
-    border-radius: 2vw;
-    color: #EFA802;
-    transition: all 0.5s ease 0s;
-    cursor: pointer;
-}
-
-.sessionForm__button:active {
-    color: black;
-    background-color: #CE4FB7;
-}
-
-.sessionForm__logo {
-    height: 12vh;
-    animation: rotation 10s infinite linear;
-}
-
-.sessionForm__h1 {
-    font-family: 'CaeciliaLTStd-Bold';
-    font-size: 3vw;
-    line-height: 150%;
-}
-
-.sessionForm__h2 {
-    font-size: 1.2vw;
-    font-family: "Raleway";
-    line-height: 110%;
-}
-
-.sessionForm__h3 {
-    margin-top: 4vh;
-    text-align: center;
-    font-size: 1.2vw;
-    font-family: "Raleway";
-    font-weight: 400;
-    line-height: 160%;
-}
+// .sessionForm__h2 {
+//     font-size: 1.4vw;
+//     font-family: "Raleway";
+//     line-height: 110%;
+// }
 
 .sessionForm__login {
     text-decoration: none;
     color: #01A82D;
-    line-height: 160%;
+    // line-height: 160%;
     font-size: 1vw;
 }
 
@@ -151,10 +138,12 @@
 }
 
 .sessionForm__signup {
+    margin-top: 2vh;
     text-decoration: none;
-    color: #01A82D;
-    line-height: 160%;
+    color: #269814;
+    line-height: 110%;
     font-size: 1vw;
+    text-align: center;
 }
 
 .sessionForm__signup:hover {

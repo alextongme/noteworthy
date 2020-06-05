@@ -22,13 +22,14 @@
     text-decoration: none;
     font-family: "Raleway";
     font-size: 1vw;
-    font-weight: 700;
+    font-weight: 400;
     text-shadow: 0.1vw 0.1vw 0.1vw #000000;
+    // color: white;
     color: white;
 }
 
 .headerIntro__button--login:hover {
     text-decoration: none;
     text-shadow: none;
-    color: black;
+    color: #53a834;
 }

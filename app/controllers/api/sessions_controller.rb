@@ -1,10 +1,11 @@
 class Api::SessionsController < ApplicationController
     def create
+        # debugger
         @user = User.find_by_credentials(
-        params[:user][:username],
-        params[:user][:password]
+            params[:user][:email],
+            params[:user][:password]
         )
-
+        # debugger
         if @user
             log_in!(@user)
             render "api/users/show"
@@ -12,6 +13,21 @@ class Api::SessionsController < ApplicationController
             render json: ["Invalid user/password"], status: 401
         end
     end
+
+    # for finding if user exists
+    def lookForUser
+        # debugger
+        @user = User.find_by(
+            email: params[:email]
+        )
+        # debugger
+        if @user
+            render json: ["Email found"], status: 200
+        else
+            render json: ["Email not found, please signup!"], status: 401
+        end
+    end
+
 
     def destroy
         if current_user

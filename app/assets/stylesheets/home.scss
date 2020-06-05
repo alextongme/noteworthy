@@ -13,8 +13,6 @@
     // background-color: rgba(0,0,0,0.2);
     // background-color: rgba(0, 0, 0,0.4);
     // background-color: #054404;
-    text-shadow: 0.1vw 0.1vw 0.1vw #000000;
-    color: white;
     position: fixed;
 }
 
@@ -27,7 +25,7 @@
 .home__image--logo {
     width: 2.8vw;
     -webkit-filter: drop-shadow(5px 5px 5px #222 );
-  filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
 }
 
 .home__h1--logo {
@@ -35,6 +33,8 @@
     margin-left: 1vw;
     font-size: 1.4vw;
     // color: black;
+    text-shadow: 0.1vw 0.1vw 0.1vw #000000;
+    color: white;
 }
 
 ///////////////////// snap container and universal div rules
@@ -55,9 +55,10 @@
 .home__content--first {
     height: 100vh;
     scroll-snap-align: start;
-    background-color: white;
-    // background-color: #A073BB;
+    // background-color: white;
+    background-color: #A073BB;
     color: black;
+    overflow: hidden;
 }
 
 .home__content--left {
@@ -75,34 +76,40 @@
     line-height: 8vh;
     width: 65%;
     font-size: 3vw;
+    color: white;
+    // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__h2--left {
-    display: block;
+    // display: block;
     margin-top: 3.7vh;
-    font-family: 'Raleway';
+    // font-family: 'Raleway';
+    line-height: 4.5vh;
     font-weight: 100;
     width: 90%;
-    color: black;
+    // color: black;
+    color: white;
+    // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
-// .home__signupButton {
+.home__signupButton {
 //     text-align: center;
 //     color: white;
 //     // background-color: #F4791F;
-//     background-color:#F5B625;
-//     margin-top: 3.7vh;
+    // background-color:#8dbb73;
+    background-color: #53a834;
+    margin-top: 3.7vh;
 //     font-family: 'Raleway';
 //     font-weight: 700;
 //     font-size: 0.95vw;
 //     text-decoration: none;
-//     width: 10vw;
-//     padding: 1.2vw;
+    width: 10vw;
+    padding: 1.2vw;
 //     // border: 0.8vw solid #CB4454;
 //     border-radius: 0.4vw;
 //     transition: all 0.5s ease 0s;
 //     letter-spacing: 0.2vw;
-// }
+}
 
 // .home__signupButton:hover {
 //     opacity: 0.8;
@@ -121,8 +128,11 @@
 
 .home__image--rick {
     height: 98vh;
-    
 }
+
+// .home__image--rick:hover .home__content--first {
+//     background-color: transparent;
+// }
 
 /////////////// SECOND MIDDLE DIV CONTENT
 .home__content--second {
@@ -137,6 +147,8 @@
     box-sizing: border-box;
     padding-top: 8vh;
     padding-bottom: 8vh;
+    // background-image: image-url('secondDivWallpaper.jpeg');
+    // background-size: contain;
 }
 
 .home__secondDiv__img {
@@ -150,7 +162,9 @@
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 8vh;
-    color: black;
+    // color: black;
+    color: #00a587;
+    text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__secondDiv__section {
@@ -165,8 +179,10 @@
     font-weight: 400;
     font-size: 1.6vw;
     line-height: 6vh;
-    color: black;
+    // color: black;
+    color: #00a587;
     text-align: center;
+    // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 
@@ -177,12 +193,13 @@
     background-color: #AC2F39;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     padding-left: 13vw;
     padding-right: 13vw;
     box-sizing: border-box;
     padding-top: 8vh;
     padding-bottom: 8vh;
+    
 }
 
 .home__thirdDiv__img {
@@ -192,21 +209,25 @@
 }
 
 .home__thirdDiv__h1 {
-    margin-top: 3.7vh;
+    margin-top: 12vh;
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 8vh;
     color: #F5B625;
+    text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__thirdDiv__h2 {
-    width: 100vw;
+    // width: 100v;
+    margin-top: 4vh;
     font-family: 'Raleway';
     font-weight: 100;
     font-size: 1.8vw;
     line-height: 8vh;
-    color: white;
+    color: #F5B625;
     text-align: center;
+    // text-shadow: 0.1vw 0.1vw 0.1vw black;
+    // margin-bottom: 10vh;
 }
 
 ///////////// FOURTH DIV CONTENT
@@ -224,6 +245,7 @@
     box-sizing: border-box;
     padding-top: 8vh;
     padding-bottom: 8vh;
+    // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__fourthDiv__h1 {
@@ -232,6 +254,7 @@
     font-size: 3vw;
     line-height: 8vh;
     color: white;
+    text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__fourthDiv__h2 {
@@ -242,15 +265,18 @@
     // line-height: 8vh;
     color: white;
     text-align: center;
+    text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__fourthDiv__h3 {
+    margin-top: 3.7vh;
     font-family: 'Raleway';
     font-weight: 400;
     font-size: 1vw;
     line-height: 3vh;
     letter-spacing: 0.1vw;
-    color: white;
+    color: #F5B625;
+    // background-image: url();
     text-align: center;
 }
 
@@ -288,7 +314,9 @@
     height: 100vh;
     scroll-snap-align: start;
     // background-color: #054404;
-    background-color: #A073BB;
+    
+    background-image: image-url('2sessionWallpaper.jpeg');
+    background-size: contain;
     display: flex;
 
     padding-left: 13vw;
@@ -322,61 +350,98 @@
 }
 
 .home__signupForm__input {
-    // margin-top: 3.7vh;
-    width: 100%;
     padding: 1.2vw;
 }
 
 .home__signupForm__button {
     margin-top: 2vh;
     width: 100%;
-    color: #A073BB;
+    // background-color: #B53F5C;
+    // color: #FFF8C1;
+    color: white;
 }
 
 .home__fifthDiv__h1 {
+    // color: #b43f5c;
     color: white;
+    text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__fifthDiv__h2 {
     margin-top: 3.7vh;
     font-weight: 400;
+    // color: #b43f5c;
     color: white;
+    line-height: 200%;
+    text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__fifthDiv__h3 {
     font-size: 0.8vw;
     color: white;
+    // color: #B53F5C;
+    line-height: 170%;
+    text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 //////FOOTER CONTENT
 .home__content--footer {
-    height: 30vh;
+    height: 20vh;
     scroll-snap-align: end;
-    background-color: black;
+    background-color: white;
+    // display: block;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    // flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // flex-wrap: wrap;
+    box-sizing: border-box;
+    padding-left: 13vw;
+    padding-right: 13vw;
+
+    padding-top: 4vh;
+    
 }
 
-.home__footer {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+.footer__h1--logo {
+    font-family: 'CaeciliaLTStd-Bold';
+    margin-left: 1vw;
+    font-size: 1.4vw;
+    color: black;
 }
 
-.home__footer--right {
-    margin-right: 3vw;
-    width: 15%;
-    height: 100%;
+.footer__image--logo {
+    width: 2.8vw;
+    -webkit-filter: drop-shadow(5px 5px 5px #222 );
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+// .home__content--firstHR {
+//     margin-top: 1vh;
+//     height: 0.1vh;
+//     width: 100%;
+//     background-color: white;
+// }
+
+/// right side of footer
+
+.home__footer--left {
     display: flex;
-    justify-content: space-around;
     align-items: center;
 }
 
+.home__footer--right {
+    // width: 100%;
+    display: flex;
+    align-items: center;
+//     justify-content: flex-end;
+}
+
 .home__button {
+    margin-left: 2vw;
     height: 1.9vw;
     opacity: 1;
-    filter: invert(1);
+    // filter: invert(1);
 }
 
 .home__button:hover {
@@ -386,14 +451,35 @@
 .home__link--personalWeb {
     font-family: 'Signerica_Fat';
     text-decoration: none;
-    color: #ff073a;
+    // color: red;
     font-size: 1.9vw;
     
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff073a, 0 0 0.5em #ff073a, 0 0 0.1em #ff073a, 0 10px 3px #ff073a;
-    animation: blink linear infinite 20s;
+    // text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff073a, 0 0 0.5em #ff073a, 0 0 0.1em #ff073a, 0 10px 3px #ff073a;
+    color: red;
+    animation: neon .08s ease-in-out infinite alternate;
+    // animation: blink linear infinite 10s;
 }
 
 .home__link--personalWeb:hover {
-    color: #269814;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #269814, 0 0 0.5em #269814, 0 0 0.1em #269814, 0 10px 3px #269814;
+    animation: none;
+    color: white;
+}
+
+
+///// very bottom of footer
+
+.home__content--secondHR {
+    height: 0.01vh;
+    width: 100%;
+    color: black;
+    // background-color: white;
+}
+
+.home__footer--copyright {
+    margin-top: 1vh;
+    color: black;
+    font-size: 1.4vh;
+    letter-spacing: 0.08vw;
+    font-weight: 100;
+    margin-bottom: 3vh;
 }

@@ -1,37 +1,40 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 .universal__button {
     text-align: center;
     color: white;
     // background-color: #F4791F;
-    background-color:#F5B625;
-    // margin-top: 3.7vh;
+    background-color: #269814;
     font-family: 'Raleway';
-    font-weight: 700;
+    font-weight: 400;
     font-size: 0.95vw;
     text-decoration: none;
-    // width: 10vw;
-    padding: 1.2vw;
+    padding: 0.8vw;
     border: none;
     border-radius: 0.4vw;
     transition: all 0.5s ease 0s;
-    letter-spacing: 0.2vw;
+    letter-spacing: 0.05vw;
     outline: none;
 }
 
 .universal__button:hover {
-    opacity: 0.8;
+    opacity: 0.9;
     border-radius: 1.3vw;
     transition: all 0.5s ease 0s;
     cursor: pointer;
 }
 
 .universal__input {
+    width: 100%;
+    // padding: 1vw;
     display: block;
     border: 0.01vw solid gainsboro;
     box-shadow: 0 2px 2px rgba(0,0,0,0.12);
     border-radius: 0.3vw;
     font-family: "Raleway";
     font-size: 0.9vw;
-    padding: 0.6vw;
     box-sizing: border-box;
 }
 

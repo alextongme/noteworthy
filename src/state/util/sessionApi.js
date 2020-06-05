@@ -16,10 +16,17 @@ export const login = (user) => (
     })
 );
   
-  export const logout = () => (
+export const logout = () => (
     $.ajax({
         method: 'DELETE',
         url: '/api/session'
     })
 );
-  
+
+export const lookForUser = (email) => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/session/lookForUser`,
+        data: { email },
+    })
+};
