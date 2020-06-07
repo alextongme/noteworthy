@@ -9,10 +9,6 @@ import {deleteNotebook} from '../../../../state/actions/notebook'
 const mapStateToProps = (state, ownProps) => {
     return {
         currNotebookId: state.ui.dropdown.notebookId
-        // debugger
-        // notebooks: Object.values(state.entities.notebooks),
-        // // notes: Object.values(state.entities.notes),
-        // users: state.entities.users
     }
 }
 

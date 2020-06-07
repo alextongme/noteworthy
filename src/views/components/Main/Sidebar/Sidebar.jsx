@@ -20,7 +20,7 @@ const Sidebar = ({session, users, logout}) => {
                                 
                 <input 
                     className="sidebar__search" 
-                    placeholder="search" 
+                    placeholder="search not functional" 
                 />
                     {/* </div> */}
                 <NavLink 
