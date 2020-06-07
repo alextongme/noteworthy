@@ -4,8 +4,14 @@ import ReactQuill from 'react-quill';
 class NoteEditor extends React.Component {
     constructor(props) {
         super(props);
-        
-        this.state = props.note;
+        if(props.note) {
+            this.state = props.note;
+        } else {
+            this.state = {
+                title: "",
+                body: "",
+            }
+        }
         // debugger
         this.handleQuillChange = this.handleQuillChange.bind(this);
        

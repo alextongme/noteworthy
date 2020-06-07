@@ -1,6 +1,6 @@
 .notesNav {
     background-color: #F8F8F8;
-    width: 30%;
+    width: 25vw;
     height: 100%;
 }
 
@@ -37,4 +37,30 @@
 
 .notesNav__navbar--right {
     margin-right: 1vw;
+}
+
+.noteNavItem {
+    width: 100%;
+    height: 8vw;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.noteNavItem__title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+}
+
+.noteNavItem__body {
+    margin-top: 2vh;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1vw;
+    font-weight: 100;
+    color: black;
+    // width: 100%;
+    // height: 100%;
+    // overflow: hidden;
 }

@@ -5,21 +5,28 @@ import NoteEditor from './NoteEditor'
 
 class NoteEditorContainer extends React.Component {
     componentDidMount() {
-        // debugger
-        // this.props;
-        let currentNote = this.props.match.params.noteId;
-        this.props.fetchNote(currentNote);
-        // debugger
+        if(this.props.match.params.noteId) {
+            let currentNote = this.props.match.params.noteId;
+            this.props.fetchNote(currentNote);
+        }
     }
 
     render() {
-        const {action, note} = this.props;
+        const {action, note, match} = this.props;
 
-        if(!note) return null;
+        if(!note) {
+            return(
+                <NoteEditor
+                    // when youre ready to create a note
+                    // action={createNote}
+                />
+            )
+        }
         
         return (
             <NoteEditor
-                action={action}
+                key={match.params.noteId}
+                action={updateNote}
                 note={note}
             />
         )
@@ -37,7 +44,9 @@ const mapDispatchToProps = (dispatch) => {
     // debugger
     return {
         fetchNote: (noteId) => dispatch(fetchNote(noteId)),
-        action: (note) => dispatch(updateNote(note)),
+        updateNote: (note) => dispatch(updateNote(note)),
+        // createNote: (note) => dispatch(createNote(note))
+
     }
 }
 

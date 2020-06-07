@@ -1,27 +1,13 @@
 import React from 'react';
 import NotebookItemContainer from './NotebookItem/NotebookItemContainer';
-// import CreateFormContainer from './NotebookForm/CreateFormContainer';
-// import EditFormContainer from './NotebookForm/EditFormContainer';
-// import { PrivateRoute } from '../../../../state/util/route';
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { openModal } from '../../../../state/actions/modal';
 
-const Notebooks = ({ openModal, notebooks }) => {
+const Notebooks = () => {
 
-    const createNotebookButton = () => {
-        return (
-            <div 
-                className="notebooks__addContainer">
-                <img 
-                    src={window.addButton} className="notebooks__button--addImage"
-                    onClick={() => openModal("create notebook")} />
-                <button 
-                    className="notebooks__button--add"
-                    onClick={() => openModal("create notebook")}
-                    >
-                    New notebook
-                </button>
-            </div>
-        );
-    }
+    const notebooksObj = useSelector(state => state.entities.notebooks);
+    const notebooks = Object.values(notebooksObj);
+    const dispatch = useDispatch();
 
     const notebookItems = notebooks.map((notebook, idx) => {
         let className;
@@ -30,59 +16,72 @@ const Notebooks = ({ openModal, notebooks }) => {
         } else {
             className = "notebooks__tableRow notebooks__tableRow--odd";
         }
-
+        // debugger
         return (
-            <NotebookItemContainer key={idx} notebook={notebook} cssName={className} />
+            <NotebookItemContainer key={notebook.id} notebook={notebook} cssName={className} />
         );
     });
-        
-        return (
-            <div className="notebooks">
-                <header className="notebooks__header">
-                    <h1 className="notebooks__h1--title">Notebooks</h1>
 
-                        <input className="notebooks__search" placeholder="search for notebooks" />
-                </header>
-                <section className="notebooks__section--bottom">
-                    <nav className="notebooks__nav">
-                        <h2 className="notebooks__h2--title">My notebook list</h2>
+    return (
+        <div className="notebooks">
+            <header className="notebooks__header">
+                <h1 className="notebooks__h1--title">Notebooks</h1>
 
-                        {createNotebookButton()}
+                    <input className="notebooks__search" placeholder="search for notebooks" />
+            </header>
+            <section className="notebooks__section--bottom">
+                <nav className="notebooks__nav">
+                    <h2 className="notebooks__h2--title">My notebook list</h2>
 
-                    </nav>
-                    <div className="notebooks__tableContainer">
-                        <table className="notebooks__table">
-                            <tbody className="notebooks__tableBody">
-                                <tr className="notebooks__tableRow--header">
-                                    <th className="notebooks__tableCol--header">
-                                        NAME
-                                    </th>
-                                    <th className="notebooks__tableCol--header">
-                                        CREATED BY
-                                    </th>
-                                    <th className="notebooks__tableCol--header">
-                                        UPDATED AT
-                                    </th>
-                                    <th className="notebooks__tableCol--header">
-                                        SHARED WITH
-                                    </th>
-                                    <th className="notebooks__tableCol--header">
-                                        ACTIONS
-                                    </th>
-                                </tr>
-                                    {notebookItems}
-                            </tbody>
-                        </table>
+                    <div 
+                        className="notebooks__addContainer">
+                        <img 
+                            src={window.addButton} className="notebooks__button--addImage"
+                            onClick={() => dispatch(openModal("Create notebook"))} />
+                        <button 
+                            className="notebooks__button--add"
+                            onClick={() => dispatch(openModal("Create notebook"))}
+                            >
+                            New notebook
+                        </button>
                     </div>
-                    
-                    {/* <PrivateRoute 
-                        exact path="/main/notebooks/:notebookId/edit" 
-                        component={EditFormContainer} 
-                    /> */}
-                </section>
-            </div>
-        );
+
+                </nav>
+                <div className="notebooks__tableContainer">
+                    <table className="notebooks__table">
+                        <tbody className="notebooks__tableBody">
+                            <tr className="notebooks__tableRow--header">
+                                <th className="notebooks__tableCol--header">
+                                    NAME
+                                </th>
+                                <th className="notebooks__tableCol--header">
+                                    CREATED BY
+                                </th>
+                                <th className="notebooks__tableCol--header">
+                                    UPDATED AT
+                                </th>
+                                <th className="notebooks__tableCol--header">
+                                    SHARED WITH
+                                </th>
+                                <th className="notebooks__tableCol--header">
+                                    ACTIONS
+                                </th>
+                            </tr>
+                                {notebookItems}
+                                
+                        </tbody>
+                    </table>
+                </div>
+                
+                {/* <PrivateRoute 
+                    exact path="/main/notebooks/:notebookId/edit" 
+                    component={EditFormContainer} 
+                /> */}
+            </section>
+        </div>
+    );
+            }
     
-};
+// };
 
 export default Notebooks;

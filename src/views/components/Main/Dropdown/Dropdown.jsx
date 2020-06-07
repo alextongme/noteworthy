@@ -1,56 +1,56 @@
 import React from 'react';
-import { connect } from "react-redux";
-// import { closeDropdown } from '../../../../state/actions/dropdown';
-// import NotebookCreateContainer from '../Notebooks/NotebookForm/CreateFormContainer';
-// import NotebookEditContainer from '../Notebooks/NotebookForm/EditFormContainer';
 
-const Dropdown = ({dropdown, closeDropdown}) => {
-    
-    if (!dropdown) {
-      return null;
-    }
+class Dropdown extends React.Component {
+  constructor(props) {
+    super(props);
 
-    switch (dropdown) {
-        case 'notebook actions':
-        
-        break;
-        case 'profile actions':
-        
-        break;
-        case 'filter actions':
-        
-        break;
-        case 'sort actions':
-        
-        break;
-        case 'note actions':
-      
-        break;
-        default:
-        return null;
-    }
-
-    return (
-      <ul className="dropdown__background" onClick={closeDropdown}>
-        <section className="dropdown__child" onClick={(e) => {
-            return (e.stopPropagation());
-            } }>
-          { component }
-        </section>
-      </ul>
-    );
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
-const mapStateToProps = (state) => {
-    return {
-        dropdown: state.ui.dropdown
-    };
-};
-  
-const mapDispatchToProps = (dispatch) => {
-    return {
-        closeDropdown: () => dispatch(closeDropdown())
-    };
-};
+  // handling closing the component whne clicking outside of it
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dropdown);
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  setWrapperRef(node) {
+    this.wrapperRef = node;
+  }
+
+  handleClickOutside(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.props.toggleDropdown();
+    }
+  }
+
+  newOpenModal(type) {
+    this.props.openModal(type);
+    this.props.toggleNextDropdown();
+  }
+
+  render() {
+    return (
+        <ul 
+          className="dropdown"
+          ref={this.setWrapperRef}>
+            <li className="dropdown__rows">
+              <button
+                className="universal__h3 dropdown__button"
+                onClick={() => this.newOpenModal("Edit notebook")}>
+                Rename notebook</button>
+            </li>
+            <li className="dropdown__rows">
+              <button 
+                className="universal__h3 dropdown__button"
+                onClick={() => this.props.deleteNotebook(this.props.currNotebookId)}>Delete notebook</button>
+            </li>
+        </ul>
+    );
+  }
+}
+
+export default Dropdown;

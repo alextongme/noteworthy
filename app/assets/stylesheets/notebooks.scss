@@ -1,9 +1,9 @@
 ////////////////////// NOTEBOOKS
 .notebooks {
-    width: 100%;
+    width: 84vw;
     height: 100vh;
     color: black;
-    background-color: #F8F8F8;
+    // background-color: #F8F8F8;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -132,7 +132,7 @@
 .notebooks__tableRow--header {
     width: 100%;
     // height: 2vh;
-    height: 4vh;
+    height: 5vh;
     
     background-color: #F8F8F8;
     color: black;
@@ -158,6 +158,7 @@
 .notebooks__tableCol--header {
     // height: 2%;
     vertical-align: middle;
-    font-size: 0.7vw;
+    font-size: 0.8vw;
     font-family: 'Raleway';
+    color: #6d6d6d;
 }

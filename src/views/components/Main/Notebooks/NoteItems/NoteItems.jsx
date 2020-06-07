@@ -29,7 +29,7 @@ const NoteItems = ({notebook, notes, users}) => {
                     className="notebooks__tableCol notebookNoteItems__tableCol">
                     <NavLink
                         // to={`/main/notebooks/${notebook.id}/notes`}
-                        to={`/main/notes/${note_id}/edit`}
+                        to={`/main/notebooks/${notebook.id}/notes/${note_id}`}
                         className="notebookNoteItems__links">
                             {currNote.title}
                     </NavLink>

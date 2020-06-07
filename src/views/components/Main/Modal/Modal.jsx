@@ -13,10 +13,10 @@ const Modal = ({modal, closeModal}) => {
     let component;
 
     switch (modal) {
-      case 'create notebook':
+      case 'Create notebook':
         component = <NotebookCreateContainer />;
         break;
-      case 'edit notebook':
+      case 'Edit notebook':
         component = <NotebookEditContainer />;
         break;
       default:
@@ -34,9 +34,9 @@ const Modal = ({modal, closeModal}) => {
     );
   }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        modal: state.ui.modal
+        modal: state.ui.modal,
     };
 };
   

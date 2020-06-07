@@ -1,5 +1,6 @@
 .notebooks__tableRow {
-    height: 4vh;
+    height: 5vh;
+    overflow: hidden;
 }
 
 .notebooks__tableRow:hover {
@@ -16,7 +17,7 @@
 
 .notebooks__tableCol {
     vertical-align: middle;
-    font-size: 0.8vw;
+    font-size: 0.9vw;
 }
 
 .notebooks__links {
@@ -43,7 +44,7 @@
 // ICONS
 .fa-running {
     color: black;
-    font-size: 0.7vw;
+    font-size: 0.9vw;
 }
 
 .fa-running:hover {
@@ -51,7 +52,7 @@
 }
 
 .chevron-right--notebooks {
-    font-size: 0.7vw;
+    font-size: 0.9vw;
 }
 
 .chevron-right--notebooks:hover {
@@ -59,9 +60,14 @@
 }
 
 .chevron-down--notebooks {
-    font-size: 0.7vw;
+    font-size: 0.9vw;
 }
 
 .chevron-down--notebooks:hover {
     color: #016d00;
 }
+
+// .notebooks__tableRowContainer {
+//     display: flex;
+//     justify-content: flex-;
+// }

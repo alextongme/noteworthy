@@ -5,7 +5,7 @@ const NoteNav = ({notes}) => {
 
     const noteItems = notes.map((note, idx) => {
         return (
-            <NavLink to={`/main/notes/${note.id}/edit`} style={{ textDecoration: 'none' }} key={idx}>
+            <NavLink exact to={`/main/notes/${note.id}`} style={{ textDecoration: 'none' }} key={idx}>
                 <li className="noteNavItem">
                     <h1 className="noteNavItem__title">{note.title}</h1>
                     <p className="noteNavItem__body">{note.body}</p>

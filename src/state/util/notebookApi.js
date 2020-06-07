@@ -32,7 +32,7 @@ export const updateNotebook = (notebook) => {
     }));
 }
 
-export const deleteNotebook = (notebook) => {
+export const deleteNotebook = (notebookId) => {
     return ($.ajax({
         method: "DELETE",
         url: `api/notebooks/${notebookId}`,

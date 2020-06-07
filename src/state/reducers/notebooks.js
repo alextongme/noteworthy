@@ -8,10 +8,18 @@ export default (prevState = {}, action) => {
     Object.freeze(prevState);
     switch(action.type) {
         case RECEIVE_NOTEBOOKS:
-            return action.notebooks;
+            const newNotebooks = {};
+            Object.values(action.notebooks).forEach((notebook) => {
+                newNotebooks[notebook.id] = notebook;
+            })
+            return Object.assign({}, prevState, newNotebooks);
         case RECEIVE_NOTEBOOK:
+            // debugger
             const newNotebook = { [action.notebook.id]: action.notebook };
             return Object.assign({}, prevState, newNotebook);
+        // case UPDATE_NOTEBOOK:
+        //     const newNotebook = { [action.notebook.id]: action.notebook };
+        //     return Object.assign({}, prevState, newNotebook);
         case REMOVE_NOTEBOOK:
             let nextState = Object.assign({}, prevState);
             delete nextState[action.notebookId]

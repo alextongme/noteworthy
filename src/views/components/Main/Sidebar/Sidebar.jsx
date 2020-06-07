@@ -8,14 +8,14 @@ const Sidebar = ({session, users, logout}) => {
         <div className="sidebar">
 
             <ul className="sidebar__listContainer">
-                <div className="sidebar__userContainer">
+                <div className="sidebar__userContainer" onClick={()=> (null)}>
                     <i className="fas fa-user-circle sidebar__userLogo" />
                     <h1 
                         className="sidebar__username">
                         {currentUser.first_name} {currentUser.last_name}
                     </h1>
                     <i 
-                        className="fas fa-chevron-circle-right chevron-right--sidebar"></i>
+                        className="fas fa-chevron-circle-down chevron-down--sidebar"></i>
                 </div>
                                 
                 <input 
@@ -40,6 +40,7 @@ const Sidebar = ({session, users, logout}) => {
                     className="sidebar__navlink"
                     activeClassName="sidebar__navlink--active"
                 >
+                    <i className="fas fa-book"></i>
                     Notebooks
                 </NavLink>
                 <NavLink 
@@ -47,6 +48,7 @@ const Sidebar = ({session, users, logout}) => {
                     className="sidebar__navlink" 
                     activeClassName="sidebar__navlink--active"
                 >
+                    <i className="fas fa-sticky-note"></i>
                     Notes
                 </NavLink>
             </ul>

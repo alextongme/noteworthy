@@ -1,11 +1,12 @@
-import { OPEN_DROPDOWN, CLOSE_DROPDOWN } from '../actions/dropdown';
+import { EDIT_NOTEBOOK_ID } from '../actions/dropdown';
 
 export default (state = null, action) => {
     switch(action.type) {
-        case OPEN_DROPDOWN:
-            return action.dropdown;
-        case CLOSE_DROPDOWN:
-            return null;
+        // case RECEIVE_NOTEBOOK:
+        //     const newNotebook = { [action.notebook.id]: action.notebook };
+        //     return Object.assign({}, prevState, newNotebook);
+        case EDIT_NOTEBOOK_ID:
+            return {notebookId: action.notebookId};
         default:
             return state;
     }
