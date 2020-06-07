@@ -32,8 +32,9 @@
     font-family: 'CaeciliaLTStd-Bold';
     margin-left: 1vw;
     font-size: 1.4vw;
+    
     // color: black;
-    text-shadow: 0.05vw 0.05vw 0.05vw #000000;
+    // text-shadow: 0.04vw 0.04vw 0.04vw #000000;
     color: #01A82D;
 }
 
@@ -59,6 +60,10 @@
     // background-color: #A073BB;
     color: black;
     overflow: hidden;
+    // overflow-x: hidden;
+    // overflow-y: visible;
+    // position: fixed;
+    // scroll-behavior:;
 }
 
 .home__content--left {
@@ -74,7 +79,7 @@
 .home__h1--left {
     font-family: 'CaeciliaLTStd-Bold';
     line-height: 8vh;
-    width: 65%;
+    width: 70%;
     font-size: 3vw;
     color: black;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
@@ -139,7 +144,9 @@
 .home__content--second {
     height: 100vh;
     scroll-snap-align: start;
-    background-color: #f9e1c2;
+    // background-color: #f9e1c2;
+    // background-color: transparent;
+    background-color: #F7F7F7;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -164,8 +171,8 @@
     font-size: 3vw;
     line-height: 8vh;
     // color: black;
-    color: #00a587;
-    text-shadow: 0.1vw 0.1vw 0.1vw black;
+    color: #01A82D;
+    // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__secondDiv__section {
@@ -181,7 +188,7 @@
     font-size: 1.6vw;
     line-height: 6vh;
     // color: black;
-    color: #00a587;
+    color: black;
     text-align: center;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
@@ -191,7 +198,8 @@
 .home__content--third {
     height: 100vh;
     scroll-snap-align: start;
-    background-color: #AC2F39;
+    // background-color: #AC2F39;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -214,8 +222,8 @@
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 8vh;
-    color: #F5B625;
-    text-shadow: 0.1vw 0.1vw 0.1vw black;
+    color: #01A82D;
+    // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__thirdDiv__h2 {
@@ -225,7 +233,7 @@
     font-weight: 100;
     font-size: 1.8vw;
     line-height: 8vh;
-    color: #F5B625;
+    color: black;
     text-align: center;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
     // margin-bottom: 10vh;
@@ -233,10 +241,12 @@
 
 ///////////// FOURTH DIV CONTENT
 .home__content--fourth {
+    background-color: #F7F7F7;
     height: 100vh;
     scroll-snap-align: start;
     // background-color: #A073BB;
-    background-color: #054404;
+    // background-color: #054404;
+    // background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -254,8 +264,8 @@
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 8vh;
-    color: white;
-    text-shadow: 0.1vw 0.1vw 0.1vw black;
+    color: #01A82D;
+    // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__fourthDiv__h2 {
@@ -264,9 +274,9 @@
     font-weight: 700;
     font-size: 1.4vw;
     // line-height: 8vh;
-    color: white;
+    color: black;
     text-align: center;
-    text-shadow: 0.1vw 0.1vw 0.1vw black;
+    // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__fourthDiv__h3 {
@@ -276,7 +286,7 @@
     font-size: 1vw;
     line-height: 3vh;
     letter-spacing: 0.1vw;
-    color: #F5B625;
+    color: black;
     // background-image: url();
     text-align: center;
 }
@@ -317,7 +327,7 @@
     // background-color: #054404;
     
     background-image: image-url('2sessionWallpaper.jpeg');
-    background-size: contain;
+    background-size: cover;
     display: flex;
 
     padding-left: 13vw;
@@ -343,15 +353,22 @@
 
 .home__fifthDiv__signupForm {
     width: 65%;
-    height: 35vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
 }
 
 .home__signupForm__input {
+    margin-top: 3vh;
     padding: 1.2vw;
+}
+
+.home__errors {
+    font-weight: 400;
+    color: #EE1C24;
+    line-height: 150%;
 }
 
 .home__signupForm__button {
@@ -359,12 +376,11 @@
     width: 100%;
     // background-color: #B53F5C;
     // color: #FFF8C1;
-    color: white;
 }
 
 .home__fifthDiv__h1 {
     // color: #b43f5c;
-    color: white;
+    color: #01A82D;
     text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
@@ -378,6 +394,7 @@
 }
 
 .home__fifthDiv__h3 {
+    margin-top: 3.7vh;
     font-size: 0.8vw;
     color: white;
     // color: #B53F5C;
@@ -463,7 +480,7 @@
 
 .home__link--personalWeb:hover {
     animation: none;
-    color: white;
+    color:black;
 }
 
 

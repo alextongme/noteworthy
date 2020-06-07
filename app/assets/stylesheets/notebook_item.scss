@@ -1,37 +1,30 @@
 .notebooks__tableRow {
-    height: 7vh;
+    height: 5vh;
+    overflow: hidden;
 }
 
 .notebooks__tableRow:hover {
-    // background-color: #404040;
-    
-    background-color: #fcf3cc;
+    background-color: #F2F2F2;
 }
 
 .notebooks__tableRow--even {
-    // height: 7vh;
-    // background-color: #fcf3cc;
-    background-color: rgba(4, 109, 2, 0.2);
-    
-
-    // border: 2px solid green;
+    background-color: white;
 }
 
 .notebooks__tableRow--odd {
-    // height: 6vh;
-    background-color: white;
+    background-color: #F8F8F8;
 }
 
 .notebooks__tableCol {
     vertical-align: middle;
-    // border: 1px solid red;
+    font-size: 0.9vw;
 }
 
 .notebooks__links {
     text-decoration: none;
     color: black;
     font-weight: 700;
-    padding-left: 2%;
+    margin-left: 4%;
 }
 
 .notebooks__links:hover {
@@ -51,7 +44,7 @@
 // ICONS
 .fa-running {
     color: black;
-    font-size: 1vw;
+    font-size: 0.9vw;
 }
 
 .fa-running:hover {
@@ -59,7 +52,7 @@
 }
 
 .chevron-right--notebooks {
-    font-size: 1vw;
+    font-size: 0.9vw;
 }
 
 .chevron-right--notebooks:hover {
@@ -67,9 +60,14 @@
 }
 
 .chevron-down--notebooks {
-    font-size: 1vw;
+    font-size: 0.9vw;
 }
 
 .chevron-down--notebooks:hover {
     color: #016d00;
 }
+
+// .notebooks__tableRowContainer {
+//     display: flex;
+//     justify-content: flex-;
+// }

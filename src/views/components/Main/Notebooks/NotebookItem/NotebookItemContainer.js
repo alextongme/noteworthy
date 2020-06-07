@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
 import NotebookItem from './NotebookItem';
+import { editNotebookId } from '../../../../../state/actions/dropdown';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        notebooks: Object.values(state.entities.notebooks),
-        // notes: Object.values(state.entities.notes),
-        users: Object.values(state.entities.users)
+        users: state.entities.users,
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        editNotebookId: (notebookId) => dispatch(editNotebookId(notebookId)),
+    }
+};
 
-export default connect(mapStateToProps, null)(NotebookItem)
+export default connect(mapStateToProps, mapDispatchToProps)(NotebookItem)

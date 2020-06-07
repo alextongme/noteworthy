@@ -33,7 +33,7 @@ class Home extends React.Component {
             <>
                 {this.props.errors.map((error, idx) => {
                     return (
-                        <p key={idx} className="sessionForm__errors">{error}</p>
+                        <p key={idx} className="universal__h3 home__errors">{error}</p>
                     );
                 })}
             </>
@@ -58,8 +58,10 @@ class Home extends React.Component {
                     <li className="home__content home__content--first">
                         <section className="home__content--left">
                             <Typist className="home__h1--left">
-                                Notes worthy 
-                                <Typist.Delay ms={800} />
+                                Notes<Typist.Delay ms={300} />
+                                <br />
+                                worthy 
+                                <Typist.Delay ms={300} />
                                 <br />
                                 for any moment.
                             </Typist>
@@ -190,7 +192,7 @@ class Home extends React.Component {
                                 <input 
                                     type="submit" 
                                     className="universal__button home__signupForm__button" 
-                                    value="Signup"
+                                    value="SIGN UP"
                                 />
                             </form>
                         </section>

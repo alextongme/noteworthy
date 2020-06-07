@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
         notebook: {
             name: "",
         },
-        formType: "Create Notebook"
+        formType: "Create New Notebook"
     }
 }
 

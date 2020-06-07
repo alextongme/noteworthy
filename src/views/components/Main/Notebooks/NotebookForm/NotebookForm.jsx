@@ -2,6 +2,7 @@ import React from 'react';
 
 class NotebookForm extends React.Component {
     constructor(props) {
+        // debugger
         super(props);
         this.state = props.notebook;
 
@@ -15,6 +16,7 @@ class NotebookForm extends React.Component {
         const notebook = Object.assign({}, this.state);
 
         this.props.action(notebook);
+        this.props.closeModal();
     }
 
     handleChange(field) {
@@ -28,35 +30,43 @@ class NotebookForm extends React.Component {
     render() {
         return (
             <div className="notebookForm">
+            
                 <div className="notebookForm__topContainer">
-                    <h3>
+                    <h2 className="universal__h2 notebookForm__h2--header">
                         {this.props.formType}
-                    </h3>
+                    </h2>
                     <i className="fas fa-times-circle" onClick={this.props.closeModal} />
                 </div>
                 
-                <h2>
+                <h3 className="universal__h3">
                     Notebooks are useful for grouping notes around a common topic. They can be private or shared.
-                </h2>
+                </h3>
 
-                <form onSubmit={this.handleSubmit}>
-                    <label>
+                <form onSubmit={this.handleSubmit} className="notebookForm__form">
+                    <label className="universal__h3 notebookForm__label">
                         Name
                     </label>
-                        <input type="text" value={this.state.name} onChange ={this.handleChange('name')} className="notebookForm__input" placeholder="notebook name" />
+                    <br></br>
+                        <input 
+                            type="text" 
+                            value={this.state.name} 
+                            onChange ={this.handleChange('name')} className="notebookForm__input universal__input" 
+                            placeholder="Notebook name" />
                     <hr></hr>
-                    <button
-                        className="notebookForm__button--submit"
-                        // onClick={this.closeModal}>
-                    >
-                    </button>
 
-                    <button 
-                        type="submit"
-                        className="notebookForm__button--submit">
-                        Continue
-                    </button>
-                    
+                    <div className="notebookForm__buttonContainer">
+                        <button
+                            className="universal__button notebookForm__button--cancel"
+                            onClick={this.props.closeModal}>
+                            Cancel
+                        </button>
+
+                        <button 
+                            type="submit"
+                            className="universal__button notebookForm__button--submit">
+                            Continue
+                        </button>
+                    </div>
                 </form>
             </div>
         );

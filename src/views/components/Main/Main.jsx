@@ -1,9 +1,11 @@
 import React from "react";
 
-import Modal from './Modal/Modal'
-import NotebooksContainer from './Notebooks/NotebooksContainer'
-import NotesContainer from "./Notes/NotesContainer";
+import Modal from './Modal/Modal';
+import Dropdown from './Dropdown/Dropdown';
 import SidebarContainer from "./Sidebar/SidebarContainer";
+import Notebooks from './Notebooks/Notebooks';
+import NotesNavContainer from "./Notes/NotesNav/NotesNavContainer";
+import NoteEditorContainer from "./Notes/NoteEditor/NoteEditorContainer";
 
 import { PrivateRoute } from '../../../state/util/route';
 
@@ -17,14 +19,39 @@ class Main extends React.Component {
         return (
             <div className="main">
                 <Modal />
+                {/* <Dropdown /> */}
                 <SidebarContainer />
+
+                {/* just notebooks */}
                 <PrivateRoute 
-                    path='/main/notebooks' 
-                    component={NotebooksContainer}
+                    exact path='/main/notebooks' 
+                    component={Notebooks}
+                />
+
+                {/* show all notes this notebook contains */}
+                <PrivateRoute 
+                    exact path='/main/notebooks/:notebookId/notes' 
+                    component={NotesNavContainer}
                 />
                 <PrivateRoute 
+                    exact path='/main/notebooks/:notebookId/notes/:noteId' 
+                    component={NoteEditorContainer}
+                />
+
+                {/* show all notes */}
+                <PrivateRoute 
                     path='/main/notes' 
-                    component={NotesContainer}
+                    component={NotesNavContainer}
+                />
+                <PrivateRoute 
+                    exact path='/main/notes' 
+                    component={NoteEditorContainer}
+                />
+
+                {/* show a specific note */}
+                <PrivateRoute
+                    exact path='/main/notes/:noteId'
+                    component={NoteEditorContainer}
                 />
         </div>
         );

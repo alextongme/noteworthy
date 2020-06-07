@@ -10,6 +10,7 @@ class SignupForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.loginAsDemo = this.loginAsDemo.bind(this);
     }
 
     handleChange(field) {
@@ -24,6 +25,14 @@ class SignupForm extends React.Component {
         event.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.signup(user);
+    }
+
+    loginAsDemo() {
+        const demo = {
+            email: 'demo@gmail.com',
+            password: '123456',
+        };
+        this.props.login(demo);
     }
 
     renderErrors() {
@@ -60,7 +69,7 @@ class SignupForm extends React.Component {
                                 type="current-password" 
                                 className="universal__input sessionForm__input" 
                                 value={this.state.password} 
-                                onChange={this.handleChange('password')} placeholder="6 character minimum" 
+                                onChange={this.handleChange('password')} placeholder="New password: 6 characters minimum" 
                             />
 
                             {this.renderErrors()}
@@ -68,10 +77,16 @@ class SignupForm extends React.Component {
                             <input 
                                 type="submit" 
                                 className="universal__button sessionForm__button" 
-                                value="Signup"
+                                value="SIGN UP"
                             />
 
                         </form>
+
+                        <button 
+                            className="universal__button sessionForm__button" 
+                            onClick={this.loginAsDemo}>
+                            DEMO
+                        </button>
                     </div>
 
                     <h2 className="universal__h3 sessionForm__h3--create">

@@ -1,0 +1,33 @@
+.dropdown {
+    position: absolute;
+    // right: 4vw;
+    right: 4vw;
+    // display: inline-block;
+    display: block;
+    z-index: 5;
+    background-color: white;
+    border-radius: 0.2vw;
+  }
+
+.dropdown__rows {
+    display: flex;
+    flex-direction: column;
+//   width: 20vh;
+    background-color: white;
+
+    box-sizing: border-box;
+    // padding: 1vw;
+}
+
+.dropdown__rows:hover {
+    background-color: #F2F2F2;
+}
+
+.dropdown__button {
+    background: transparent;
+    // color: black;
+    font-weight: 700;
+    border: none;
+    background-color: none;
+    padding: 1vw;
+}  

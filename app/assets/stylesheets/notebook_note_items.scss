@@ -1,36 +1,20 @@
-// .notebookNotes__tableCol {
-//     height: 7vh;
-//     vertical-align: middle;
-// }
-
-// .notebookNotes__tableCol:first-child {
-//     width: 40%;
-//     box-sizing: border-box;
-//     padding-left: 6%;
-// }
-
-// .notebookNotes__tableCol:last-child {
-//     padding-right: 2%;
-//     text-align: right;
-// }
-
-
-
 .notebookNoteItems__tableRow--even {
-  
-    // background-color: rgba(4, 109, 2, 0.2);
     background-color: #F2F2F2;
 }
 
 .notebookNoteItems__tableRow--odd {
-    
     background-color: white;
 }
 
-.notebookNoteItems__tableRow--even:first-child {
-    padding-left: 6%;
+.notebookNoteItems__tableCol:first-child {
+    padding-left: 3.7vw;
 }
 
-.notebookNoteItems__tableRow--odd:first-child {
-    padding-left: 6%;
+.notebookNoteItems__links {
+    text-decoration: none;
+    color: black;
+}
+
+.notebookNoteItems__links:hover {
+    text-decoration: underline;
 }

@@ -4,7 +4,7 @@ import { closeModal } from '../../../../state/actions/modal';
 import NotebookCreateContainer from '../Notebooks/NotebookForm/CreateFormContainer';
 import NotebookEditContainer from '../Notebooks/NotebookForm/EditFormContainer';
 
-function Modal({modal, closeModal}) {
+const Modal = ({modal, closeModal}) => {
     
     if (!modal) {
       return null;
@@ -13,10 +13,10 @@ function Modal({modal, closeModal}) {
     let component;
 
     switch (modal) {
-      case 'create notebook':
+      case 'Create notebook':
         component = <NotebookCreateContainer />;
         break;
-      case 'edit notebook':
+      case 'Edit notebook':
         component = <NotebookEditContainer />;
         break;
       default:
@@ -34,9 +34,9 @@ function Modal({modal, closeModal}) {
     );
   }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        modal: state.ui.modal
+        modal: state.ui.modal,
     };
 };
   

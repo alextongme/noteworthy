@@ -1,20 +1,21 @@
 .sidebar {
     font-family: "Raleway";
     height: 100vh;
-    width: 20vw;
+    width: 16vw;
     background-color: #1B1B1B;
     // background-color: white;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;;
+    // justify-content: space-between;;
 }
 
 .sidebar__listContainer {
-    width: 50;
+    // padding-left: 1vw;
+    // width: 50;
     // height: 94%;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     // justify-content: space-evenly;
 }
 
@@ -24,12 +25,12 @@
     justify-content: space between;
     align-items: center;
     width: 100%;
-    height: 10vh;
+    height: 7vh;
     padding-left: 1vw;
 }
 
 .sidebar__userLogo {
-    width: 3vw;
+    font-size: 2vw;
 }
 
 .sidebar__username {
@@ -39,7 +40,7 @@
 
 .chevron-right--sidebar {
     color: white;
-    padding-left: 3%;
+    padding-left: 0.6vw;
 }
 
 .chevron-right--sidebar:hover {
@@ -51,15 +52,16 @@
 }
 
 /////////////////////////////// SEARCH //////////////////////////////
-.sidebar__searchContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 5vh;
-}
+// .sidebar__searchContainer {
+//     // display: flex;
+//     // justify-content: center;
+//     // align-items: center;
+//     width: 100%;
+//     height: 5vh;
+// }
 
 .sidebar__search {
+    margin-left: 1vw;
     width: 65%;
     // outline: red;
     border: none;
@@ -69,6 +71,7 @@
 }
 
 .sidebar__search:focus {
+    background-color: none;
     outline: none;
 }
 
@@ -112,18 +115,19 @@
 
 
 .sidebar__addContainer {
-    padding-left: 1.3vw;
+    // padding-left: 1.3vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 56%;
+    width: 45%;
     height: 10vh;
     text-decoration: none;
+    margin-left: 3vw;
 }
 
 .sidebar__button--add {
-    margin-left: 10%;
-    width: 3vw;
+    // margin-left: 10%;
+    width: 2vw;
     filter: brightness(0) saturate(100%) invert(30%) sepia(59%) saturate(5655%) hue-rotate(116deg) brightness(95%) contrast(74%);
 }
 
