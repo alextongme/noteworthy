@@ -5,7 +5,7 @@ import Main from './Main';
 
 const mapStateToProps = (state) => {
     return {
-        // notes: Object.values(state.entities.notes),
+        notes: Object.values(state.entities.notes),
         // notebooks: Object.values(state.entities.notebooks),
         // users: Object.values(state.entities.users),
     }

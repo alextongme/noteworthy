@@ -3,7 +3,6 @@ import * as APIUtil from '../util/notebookApi';
 export const RECEIVE_NOTEBOOK = "RECEIVE_NOTEBOOK";
 export const RECEIVE_NOTEBOOKS = "RECEIVE_NOTEBOOKS";
 export const REMOVE_NOTEBOOK = "REMOVE_NOTEBOOK";
-// export const UPDATE_NOTEBOOK = "UPDATE_NOTEBOOK";
 
 export const receiveNotebook = (notebook) => {
     return {
@@ -19,13 +18,6 @@ export const receiveNotebooks = (notebooks) => {
     }
 };
 
-// export const updateNotebook = (notebook) => {
-//     return {
-//         type: UPDATE_NOTEBOOK,
-//         notebook
-//     }
-// };
-
 export const removeNotebook = (notebookId) => {
     return {
         type: REMOVE_NOTEBOOK,
@@ -34,8 +26,6 @@ export const removeNotebook = (notebookId) => {
 };
 
 // UI ACTIONS
-
-
 // action thunk creators for getting notebooks of current user
 export const fetchNotebooks = () => (dispatch) => {
     // take in callback functions for (success, failure)

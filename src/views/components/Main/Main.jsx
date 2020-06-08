@@ -16,6 +16,8 @@ class Main extends React.Component {
     }
 
     render() {
+        // debugger
+        // let firstNote = this.props.notes[0].id;
         return (
             <div className="main">
                 <Modal />
@@ -41,12 +43,13 @@ class Main extends React.Component {
                 {/* show all notes */}
                 <PrivateRoute 
                     path='/main/notes' 
-                    component={NotesNavContainer}
-                />
-                <PrivateRoute 
+                    component={NotesNavContainer}>
+                    {/* <Redirect to={`/main/notes/${firstNote}`} /> */}
+                </PrivateRoute>
+                {/* <PrivateRoute 
                     exact path='/main/notes' 
                     component={NoteEditorContainer}
-                />
+                /> */}
 
                 {/* show a specific note */}
                 <PrivateRoute

@@ -1,14 +1,24 @@
 import React from "react";
 import {NavLink} from 'react-router-dom';
+import ReactQuill, {Quill} from 'react-quill';
 
 const NoteNav = ({notes}) => {
 
     const noteItems = notes.map((note, idx) => {
+        let title = note.title;
+        if(title === "") {
+            title = "Untitled"
+        }
         return (
             <NavLink exact to={`/main/notes/${note.id}`} style={{ textDecoration: 'none' }} key={idx}>
                 <li className="noteNavItem">
-                    <h1 className="noteNavItem__title">{note.title}</h1>
-                    <p className="noteNavItem__body">{note.body}</p>
+                    <h2 className="noteNavItem__title universal__h3">{title}</h2>
+                    {/* <p className="noteNavItem__body">{note.body}</p> */}
+                    <ReactQuill
+                        className="noteNavItem__body"
+                        value={note.body}
+                        readOnly={true}
+                        theme={"bubble"} />
                 </li>
             </NavLink>
         );
@@ -16,13 +26,14 @@ const NoteNav = ({notes}) => {
     
     return (
         <div className="notesNav">
-            <header className="notesNav__header">
+            <header className="notesNav__header universal__h2">
                 All notes
+                <nav className="notesNav__navbar universal__h3">
+                    <div className="notesNav__navbar--left">{notes.length} notes</div>
+                    <div className="notesNav__navbar--right">sort - filter</div>
+                </nav>
             </header>
-            <nav className="notesNav__navbar">
-                <div className="notesNav__navbar--l"># notes</div>
-                <div className="notesNav__navbar--right">sort - filter</div>
-            </nav>
+            
             <section className="notesNav__indexSection">
                 <ul>
                     {noteItems}

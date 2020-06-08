@@ -12,13 +12,16 @@ class NoteEditorContainer extends React.Component {
     }
 
     render() {
-        const {action, note, match} = this.props;
+        const {updateNote, note, match} = this.props;
 
         if(!note) {
             return(
                 <NoteEditor
                     // when youre ready to create a note
                     // action={createNote}
+                    key={match.params.noteId}
+                    updateNote={updateNote}
+                    
                 />
             )
         }
@@ -26,7 +29,7 @@ class NoteEditorContainer extends React.Component {
         return (
             <NoteEditor
                 key={match.params.noteId}
-                action={updateNote}
+                updateNote={updateNote}
                 note={note}
             />
         )
@@ -34,25 +37,19 @@ class NoteEditorContainer extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         note: state.entities.notes[ownProps.match.params.noteId]
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    // debugger
     return {
-        fetchNote: (noteId) => dispatch(fetchNote(noteId)),
-        updateNote: (note) => dispatch(updateNote(note)),
-        // createNote: (note) => dispatch(createNote(note))
-
+        fetchNote: (note) => dispatch(fetchNote(note)),
+        updateNote: (note) => dispatch(updateNote(note))
     }
 }
 
 export default connect(
     mapStateToProps, 
     mapDispatchToProps,
-    // null,
-    // {pure: false}
     )(NoteEditorContainer)

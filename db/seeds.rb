@@ -76,7 +76,7 @@ Note.create!(
     },
     {
         title: 'my first note',
-        body: 'Laboris occaecat sit excepteur non culpa ipsum culpa do aliquip labore do. Amet esse aliquip officia aliquip sint cupidatat officia nostrud qui. Enim deserunt mollit minim eiusmod ut veniam minim elit anim commodo. Eiusmod velit officia non consequat excepteur irure dolor voluptate dolor. Labore elit qui nulla est duis id aliqua do officia exercitation do non ullamco culpa.'
+        body: 'Velit quis dolor officia laboris culpa qui. Duis velit culpa fugiat aute laborum tempor id. Consequat excepteur Lorem adipisicing magna cillum Lorem elit sit amet aliqua pariatur laborum in ut. Minim magna sit in quis irure eu proident cillum. Adipisicing velit consectetur consequat reprehenderit consectetur magna. Aute amet adipisicing voluptate qui. Incididunt cillum nisi et aliqua excepteur culpa fugiat aliquip.'
     }
 ]
 )

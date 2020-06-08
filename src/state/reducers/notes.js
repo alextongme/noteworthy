@@ -8,7 +8,11 @@ export default (prevState = {}, action) => {
     Object.freeze(prevState);
     switch(action.type) {
         case RECEIVE_NOTES:
-            return action.notes;
+            const newNotes = {};
+            Object.values(action.notes).forEach((note) => {
+                newNotes[note.id] = note;
+            })
+            return Object.assign({}, prevState, newNotes);
         case RECEIVE_NOTE:
             const newNote = { [action.note.id]: action.note };
             return Object.assign({}, prevState, newNote);
