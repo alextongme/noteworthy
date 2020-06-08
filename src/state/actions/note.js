@@ -42,7 +42,9 @@ export const fetchNote = (noteId) => (dispatch) => {
 };
 
 export const createNote = (note) => (dispatch) => {
+    // debugger
     return APIUtil.createNote(note).then((note) => {
+        // debugger
         return dispatch(receiveNote(note));
     });
 };

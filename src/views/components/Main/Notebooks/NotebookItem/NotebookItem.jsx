@@ -11,11 +11,8 @@ class NotebookItem extends React.Component {
             expanded: false,
             expandButton: "fas fa-chevron-circle-right chevron-right--notebooks",
             dropdown: false,
-            notebook: this.props.notebook
-            // state is not being redefined on notebook
         }
         this.cssName = props.cssName;
-        // this.state.notebook = props.notebook;
         this.openDropdown = props.openDropdown;
         this.currentUser = Object.values(props.users)[0];
 
@@ -26,24 +23,11 @@ class NotebookItem extends React.Component {
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.toggleNextDropdown = this.toggleNextDropdown.bind(this);
 
-        // this.dropdownItems = {
-        //     edit: "Rename notebook",
-        //     delete: "Delete notebook"
-        // }
     }
 
-    componentDidUpdate(prevProps) {
-        // debugger
-        if (this.props.notebook !== prevProps.notebook) {
-        
-            this.setState({
-                notebook: this.props.notebook
-            })
-          }
-    }
 
     time() {
-        const timestamp = this.state.notebook.updated_at;
+        const timestamp = this.props.notebook.updated_at;
         return (
             <td
                 className="notebooks__tableCol">
@@ -55,7 +39,7 @@ class NotebookItem extends React.Component {
     noteItems() {
         if(this.state.expanded === true) {
             return (
-                <NoteItemsContainer notebook={this.state.notebook} cssName={this.cssName} />
+                <NoteItemsContainer notebook={this.props.notebook} cssName={this.cssName} />
             );
         }
     }
@@ -96,12 +80,9 @@ class NotebookItem extends React.Component {
         if(this.state.dropdown === true) {
             return (
                 <DropdownContainer
-                    // onBlur={() => this.toggleDropdown()}
-                    // tabIndex="0"
                     toggleDropdown={this.toggleDropdown}
                     toggleNextDropdown={this.toggleNextDropdown}
-                    notebookId={this.state.notebook.id} 
-                    // toggleNextDropdown={this.toggleNextDropdown} 
+                    notebookId={this.props.notebook.id} 
 
                     />
             );
@@ -116,7 +97,7 @@ class NotebookItem extends React.Component {
                 dropdown: false,
             });
         } else {
-            this.props.editNotebookId(this.state.notebook.id);
+            this.props.editNotebookId(this.props.notebook.id);
             this.setState({
                 dropdown: true,
             });
@@ -132,9 +113,9 @@ class NotebookItem extends React.Component {
                         className="notebooks__tableCol">
                         <i className={this.state.expandButton} onClick={this.toggleNoteIndex} />
                         <NavLink
-                            to={`/main/notebooks/${this.state.notebook.id}/notes`}
+                            to={`/main/notebooks/${this.props.notebook.id}/notes`}
                             className="notebooks__links">
-                            {this.state.notebook.name}
+                            {this.props.notebook.name}
                         </NavLink>
                     </td>
 
@@ -154,15 +135,10 @@ class NotebookItem extends React.Component {
                         className="notebooks__tableCol">
                         <i 
                             className="fas fa-running"
-                            // onBlur={() => this.toggleDropdown()}
-                            // tabIndex="0"
                             onClick={this.toggleDropdown} 
                             />
-                            {/* onClick={this.toggleDropdown}> */}
-                        
                         {this.dropdown()}
                     </td>
-                    
                 </tr>
                 
                 {this.noteItems()}

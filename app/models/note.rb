@@ -32,7 +32,7 @@ class Note < ApplicationRecord
     # notebook associations
     has_many :notebook_notes,
     primary_key: :id,
-    foreign_key: :notebook_id,
+    foreign_key: :note_id,
     class_name: :NotebookNote
 
     has_many :notebooks,

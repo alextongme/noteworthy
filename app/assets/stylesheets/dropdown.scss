@@ -5,22 +5,23 @@
     // display: inline-block;
     display: block;
     z-index: 5;
-    background-color: white;
-    border-radius: 0.2vw;
+    background-color: red;
+    border-radius: 0.5vw;
   }
 
 .dropdown__rows {
     display: flex;
     flex-direction: column;
 //   width: 20vh;
-    background-color: white;
-
+    background-color: transparent;
     box-sizing: border-box;
     // padding: 1vw;
+
 }
 
 .dropdown__rows:hover {
     background-color: #F2F2F2;
+    // cursor: pointer;
 }
 
 .dropdown__button {
@@ -30,4 +31,5 @@
     border: none;
     background-color: none;
     padding: 1vw;
+    cursor: pointer;
 }  

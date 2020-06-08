@@ -30,7 +30,7 @@ export const updateNote = (note) => {
     }));
 }
 
-export const deleteNote = (note) => {
+export const deleteNote = (noteId) => {
     return ($.ajax({
         method: "DELETE",
         url: `api/notes/${noteId}`,

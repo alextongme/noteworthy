@@ -4,6 +4,8 @@ class Api::UsersController < ApplicationController
       @user = User.new(user_params)
 
       if @user.save # successful creation
+        # debugger
+        initialize_user(@user)
         log_in!(@user)
         render "api/users/show"
       else
@@ -15,5 +17,46 @@ class Api::UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:password, :email)
     end
+
+    def initialize_user(user)
+      # debugger
+      @notebook = Notebook.new({name: "Your first notebook!"})
+      @note = Note.new({title: "Your first note!", body: "Your first message!"})
+      # debugger
+      if (@notebook.save && @note.save)
+          user.default_notebook_id = @notebook.id
+          create_user_notebook_association(user.id, @notebook.id)
+          create_user_note_association(user.id, @note.id)
+          create_notebook_note_association(@notebook.id, @note.id)
+          # debugger
+      else
+          render json: [@notebook.errors.full_messages, @note.errors.full_messages], status: 422
+      end
+    end
+
+    def create_user_notebook_association(user_id, ntbk_id)
+      association = UserNotebook.new({
+          user_id: user_id,
+          notebook_id: ntbk_id
+      })
+      association.save
+    end
+
+    def create_user_note_association(user_id, nt_id)
+      association = UserNote.new({
+          user_id: user_id,
+          note_id: nt_id
+      })
+      association.save
+  end
+
+  def create_notebook_note_association(ntbk_id, nt_id)
+      association = NotebookNote.new({
+          notebook_id: ntbk_id,
+          note_id: nt_id
+      })
+      association.save
+  end
+
   end
   

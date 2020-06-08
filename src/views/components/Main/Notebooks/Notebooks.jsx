@@ -1,6 +1,6 @@
 import React from 'react';
 import NotebookItemContainer from './NotebookItem/NotebookItemContainer';
-import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { openModal } from '../../../../state/actions/modal';
 
 const Notebooks = () => {
@@ -27,7 +27,7 @@ const Notebooks = () => {
             <header className="notebooks__header">
                 <h1 className="notebooks__h1--title">Notebooks</h1>
 
-                    <input className="notebooks__search" placeholder="search for notebooks" />
+                    {/* <input className="notebooks__search" placeholder="search for notebooks" /> */}
             </header>
             <section className="notebooks__section--bottom">
                 <nav className="notebooks__nav">
@@ -72,11 +72,10 @@ const Notebooks = () => {
                         </tbody>
                     </table>
                 </div>
-                
-                {/* <PrivateRoute 
-                    exact path="/main/notebooks/:notebookId/edit" 
-                    component={EditFormContainer} 
-                /> */}
+
+                {/* <button onClick={openNav}>
+                    Expand
+                </button> */}
             </section>
         </div>
     );
