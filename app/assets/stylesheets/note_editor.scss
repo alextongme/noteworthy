@@ -1,20 +1,61 @@
 .noteEditor {
     // display: block;
-    width: 59vw;
-    height: 50vh;
+    // width: 71vw;
+    width: 100%;
     box-sizing: border-box;
+    // width: 100%;
+    // height: 100%;
+    // background-color: red;
+    // box-sizing: border-box;
+    // height: auto;
+    // overflow: auto;
+    // position: relative;
+}
 
+.noteEditor__header {
+    display: flex;
+    height: 5vh;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1vw;
+    // font-size: 3rem;
+}
+
+.noteEditor__h2--header {
+    font-size: 1.5em;
+}
+
+.noteEditor__button--action {
+    font-size: 1.5em;
+}
+
+.noteEditor__input--title {
+    height: 5vh;
+    width: 100%;
+    padding: 1vw;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+.noteEditor__quillContainer {
+    // height: 90vh;
+    height: 100%;
+    // background-color: blue;
+    box-sizing: border-box;
 }
 
 .noteEditor__quill {
     // why is there padding on this height?
+    font-family: 'Raleway';
+    // font-size: 30px;
     height: 100%;
 }
 
 // quill editor styles for showing to user
 // bold
 strong {
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 // italics
@@ -22,16 +63,4 @@ em {
     font-style: italic;
 }
 
-.noteEditor__header {
-    display: flex;
-    justify-content: space-between;
 
-    box-sizing: border-box;
-    padding: 1vw;
-}
-
-.noteEditor__input--title {
-    width: 100%;
-    border: none;
-    outline: none;
-}

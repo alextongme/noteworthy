@@ -61,10 +61,10 @@ class NoteEditor extends React.Component {
     
 
         return (
-            <>
+            
             <div className="noteEditor">
                 <header className="noteEditor__header">
-                        <h2>{this.props.notebookName}</h2>
+                    <h2 className="universal__h2 noteEditor__h2--header" >{this.props.notebookName}</h2>
                     <i className="fas fa-running noteEditor__button--action" />
                 </header>
                 <input
@@ -75,10 +75,12 @@ class NoteEditor extends React.Component {
                     placeholder="Untitled"
                     onBlur={() => this.props.updateNote(this.state)}
                 />
-                <div onBlur={() => this.props.updateNote(this.state)} >
+                <div 
+                    className="noteEditor__quillContainer" 
+                    onBlur={() => this.props.updateNote(this.state)} >
                     <ReactQuill 
                         className="noteEditor__quill" 
-                        theme="snow" 
+                        theme="snow"
                         value={this.state.body} 
                         onChange={this.handleQuillChange}
                         placeholder={"Start your note..."}
@@ -86,8 +88,7 @@ class NoteEditor extends React.Component {
                         formats={formats} />
                 </div>
             </div>
-                {/* <button onClick={() => this.props.updateNote(this.state)}>SAVE</button> */}
-            </>
+        
         );
     }
 }

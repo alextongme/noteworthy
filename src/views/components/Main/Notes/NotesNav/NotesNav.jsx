@@ -10,17 +10,29 @@ const NoteNav = ({notes}) => {
             title = "Untitled"
         }
         return (
-            <NavLink exact to={`/main/notes/${note.id}`} style={{ textDecoration: 'none' }} key={idx}>
-                <li className="noteNavItem">
-                    <h2 className="noteNavItem__title universal__h3">{title}</h2>
-                    {/* <p className="noteNavItem__body">{note.body}</p> */}
+            <div className="noteNav__LinkContainer" key={idx}>
+            <NavLink 
+                to={`/main/notes/${note.id}`} 
+                style={{ textDecoration: 'none' }} 
+                key={idx}
+                className="noteNavItem"
+                activeClassName="noteNavItem--active">
+            
+                
+                <div className="noteNavItem__bodyContainer">
+                    <h2 className="noteNavItem__title">
+                    {title}
+                    </h2>
                     <ReactQuill
-                        className="noteNavItem__body"
-                        value={note.body}
-                        readOnly={true}
-                        theme={"bubble"} />
-                </li>
+                            className="noteNavItem__body"
+                            value={note.body}
+                            readOnly={true}
+                            theme={"bubble"} />
+                </div>
             </NavLink>
+
+            </div>
+            
         );
     });
     
@@ -30,14 +42,13 @@ const NoteNav = ({notes}) => {
                 All notes
                 <nav className="notesNav__navbar universal__h3">
                     <div className="notesNav__navbar--left">{notes.length} notes</div>
-                    <div className="notesNav__navbar--right">sort - filter</div>
+                    {/* <div className="notesNav__navbar--right">sort - filter</div> */}
                 </nav>
             </header>
             
             <section className="notesNav__indexSection">
-                <ul>
-                    {noteItems}
-                </ul>
+                {noteItems}
+               
             </section>
         </div>
     );

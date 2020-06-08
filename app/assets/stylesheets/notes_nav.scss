@@ -1,19 +1,22 @@
 .notesNav {
     background-color: #F8F8F8;
-    width: 400px;
-    height: 100%;
+    border: 0.001vw solid #dddbdb;
+    width: 500px;
+    height: 100vh;
     margin-left: 250px;
+    box-sizing: border-box;
     transition: margin-left 0.6s;
 }
 
 .notesNavClosed {
     transition: margin-left 0.6s;
+    // width: 330px;
     margin-left: 80px;
 }
 
 .notesNav__header {
     width: 100%;
-    height: 16vh;
+    height: 8vh;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -28,53 +31,69 @@
     justify-content: space-between;
     align-items: center;
     
-    height: 8vh;
+    height: 4vh;
 }
 
 .notesNav__indexSection {
+    // width: 100%;
+    height: 92vh;
+    // // border: 1px solid red;
+    // box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+.noteNav__LinkContainer {
+    border: 1px solid #dddbdb;
+    // border: 2px solid black;
+    // box-sizing: border-box;
+    height: 200px;
     width: 100%;
-    height: 84vh;
-    // border: 1px solid red;
-    overflow: scroll;
-}
-
-.notesNav__navbar--left {
-    // margin-left: 1vw;
-}
-
-.notesNav__navbar--right {
-    // margin-right: 1vw;
+    box-sizing: border-box;
 }
 
 .noteNavItem {
-    width: 100%;
-    height: 8vw;
-    padding: 1vw;
+
+}
+
+.noteNavItem--active {
+    font-weight: 700;
+}
+
+.noteNavItem__bodyContainer {
+    background: none;
+    height: 100%;
     box-sizing: border-box;
-    border: 0.001vw solid #dddbdb;
+}
+
+.noteNavItem__body {
+    padding: 30px;
+    box-sizing: border-box;
     overflow: hidden;
 }
 
 .noteNavItem__title {
-    font-weight: 700;
+    font-family: "Raleway";
+    font-size: 1.3em;
+    padding-top: 20px;
+    padding-left: 20px;
+    white-space: nowrap;
     color: black;
 }
 
-.noteNavItem__body {
-    font-size: 1.5vw;
-    cursor: pointer;
-    color: black;
-    // height: 4vh;
-    overflow: hidden;
-    white-space: nowrap; 
-    text-overflow: ellipsis;
+.ql-bubble {
+    box-sizing: border-box;
+    height: 50px;
 }
 
 .ql-bubble .ql-editor {
+    height: inherit;
+    background: none;
     font-family: 'Raleway';
-    font-weight: 400;
-    font-size: 0.95vw;
-    width: 100%;
+    font-weight: 100;
+    color: black;
+    font-size: 1em;
+    height: 50px;
     overflow: hidden;
     cursor: pointer;
+    padding: 0;
 }

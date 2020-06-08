@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
     // passes back the current user using the session.id to identify user
     return {
         users: state.entities.users,
-        session: state.session.id
+        session: state.session.id,
+        firstNote: state.entities.notes
     }
 };
 
