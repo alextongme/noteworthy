@@ -95,11 +95,18 @@
     display: flex;
     // align-items: flex-end;
     align-items: center;
+    // cursor: pointer;
 }
 
 .notebooks__button--addImage {
-    width: 1vw;
+    width: 2vw;
     filter: brightness(0) saturate(100%) invert(30%) sepia(59%) saturate(5655%) hue-rotate(116deg) brightness(95%) contrast(74%);
+    cursor: pointer;
+}
+
+.notebooks__button--addImage:hover {
+    filter: brightness(0) saturate(100%) invert(65%) sepia(91%) saturate(798%) hue-rotate(358deg) brightness(99%) contrast(90%);
+    animation: rotation 1.5s infinite linear;
 }
 
 .notebooks__button--add {
@@ -111,6 +118,7 @@
     // outline: none;
     background-color: transparent;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .notebooks__button--add:hover {

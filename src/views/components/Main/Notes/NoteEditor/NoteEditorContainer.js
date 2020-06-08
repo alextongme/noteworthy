@@ -4,47 +4,38 @@ import { fetchNote, updateNote } from '../../../../../state/actions/note'
 import NoteEditor from './NoteEditor'
 
 class NoteEditorContainer extends React.Component {
-    componentDidMount() {
-        if(this.props.match.params.noteId) {
-            let currentNote = this.props.match.params.noteId;
-            this.props.fetchNote(currentNote);
-        }
-    }
-
     render() {
-        const {updateNote, note, match} = this.props;
-
+        const {notebooks, updateNote, note, match} = this.props;
+        
         if(!note) {
-            return(
+            return (null);
+        }
+        else {
+            const notebookName = notebooks[note.notebook_ids[0]].name;
+            return (
                 <NoteEditor
-                    // when youre ready to create a note
-                    // action={createNote}
                     key={match.params.noteId}
                     updateNote={updateNote}
-                    
+                    note={note}
+                    notebookName={notebookName}
                 />
             )
         }
-        
-        return (
-            <NoteEditor
-                key={match.params.noteId}
-                updateNote={updateNote}
-                note={note}
-            />
-        )
     }
 }
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
     return {
-        note: state.entities.notes[ownProps.match.params.noteId]
+        note: state.entities.notes[ownProps.match.params.noteId],
+        // how can i grab the notebook name without grabbing the entire slice of notebooks?
+        notebooks: state.entities.notebooks
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchNote: (note) => dispatch(fetchNote(note)),
+        // fetchNote: (note) => dispatch(fetchNote(note)),
         updateNote: (note) => dispatch(updateNote(note))
     }
 }

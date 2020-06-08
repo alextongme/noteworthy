@@ -6,11 +6,6 @@ class NoteEditor extends React.Component {
         super(props);
         if(props.note) {
             this.state = props.note;
-        } else {
-            this.state = {
-                title: "",
-                body: "",
-            }
         }
         this.handleQuillChange = this.handleQuillChange.bind(this);
     }
@@ -32,8 +27,10 @@ class NoteEditor extends React.Component {
     componentDidMount() {
         // debugger
         if(this.props.note) {
-            this.autosaveInterval = setInterval(() => (this.props.updateNote(this.state)), 10000);
+            this.autosaveInterval = setInterval(() => (this.props.updateNote(this.state)), 20000);
         }
+
+        this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
     }
     
     componentWillUnmount() {
@@ -41,6 +38,7 @@ class NoteEditor extends React.Component {
             this.props.updateNote(this.state);
             clearInterval(this.autosaveInterval);
         }
+        window.removeEventListener('beforeunload', this.saveOnClose);
     }
 
     render() {
@@ -66,25 +64,27 @@ class NoteEditor extends React.Component {
             <>
             <div className="noteEditor">
                 <header className="noteEditor__header">
-                        <input
-                            type='text'
-                            className="universal__input" 
-                            value={this.state.title} 
-                            onChange={this.handleChange('title')}
-                            placeholder="Untitled"
-                            />
-                        <i className="fas fa-running noteEditor__button--action" />
+                        <h2>{this.props.notebookName}</h2>
+                    <i className="fas fa-running noteEditor__button--action" />
                 </header>
-
-                <ReactQuill 
-                    className="noteEditor__quill" 
-                    theme="snow" 
-                    value={this.state.body} 
-                    onChange={this.handleQuillChange}
-                    placeholder={"Start your note..."}
-                    modules={modules}
-                    formats={formats}
-                />;
+                <input
+                    type='text'
+                    className="universal__h2 noteEditor__input--title" 
+                    value={this.state.title} 
+                    onChange={this.handleChange('title')}
+                    placeholder="Untitled"
+                    onBlur={() => this.props.updateNote(this.state)}
+                />
+                <div onBlur={() => this.props.updateNote(this.state)} >
+                    <ReactQuill 
+                        className="noteEditor__quill" 
+                        theme="snow" 
+                        value={this.state.body} 
+                        onChange={this.handleQuillChange}
+                        placeholder={"Start your note..."}
+                        modules={modules}
+                        formats={formats} />
+                </div>
             </div>
                 {/* <button onClick={() => this.props.updateNote(this.state)}>SAVE</button> */}
             </>

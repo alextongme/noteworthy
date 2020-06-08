@@ -14,6 +14,7 @@ class Api::NotesController < ApplicationController
 
         if @note.save
             create_user_note_association(current_user.id, @note.id)
+            create_notebook_note_association(current_user.default_notebook_id, @note.id)
         else
             render json: @notebook.errors.full_messages, status: 422
         end
@@ -39,6 +40,14 @@ class Api::NotesController < ApplicationController
     def create_user_note_association(user_id, nt_id)
         association = UserNote.new({
             user_id: user_id,
+            note_id: nt_id
+        })
+        association.save
+    end
+
+    def create_notebook_note_association(ntbk_id, nt_id)
+        association = NotebookNote.new({
+            notebook_id: ntbk_id,
             note_id: nt_id
         })
         association.save

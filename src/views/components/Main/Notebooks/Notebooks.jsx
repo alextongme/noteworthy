@@ -1,6 +1,6 @@
 import React from 'react';
 import NotebookItemContainer from './NotebookItem/NotebookItemContainer';
-import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { openModal } from '../../../../state/actions/modal';
 
 const Notebooks = () => {
