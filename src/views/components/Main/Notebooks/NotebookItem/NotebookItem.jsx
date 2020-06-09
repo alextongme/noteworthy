@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import NoteItemsContainer from '../NoteItems/NoteItemsContainer';
 import DropdownContainer from '../../Dropdown/DropdownContainer';
+import * as ComUtil from '../../../utils/utils';
 
 class NotebookItem extends React.Component {
     constructor(props) {
@@ -27,12 +28,11 @@ class NotebookItem extends React.Component {
 
 
     time() {
-        const timestamp = this.props.notebook.updated_at;
+        const timestamp = ComUtil.time(this.props.notebook.updated_at);
         return (
-            <td
-                className="notebooks__tableCol">
-                    {timestamp.slice(5, 7)}-{timestamp.slice(8, 10)}-{timestamp.slice(0, 4)}
-            </td>);
+            <td className="notebooks__tableCol">
+                {timestamp}
+            </td>)
     }
 
     ////// showing/hiding notes

@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { fetchNote, updateNote } from '../../../../../state/actions/note'
+import { updateNote, deleteNote } from '../../../../../state/actions/note'
 import NoteEditor from './NoteEditor'
 
 class NoteEditorContainer extends React.Component {
     render() {
-        const {notebooks, updateNote, note, match} = this.props;
+        const {notebooks, deleteNote, updateNote, note, match} = this.props;
         
-        if(!note) {
+        if(!note || Object.keys(notebooks).length === 0) {
             return (null);
         }
         else {
@@ -15,6 +15,7 @@ class NoteEditorContainer extends React.Component {
             return (
                 <NoteEditor
                     key={match.params.noteId}
+                    deleteNote={deleteNote}
                     updateNote={updateNote}
                     note={note}
                     notebookName={notebookName}
@@ -36,7 +37,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         // fetchNote: (note) => dispatch(fetchNote(note)),
-        updateNote: (note) => dispatch(updateNote(note))
+        updateNote: (note) => dispatch(updateNote(note)),
+        deleteNote: (note) => dispatch(deleteNote(note))
     }
 }
 

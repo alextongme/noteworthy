@@ -49,8 +49,7 @@ const Sidebar = ({createNote, session, users, logout, firstNote}) => {
                         className="sidebar__username">
                         {currentUser.first_name} {currentUser.last_name}
                     </h1>
-                    <i 
-                        className="fas fa-chevron-circle-down chevron-down--sidebar"></i>
+                    {/* <i className="fas fa-chevron-circle-down chevron-down--sidebar" /> */}
                 </div>
                 {/* search input bar */}
 

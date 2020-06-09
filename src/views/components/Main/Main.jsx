@@ -59,7 +59,7 @@ class Main extends React.Component {
 
                 {/* show all notes this notebook contains */}
                 <PrivateRoute 
-                    exact path='/main/notebooks/:notebookId/notes' 
+                    path='/main/notebooks/:notebookId/notes' 
                     component={NotesNavContainer}
                 />
                 <PrivateRoute 
@@ -67,12 +67,10 @@ class Main extends React.Component {
                     component={NoteEditorContainer}
                 />
 
-                {/* show all notes */}
+                {/* show all notes nav, and a specific note when clicked */}
                 <PrivateRoute 
                     path='/main/notes' 
                     component={NotesNavContainer} />
-
-                {/* show a specific note */}
                 <PrivateRoute
                     exact path='/main/notes/:noteId'
                     component={NoteEditorContainer} />

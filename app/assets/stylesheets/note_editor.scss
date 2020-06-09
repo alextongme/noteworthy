@@ -9,35 +9,53 @@
     // padding: 30px;
     box-sizing: border-box;
     display: grid;
+    padding: 30px;
 }
 
 .noteEditor__header {
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    margin-top: 10px;
-    margin-left: 10px;
+    // margin-top: 10px;
+    // margin-left: 10px;
+    // margin: 30px;
     grid-row: 1 / 2;
 
 }
 
+.noteEditor__icons {
+    color: #01A82D;
+    cursor: none;
+}
+
+
 .noteEditor__h2--header {
     font-size: 1.5em;
     font-weight: 700;
-    
+    cursor: none;
+    margin-left: 10px;
 }
 
 .noteEditor__button--action {
+    transition: 1s;
+    font-size: 1.5em;
+}
+
+.noteEditor__button--action:hover {
+    transition: 1s;
+    color: #01A82D;
     font-size: 1.5em;
 }
 
 .noteEditor__input--title {
+    margin-left: 10px;
     width: 100%;
     grid-row: 2 / 3;
-    box-sizing: border-box;
+    // box-sizing: border-box;
     border: none;
     outline: none;
-    margin-left: 10px;
+    // margin-left: 10px;
+    // margin-left: 30px;
 }
 
 .noteEditor__quillContainer {
@@ -56,6 +74,7 @@
 
 .ql-editor {
     height: 500px !important;
+    // font-family: "Signerica_Fat";
 }
 
 
@@ -81,7 +100,34 @@
     align-items: flex-end;
 }
 
+.noteEditor__button {
+    margin-left: 1vw;
+    // height: 1.9vw;
+    width: 1vw;
+    opacity: 1;
+    // filter: invert(1);
+}
 
+.noteEditor__button:hover {
+    opacity: 0.5;
+}
+
+.noteEditor__link--personalWeb {
+    font-family: 'Signerica_Fat';
+    text-decoration: none;
+    // color: red;
+    font-size: 1vw;
+    
+    // text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff073a, 0 0 0.5em #ff073a, 0 0 0.1em #ff073a, 0 10px 3px #ff073a;
+    color: red;
+    animation: neon .08s ease-in-out infinite alternate;
+    // animation: blink linear infinite 10s;
+}
+
+.noteEditor__link--personalWeb:hover {
+    animation: none;
+    color:black;
+}
 
 
 // quill editor styles for showing to user

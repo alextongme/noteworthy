@@ -12,7 +12,7 @@ class Notebook < ApplicationRecord
     # user associations
     has_many :user_notebooks,
     primary_key: :id,
-    foreign_key: :user_id,
+    foreign_key: :notebook_id,
     class_name: :UserNotebook
 
     has_many :users, 
