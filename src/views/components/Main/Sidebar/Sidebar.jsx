@@ -25,7 +25,11 @@ const Sidebar = ({createNote, session, users, logout, firstNote}) => {
         // debugger
         document.getElementsByClassName("sidebar")[0].classList.toggle("sidebarClosed");
         // document.getElementsByClassName("notebooks")[0].classList.toggle("notebooksClosed");
-        document.getElementsByClassName("notesNav")[0].classList.toggle("notesNavClosed");
+        if(document.getElementsByClassName("notesNav").length !== 0) {
+            document.getElementsByClassName("notesNav")[0].classList.toggle("notesNavClosed");
+        } else {
+            document.getElementsByClassName("notebooks")[0].classList.toggle("notebooksClosed");
+        }
     }
 
     function createNoteAndRedirect() {
@@ -38,9 +42,9 @@ const Sidebar = ({createNote, session, users, logout, firstNote}) => {
 
     return (
         <div className="sidebar">
-            <ul className="sidebar__listContainer">
-                <div className="sidebar__userContainer" onClick={() => (null)}>
-                    <i className="fas fa-user-circle sidebar__userLogo" />
+            {/* <ul className="sidebar__listContainer"> */}
+                <div className="sidebar__navlink" onClick={() => (null)}>
+                    <i className="fas fa-user-circle sidebar__icons" />
                     <h1 
                         className="sidebar__username">
                         {currentUser.first_name} {currentUser.last_name}
@@ -54,16 +58,15 @@ const Sidebar = ({createNote, session, users, logout, firstNote}) => {
                     className="sidebar__search" 
                     placeholder="search not functional" 
                 /> */}
-                    <div 
-                        className="sidebar__addContainer"
-                        onClick={() => createNoteAndRedirect()}>
-                        <img 
-                            src={window.addButton} className="sidebar__button--add sidebar__icons" />
-                        <h1 
-                            className="sidebar__add">
-                            New note
-                        </h1>
-                    </div>
+                <div 
+                    className="sidebar__navlink"
+                    onClick={() => createNoteAndRedirect()}>
+                    <i className="far fa-edit sidebar__icons"></i>
+                    {/* <h1  */}
+                        {/* // className="sidebar__add"> */}
+                        New note
+                    {/* </h1> */}
+                </div>
                 <NavLink 
                     to="/main/notebooks" 
                     className="sidebar__navlink"
@@ -80,19 +83,16 @@ const Sidebar = ({createNote, session, users, logout, firstNote}) => {
                     Notes
                     {/* <Redirect to={`/main/notes/${firstNoteId()}`} /> */}
                 </NavLink>
-            </ul>
+            {/* </ul> */}
 
-            <li className="sidebar__navlink">
-                <button 
-                    onClick={logout} 
-                    className="sidebar__button--logout">
-                    Logout
-                </button>
+            <li className="sidebar__navlink" onClick={logout}>
+                <i className="fas fa-sign-out-alt sidebar__icons" />
+                Logout
             </li>
-            <li className="sidebar__navlink">
-                <button onClick={toggleSidebar} className="universal__button">
-                    Close
-                </button>
+
+            <li className="sidebar__navlink sidebar__navlink--expand" onClick={toggleSidebar} >
+                Toggle
+                <i class="fas fa-arrows-alt-h sidebar__icons" ></i>
             </li>
         </div>
     );

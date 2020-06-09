@@ -80,6 +80,11 @@
         transform: translateX(-3px);
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 // .threed
 // {
 //         box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.12), 

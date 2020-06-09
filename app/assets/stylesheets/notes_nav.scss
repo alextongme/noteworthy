@@ -1,27 +1,27 @@
 .notesNav {
     background-color: #F8F8F8;
-    border: 0.001vw solid #dddbdb;
+    // border: 0.001vw solid #dddbdb;
     width: 500px;
     height: 100vh;
     margin-left: 250px;
     box-sizing: border-box;
-    transition: margin-left 0.6s;
+    transition: margin-left 0.5s;
 }
 
 .notesNavClosed {
-    transition: margin-left 0.6s;
+    transition: margin-left 0.5s;
     // width: 330px;
-    margin-left: 80px;
+    margin-left: 44px;
 }
 
 .notesNav__header {
     width: 100%;
-    height: 8vh;
+    height: 14vh;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    justify-content: flex-end;
-    padding-left: 1.5vw;
+    justify-content: space-around;
+    padding-left: 36px;
     padding-right: 1.5vw;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .noteNav__LinkContainer {
-    border: 1px solid #dddbdb;
+    border-top: 1px solid #dddbdb;
     // border: 2px solid black;
     // box-sizing: border-box;
     height: 200px;
@@ -52,7 +52,7 @@
 }
 
 .noteNavItem {
-
+    box-sizing: border-box;
 }
 
 .noteNavItem--active {
@@ -74,8 +74,8 @@
 .noteNavItem__title {
     font-family: "Raleway";
     font-size: 1.3em;
-    padding-top: 20px;
-    padding-left: 20px;
+    padding-top: 36px;
+    padding-left: 36px;
     white-space: nowrap;
     color: black;
 }

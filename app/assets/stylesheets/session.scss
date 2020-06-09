@@ -13,41 +13,22 @@
     width: 30vw;
     padding-top: 6vh;
     padding-bottom: 6vh;
-    // height: auto;
-    // box-sizing: border-box;
-    // padding-top: 4vh;
-    // padding-bottom: 4vh;
     background-color: rgba(255, 255, 255, 0.7);
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     align-items: center;
     border-radius: 0.1vw;
-    // box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.12), 
-    //             4px 4px 4px 4px rgba(0,0,0,0.12), 
-    //             6px 6px 6px 6px rgba(0,0,0,0.12), 
-    //             10px 10px 10px 10px rgba(0,0,0,0.12),
-    //             18px 18px 18px 18px rgba(0,0,0,0.12);
 }
-
-.sessionForm__section--form:hover {
-    // box-shadow: none;
-    // background-color: rgba(255, 255, 255, 1);
-}
-
 
 //////////// session form image and title
 .sessionForm__section--header {
-    // margin-top: 6vh;
     width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    // flex-wrap: wrap;
 }
 
 .sessionForm__logo {
-    // margin-top: 6vh;
     height: 7vh;
     animation: rotation 10s infinite linear;
     margin-top: 3vh;
@@ -68,7 +49,6 @@
 }
 
 .sessionForm__h3--create {
-    // padding-top: 2vh;
     margin-top: 4vh;
     font-size: 1vw;
     font-weight: 400;
@@ -112,29 +92,19 @@
     font-weight: 400;
     font-size: 0.9vw;
     padding: 1vh;
-    // line-height: 200%;
 }
 
 .sessionForm__button {
     width: 100%;
     margin-top: 1.4vh;
-    // margin-top: 2vh;
     outline: none;
     color: white;
     background: #269814;
-    // height: 5vh;
 }
-
-// .sessionForm__h2 {
-//     font-size: 1.4vw;
-//     font-family: "Raleway";
-//     line-height: 110%;
-// }
 
 .sessionForm__login {
     text-decoration: none;
     color: #01A82D;
-    // line-height: 160%;
     font-size: 1vw;
 }
 

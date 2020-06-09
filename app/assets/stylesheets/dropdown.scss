@@ -1,12 +1,10 @@
 .dropdown {
     position: absolute;
-    // right: 4vw;
     right: 4vw;
-    // display: inline-block;
     display: block;
     z-index: 5;
-    background-color: red;
-    border-radius: 0.5vw;
+    background-color: #F2F2F2;
+    border-radius: 0.9vw;
   }
 
 .dropdown__rows {
@@ -19,17 +17,25 @@
 
 }
 
-.dropdown__rows:hover {
-    background-color: #F2F2F2;
-    // cursor: pointer;
-}
+// .dropdown__rows:hover {
+//     background-color: black;
+//     color: white;
+//     // cursor: pointer;
+// }
+
 
 .dropdown__button {
     background: transparent;
     // color: black;
     font-weight: 700;
     border: none;
+    border-radius: 0.9vw;
     background-color: none;
     padding: 1vw;
     cursor: pointer;
 }  
+
+.dropdown__button:hover {
+    background-color: black;
+    color: white;
+}
