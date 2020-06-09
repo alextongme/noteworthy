@@ -20,24 +20,25 @@ class NoteEditor extends React.Component {
         });
     }
 
-    handleQuillChange(value) {
+    handleQuillChange(content, delta, source, editor) {
         this.setState({
-            body : value
+            body : content
         })
+        console.log(editor.getLength())
     }
 
     showToolbar() {
-        document.getElementsByClassName('ql-toolbar ql-snow')[0].classList.add('ql-toolbar--show');
+        document.getElementsByClassName('ql-snow')[0].classList.add('ql-toolbar--show');
     }
 
     hideToolbarAndSave() {
         this.props.updateNote(this.state);
-        document.getElementsByClassName('ql-toolbar ql-snow')[0].classList.remove('ql-toolbar--show');
+        document.getElementsByClassName('ql-snow')[0].classList.remove('ql-toolbar--show');
     }
 
     componentDidMount() {
         if(this.props.note) {
-            this.autosaveInterval = setInterval(() => (this.props.updateNote(this.state)), 20000);
+            // this.autosaveInterval = setInterval(() => (this.props.updateNote(this.state)), 20000);
         }
 
         this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
@@ -46,7 +47,7 @@ class NoteEditor extends React.Component {
     componentWillUnmount() {
         if(this.props.note) {
             this.props.updateNote(this.state);
-            clearInterval(this.autosaveInterval);
+            // clearInterval(this.autosaveInterval);
         }
         window.removeEventListener('beforeunload', this.saveOnClose);
     }
@@ -54,11 +55,11 @@ class NoteEditor extends React.Component {
     render() {
         const modules = {
             toolbar: [
-                [{ 'header': [1, 2, false] }],
-                ['blockquote', 'code-block'],
-                ['bold', 'italic', 'underline','strike', 'blockquote'],
+                [{ 'font': [] }],
+                [{ 'size': ['small', false, 'large', 'huge'] }],
+                ['bold', 'italic', 'underline','strike', 'blockquote', 'code-block'],
                 [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-                // [{ 'color': [] }, { 'background': [] }],
+                [{ 'color': [] }, { 'background': [] }],
                 // [{ 'font': [] }],
                 // [{ 'align': [] }],
                 ['link', 'image'],
@@ -67,9 +68,11 @@ class NoteEditor extends React.Component {
             };
         
         const formats = [
-            'header',
-            'bold', 'italic', 'underline', 'strike', 'blockquote',
+            'font',
+            'size',
+            'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
             'list', 'bullet', 'indent',
+            'color', 'background',
             'link', 'image'
         ];
     
@@ -96,13 +99,14 @@ class NoteEditor extends React.Component {
                     onBlur={() => this.hideToolbarAndSave() } 
                     onFocus={() => this.showToolbar()}>
                     <ReactQuill 
-                        className="noteEditor__quill" 
+                        // className="noteEditor__quill" 
                         theme="snow"
                         value={this.state.body} 
                         onChange={this.handleQuillChange}
                         placeholder={"Start your note..."}
                         modules={modules}
                         formats={formats} />
+                    
                 </div>
 
                 <section className="noteEditor__footer">

@@ -92,7 +92,7 @@ const Sidebar = ({createNote, session, users, logout, firstNote}) => {
 
             <li className="sidebar__navlink sidebar__navlink--expand" onClick={toggleSidebar} >
                 Toggle
-                <i class="fas fa-arrows-alt-h sidebar__icons" ></i>
+                <i className="fas fa-arrows-alt-h sidebar__icons" ></i>
             </li>
         </div>
     );
