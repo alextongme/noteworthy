@@ -13,6 +13,13 @@ const NoteNav = ({notes}) => {
             if(title === "") {
                 title = "Untitled"
             }
+
+            <ReactQuill
+            className="noteNavItem__body"
+            value={note.body}
+            readOnly={true}
+            theme={"bubble"} />
+
             return (
                 <div className="noteNav__LinkContainer" key={idx}>
                 <NavLink 
@@ -27,11 +34,7 @@ const NoteNav = ({notes}) => {
                         <h2 className="noteNavItem__title">
                         {title}
                         </h2>
-                        <ReactQuill
-                                className="noteNavItem__body"
-                                value={note.body}
-                                readOnly={true}
-                                theme={"bubble"} />
+                       
                     </div>
                 </NavLink>
 
