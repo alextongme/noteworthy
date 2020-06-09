@@ -18,6 +18,7 @@
 .notebooks__tableCol {
     vertical-align: middle;
     font-size: 0.9vw;
+    box-sizing: border-box;
 }
 
 .notebooks__links {
@@ -32,13 +33,15 @@
 }
 
 .notebooks__tableCol:first-child {
-    width: 40%;
+    width: 30%;
     padding-left: 2%;
+    // box-sizing: border-box;
 }
 
 .notebooks__tableCol:last-child {
     padding-right: 2%;
     text-align: right;
+    // box-sizing: border-box;
 }
 
 // ICONS
@@ -48,22 +51,27 @@
 }
 
 .fa-running:hover {
+    transition: 1s;
     color: #016d00;
 }
 
 .chevron-right--notebooks {
+    transition: 1s;
     font-size: 0.9vw;
 }
 
 .chevron-right--notebooks:hover {
+    transition: 1s;
     color: #016d00;
 }
 
 .chevron-down--notebooks {
+    transition: 1s;
     font-size: 0.9vw;
 }
 
 .chevron-down--notebooks:hover {
+    transition: 1s;
     color: #016d00;
 }
 

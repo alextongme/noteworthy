@@ -1,4 +1,12 @@
 .dropdown {
+    animation-name: stretch--down;
+    animation-duration: 0.3s; 
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-play-state: running; 
+
     position: absolute;
     right: 4vw;
     display: block;
@@ -27,7 +35,7 @@
 .dropdown__button {
     background: transparent;
     // color: black;
-    font-weight: 700;
+    font-weight: 400;
     border: none;
     border-radius: 0.9vw;
     background-color: none;

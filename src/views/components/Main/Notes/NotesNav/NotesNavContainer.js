@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import NotesNav from './NotesNav';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        notes: Object.values(state.entities.notes),
-        notebooks: Object.values(state.entities.notebooks),
+        notes: state.entities.notes,
+        notebooks: state.entities.notebooks,
     }
 }
 

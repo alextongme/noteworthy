@@ -60,8 +60,6 @@ class NoteEditor extends React.Component {
                 ['bold', 'italic', 'underline','strike', 'blockquote', 'code-block'],
                 [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
                 [{ 'color': [] }, { 'background': [] }],
-                // [{ 'font': [] }],
-                // [{ 'align': [] }],
                 ['link', 'image'],
                 ['clean']
             ],
@@ -80,8 +78,10 @@ class NoteEditor extends React.Component {
         return (
             <div className="noteEditor">
                 <header className="noteEditor__header">
-                    <h2 className="universal__h2 noteEditor__h2--header" >{this.props.notebookName}</h2>
-                    <i className="fas fa-running noteEditor__button--action" />
+                    <h2 className="universal__h2 noteEditor__h2--header" >
+                    <i className="fas fa-book noteEditor__icons" />&nbsp;{this.props.notebookName}</h2>
+                    {/* <i className="fas fa-running noteEditor__button--action" /> */}
+                    <i className="fas fa-trash-alt noteEditor__button--action" onClick={() => this.props.deleteNote(this.props.note.id)}/>
                 </header>
 
                 <input
@@ -110,14 +110,14 @@ class NoteEditor extends React.Component {
                 </div>
 
                 <section className="noteEditor__footer">
-                    <a href='http://www.tongsalex.com' className ="home__link--personalWeb">
+                    <a href='http://www.tongsalex.com' className ="noteEditor__link--personalWeb">
                         aT
                     </a>
                     <a href='http://www.github.com/tongsalex'>
-                        <img src={window.github} alt='github' className="home__button" />
+                        <img src={window.github} alt='github' className="noteEditor__button" />
                     </a>
                     <a href='http://www.linkedin.com/in/tongsalex'>
-                        <img src={window.linkedin} alt='linkedin' className="home__button" />
+                        <img src={window.linkedin} alt='linkedin' className="noteEditor__button" />
                     </a>
                 </section>
 

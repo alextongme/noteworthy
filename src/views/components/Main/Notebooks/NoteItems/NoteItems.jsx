@@ -1,5 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
+import * as ComUtil from '../../../utils/utils';
 
 const NoteItems = ({notebook, notes, users}) => {
     // debugger
@@ -23,6 +24,11 @@ const NoteItems = ({notebook, notes, users}) => {
         }
         
 
+        const time = () => {
+            const timestamp = ComUtil.time(currNote.updated_at);
+            return (timestamp)
+        }
+
         return (
             <tr key={idx} className={cssName}>
                 <td
@@ -42,7 +48,7 @@ const NoteItems = ({notebook, notes, users}) => {
 
                 <td
                     className="notebooks__tableCol notebookNoteItems__tableCol">
-                    {currNote.updated_at}
+                    {time()}
                 </td>
 
                 <td

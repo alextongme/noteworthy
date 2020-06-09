@@ -12,7 +12,7 @@ class Note < ApplicationRecord
     # user associations
     has_many :user_notes,
     primary_key: :id,
-    foreign_key: :user_id,
+    foreign_key: :note_id,
     class_name: :UserNote
 
     has_many :users, 
