@@ -10,22 +10,18 @@
 #
 class Tag < ApplicationRecord
     # user associations
-    has_many :user_tags,
+    belongs_to :author,
     primary_key: :id,
-    foreign_key: :user_id,
-    class_name: :UserTag
+    foreign_key: :author_id,
+    class_name: :User
 
-    has_many :users, 
-    through: :user_tags, 
-    source: :user
-
-    # notebook associations
-    has_many :user_tags,
+    # note associations
+    has_many :note_tags,
     primary_key: :id,
-    foreign_key: :user_id,
-    class_name: :UserTag
+    foreign_key: :tag_id,
+    class_name: :NoteTag
 
-    has_many :users, 
-    through: :user_tags, 
-    source: :user
+    has_many :notes, 
+    through: :note_tags, 
+    source: :note
 end

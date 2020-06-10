@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { closeModal } from '../../../../state/actions/modal';
 import NotebookCreateContainer from '../Notebooks/NotebookForm/CreateFormContainer';
 import NotebookEditContainer from '../Notebooks/NotebookForm/EditFormContainer';
+import Tags from '../Tags/Tags'
 
 const Modal = ({modal, closeModal}) => {
     
@@ -13,6 +14,9 @@ const Modal = ({modal, closeModal}) => {
     let component;
 
     switch (modal) {
+      case 'Open tags':
+        component = <Tags />
+        break;
       case 'Create notebook':
         component = <NotebookCreateContainer />;
         break;
@@ -25,7 +29,9 @@ const Modal = ({modal, closeModal}) => {
 
     return (
       <div className="modal__background" onClick={closeModal}>
+
         <section className="modal__child" onClick={(e) => {
+          // debugger
             return (e.stopPropagation());
             } }>
           { component }

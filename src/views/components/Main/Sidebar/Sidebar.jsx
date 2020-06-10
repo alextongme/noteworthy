@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink, useHistory, Redirect } from 'react-router-dom';
 
-
-const Sidebar = ({createNote, session, users, logout, firstNote}) => {
+const Sidebar = ({createNote, session, users, logout, firstNote, openTags}) => {
     const currentUser = users[session];
     let history = useHistory();
     
@@ -23,13 +22,21 @@ const Sidebar = ({createNote, session, users, logout, firstNote}) => {
     function toggleSidebar() {
         // firstNote
         // debugger
-        document.getElementsByClassName("sidebar")[0].classList.toggle("sidebarClosed");
-        // document.getElementsByClassName("notebooks")[0].classList.toggle("notebooksClosed");
-        if(document.getElementsByClassName("notesNav").length !== 0) {
-            document.getElementsByClassName("notesNav")[0].classList.toggle("notesNavClosed");
+        if(document.getElementsByClassName("main")[0].style.gridTemplateColumns === "55px 500px auto") {
+            // document.getElementsByClassName("sidebar")[0].classList.toggle("sidebarClosed");
+            document.getElementsByClassName("main")[0].style.gridTemplateColumns = "250px 500px auto";
         } else {
-            document.getElementsByClassName("notebooks")[0].classList.toggle("notebooksClosed");
+            // document.getElementsByClassName("sidebar")[0].classList.toggle("sidebarClosed");
+
+            document.getElementsByClassName("main")[0].style.gridTemplateColumns = "55px 500px auto";
+            
         }
+        // document.getElementsByClassName("notebooks")[0].classList.toggle("notebooksClosed");
+        // if(document.getElementsByClassName("notesNav").length !== 0) {
+        //     document.getElementsByClassName("notesNav")[0].classList.toggle("notesNavClosed");
+        // } else {
+        //     document.getElementsByClassName("notebooks")[0].classList.toggle("notebooksClosed");
+        // }
     }
 
     function createNoteAndRedirect() {
@@ -45,10 +52,10 @@ const Sidebar = ({createNote, session, users, logout, firstNote}) => {
             {/* <ul className="sidebar__listContainer"> */}
                 <div className="sidebar__navlink" onClick={() => (null)}>
                     <i className="fas fa-user-circle sidebar__icons" />
-                    <h1 
-                        className="sidebar__username">
+                    <h3 
+                        className="sidebar__titles">
                         {currentUser.first_name} {currentUser.last_name}
-                    </h1>
+                    </h3>
                     {/* <i className="fas fa-chevron-circle-down chevron-down--sidebar" /> */}
                 </div>
                 {/* search input bar */}
@@ -63,7 +70,7 @@ const Sidebar = ({createNote, session, users, logout, firstNote}) => {
                     <i className="far fa-edit sidebar__icons"></i>
                     {/* <h1  */}
                         {/* // className="sidebar__add"> */}
-                        New note
+                        <h3 className="sidebar__titles">New notes</h3>
                     {/* </h1> */}
                 </div>
                 <NavLink 
@@ -71,26 +78,30 @@ const Sidebar = ({createNote, session, users, logout, firstNote}) => {
                     className="sidebar__navlink"
                     activeClassName="sidebar__navlink--active">
                     <i className="fas fa-book sidebar__icons"></i>
-                    Notebooks
+                    <h3 className="sidebar__titles">Notebooks</h3>
                 </NavLink>
                 <NavLink
-                    // to={`/main/notes/${firstNoteId()}`}
-                    to={`/main/notes`}
+                    to={`/main/notes/${firstNoteId()}`}
+                    // to={`/main/notes`}
                     className="sidebar__navlink" 
                     activeClassName="sidebar__navlink--active">
+
                     <i className="fas fa-sticky-note sidebar__icons" /> 
-                    Notes
+                    <h3 className="sidebar__titles">Notes</h3>
                     {/* <Redirect to={`/main/notes/${firstNoteId()}`} /> */}
                 </NavLink>
-            {/* </ul> */}
+
+            <li className="sidebar__navlink" onClick={() => openTags()}>
+                <i class="fas fa-tags sidebar__icons"></i>
+                <h3 className="sidebar__titles">Tags</h3>
+            </li>
 
             <li className="sidebar__navlink" onClick={logout}>
                 <i className="fas fa-sign-out-alt sidebar__icons" />
-                Logout
+                <h3 className="sidebar__titles">Logout</h3>
             </li>
 
             <li className="sidebar__navlink sidebar__navlink--expand" onClick={toggleSidebar} >
-                Toggle
                 <i className="fas fa-arrows-alt-h sidebar__icons" ></i>
             </li>
         </div>

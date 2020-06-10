@@ -78,7 +78,7 @@ const NoteNav = (props) => {
                             {/* </div> */}
 
                         </NavLink>
-                    // </div>
+               
                     
                 );
             });

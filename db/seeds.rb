@@ -28,13 +28,6 @@ User.create!(
         first_name: 'demo',
         last_name: 'greatest',
         default_notebook_id: 1
-    },
-    {
-        username: 'alex', 
-        password: '123456', 
-        email: 'alex@gmail.com',
-        first_name: 'alex',
-        last_name: 'tong'
     }]
 )
 
@@ -115,8 +108,36 @@ UserNote.create!(
 ]
 )
 
-# Tag.create!(
-#     {
-#         name: 'appAcademy',
-#     }
-# )
+Tag.create!(
+    [{
+        name: 'App Academy',
+        author_id: 1
+    },
+    {
+        name: 'Lions',
+        author_id: 1
+    },
+    {
+        name: 'Redux',
+        author_id: 1
+    }]
+)
+
+NoteTag.create!(
+    [{
+        note_id: 1,
+        tag_id: 1
+    },
+    {
+        note_id: 2,
+        tag_id: 2
+    },
+    {
+        note_id: 1,
+        tag_id: 3
+    },
+    {
+        note_id: 2,
+        tag_id: 1
+    }]
+)

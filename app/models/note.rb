@@ -22,12 +22,12 @@ class Note < ApplicationRecord
     # tag associations
     has_many :note_tags,
     primary_key: :id,
-    foreign_key: :user_id,
+    foreign_key: :note_id,
     class_name: :NoteTag
 
     has_many :tags,
     through: :note_tags,
-    source: :note
+    source: :tag
 
     # notebook associations
     has_many :notebook_notes,

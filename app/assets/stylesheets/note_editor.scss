@@ -1,12 +1,9 @@
 .noteEditor {
-    // display: block;
-    // width: 71vw;
-    // width: calc(100% - 750px);
-    height: 100vh;
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
 
-    width: calc(100% - 750px);
-    grid-template-rows: 50px 80px auto 60px;
-    // padding: 30px;
+    grid-template-rows: 70px 80px auto 50px;
+  
     box-sizing: border-box;
     display: grid;
     padding: 30px;
@@ -16,9 +13,6 @@
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    // margin-top: 10px;
-    // margin-left: 10px;
-    // margin: 30px;
     grid-row: 1 / 2;
 
 }
@@ -33,57 +27,58 @@
     font-size: 1.5em;
     font-weight: 700;
     cursor: none;
-    margin-left: 10px;
+    padding-left: 12px;
 }
 
-.noteEditor__button--action {
+.noteEditor__button--trash {
     transition: 1s;
     font-size: 1.5em;
+    opacity: 0;
 }
 
-.noteEditor__button--action:hover {
+.noteEditor__button--trash:hover {
     transition: 1s;
     color: #01A82D;
     font-size: 1.5em;
 }
 
+.noteEditor__button--trash--show {
+    transition: 1s;
+    opacity: 1;
+}
+
+
+
 .noteEditor__input--title {
-    margin-left: 10px;
+
     width: 100%;
     grid-row: 2 / 3;
-    // box-sizing: border-box;
+
     border: none;
     outline: none;
-    // margin-left: 10px;
-    // margin-left: 30px;
+    padding-left: 12px;
 }
 
 .noteEditor__quillContainer {
     grid-row: 3 / 4;
    overflow: hidden;
-   border: none;
 }
 
-// .ql-snow {
-//     border: none !important;
-// }
+.noteEditor__quillContainer > .quill {
+    height: 1165px;
+}
 
 .ql-container {
     border: none !important;
 }
 
-.ql-editor {
-    height: 500px !important;
-    // font-family: "Signerica_Fat";
+.ql-snow .ql-editor {
+    height: inherit !important;
+    // border: 1px solid black !important;
 }
-
 
 .ql-toolbar {
     border: none !important;
-    // border-top: none !important;
-    // border-left: none !important;
-    // border-right: none !important;
-    // border-bottom: 1px solid red;
     opacity: 0;
     transition: 1s opacity;
 }
@@ -93,19 +88,34 @@
     transition: 1s opacity;
 }
 
+.ql-list {
+    width: 3vw !important;
+}
+
 .noteEditor__footer {
     grid-row: 4 / 5;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-end;
 }
 
+.footer__characterLength {
+    opacity: 0;
+    transition: 1s opacity;
+}
+
+.footer__characterLength--show{
+    opacity: 1;
+    transition: 1s opacity;
+}
+
+
 .noteEditor__button {
     margin-left: 1vw;
-    // height: 1.9vw;
+
     width: 1vw;
     opacity: 1;
-    // filter: invert(1);
+ 
 }
 
 .noteEditor__button:hover {
@@ -115,13 +125,13 @@
 .noteEditor__link--personalWeb {
     font-family: 'Signerica_Fat';
     text-decoration: none;
-    // color: red;
+
     font-size: 1vw;
     
-    // text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff073a, 0 0 0.5em #ff073a, 0 0 0.1em #ff073a, 0 10px 3px #ff073a;
+   
     color: red;
     animation: neon .08s ease-in-out infinite alternate;
-    // animation: blink linear infinite 10s;
+
 }
 
 .noteEditor__link--personalWeb:hover {
@@ -140,5 +150,3 @@ strong {
 em {
     font-style: italic;
 }
-
-

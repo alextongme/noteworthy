@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { logout } from '../../../../state/actions/session';
-import {createNote} from '../../../../state/actions/note'
+import {createNote} from '../../../../state/actions/note';
+import {openModal} from '../../../../state/actions/modal';
+// import {openTags} from '../../../../state/actions/'
 import Sidebar from './Sidebar';
 
 // takes in the current session and the entire users entities slice to match the logged in user to the specific user
@@ -15,6 +17,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        openTags: () => dispatch(openModal("Open tags")),
         createNote: (note) => dispatch(createNote(note)),
         logout: () => dispatch(logout()),
     }

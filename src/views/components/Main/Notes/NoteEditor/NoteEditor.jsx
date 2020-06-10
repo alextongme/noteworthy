@@ -7,8 +7,8 @@ class NoteEditor extends React.Component {
         if(props.note) {
             this.state = props.note;
         }
+        this.length = "Loading...";
         this.handleQuillChange = this.handleQuillChange.bind(this);
-        // this.showToolbar = this.showToolbar.bind(this);
         this.hideToolbarAndSave = this.hideToolbarAndSave.bind(this);
     }
 
@@ -24,16 +24,23 @@ class NoteEditor extends React.Component {
         this.setState({
             body : content
         })
-        console.log(editor.getLength())
+        // debugger
+        this.length = editor.getLength();
+        // debugger
     }
 
     showToolbar() {
         document.getElementsByClassName('ql-snow')[0].classList.add('ql-toolbar--show');
+        document.getElementsByClassName('footer__characterLength')[0].classList.add('footer__characterLength--show');
+
+        document.getElementsByClassName('noteEditor__button--trash')[0].classList.add('noteEditor__button--trash--show');
     }
 
     hideToolbarAndSave() {
         this.props.updateNote(this.state);
         document.getElementsByClassName('ql-snow')[0].classList.remove('ql-toolbar--show');
+        document.getElementsByClassName('footer__characterLength')[0].classList.remove('footer__characterLength--show');
+        document.getElementsByClassName('noteEditor__button--trash')[0].classList.remove('noteEditor__button--trash--show');
     }
 
     componentDidMount() {
@@ -81,7 +88,7 @@ class NoteEditor extends React.Component {
                     <h2 className="universal__h2 noteEditor__h2--header" >
                     <i className="fas fa-book noteEditor__icons" />&nbsp;{this.props.notebookName}</h2>
                     {/* <i className="fas fa-running noteEditor__button--action" /> */}
-                    <i className="fas fa-trash-alt noteEditor__button--action" onClick={() => this.props.deleteNote(this.props.note.id)}/>
+                    <i className="fas fa-trash-alt noteEditor__button--trash" onClick={() => this.props.deleteNote(this.props.note.id)}/>
                 </header>
 
                 <input
@@ -92,6 +99,7 @@ class NoteEditor extends React.Component {
                     placeholder="Untitled"
                     onBlur={() => this.hideToolbarAndSave() }
                     onFocus={() => this.showToolbar()}
+                    maxLength="40"
                 />
 
                 <div 
@@ -110,15 +118,20 @@ class NoteEditor extends React.Component {
                 </div>
 
                 <section className="noteEditor__footer">
-                    <a href='http://www.tongsalex.com' className ="noteEditor__link--personalWeb">
-                        aT
-                    </a>
-                    <a href='http://www.github.com/tongsalex'>
-                        <img src={window.github} alt='github' className="noteEditor__button" />
-                    </a>
-                    <a href='http://www.linkedin.com/in/tongsalex'>
-                        <img src={window.linkedin} alt='linkedin' className="noteEditor__button" />
-                    </a>
+                   
+                    <h3 className="universal__h3 footer__characterLength">
+                    {this.length} / ∞</h3>
+                    <div>
+                        <a href='http://www.tongsalex.com' className ="noteEditor__link--personalWeb">
+                            aT
+                        </a>
+                        <a href='http://www.github.com/tongsalex'>
+                            <img src={window.github} alt='github' className="noteEditor__button" />
+                        </a>
+                        <a href='http://www.linkedin.com/in/tongsalex'>
+                            <img src={window.linkedin} alt='linkedin' className="noteEditor__button" />
+                        </a>
+                    </div>
                 </section>
 
             </div>

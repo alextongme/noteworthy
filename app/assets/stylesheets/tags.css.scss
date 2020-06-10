@@ -1,0 +1,45 @@
+.tags {
+    animation: fade;
+    animation-duration: 0.5s; 
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-play-state: running; 
+
+    width: 500px;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 250px;
+
+    display: grid;
+    padding: 30px;
+    box-sizing: border-box;
+
+    grid-template-rows: 50px 100px 100px auto;
+}
+
+.tags__exit {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-row: 1 / 2;
+}
+
+.tags__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-row: 2 / 3;
+    
+}
+
+.tags__search {
+    grid-row: 3 / 4;
+}
+
+.tags__index {
+    grid-row: 4 / 5;
+}
