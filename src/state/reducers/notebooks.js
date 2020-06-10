@@ -4,9 +4,28 @@ import {
     REMOVE_NOTEBOOK
 } from "../actions/notebook";
 
+// import {
+//     RECEIVE_NOTE,
+//     REMOVE_NOTE
+// } from "../actions/note";
+
 export default (prevState = {}, action) => {
     Object.freeze(prevState);
     switch(action.type) {
+
+        // case RECEIVE_NOTE:
+        //     let newNotebooks = {};
+        //     Object.values(action.notebooks).forEach((notebook) => {
+        //         newNotebooks[notebook.id] = notebook;
+        //     })
+        //     return Object.assign({}, prevState, newNotebooks);
+        // case REMOVE_NOTE:
+        //     newNotebooks = {};
+        //     Object.values(action.notebooks).forEach((notebook) => {
+        //         newNotebooks[notebook.id] = notebook;
+        //     })
+        //     return Object.assign({}, prevState, newNotebooks);
+
         case RECEIVE_NOTEBOOKS:
             const newNotebooks = {};
             Object.values(action.notebooks).forEach((notebook) => {

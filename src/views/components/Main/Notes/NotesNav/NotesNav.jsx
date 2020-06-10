@@ -8,7 +8,7 @@ const NoteNav = (props) => {
     let noteItems;
     let notes = [];
     let notebookName = "All notes";
-
+    // debugger
     if(Object.keys(props.notes).length === 0) {
         noteItems = <div></div>;
     } else {
@@ -39,17 +39,21 @@ const NoteNav = (props) => {
 
             return (a.updated_at > b.updated_at ? -1 : 1)})
             .map((note, idx) => {
-            let path;
-            if(notebookName === "All notes") {
-                path =`/main/notes/${note.id}`
-            } else {
-                path =`/main/notebooks/${props.match.params.notebookId}/notes/${note.id}`
-            }
+                // debugger
+                // if(note == undefined) {
+                //     continue;
+                // }
+                let path;
+                if(notebookName === "All notes") {
+                    path =`/main/notes/${note.id}`
+                } else {
+                    path =`/main/notebooks/${props.match.params.notebookId}/notes/${note.id}`
+                }
 
-            let title = note.title;
-            if(title === "") {
-                title = "Untitled"
-            }
+                let title = note.title;
+                if(title === "") {
+                    title = "Untitled"
+                }
 
             // debugger
 

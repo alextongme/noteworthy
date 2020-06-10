@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useHistory, Redirect } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 
 const Sidebar = ({createNote, session, users, logout, firstNote, openTags}) => {
     const currentUser = users[session];
@@ -15,7 +15,7 @@ const Sidebar = ({createNote, session, users, logout, firstNote, openTags}) => {
     }
 
     const note = {
-        title: "",
+        title: "Untitled",
         body: ""
     }
 
@@ -44,12 +44,23 @@ const Sidebar = ({createNote, session, users, logout, firstNote, openTags}) => {
             // debugger
             let noteId = obj.note.id;
             return (history.push(`/main/notes/${noteId}`)) });
-  
+            
     }
 
     return (
         <div className="sidebar">
-            {/* <ul className="sidebar__listContainer"> */}
+                <NavLink 
+                    to="/home" 
+                    className="sidebar__navlink" 
+                    activeClassName="sidebar__navlink--active"
+                    >
+                    <img src={window.nLogo} className="sidebar__image--logo" />
+                    <h1 
+                        className="sidebar__logo">
+                        noteworthy
+                    </h1>
+                </NavLink>
+
                 <div className="sidebar__navlink" onClick={() => (null)}>
                     <i className="fas fa-user-circle sidebar__icons" />
                     <h3 
@@ -70,7 +81,7 @@ const Sidebar = ({createNote, session, users, logout, firstNote, openTags}) => {
                     <i className="far fa-edit sidebar__icons"></i>
                     {/* <h1  */}
                         {/* // className="sidebar__add"> */}
-                        <h3 className="sidebar__titles">New notes</h3>
+                        <h3 className="sidebar__titles">New note</h3>
                     {/* </h1> */}
                 </div>
                 <NavLink 
@@ -82,17 +93,15 @@ const Sidebar = ({createNote, session, users, logout, firstNote, openTags}) => {
                 </NavLink>
                 <NavLink
                     to={`/main/notes/${firstNoteId()}`}
-                    // to={`/main/notes`}
                     className="sidebar__navlink" 
                     activeClassName="sidebar__navlink--active">
 
                     <i className="fas fa-sticky-note sidebar__icons" /> 
                     <h3 className="sidebar__titles">Notes</h3>
-                    {/* <Redirect to={`/main/notes/${firstNoteId()}`} /> */}
                 </NavLink>
 
             <li className="sidebar__navlink" onClick={() => openTags()}>
-                <i class="fas fa-tags sidebar__icons"></i>
+                <i className="fas fa-tags sidebar__icons"></i>
                 <h3 className="sidebar__titles">Tags</h3>
             </li>
 

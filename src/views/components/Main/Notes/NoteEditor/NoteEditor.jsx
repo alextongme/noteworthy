@@ -1,5 +1,6 @@
 import React from "react";
-import ReactQuill, {Quill} from 'react-quill';
+import ReactQuill from 'react-quill';
+import {NavLink} from 'react-router-dom';
 
 class NoteEditor extends React.Component {
     constructor(props) {
@@ -10,6 +11,9 @@ class NoteEditor extends React.Component {
         this.length = "Loading...";
         this.handleQuillChange = this.handleQuillChange.bind(this);
         this.hideToolbarAndSave = this.hideToolbarAndSave.bind(this);
+        this.trash = this.trash.bind(this);
+        // debugger
+        // this.history = useHistory();
     }
 
     handleChange(field) {
@@ -59,6 +63,12 @@ class NoteEditor extends React.Component {
         window.removeEventListener('beforeunload', this.saveOnClose);
     }
 
+    trash() {
+        this.props.deleteNote(this.props.note.id).then(() => (this.props.history.push('/main/notes') ) );
+            // return (this.history.push('/main/notes'))
+        
+    }
+
     render() {
         const modules = {
             toolbar: [
@@ -67,7 +77,7 @@ class NoteEditor extends React.Component {
                 ['bold', 'italic', 'underline','strike', 'blockquote', 'code-block'],
                 [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
                 [{ 'color': [] }, { 'background': [] }],
-                ['link', 'image'],
+                ['link', 'image', 'video'],
                 ['clean']
             ],
             };
@@ -78,17 +88,23 @@ class NoteEditor extends React.Component {
             'bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block',
             'list', 'bullet', 'indent',
             'color', 'background',
-            'link', 'image'
+            'link', 'image', 'video'
         ];
-    
+        
 
         return (
             <div className="noteEditor">
                 <header className="noteEditor__header">
-                    <h2 className="universal__h2 noteEditor__h2--header" >
-                    <i className="fas fa-book noteEditor__icons" />&nbsp;{this.props.notebookName}</h2>
-                    {/* <i className="fas fa-running noteEditor__button--action" /> */}
-                    <i className="fas fa-trash-alt noteEditor__button--trash" onClick={() => this.props.deleteNote(this.props.note.id)}/>
+                    <div className="noteEditor__header--left">
+                        <i className="fas fa-book noteEditor__icons" />
+                        <NavLink to={`/main/notebooks/${this.props.notebook.id}/notes`}>
+                        <h2 className="universal__h2 noteEditor__h2--header" >
+                            {this.props.notebook.name}
+                            </h2>
+                        </NavLink>
+                    </div>
+                        <i className="fas fa-trash-alt noteEditor__button--trash" onClick={this.trash} />
+                    
                 </header>
 
                 <input
@@ -96,7 +112,7 @@ class NoteEditor extends React.Component {
                     className="universal__h2 noteEditor__input--title" 
                     value={this.state.title} 
                     onChange={this.handleChange('title')}
-                    placeholder="Untitled"
+                    placeholder="Title your note"
                     onBlur={() => this.hideToolbarAndSave() }
                     onFocus={() => this.showToolbar()}
                     maxLength="40"

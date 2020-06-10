@@ -16,9 +16,15 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
+        // debugger
         this.props.fetchNotes();
         this.props.fetchNotebooks();
     }
+
+    // componentDidUpdate() {
+    //     this.props.fetchNotes();
+    //     this.props.fetchNotebooks();
+    // }
 
     // firstNoteId () {
     //     // debugger
@@ -33,17 +39,17 @@ class Main extends React.Component {
         // debugger
         // let firstNote = this.props.notes[0].id;
 
-        const loginRoute = () => {
-            if(Object.keys(this.props.notes).length !== 0) {
-                return (<PrivateRoute 
-                    path='/main/notes' 
-                    component={NotesNavContainer} />);
-            } else {
-                return (<PrivateRoute 
-                    path='/main/notes' 
-                    component={NotesNavContainer} />);
-            }
-        }
+        // const loginRoute = () => {
+        //     if(Object.keys(this.props.notes).length !== 0) {
+        //         return (<PrivateRoute 
+        //             path='/main/notes' 
+        //             component={NotesNavContainer} />);
+        //     } else {
+        //         return (<PrivateRoute 
+        //             path='/main/notes' 
+        //             component={NotesNavContainer} />);
+        //     }
+        // }
 
         return (
             <div className="main">

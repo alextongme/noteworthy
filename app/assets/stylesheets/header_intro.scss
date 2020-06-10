@@ -1,10 +1,10 @@
 .headerIntro__container  {
     height: inherit;
-    width: 10%;
+    width: 12%;
     // border: 1px solid black;
     margin-right: 11vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -24,19 +24,29 @@
     font-size: 1.2vw;
     font-weight: 700;
     // text-shadow: 0.04vw 0.04vw 0.04vw #000000;
-    color: #01A82D;
+    // color: #01A82D;
     // color: white;
-
+    color: #FDF6E4;
 }
 
-.headerIntro__button--login:hover {
+.headerIntro__button--logout {
+    font-family: "Raleway";
+    font-size: 1.2vw;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    color:#FDF6E4;
+}
+
+.headerIntro__button--login:hover, .headerIntro__button--logout:hover, {
+    cursor: pointer;
     text-decoration: none;
     text-shadow: none;
     color: #F5B625;
 }
 
-.headerIntro__button--login:focus {
-    text-decoration: none;
-    text-shadow: none;
-    color: #EE1C24;
-}
+// .headerIntro__button--login:focus {
+//     text-decoration: none;
+//     text-shadow: none;
+//     color: #EE1C24;
+// }

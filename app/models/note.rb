@@ -3,12 +3,14 @@
 # Table name: notes
 #
 #  id         :bigint           not null, primary key
-#  title      :string           not null
-#  body       :text             not null
+#  title      :string
+#  body       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 class Note < ApplicationRecord
+    # default_scope { order(updated_at: :desc) }
+
     # user associations
     has_many :user_notes,
     primary_key: :id,

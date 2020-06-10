@@ -1,24 +1,26 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { updateNote, deleteNote } from '../../../../../state/actions/note'
-import NoteEditor from './NoteEditor'
+import { updateNote, deleteNote } from '../../../../../state/actions/note';
+import NoteEditor from './NoteEditor';
+import {withRouter} from "react-router";
 
 class NoteEditorContainer extends React.Component {
     render() {
-        const {notebooks, deleteNote, updateNote, note, match} = this.props;
+        const {notebooks, deleteNote, updateNote, note, match, history} = this.props;
         
         if(!note || Object.keys(notebooks).length === 0) {
             return (null);
         }
         else {
-            const notebookName = notebooks[note.notebook_ids[0]].name;
+            let notebook = notebooks[note.notebook_ids[0]];
             return (
                 <NoteEditor
                     key={match.params.noteId}
                     deleteNote={deleteNote}
                     updateNote={updateNote}
                     note={note}
-                    notebookName={notebookName}
+                    notebook={notebook}
+                    history = {history}
                 />
             )
         }
@@ -42,7 +44,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps, 
     mapDispatchToProps,
-    )(NoteEditorContainer)
+    )(NoteEditorContainer))

@@ -97,14 +97,42 @@
         transform: translateX(-3px);
 }
 
+// material theme
+.material{
+  background-color: #263238;
+  
+  color: white;
+  color: #FDF6E4;
 
-// .threed
-// {
-//         box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.12), 
-//                     4px 4px 4px 4px rgba(0,0,0,0.12), 
-//                     6px 6px 6px 6px rgba(0,0,0,0.12), 
-//                     10px 10px 10px 10px rgba(0,0,0,0.12),
-//                     18px 18px 18px 18px rgba(0,0,0,0.12);
-//         -webkit-transform: translateX(-3px);
-//         transform: translateX(-3px);
-// }
+  color: #F78C6C;
+  color: rgb(255, 111, 0);
+  
+  color: #FFCB6B;
+  color: rgb(255, 190, 27);
+  
+  
+  color: #C3E88D;
+  color: #01A82D;
+  
+  color: rgb(182, 106, 232);
+  color: #C792EA;
+  color: #F07178;
+  
+  color: #F44336;
+  color: #E84079;
+  color: #F44336;
+
+  color: #82AAFF;
+  color: #89DDFF;
+  color: rgb(0, 120, 218);
+
+
+
+  
+}
+
+
+
+a {
+  text-decoration: none;
+}

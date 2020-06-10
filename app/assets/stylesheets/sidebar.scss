@@ -10,8 +10,10 @@
     grid-row: 1 / 2;
 
     font-family: "Raleway";
-    background-color: #1B1B1B;
-    color: white;
+    // background-color: #1B1B1B;
+    // background-color: #1D3F48;
+    background-color: #263238;
+    // color: white;
     transition: 1s;
     display: flex;
     flex-direction: column;
@@ -19,6 +21,8 @@
     // grid-template-columns: 44px auto;
     overflow: hidden;
     // z-index: 9;
+
+   
 }
 
 // .sidebarClosed {
@@ -32,7 +36,7 @@
     justify-content: space between;
     align-items: center;
     width: 100%;
-    height: 7vh;
+    height: 6vh;
     padding-left: 1vw;
 }
 
@@ -97,32 +101,67 @@
 
 
 /////////////////////////////// SIDEBAR NAVIGATION//////////////////////////////
+.sidebar__logoContainer {
+    height: 6vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 55px auto;
+}
+
+.sidebar__image--logo {
+    grid-column: 1 / 2;
+    // width: 1.3rem;
+    margin: 15px;
+    width: 1.7em;
+}
+
+.sidebar__logo {
+    font-size: 1.3em;
+    font-family: 'CaeciliaLTStd-Bold';
+    // color: white;
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+}
+
 .sidebar__navlink {
     white-space: nowrap;
-    height: 4vh;
+    height: 6vh;
     width: 100%;
     // display: flex;
     // align-items: center;
     text-decoration: none;
-    color: white;
-    font-size: 1.3 em;
+    // color: white;
     cursor: pointer;
     transition: 0.8s;
 
     display: grid;
     grid-template-columns: 55px auto;
+    grid-template-rows: 6vh;
+    
+    // color: #FFCB6B;
+    // color: #C3E88D;
+    // color: #F44336;
+    // color: #82AAFF;
+    // color: #89DDFF;
+    // color: #E84079;
+    // color: #C792EA;
+    // color: #F07178;
+    // color: #00A82D;
+    color: white;
+    
 }
 
 .sidebar__navlink:hover {
     transition: 0.8s;
     color: black;
-    background-color: #EFAD0F;
+    background-color: #FDF6E4;
     
 }
 
 .sidebar__navlink:active {
-    color: red;
-    background-color: #EFAD0F;
+    // color: red;
+    // background-color: #EFAD0F;
 }
 
 .sidebar__navlink--active{
@@ -135,9 +174,15 @@
 
 .sidebar__icons {
     grid-column: 1 / 2;
+    grid-row: 1 / 2;
     margin: 15px;
-    color: #00A82D;
+    
+    align-self: center;
+    // color: #FFCB6B;
+    // color: white;
     font-size: 1.7em !important;
+    // display: flex;
+    // align-items: center;
 }
 
 .sidebar__titles {
@@ -146,35 +191,39 @@
     align-items: center;
 }
 
-.sidebar__icons:hover {
-    color: red;
-}
-
-.sidebar__button--add {
-    width: 1em;
-    filter: brightness(0) saturate(100%) invert(30%) sepia(59%) saturate(5655%) hue-rotate(116deg) brightness(95%) contrast(74%);
-}
-
-// .sidebar__button--logout {
-//     width: 100%;
-//     height: 100%;
-//     font-family: "Raleway";
-//     border: none;
-//     background-color: transparent;
+.fa-user-circle {
 //     color: white;
-//     font-size: 1.7em;
-// }
+//   color: #F78C6C;
+color: rgb(0, 120, 218);
+  
+//   color: #F07178
+}
 
-// .sidebar__button--logout:hover {
-//     color: black;
-//     cursor: pointer;
-// }
+.fa-edit {
+    // color: #C3E88D;
+    color: #E84079;
+}
 
-// .sidebar__button--logout:active {
-//     color: red;
-//     outline: none;
-// }
+.fa-book {
+    // color: #89DDFF;
+    
+    color: #01A82D;
+}
 
-// .sidebar__button--logout:focus {
-//     outline: none;
-// }
+.fa-sticky-note {
+    color: rgb(255, 190, 27);
+}
+
+.fa-tags {
+    color: rgb(255, 111, 0);
+}
+
+.fa-sign-out-alt {
+    color: #F44336;
+}
+
+.fa-arrows-alt-h {
+    color: rgb(182, 106, 232);
+    
+}
+

@@ -63,7 +63,7 @@ Note.create!(
     },
     {
         title: 'my first note in notebook 3',
-        body: 'Velit quis dolor officia laboris culpa qui. Duis velit culpa fugiat aute laborum tempor id. Consequat excepteur Lorem adipisicing magna cillum Lorem elit sit amet aliqua pariatur laborum in ut. Minim magna sit in quis irure eu proident cillum. Adipisicing velit consectetur consequat reprehenderit consectetur magna. Aute amet adipisicing voluptate qui. Incididunt cillum nisi et aliqua excepteur culpa fugiat aliquip.'
+        body: '<p><br></p><iframe class="ql-video" frameborder="0" allowfullscreen="true" src="https://www.youtube.com/embed/OMkEVX23BdM?showinfo=0"></iframe><p><br></p>'
     }
 ]
 )

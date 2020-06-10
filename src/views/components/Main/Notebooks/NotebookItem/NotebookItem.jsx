@@ -23,7 +23,6 @@ class NotebookItem extends React.Component {
         this.dropdown = this.dropdown.bind(this);
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.toggleNextDropdown = this.toggleNextDropdown.bind(this);
-
     }
 
 
