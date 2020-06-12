@@ -3,28 +3,46 @@ Notes worthy for any moment.
 
 noteworthy originally started as a clone of the popular note taking app, [Evernote](https://www.evernote.com), but quickly became its own unique app. Influenced by design aspects from Mattia Astorino's Material theme and functional aspects from Evernote's note taking editor, noteworthy is a new note editor designed to make your daily note taking activities a simple and visually pleasant experience. Document your thoughts and your life, with noteworthy.
 
+![noteworthy Splash Page](./app/assets/images/readme_images/home.png)
+
 ## Features
 ### User Account Signup/Login
-- Users can create accounts to save their notes, notebooks & tags. 
-- Users can login and retrieve their saved data.
+- Users can create accounts to save their notes, notebooks & tags.
+![Sign up](./app/assets/images/readme_images/signup.gif)
+- Users can login (if they have an account) and retrieve their saved data.
+![Log in](./app/assets/images/readme_images/userAuth.gif)
+- Log out with ease.
+![Log out](./app/assets/images/readme_images/logout.gif)
 - Visitors can also browse and see how the app works on a real account through the demo login button.
 
 ### Document with Notes
+- Personalized welcome screen
+![welcome](./app/assets/images/readme_images/loginSplash.png)
 - Users can save notes and mark them down with specific formatting rules like indentation, fonts, sizes, colors, background colors, all with the click of one button.
 - Users can also save photos, videos & links within each note.
+![Videos](./app/assets/images/readme_images/videosInEditor.gif)
 
 ### Organize by Notebooks
-- Choose which notebook you would like to store your note in, each note needs to be in a notebook. 
+- Choose which notebook you would like to store your note in, each note needs to be in a notebook.
+![Specific Notebook](./app/assets/images/readme_images/makeNoteInSpecificNb.gif)
 - Users can easily change which notebook they are creating a new note on using the dropdown menu in the sidebar.
 - Easily view all of your notes in a specific notebook by visiting the notebook index page through the sidebar and selecting the arrow next to your desired notebook.
+![Expand Notebook](./app/assets/images/readme_images/expandNb.gif)
 - View notes' content in depth by clicking on the notebook title in the notebooks index page.
 - Delete and rename notebooks with ease, using the dropdown menu button on the notebooks index page, located on each notebook row.
+![Delete Notebook](./app/assets/images/readme_images/deletingNotebook.gif)
+![Rename Notebook](./app/assets/images/readme_images/renameNb.gif)
+
+- Navigation changes if user has 0 notebooks.
+![No Notebooks](./app/assets/images/readme_images/noNotebooks.gif)
 
 ### Dark mode
 - Easily switch between light and dark modes on the note editor, through the sidebar button, if your eyes need a rest or your writing creativity needs a bright boost.
+![Dark mode](./app/assets/images/readme_images/darkMode.gif)
 
 ### Organize by Tags
 - Currently tags are only implemented on the demo login, and only existing tags and their corresponding notes can be viewed.
+![Tags](./app/assets/images/readme_images/tags.gif)
 
 ## Featured Technologies Used
 - React Quill
