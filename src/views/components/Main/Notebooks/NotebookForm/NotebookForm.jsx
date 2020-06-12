@@ -14,11 +14,13 @@ class NotebookForm extends React.Component {
         // debugger
         event.preventDefault();
         const notebook = Object.assign({}, this.state);
-        debugger
-        if(this.props.notebooks.length === 0) {
-            this.props.action(notebook).then((nb) => {
-                this.props.updateDefaultNotebook(nb.notebook.id);
-            })
+        // debugger
+        if(this.props.notebooks) {
+            if(this.props.notebooks.length === 0) {
+                this.props.action(notebook).then((nb) => {
+                    this.props.updateDefaultNotebook(nb.notebook.id);
+                })
+            } 
         } else {
             this.props.action(notebook)
         }
