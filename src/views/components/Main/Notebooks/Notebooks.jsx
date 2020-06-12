@@ -1,13 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import NotebookItemContainer from './NotebookItem/NotebookItemContainer';
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from '../../../../state/actions/modal';
+import { fetchNotebooks } from '../../../../state/actions/notebook';
+import { fetchNotes } from '../../../../state/actions/note';
 
 const Notebooks = () => {
+    // map state and dispatch
+    const dispatch = useDispatch();
+    useEffect(() => {
+        // debugger
+        dispatch(fetchNotebooks());
+        // debugger
+        dispatch(fetchNotes());
+        // debugger
+    }, []);
 
     const notebooksObj = useSelector(state => state.entities.notebooks);
     const notebooks = Object.values(notebooksObj);
-    const dispatch = useDispatch();
 
     const notebookItems = notebooks.map((notebook, idx) => {
         let className;
@@ -26,8 +36,10 @@ const Notebooks = () => {
         <div className="notebooks">
             <header className="notebooks__header">
                 <h1 className="notebooks__h1--title">Notebooks</h1>
-
+                
+                    {/* search functionality */}
                     {/* <input className="notebooks__search" placeholder="search for notebooks" /> */}
+
             </header>
             <section className="notebooks__section--bottom">
                 <nav className="notebooks__nav">
@@ -35,13 +47,16 @@ const Notebooks = () => {
 
                     <div 
                         className="notebooks__addContainer">
-                        <img 
+                        {/* <img 
                             src={window.addButton} className="notebooks__button--addImage"
-                            onClick={() => dispatch(openModal("Create notebook"))} />
+                            onClick={() => dispatch(openModal("Create notebook"))} /> */}
+
+                        <i 
+                            className="fas fa-book sidebar__icons" 
+                            onClick={() => dispatch(openModal("Create notebook"))}/>
                         <button 
                             className="notebooks__button--add"
-                            onClick={() => dispatch(openModal("Create notebook"))}
-                            >
+                            onClick={() => dispatch(openModal("Create notebook"))}>
                             New notebook
                         </button>
                     </div>
@@ -72,10 +87,6 @@ const Notebooks = () => {
                         </tbody>
                     </table>
                 </div>
-
-                {/* <button onClick={openNav}>
-                    Expand
-                </button> */}
             </section>
         </div>
     );

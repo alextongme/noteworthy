@@ -13,6 +13,10 @@ class SignupForm extends React.Component {
         this.loginAsDemo = this.loginAsDemo.bind(this);
     }
 
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
+
     handleChange(field) {
         return ((event) => {
             this.setState({
@@ -66,7 +70,8 @@ class SignupForm extends React.Component {
                                 onChange={this.handleChange('email')} placeholder="Email"
                             />
                             <input 
-                                type="current-password" 
+                                type="password"
+                                autoComplete="current-password"
                                 className="universal__input sessionForm__input" 
                                 value={this.state.password} 
                                 onChange={this.handleChange('password')} placeholder="New password: 6 characters minimum" 
@@ -83,7 +88,7 @@ class SignupForm extends React.Component {
                         </form>
 
                         <button 
-                            className="universal__button sessionForm__button" 
+                            className="universal__button sessionForm__button sessionForm__button--demo"  
                             onClick={this.loginAsDemo}>
                             DEMO
                         </button>

@@ -14,6 +14,7 @@ const App = () => {
                 <GuestRoute exact path="/" component={HomeContainer} />
                 <GuestRoute exact path="/login" component={LoginContainer} />
                 <GuestRoute exact path="/signup" component={SignupContainer} />
+                <PrivateRoute exact path="/home" component={HomeContainer} />
                 <PrivateRoute path="/main" component={MainContainer} />
             </Switch>
     );

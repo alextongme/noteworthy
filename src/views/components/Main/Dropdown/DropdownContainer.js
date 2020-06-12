@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import Dropdown from './Dropdown'
 // import { openDropdown } from '../../../../../state/actions/dropdown';
 import {openModal} from '../../../../state/actions/modal';
-
-import {deleteNotebook} from '../../../../state/actions/notebook'
+import {deleteNotebook, updateDefaultNotebook} from '../../../../state/actions/notebook'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        currNotebookId: state.ui.dropdown.notebookId
+        currNotebookId: state.ui.dropdown.notebookId,
+        user: Object.values(state.entities.users)[0],
+        notebookIds: Object.keys(state.entities.notebooks)
     }
 }
 
@@ -16,7 +17,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         // openDropdown: (dropdown) => dispatch(openDropdown(dropdown)),
         openModal: (modal) => dispatch(openModal(modal)),
-        deleteNotebook: (notebook) => dispatch(deleteNotebook(notebook))
+        deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId)),
+        updateDefaultNotebook: (notebookId) => dispatch(updateDefaultNotebook(notebookId)),
     }
 };
 

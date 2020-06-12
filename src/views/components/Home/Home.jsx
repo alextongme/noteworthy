@@ -81,6 +81,8 @@ class Home extends React.Component {
                     <li className="home__content home__content--second">
                             <i className="fas fa-brain home__secondDiv__img"></i>
 
+                            {/* <img src={window.computer} className="home__content--computer"/> */}
+
                             <h1 className="home__secondDiv__h1">
                                 Focus on what matters most.
                             </h1>

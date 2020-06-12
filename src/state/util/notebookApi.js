@@ -23,6 +23,14 @@ export const createNotebook = (notebook) => {
     }));
 }
 
+export const updateDefaultNotebook = (default_notebook_id) => {
+    return ($.ajax({
+        method: "PATCH",
+        url: `api/user`,
+        data: { default_notebook_id }
+    }));
+}
+
 export const updateNotebook = (notebook) => {
     // debugger
     return ($.ajax({

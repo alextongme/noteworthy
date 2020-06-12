@@ -2,15 +2,16 @@
 #
 # Table name: users
 #
-#  id              :bigint           not null, primary key
-#  username        :string
-#  session_token   :string           not null
-#  password_digest :string           not null
-#  email           :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  first_name      :string
-#  last_name       :string
+#  id                  :bigint           not null, primary key
+#  username            :string
+#  session_token       :string           not null
+#  password_digest     :string           not null
+#  email               :string           not null
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  first_name          :string
+#  last_name           :string
+#  default_notebook_id :integer
 #
 class User < ApplicationRecord
     validates :email, :session_token, presence: true, uniqueness: true
@@ -44,16 +45,11 @@ class User < ApplicationRecord
     source: :note
 
     # tag associations
-    has_many :user_tags,
-    dependent: :destroy,
-    primary_key: :id,
-    foreign_key: :user_id,
-    class_name: :UserTag
-
     has_many :tags,
     dependent: :destroy,
-    through: :user_tags, 
-    source: :tag
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Tag
     
     after_initialize :ensure_session_token
 

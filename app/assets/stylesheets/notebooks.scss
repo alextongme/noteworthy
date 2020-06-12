@@ -1,10 +1,21 @@
 ////////////////////// NOTEBOOKS
 .notebooks {
-    transition: margin-left 0.5s;
-    margin-left: 250px;
+    animation: fade;
+    animation-duration: 0.8s; 
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-play-state: running; 
+
+    overflow: hidden;
+    grid-row: 1 / 2;
+    grid-column: 2 / 4;
+    // transition: margin-left 0.5s;
+    // margin-left: 250px;
     // padding: 20px;
-    width: 100%;
-    height: 100vh;
+    // width: 100%;
+    // height: 100vh;
     color: black;
     // background-color: #F8F8F8;
     display: flex;
@@ -64,9 +75,8 @@
     height: 93vh;
     width: 100%;
     display: block;
-    // flex-direction: column;
-    // align-items: center;
-    // overflow: scroll;
+    overflow: scroll;
+    // rearrange this! the scroll should be on the table, not this entire section, so users can add notebooks while browsing notebook list.
 }
 
 ////////////////// NOTEBOOK CONTENT NAV
@@ -127,6 +137,7 @@
 
 ///////////////// NOTEBOOK TABLE SECTION
 .notebooks__tableContainer {
+    overflow: scroll;
     box-sizing: border-box;
     padding-top: 3vh;
     width: 100%;
@@ -149,8 +160,8 @@
     width: 100%;
     // height: 2vh;
     height: 5vh;
-    
-    background-color: #F8F8F8;
+    background-color: #FDF6E4;
+    // background-color: #F8F8F8;
     color: black;
     text-align: left;
     // display: flex;

@@ -1,89 +1,86 @@
-import React from "react";
-import {NavLink} from 'react-router-dom';
+import React, {useEffect} from "react";
+import {NavLink, useRouteMatch } from 'react-router-dom';
 import ReactQuill from 'react-quill';
 import * as ComUtil from '../../../utils/utils';
 
-const NoteNav = (props) => {
+import { fetchNotebooks } from '../../../../../state/actions/notebook';
+import { fetchNotes } from '../../../../../state/actions/note';
+
+import { useSelector, useDispatch } from "react-redux";
+
+const NoteNav = () => {
+    const dispatch = useDispatch();
+    const notebooks = useSelector(state => state.entities.notebooks);
+    const notes = useSelector(state => state.entities.notes);
     // debugger
-    let noteItems;
-    let notes = [];
+    // useEffect(() => {
+    //     // debugger
+    //     dispatch(fetchNotebooks());
+    //     // debugger
+    //     dispatch(fetchNotes());
+    //     // debugger
+    // }, []);
+
+    
+    const match = useRouteMatch();
+    // debugger
+    let sortedNotes;
+    let selectedNotes = [];
     let notebookName = "All notes";
+    // debugger
 
-    if(Object.keys(props.notes).length === 0) {
-        noteItems = <div></div>;
+    /// pick which notes you want, all notes or notes from a specific notebook
+    if(Object.keys(notebooks).length === 0) {
+        sortedNotes = <h2 className="universal__h2 notesNav__h2--noNotes">There are no notes to display. <br></br> Start by making a notebook!</h2>;
     } else {
-        if(props.match.path === "/main/notes") {
-            // debugger
-            notes = Object.values(props.notes);
-        } 
-        else if (props.match.path === "/main/notebooks/:notebookId/notes") {
-            // debugger
-            const notebookId = Number(props.match.params.notebookId);
-            let notebook = props.notebooks[notebookId];
-            if(notebook !== undefined) {
-                notebookName = notebook.name;
-                let noteIds = notebook.note_ids;
-                [props.match.params.notebookId].note_ids;
-                // debugger
-                noteIds.forEach((id) => {
-                    notes.push(props.notes[id]);
-                });
-            }
-            // debugger
-        }
-
-        // debugger
-        noteItems = notes.sort((a,b) => {
-            // sort by updated at
-            
-
-            return (a.updated_at > b.updated_at ? -1 : 1)})
-            .map((note, idx) => {
-            let path;
-            if(notebookName === "All notes") {
-                path =`/main/notes/${note.id}`
-            } else {
-                path =`/main/notebooks/${props.match.params.notebookId}/notes/${note.id}`
-            }
-
-            let title = note.title;
-            if(title === "") {
-                title = "Untitled"
-            }
-
-            // debugger
-
-                return (
-                    // <div className="noteNav__LinkContainer" key={idx}>
-                        <NavLink 
-                            to={path} 
-                            style={{ textDecoration: 'none' }} 
-                            key={idx}
-                            className="noteNavItem"
-                            activeClassName="noteNavItem--active"
-                            // activeStyle={{ backgroundColor: 'red' }}>
-                            >
-                            
-                            {/* <div className="noteNavItem__bodyContainer"> */}
-                                <h2 className="noteNavItem__title">
-                                {title}</h2>
-                                
-                                <ReactQuill
-                                className="noteNavItem__quill"
-                                value={note.body}
-                                readOnly={true}
-                                theme={"bubble"} />
-                                
-                                <h3 className="noteNavItem__timestamp">Updated {ComUtil.time(note.updated_at)}</h3>
-                            {/* </div> */}
-
-                        </NavLink>
-                    // </div>
-                    
-                );
+        if(match.path === "/main/notes") {
+            selectedNotes = Object.values(notes);
+        } else if (match.path === "/main/notebooks/:notebookId/notes") {
+            let notebook = notebooks[match.params.notebookId];
+            notebookName = notebook.name;
+            notebook.note_ids.forEach((id) => {
+                selectedNotes.push(notes[id]);
             });
         }
-    
+
+        sortedNotes = selectedNotes.sort((a,b) => {
+            //     // sort by updated at
+            return (a.updated_at > b.updated_at ? -1 : 1)}).map((note, idx) => {
+                    let path;
+                    if(match.path === "/main/notes") {
+                        path =`/main/notes/${note.id}`
+                    } else {
+                        path =`/main/notebooks/${match.params.notebookId}/notes/${note.id}`
+                    }
+
+                    return (
+                        <div className="noteNav__LinkContainer" key={idx}>
+                            <NavLink 
+                                to={path} 
+                                style={{ textDecoration: 'none' }} 
+                                key={idx}
+                                className="noteNavItem"
+                                activeClassName="noteNavItem--active">
+                                <h2 className="noteNavItem__title">{note.title}</h2>
+                                
+                                <div className="noteNavItem__bodyContainer">
+                                <ReactQuill
+                                    className="noteNavItem__quill"
+                                    value={note.body}
+                                    readOnly={true}
+                                    theme={"bubble"} />
+
+                                </div>
+                                
+                                <h3 className="noteNavItem__timestamp">Updated {ComUtil.time(note.updated_at)}</h3>
+        
+                            </NavLink>
+                        </div>
+                    );
+                })
+    }
+
+    // debugger
     
     return (
         <div className="notesNav">
@@ -91,15 +88,13 @@ const NoteNav = (props) => {
                 {notebookName}
                 <nav className="notesNav__navbar universal__h3">
                     <div className="notesNav__navbar--left">
-                    {notes.length} notes</div>
-
-                    {/* <div className="notesNav__navbar--right">sort - filter</div> */}
-
+                        {selectedNotes.length} notes
+                    </div>
                 </nav>
             </header>
             
             <section className="notesNav__indexSection">
-                {noteItems}
+                {sortedNotes}
             </section>
         </div>
     );

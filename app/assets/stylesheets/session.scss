@@ -10,10 +10,20 @@
 }
 
 .sessionForm__section--form {
+    animation: fade;
+    animation-duration: 0.8s; 
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-play-state: running; 
+
     width: 30vw;
     padding-top: 6vh;
     padding-bottom: 6vh;
-    background-color: rgba(255, 255, 255, 0.7);
+    // color: rgb(253, 246, 228);
+    // background-color: rgba(253, 246, 228, 0.8);
+    background-color : rgba(38, 50, 56, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +48,7 @@
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 2.4vw;
     margin-top: 2vh;
+    color: #FDF6E4;
 }
 
 .sessionForm__h3 {
@@ -46,6 +57,7 @@
     font-size: 1.1vw;
     font-weight: 400;
     text-align: center;
+    color: #FDF6E4;
 }
 
 .sessionForm__h3--create {
@@ -53,6 +65,7 @@
     font-size: 1vw;
     font-weight: 400;
     text-align: center;
+    color: #FDF6E4;
 }
 
 ////////// THE FORM CONTAINER
@@ -92,6 +105,7 @@
     font-weight: 400;
     font-size: 0.9vw;
     padding: 1vh;
+    color: red;
 }
 
 .sessionForm__button {
@@ -102,6 +116,34 @@
     background: #269814;
 }
 
+.sessionForm__button--demo {
+    // background: rgb(182, 106, 232);
+    // background-color: #FDF6E4;
+
+//   background-color: #F78C6C;
+//   background-color: rgb(255, 111, 0);
+  
+//   background-color: #FFCB6B;
+//   background-color: rgb(255, 190, 27);
+  
+  
+//   background-color: #C3E88D;
+//   background-color: #01A82D;
+  
+//   background-color: rgb(182, 106, 232);
+//   background-color: #C792EA;
+//   background-color: #F07178;
+  
+//   background-color: #F44336;
+//   background-color: #E84079;
+//   background-color: #F44336;
+
+//   background-color: #82AAFF;
+//   background-color: #89DDFF;
+  background-color: rgb(0, 120, 218);
+color: white;
+}
+
 .sessionForm__login {
     text-decoration: none;
     color: #01A82D;
@@ -109,7 +151,7 @@
 }
 
 .sessionForm__login:hover {
-    color: #CE4FB7;
+    // color: #CE4FB7;
     cursor: pointer;
 }
 

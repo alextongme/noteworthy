@@ -2,6 +2,7 @@
     // background-image: image-url('lion-king-wallpaper.png');
     background-size: cover;
     // mix-blend-mode: screen;
+    background-color: #263238;
 }
 //////// TOP NAVBAR
 .home__navbar {
@@ -9,10 +10,10 @@
     height: 8.5vh;
     display: flex;
     justify-content: space-between;
-    // background-color: #FFFFFF;
     // background-color: rgba(0,0,0,0.2);
     // background-color: rgba(0, 0, 0,0.4);
     // background-color: #054404;
+    // background-color: #FFFFFF;
     position: fixed;
 }
 
@@ -32,10 +33,9 @@
     font-family: 'CaeciliaLTStd-Bold';
     margin-left: 1vw;
     font-size: 1.4vw;
-    
-    // color: black;
-    // text-shadow: 0.04vw 0.04vw 0.04vw #000000;
-    color: #01A82D;
+    // color: #FFCB6B;
+    // color: white;
+    color: #FDF6E4;
 }
 
 ///////////////////// snap container and universal div rules
@@ -56,9 +56,15 @@
 .home__content--first {
     height: 100vh;
     scroll-snap-align: start;
-    background-color: white;
+    // background-color: white;
     // background-color: #A073BB;
-    color: black;
+    // background-color: #1D3F48;
+    // background-color: #FDF6E4;
+    // background-color: #233D4D;
+
+    // background-color: #263238;
+    // color: black;
+    
     overflow: hidden;
     // overflow-x: hidden;
     // overflow-y: visible;
@@ -81,8 +87,15 @@
     line-height: 8vh;
     width: 70%;
     font-size: 3vw;
-    color: black;
+    // color: black;
+    // color: #FDF6E4;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
+
+    
+    
+    // sepia
+    // color: rgb(182, 106, 232);
+    color: rgb(255, 190, 27);
 }
 
 .home__h2--left {
@@ -93,7 +106,9 @@
     font-weight: 100;
     width: 90%;
     // color: black;
-    color: black;
+    // color: black;
+    color: #FDF6E4;
+    // color: white;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
@@ -102,19 +117,37 @@
 //     color: white;
 //     // background-color: #F4791F;
     // background-color:#8dbb73;
-    background-color: #01A82D;
+    // background-color: #01A82D;
+    // background-color: #C3E88D;
     // background-color: #20a9f2;
     margin-top: 3.7vh;
-//     font-family: 'Raleway';
-//     font-weight: 700;
-//     font-size: 0.95vw;
-//     text-decoration: none;
+    //     font-family: 'Raleway';
+    //     font-weight: 700;
+    //     font-size: 0.95vw;
+    //     text-decoration: none;
     width: 10vw;
     // padding: 1vw;
-//     // border: 0.8vw solid #CB4454;
-//     border-radius: 0.4vw;
-//     transition: all 0.5s ease 0s;
-//     letter-spacing: 0.2vw;
+    //     // border: 0.8vw solid #CB4454;
+    //     border-radius: 0.4vw;
+    //     transition: all 0.5s ease 0s;
+    //     letter-spacing: 0.2vw;
+
+     // sepia
+    // background-color: #FDF6E4;
+     // material
+    // background-color: white;
+    // background-color: #F5B625;
+    // background-color: 	#F47B6D;
+    // background-color: #FFCB6B;
+    // background-color: #C3E88D;
+    // background-color: #F44336;
+    // background-color: #82AAFF;
+    // background-color: #89DDFF;
+    background-color: #01A82D;
+    // background-color: #C792EA;
+    // background-color: #F07178;
+
+    color: #FDF6E4;
 }
 
 // .home__signupButton:hover {
@@ -146,7 +179,7 @@
     scroll-snap-align: start;
     // background-color: #f9e1c2;
     // background-color: transparent;
-    background-color: #F7F7F7;
+    // background-color: #F7F7F7;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -157,11 +190,17 @@
     padding-bottom: 8vh;
     // background-image: image-url('secondDivWallpaper.jpeg');
     // background-size: contain;
+    // background-color: black;
+}
+
+.home__content--computer {
+    width: 10vw;
 }
 
 .home__secondDiv__img {
     font-size: 15vw;
-    color: #F783AC;
+    // color: #F783AC;
+    color: #F07178;
     cursor: none;
 }
 
@@ -171,6 +210,7 @@
     font-size: 3vw;
     line-height: 8vh;
     // color: black;
+    
     color: #01A82D;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
@@ -188,7 +228,7 @@
     font-size: 1.6vw;
     line-height: 6vh;
     // color: black;
-    color: black;
+    color: #FDF6E4;
     text-align: center;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
@@ -199,7 +239,7 @@
     height: 100vh;
     scroll-snap-align: start;
     // background-color: #AC2F39;
-    background-color: white;
+    // background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -214,7 +254,8 @@
 .home__thirdDiv__img {
     font-size: 15vw;
     // width: 15vw;
-    color: #16AABF;
+    // color: rgb(0, 120, 218);
+    color: #89DDFF;
 }
 
 .home__thirdDiv__h1 {
@@ -222,7 +263,8 @@
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 8vh;
-    color: #01A82D;
+    // color: #82AAFF;
+    color: rgb(255, 190, 27);
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
@@ -233,7 +275,7 @@
     font-weight: 100;
     font-size: 1.8vw;
     line-height: 8vh;
-    color: black;
+    color: #FDF6E4;
     text-align: center;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
     // margin-bottom: 10vh;
@@ -241,7 +283,7 @@
 
 ///////////// FOURTH DIV CONTENT
 .home__content--fourth {
-    background-color: #F7F7F7;
+    // background-color: #F7F7F7;
     height: 100vh;
     scroll-snap-align: start;
     // background-color: #A073BB;
@@ -264,7 +306,8 @@
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 8vh;
-    color: #01A82D;
+    // color: rgb(255, 111, 0);
+    color:  #FDF6E4;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
@@ -274,7 +317,9 @@
     font-weight: 700;
     font-size: 1.4vw;
     // line-height: 8vh;
-    color: black;
+    // color: #FDF6E4;
+    // color: rgb(182, 106, 232);
+    color: #01A82D;
     text-align: center;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
@@ -286,7 +331,7 @@
     font-size: 1vw;
     line-height: 3vh;
     letter-spacing: 0.1vw;
-    color: black;
+    color: #FDF6E4;
     // background-image: url();
     text-align: center;
 }
@@ -348,12 +393,13 @@
     width: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
     // height: 100%;
 }
 
 .home__fifthDiv__signupForm {
     width: 65%;
-    height: 40vh;
+    // height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -380,23 +426,24 @@
 
 .home__fifthDiv__h1 {
     // color: #b43f5c;
-    color: #01A82D;
+    // color: rgb(182, 106, 232);
+    color: rgb(255, 190, 27);
     text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__fifthDiv__h2 {
-    margin-top: 3.7vh;
+    margin-top: 3vh;
     font-weight: 400;
     // color: #b43f5c;
-    color: white;
+    color: #FDF6E4;
     line-height: 200%;
     text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__fifthDiv__h3 {
-    margin-top: 3.7vh;
+    margin-top: 3vh;
     font-size: 0.8vw;
-    color: white;
+    color:#FDF6E4;
     // color: #B53F5C;
     line-height: 170%;
     text-shadow: 0.1vw 0.1vw 0.1vw black;
@@ -404,9 +451,9 @@
 
 //////FOOTER CONTENT
 .home__content--footer {
-    height: 20vh;
+    height: 15vh;
     scroll-snap-align: end;
-    background-color: white;
+    // background-color: white;
     // display: block;
     display: flex;
     // flex-direction: column;
@@ -417,7 +464,7 @@
     padding-left: 13vw;
     padding-right: 13vw;
 
-    padding-top: 4vh;
+    // padding-top: 4vh;
     
 }
 
@@ -425,7 +472,8 @@
     font-family: 'CaeciliaLTStd-Bold';
     margin-left: 1vw;
     font-size: 1.4vw;
-    color: black;
+    // color: black;
+    color: #FDF6E4;
 }
 
 .footer__image--logo {
@@ -460,6 +508,7 @@
     height: 1.9vw;
     opacity: 1;
     // filter: invert(1);
+    filter: invert(95%) sepia(11%) saturate(704%) hue-rotate(317deg) brightness(105%) contrast(98%);
 }
 
 .home__button:hover {
@@ -480,7 +529,8 @@
 
 .home__link--personalWeb:hover {
     animation: none;
-    color:black;
+    // color:black;
+    color: #FDF6E4;
 }
 
 
@@ -489,14 +539,16 @@
 .home__content--secondHR {
     height: 0.01vh;
     width: 100%;
-    color: black;
+    // color: black;
+    color: #FDF6E4;
     // background-color: white;
 }
 
 .home__footer--copyright {
     margin-top: 1vh;
-    color: black;
-    font-size: 1.4vh;
+    // color: black;
+    color: white;
+    font-size: 1vh;
     letter-spacing: 0.08vw;
     font-weight: 100;
     margin-bottom: 3vh;

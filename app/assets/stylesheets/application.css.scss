@@ -22,8 +22,38 @@
 }
 
 @font-face {
+  font-family: 'Fofer';
+  src:font-url('Fofer.otf');
+}
+
+@font-face {
+  font-family: 'HabelDemo';
+  src:font-url('HabelDemo.otf');
+}
+
+@font-face {
+  font-family: 'LemonMilk';
+  src:font-url('lemon_milk/LEMONMILK-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Dearest';
+  src:font-url('Dearest.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Signerica_Fat';
   src:font-url('Signerica_Fat.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ShoppingScriptDemo';
+  src:font-url('ShoppingScriptDemo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NeonAbsoluteSans';
+  src:font-url('neon_abslolute_demo/NeonAbsoluteSans.ttf') format('truetype');
 }
 
 @keyframes neon {
@@ -59,6 +89,18 @@
   }
 }
 
+@keyframes stretch--right {
+  0% {
+    transform: scale(0, 1);
+  }
+  50% {
+    transform: scale(0.5, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
 @keyframes rotation {
   from {
     transform: rotate(0deg);
@@ -66,6 +108,11 @@
   to {
     transform: rotate(359deg);
   }
+}
+
+@keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /// 3d shadow on boxes
@@ -80,18 +127,42 @@
         transform: translateX(-3px);
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+// material theme
+.material{
+  background-color: #263238;
+  
+  color: white;
+  color: #FDF6E4;
+
+  color: #F78C6C;
+  color: rgb(255, 111, 0);
+  
+  color: #FFCB6B;
+  color: rgb(255, 190, 27);
+  
+  
+  color: #C3E88D;
+  color: #01A82D;
+  
+  color: rgb(182, 106, 232);
+  color: #C792EA;
+  color: #F07178;
+  
+  color: #F44336;
+  color: #E84079;
+  color: #F44336;
+
+  color: #82AAFF;
+  color: #89DDFF;
+  color: rgb(0, 120, 218);
+
+
+
+  
 }
 
-// .threed
-// {
-//         box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.12), 
-//                     4px 4px 4px 4px rgba(0,0,0,0.12), 
-//                     6px 6px 6px 6px rgba(0,0,0,0.12), 
-//                     10px 10px 10px 10px rgba(0,0,0,0.12),
-//                     18px 18px 18px 18px rgba(0,0,0,0.12);
-//         -webkit-transform: translateX(-3px);
-//         transform: translateX(-3px);
-// }
+
+
+a {
+  text-decoration: none;
+}

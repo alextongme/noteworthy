@@ -27,7 +27,8 @@ body {
 }
 
 .universal__button:active {
-    background-color: #EE1C24;
+    // background-color: #EE1C24;
+    background-color: rgb(182, 106, 232);
 }
 
 .universal__input {
@@ -40,7 +41,7 @@ body {
     font-family: "Raleway";
     font-size: 0.9vw;
     box-sizing: border-box;
-    
+    background-color: #FDF6E4;
 }
 
 .universal__input:focus {

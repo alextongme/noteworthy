@@ -18,10 +18,10 @@ export const receiveNotes = (notes) => {
     }
 };
 
-export const removeNote = (noteId) => {
+export const removeNote = (note) => {
     return {
         type: REMOVE_NOTE,
-        noteId
+        note
     }
 };
 
@@ -58,7 +58,14 @@ export const updateNote = (note) => (dispatch) => {
 };
 
 export const deleteNote = (noteId) => (dispatch) => {
-    return APIUtil.deleteNote(noteId).then(() => {
-        return dispatch(removeNote(noteId));
+    return APIUtil.deleteNote(noteId).then((note) => {
+        // debugger
+        return dispatch(removeNote(note));
     });
 };
+
+// export const deleteNotebook = (notebookId) => (dispatch) => {
+//     return APIUtil.deleteNotebook(notebookId).then((notebook) => {
+//         return dispatch(removeNotebook(notebook));
+//     });
+// };

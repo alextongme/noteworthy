@@ -33,7 +33,9 @@ class Api::NotebooksController < ApplicationController
     def destroy
         @notebook = Notebook.find(params[:id])
         if @notebook.destroy
-            render json: ["Successfully deleted"]
+            # debugger
+            render :show
+            # debugger
         else
             render json: @notebook.errors.full_messages, status: 422
         end

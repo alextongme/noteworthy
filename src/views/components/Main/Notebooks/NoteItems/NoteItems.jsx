@@ -58,7 +58,7 @@ const NoteItems = ({notebook, notes, users}) => {
 
                 <td
                     className="notebooks__tableCol notebookNoteItems__tableCol">
-                    <i className="fas fa-running" />
+                    {/* <i className="fas fa-running" /> */}
                 </td>
             </tr>
         );
