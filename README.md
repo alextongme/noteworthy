@@ -1,7 +1,7 @@
 # noteworthy
 Notes worthy for any moment.
 
-noteworthy originally started as a clone of the popular note taking app, [Evernote](https://www.evernote.com).
+noteworthy originally started as a clone of the popular note taking app, [Evernote](https://www.evernote.com), but quickly became its own unique app. Influenced by design aspects from Mattia Astorino's Material theme and functional aspects from Evernote's note taking editor, noteworthy is a new note editor designed to make your daily note taking activities a simple and visually pleasant experience. Document your thoughts and your life, with noteworthy.
 
 ## Features
 ### User Account Signup/Login
