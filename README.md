@@ -4,19 +4,22 @@
 noteworthy originally started as a clone of the popular note taking app, [Evernote](https://www.evernote.com), but quickly became its own unique app. Influenced by design aspects from Mattia Astorino's Material theme and functional aspects from Evernote's note taking editor, noteworthy is a new note editor designed to make your daily note taking activities a simple and visually pleasant experience. Document your thoughts and your life, with noteworthy.
 
 <p align="center">
-	<img src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/home.png?raw=true"/>
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/home.png?raw=true"/>
 </p>
 
 ## Features
 ### User Account Signup/Login
 - Users can create accounts to save their notes, notebooks & tags. <br></br>
-![Sign up](./app/assets/images/readme_images/signup.gif)
 
 - Users can login (if they have an account) and retrieve their saved data. <br></br>
-![Log in](./app/assets/images/readme_images/userAuth.gif)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/userAuth.gif?raw=true"/>
+</p>
 
 - Log out with ease. <br></br>
-![Log out](./app/assets/images/readme_images/logout.gif)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/logout.gif?raw=true" />
+</p>
 
 - Visitors can also browse and see how the app works on a real account through the demo login button.
 
