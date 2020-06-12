@@ -20,7 +20,9 @@ class NotebookForm extends React.Component {
                 this.props.action(notebook).then((nb) => {
                     this.props.updateDefaultNotebook(nb.notebook.id);
                 })
-            } 
+            } else {
+                this.props.action(notebook);
+            }
         } else {
             this.props.action(notebook)
         }
