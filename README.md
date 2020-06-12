@@ -10,7 +10,6 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 ## Features
 ### User Account Signup/Login
 - Users can create accounts to save their notes, notebooks & tags. <br></br>
-
 - Users can login (if they have an account) and retrieve their saved data. <br></br>
 <p align="center">
 	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/userAuth.gif?raw=true"/>
