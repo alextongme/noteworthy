@@ -1,7 +1,7 @@
 import React from "react";
 
 import Modal from './Modal/Modal';
-import SidebarContainer from "./Sidebar/SidebarContainer";
+import Sidebar from "./Sidebar/Sidebar";
 import Notebooks from './Notebooks/Notebooks';
 
 import NotesNav from "./Notes/NotesNav/NotesNav";
@@ -22,7 +22,7 @@ class Main extends React.Component {
         // debugger
         this.props.fetchNotes();
         this.props.fetchNotebooks();
-        // this.props.fetchTags();
+        this.props.fetchTags();
     }
 
     render() {
@@ -31,7 +31,7 @@ class Main extends React.Component {
             <div className="main">
                 <Modal />
                 {/* <Dropdown /> */}
-                <SidebarContainer />
+                <Sidebar />
 
                 {/* just notebooks */}
                 <PrivateRoute
@@ -64,8 +64,18 @@ class Main extends React.Component {
 
                 {/* show all tags */}
                 <PrivateRoute 
-                    path='/main/tags' 
+                    exact path='/main/tags' 
                     component={Tags} />
+
+                {/* show all notes associated with tags */}
+                <PrivateRoute
+                    path='/main/tags/:tagId/notes' 
+                    component={NotesNav}
+                />
+                <PrivateRoute 
+                    exact path='/main/tags/:tagId/notes/:noteId' 
+                    component={NoteEditorContainer}
+                />
         </div>
         );
     }

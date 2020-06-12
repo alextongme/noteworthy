@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchNotebooks } from '../../../state/actions/notebook';
 import { fetchNotes } from '../../../state/actions/note';
+import { fetchTags } from '../../../state/actions/tag';
 import Main from './Main';
 
 const mapStateToProps = (state) => {
@@ -14,7 +15,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchNotebooks: () => dispatch(fetchNotebooks()),
-        fetchNotes: () => dispatch(fetchNotes())
+        fetchNotes: () => dispatch(fetchNotes()),
+        fetchTags: () => dispatch(fetchTags())
     }
 }
 

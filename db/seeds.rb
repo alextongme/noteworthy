@@ -120,6 +120,26 @@ Tag.create!(
     {
         name: 'Redux',
         author_id: 1
+    },
+    {
+        name: 'Tigers',
+        author_id: 1
+    },
+    {
+        name: 'React',
+        author_id: 1
+    },
+    {
+        name: 'Rails',
+        author_id: 1
+    },
+    {
+        name: 'Ruby',
+        author_id: 1
+    },
+    {
+        name: 'Ruby on Redux',
+        author_id: 1
     }]
 )
 
@@ -139,5 +159,18 @@ NoteTag.create!(
     {
         note_id: 2,
         tag_id: 1
-    }]
+    },
+    {
+        note_id: 3,
+        tag_id: 4
+    },
+    {
+        note_id: 4,
+        tag_id: 4
+    },
+    {
+        note_id: 4,
+        tag_id: 5
+    },
+]
 )

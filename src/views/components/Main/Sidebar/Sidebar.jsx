@@ -1,13 +1,23 @@
 import React from "react";
-import { NavLink, useHistory } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { NavLink, useHistory, useRouteMatch } from 'react-router-dom';
+import {matchPath} from 'react-router';
+import { useDispatch, useSelector } from "react-redux";
+
+import { logout } from '../../../../state/actions/session';
 import { openModal } from '../../../../state/actions/modal';
+import {createNote} from '../../../../state/actions/note';
+import {updateDefaultNotebook} from '../../../../state/actions/notebook';
 
-const Sidebar = ({createNote, session, users, logout, notebooks, updateDefaultNotebook}) => {
-
+const Sidebar = () => {
+    const notebooks = useSelector(state => Object.values(state.entities.notebooks));
+    const users = useSelector(state => state.entities.users);
+    const session = useSelector(state => state.session.id);
     const dispatch = useDispatch();
+
     const currentUser = users[session];
     let history = useHistory();
+    let match = useRouteMatch("/main/notes/:noteId");
+    let match2 = useRouteMatch("/main/notebooks/:notebookId/notes/:noteId/");
 
     const note = {
         title: "Untitled",
@@ -27,31 +37,44 @@ const Sidebar = ({createNote, session, users, logout, notebooks, updateDefaultNo
         if(document.getElementsByClassName("noteEditor")[0] && document.getElementsByClassName("notesNav")[0]) {
             document.getElementsByClassName("noteEditor")[0].classList.toggle("noteEditor--darkMode");
             document.getElementsByClassName("notesNav")[0].classList.toggle("notesNav--darkMode");
+            document.getElementsByClassName("noteNavItem")[0].classList.toggle("noteNavItem--darkMode");
+        }
+    }
+
+    function darkModeLink() {
+        // debugger
+        // console.log(match);
+        if(match) {
+            if(match.isExact || match2.isExact) {
+                return (<li className="sidebar__navlink" onClick={darkMode}>
+                    <i className="fas fas fa-moon sidebar__icons" />
+                    <h3 className="sidebar__titles">Dark mode</h3>
+                </li>);
+            };
         }
     }
     
     function createNoteAndRedirect() {
-        createNote(note).then((obj) => {
-            // debugger
+        // 
+        dispatch(createNote(note)).then((obj) => {
+            // 
             let noteId = obj.note.id;
             return (history.push(`/main/notes/${noteId}`)) 
         })
     }
 
     function defaultNbChange(event) {
+        
         const defaultNbId = parseInt(event.target.value);
-        updateDefaultNotebook(defaultNbId);
-    }
-
-    function notebookNames() {    
-        return notebooks.map((notebook, idx) => {
-            return (<option key={idx} value={notebook.id}>{notebook.name}</option>);
-        })
+        dispatch(updateDefaultNotebook(defaultNbId));
     }
 
     function notebookSelector() {
+        
         if(notebooks === undefined || notebooks.length === 0) {
-            history.push(`/main/notes`);
+            ////////// ****** why does this piece of code cause infinite loop?
+            // history.push(`/main/notes`);
+            
             return (
                 <div className="custom__select sidebar__navlink"
                     onClick={() => dispatch(openModal("Create notebook"))}>
@@ -61,8 +84,7 @@ const Sidebar = ({createNote, session, users, logout, notebooks, updateDefaultNo
                     </h3>
                 </div>);
         } else {
-
-            let names = notebookNames();
+            
              return (
                 <>
                     <div className="custom__select sidebar__navlink">
@@ -74,12 +96,15 @@ const Sidebar = ({createNote, session, users, logout, notebooks, updateDefaultNo
                             value={currentUser.default_notebook_id}
                             >
                             <option disabled>Select a default notebook</option>
-                            {names}
+                            
+                            {notebooks.map((notebook, idx) => {
+                                return (<option key={idx} value={notebook.id}>{notebook.name}</option>);
+                            })}
                         </select>
                     </div>
                     <div 
                             className="sidebar__navlink"
-                            onClick={() => createNoteAndRedirect()}>
+                            onClick={createNoteAndRedirect}>
                             <i className="far fa-edit sidebar__icons"></i>
                             <h3 className="sidebar__titles">New note</h3>
                     </div>
@@ -145,16 +170,11 @@ const Sidebar = ({createNote, session, users, logout, notebooks, updateDefaultNo
                 
                 {notebookSelector()}
 
-                
+                {darkModeLink()}
 
-            <li className="sidebar__navlink" onClick={logout}>
+            <li className="sidebar__navlink" onClick={ () => dispatch(logout()) }>
                 <i className="fas fa-sign-out-alt sidebar__icons" />
                 <h3 className="sidebar__titles">Logout</h3>
-            </li>
-
-            <li className="sidebar__navlink" onClick={darkMode}>
-                <i className="fas fas fa-moon sidebar__icons" />
-                <h3 className="sidebar__titles">Dark mode</h3>
             </li>
 
             <li className="sidebar__navlink sidebar__navlink--expand" onClick={toggleSidebar} >
