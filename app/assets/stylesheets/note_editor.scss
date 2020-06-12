@@ -15,7 +15,7 @@
 }
 
 .noteEditor--darkMode > * {
-    color: white;
+    color: #efe8d7;
 }
 
 .noteEditor__header {
@@ -56,7 +56,7 @@
     font-size: 1.5em;
     // opacity: 0;
     // display: none !important;
-    opacity: 0;
+    opacity: 1;
 }
 
 .fa-trash-alt {
@@ -69,11 +69,11 @@
 //     font-size: 1.5em;
 // }
 
-.noteEditor__button--trash--show {
-    display: inline-block !important;
-    transition: 1s;
-    opacity: 1;
-}
+// .noteEditor__button--trash--show {
+//     display: inline-block !important;
+//     transition: 1s;
+//     opacity: 1;
+// }
 
 
 

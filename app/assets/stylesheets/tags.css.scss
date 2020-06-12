@@ -12,18 +12,127 @@
     // background-color: white;
 
     // grid-template-rows: 50px 100px 100px auto;
+    display: grid;
+    grid-template-rows: 15vh auto 10vh;
+
+    overflow: scroll;
 }
 
-.tags__container {
-}
 
 .tags__header {
     width: 100%;
-    height: 10vh;
+    height: 100%;
+    grid-row: 1 / 2;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 1.7em;
+    color: #FDF6E4;
+    // position: fixed;
 }
 
-.tag__link {
-    width: 25%;
-    height: 15vh;
-    background-color: green;
+.tags__header--icon {
+    margin: 20px;
+   
 }
+
+.tags__grid {
+    grid-row: 2 / 3;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tag__container {
+    width: 30%;
+    height: 40vh;
+    background-color: #FDF6E4;
+
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: space-around;
+    // border-radius: 0.15em;
+
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 35px;
+
+    display: grid;
+    grid-template-rows: 70% 15% 15%;
+}
+
+.tag__container {
+    background-color: transparent;
+    color: #FDF6E4;
+}
+.tag__container--6:hover {
+    background-color: black;
+    color: #FDF6E4;
+}
+    .tag__container--7:hover {
+    color: black;
+    background-color: #FDF6E4;
+    }
+
+.tag__container--1:hover {
+    background-color: rgb(255, 111, 0);
+    color: #FDF6E4 !important;
+}
+.tag__container--2:hover {
+    background-color: rgb(255, 190, 27);
+    color: #FDF6E4 !important;
+}
+.tag__container--3:hover {
+    background-color: #01A82D;
+    color: #FDF6E4 !important;
+}
+.tag__container--4:hover {
+    background-color: rgb(182, 106, 232);
+    color: #FDF6E4 !important;
+}
+.tag__container--5:hover {
+    background-color: #E84079;
+    color: #FDF6E4 !important;
+}
+.tag__container--0:hover {
+    background-color: rgb(0, 120, 218);
+    color: #FDF6E4 !important;
+}
+
+// .tag__container:hover {
+//     background-color: green;
+//     color: #FDF6E4;
+// }
+
+.tag__link {
+    grid-row: 1 / 2;
+    font-family: "Oswald";
+    font-size: 10vh;
+    font-weight: 400;
+    // color: black;
+    color: inherit;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tag__numOfItems {
+    grid-row: 2 / 3;
+    align-self: center;
+}
+
+.tag__footer--container {
+    grid-row: 3 / 4;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+.tag__footer--container i {
+    color: black;
+}
+

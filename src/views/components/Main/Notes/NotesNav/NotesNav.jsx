@@ -12,6 +12,7 @@ const NoteNav = () => {
     const dispatch = useDispatch();
     const notebooks = useSelector(state => state.entities.notebooks);
     const notes = useSelector(state => state.entities.notes);
+    const tags = useSelector(state => state.entities.tags);
     // debugger
     // useEffect(() => {
     //     // debugger
@@ -41,16 +42,25 @@ const NoteNav = () => {
             notebook.note_ids.forEach((id) => {
                 selectedNotes.push(notes[id]);
             });
+        } else if (match.path === "/main/tags/:tagId/notes") {
+            let tag = tags[match.params.tagId];
+            notebookName = tag.name;
+            tag.note_ids.forEach((id) => {
+                selectedNotes.push(notes[id]);
+            });
         }
 
         sortedNotes = selectedNotes.sort((a,b) => {
             //     // sort by updated at
             return (a.updated_at > b.updated_at ? -1 : 1)}).map((note, idx) => {
                     let path;
+                    // debugger
                     if(match.path === "/main/notes") {
                         path =`/main/notes/${note.id}`
-                    } else {
+                    } else if (match.path === "/main/notebooks/:notebookId/notes") {
                         path =`/main/notebooks/${match.params.notebookId}/notes/${note.id}`
+                    } else if (match.path === "/main/tags/:tagId/notes") {
+                        path =`/main/tags/${match.params.tagId}/notes/${note.id}`
                     }
 
                     return (

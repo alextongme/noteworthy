@@ -17,6 +17,7 @@ class Tag < ApplicationRecord
 
     # note associations
     has_many :note_tags,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :tag_id,
     class_name: :NoteTag
