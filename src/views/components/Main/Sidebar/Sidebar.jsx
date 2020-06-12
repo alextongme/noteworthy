@@ -37,7 +37,12 @@ const Sidebar = () => {
         if(document.getElementsByClassName("noteEditor")[0] && document.getElementsByClassName("notesNav")[0]) {
             document.getElementsByClassName("noteEditor")[0].classList.toggle("noteEditor--darkMode");
             document.getElementsByClassName("notesNav")[0].classList.toggle("notesNav--darkMode");
-            document.getElementsByClassName("noteNavItem")[0].classList.toggle("noteNavItem--darkMode");
+            Array.from(document.getElementsByClassName("noteNavItem")).forEach((item) => {
+                item.classList.toggle("noteNavItem--darkMode");
+            })
+            document.getElementsByClassName("noteNavItem--active")[0].classList.toggle("noteNavItem--active--darkMode");
+            document.getElementsByClassName("noteEditor__h2--header")[0].classList.toggle("noteEditor__h2--header--darkMode");
+            Array.from(document.getElementsByClassName("noteEditor__button")).forEach((item) => {item.classList.toggle("noteEditor__button--darkMode")});
         }
     }
 

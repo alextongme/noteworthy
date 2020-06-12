@@ -82,8 +82,13 @@
 
 .noteNavItem--darkMode {
     color: #efe8d7 !important;
+    border-top: 0.3px solid #192126;
 }
 
+.noteNavItem--active--darkMode {
+    background-color: #1f292d !important;
+    
+}
 
 .noteNavItem--active {
     width: 100%;

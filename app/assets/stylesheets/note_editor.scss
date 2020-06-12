@@ -15,7 +15,15 @@
 }
 
 .noteEditor--darkMode > * {
-    color: #efe8d7;
+    color: #efe8d7 !important;
+}
+
+.noteEditor__h2--header--darkMode {
+    color: #efe8d7 !important;
+}
+
+.noteEditor__button--darkMode {
+    filter: invert(1);
 }
 
 .noteEditor__header {
@@ -150,7 +158,6 @@
 
     width: 1.5em;
     opacity: 1;
- 
 }
 
 .noteEditor__button:hover {
