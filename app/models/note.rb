@@ -11,6 +11,16 @@
 class Note < ApplicationRecord
     # default_scope { order(updated_at: :desc) }
 
+    has_one :notebook_note,
+    dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :note_id,
+    class_name: :NotebookNote
+
+    has_one :notebook,
+    through: :notebook_note,
+    source: :notebook
+
     # user associations
     has_many :user_notes,
     primary_key: :id,
@@ -32,13 +42,6 @@ class Note < ApplicationRecord
     source: :tag
 
     # notebook associations
-    has_many :notebook_notes,
-    primary_key: :id,
-    foreign_key: :note_id,
-    class_name: :NotebookNote
-
-    has_many :notebooks,
-    through: :notebook_notes,
-    source: :notebook
+    
     
 end

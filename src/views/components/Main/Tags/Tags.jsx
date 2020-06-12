@@ -1,8 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import React from 'react';
 import { closeModal } from '../../../../state/actions/modal'
-// import { closeModal } from '../../../../state/actions/modal';
-// import { createNotebook } from '../../../../../state/actions/notebook';
 
 const Tags = (props) => {
     const tagsObj = useSelector(state => state.entities.tags);

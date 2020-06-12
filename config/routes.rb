@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     get 'session/lookForUser', to: 'sessions#lookForUser'
 
-    resource :user, only: [:create]
+    resource :user, only: [:create, :update]
 
     resources :notebooks, only: [:index, :show, :create, :destroy, :update]
 

@@ -8,6 +8,18 @@
 #  updated_at :datetime         not null
 #
 class Notebook < ApplicationRecord
+    before_destroy :delete_notes
+
+    # note associations
+    has_many :notebook_notes,
+    dependent: :destroy,
+    primary_key: :id,
+    foreign_key: :notebook_id,
+    class_name: :NotebookNote
+
+    has_many :notes,
+    through: :notebook_notes,
+    source: :note
 
     # user associations
     has_many :user_notebooks,
@@ -19,13 +31,12 @@ class Notebook < ApplicationRecord
     through: :user_notebooks, 
     source: :user
 
-    # note associations
-    has_many :notebook_notes,
-    primary_key: :id,
-    foreign_key: :notebook_id,
-    class_name: :NotebookNote
+    
 
-    has_many :notes,
-    through: :notebook_notes,
-    source: :note
+    private
+    def delete_notes
+        notes.each do |note|
+            note.destroy
+        end
+    end
 end

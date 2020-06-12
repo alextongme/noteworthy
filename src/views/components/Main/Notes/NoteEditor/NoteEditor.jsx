@@ -12,8 +12,6 @@ class NoteEditor extends React.Component {
         this.handleQuillChange = this.handleQuillChange.bind(this);
         this.hideToolbarAndSave = this.hideToolbarAndSave.bind(this);
         this.trash = this.trash.bind(this);
-        // debugger
-        // this.history = useHistory();
     }
 
     handleChange(field) {
@@ -52,15 +50,15 @@ class NoteEditor extends React.Component {
             // this.autosaveInterval = setInterval(() => (this.props.updateNote(this.state)), 20000);
         }
 
-        this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
+        // this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
     }
     
     componentWillUnmount() {
         if(this.props.note) {
-            this.props.updateNote(this.state);
-            // clearInterval(this.autosaveInterval);
+        //     this.props.updateNote(this.state);
+        //     // clearInterval(this.autosaveInterval);
         }
-        window.removeEventListener('beforeunload', this.saveOnClose);
+        // window.removeEventListener('beforeunload', this.saveOnClose);
     }
 
     trash() {

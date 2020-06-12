@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 // import React from 'react';
-import { createNotebook } from '../../../../../state/actions/notebook';
+import { createNotebook, updateDefaultNotebook } from '../../../../../state/actions/notebook';
 import { closeModal } from '../../../../../state/actions/modal';
 import NotebookForm from './NotebookForm';
 
@@ -9,7 +9,8 @@ const mapStateToProps = (state) => {
         notebook: {
             name: "",
         },
-        formType: "Create New Notebook"
+        formType: "Create New Notebook",
+        notebooks: Object.values(state.entities.notebooks)
     }
 }
 
@@ -17,7 +18,8 @@ const mapDispatchToProps = (dispatch) => {
     // debugger
     return {
         action: (notebook) => dispatch(createNotebook(notebook)),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        updateDefaultNotebook: (notebookId) => dispatch(updateDefaultNotebook(notebookId)),
     }
 }
 

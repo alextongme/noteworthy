@@ -47,13 +47,16 @@ const Notebooks = () => {
 
                     <div 
                         className="notebooks__addContainer">
-                        <img 
+                        {/* <img 
                             src={window.addButton} className="notebooks__button--addImage"
-                            onClick={() => dispatch(openModal("Create notebook"))} />
+                            onClick={() => dispatch(openModal("Create notebook"))} /> */}
+
+                        <i 
+                            className="fas fa-book sidebar__icons" 
+                            onClick={() => dispatch(openModal("Create notebook"))}/>
                         <button 
                             className="notebooks__button--add"
-                            onClick={() => dispatch(openModal("Create notebook"))}
-                            >
+                            onClick={() => dispatch(openModal("Create notebook"))}>
                             New notebook
                         </button>
                     </div>

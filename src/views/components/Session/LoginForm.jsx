@@ -15,6 +15,10 @@ class LoginForm extends React.Component {
         this.showPasswordField = this.showPasswordField.bind(this)
     }
 
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
+
     handleChange(field) {
         return ((event) => {
             this.setState({
@@ -58,7 +62,8 @@ class LoginForm extends React.Component {
         if(this.state.emailFound === true) {
             return (
                 <input 
-                    type="current-password" 
+                    type="password"
+                    autoComplete="current-password"
                     className="universal__input sessionForm__input sessionForm__input--login" 
                     value={this.state.password} 
                     onChange={this.handleChange('password')} placeholder="Password" 
@@ -108,7 +113,7 @@ class LoginForm extends React.Component {
                         </form>
 
                         <button 
-                            className="universal__button sessionForm__button" 
+                            className="universal__button sessionForm__button sessionForm__button--demo" 
                             onClick={this.loginAsDemo}>
                             DEMO
                         </button>

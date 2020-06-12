@@ -27,6 +27,7 @@
     // color: #01A82D;
     // color: white;
     color: #FDF6E4;
+    transition: all 1s;
 }
 
 .headerIntro__button--logout {
@@ -39,8 +40,9 @@
 }
 
 .headerIntro__button--login:hover, .headerIntro__button--logout:hover, {
+    transition: all 1s;
     cursor: pointer;
-    text-decoration: none;
+    // text-decoration: underline;
     text-shadow: none;
     color: #F5B625;
 }

@@ -1,5 +1,13 @@
 ////////////////////// NOTEBOOKS
 .notebooks {
+    animation: fade;
+    animation-duration: 0.8s; 
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-play-state: running; 
+
     overflow: hidden;
     grid-row: 1 / 2;
     grid-column: 2 / 4;

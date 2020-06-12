@@ -14,6 +14,7 @@ class Api::NotesController < ApplicationController
 
         if @note.save
             create_user_note_association(current_user.id, @note.id)
+            # debugger
             create_notebook_note_association(current_user.default_notebook_id, @note.id)
         else
             render json: @notebook.errors.full_messages, status: 422
@@ -33,9 +34,9 @@ class Api::NotesController < ApplicationController
 
     def destroy
         @note = Note.find(params[:id])
-
+        @notebook_id = @note.notebook.id
         if @note.destroy
-            render json: ["Successfully deleted"]
+            render :delete
         else
             render json: @note.errors.full_messages, status: 422
         end

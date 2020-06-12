@@ -51,15 +51,15 @@ UserNotebook.create!(
 Note.create!(
     [{
         title: 'my first note in notebook 1',
-        body: 'Consequat esse dolore minim eiusmod ut. Consequat qui dolor nisi veniam do duis id excepteur aliqua cupidatat. Quis aute sunt velit cillum consectetur elit est pariatur. Sint reprehenderit laboris fugiat aute est ullamco adipisicing minim incididunt ex.'
+        body: '<p><u class="ql-font-monospace ql-size-huge" style="color: rgb(0, 138, 0); background-color: rgb(0, 41, 102);">“The Old Pond” by Matsuo Bashō</u></p><p><em style="background-color: initial;" class="ql-font-serif ql-size-large">An old silent pond</em></p><p><span class="ql-size-huge" style="background-color: initial;">A frog jumps into the pond—</span></p><p><em style="background-color: initial;" class="ql-font-monospace ql-size-large">Splash! Silence again.</em></p><p><br></p>'
     },
     {
         title: 'my first note in notebook 2',
-        body: 'Amet Lorem aute enim ex excepteur adipisicing ullamco cillum sunt excepteur proident incididunt est culpa. Laboris quis minim cillum mollit. Aliquip nulla cillum dolore ullamco. Ea laboris consequat amet esse Lorem ullamco eu laboris incididunt. Non amet occaecat ullamco dolore dolor laborum sunt id magna culpa et voluptate officia aliquip. Culpa pariatur sit incididunt nisi consectetur ea dolor. Consequat magna veniam qui non voluptate qui officia esse adipisicing enim.'
+        body: '<p><a href="www.tongsalex.com" rel="noopener noreferrer" target="_blank">Laboris occaecat sit excepteur non culpa ipsum culpa do aliquip labore do. Amet esse aliquip officia aliquip sint cupidatat officia nostrud qui. Enim deserunt mollit minim eiusmod ut veniam minim elit anim commodo. Eiusmod velit officia non consequat excepteur irure dolor voluptate dolor. Labore elit qui nulla est duis id aliqua do officia exercitation do non ullamco culpa.</a></p>'
     },
     {
         title: 'my second note in notebook 1',
-        body: 'Laboris occaecat sit excepteur non culpa ipsum culpa do aliquip labore do. Amet esse aliquip officia aliquip sint cupidatat officia nostrud qui. Enim deserunt mollit minim eiusmod ut veniam minim elit anim commodo. Eiusmod velit officia non consequat excepteur irure dolor voluptate dolor. Labore elit qui nulla est duis id aliqua do officia exercitation do non ullamco culpa.'
+        body: '<ol><li><span class="ql-font-monospace ql-size-large">Consequat esse dolore minim </span></li><li><span class="ql-font-monospace ql-size-large">eiusmod </span></li><li><span class="ql-font-monospace ql-size-large">ut. </span></li><li><br></li></ol><ul><li><span class="ql-font-monospace ql-size-large">Consequat qui dolor nisi veniam do duis id </span></li><li><span class="ql-font-monospace ql-size-large">excepteur aliqua cupidatat. Quis aute sunt velit cillum consectetur elit est pariatur. Sint reprehenderit laboris fugiat aute est ullamco adipisicing minim incididunt ex.</span></li></ul><p><br></p><p><br></p><p><br></p><pre class="ql-syntax" spellcheck="false">&lt;div&gt;this is a code block!&lt;/div&gt;+'
     },
     {
         title: 'my first note in notebook 3',

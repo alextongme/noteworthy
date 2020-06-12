@@ -1,4 +1,12 @@
 .sidebar {
+    animation: fade;
+    animation-duration: 0.8s; 
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-play-state: running; 
+
     // height: 100vh;
     // position: fixed;
     // width: 250px;
@@ -105,7 +113,7 @@
     height: 6vh;
     width: 100%;
     display: grid;
-    grid-template-columns: 55px auto;
+    grid-template-columns: 65px auto;
 }
 
 .sidebar__image--logo {
@@ -113,6 +121,7 @@
     // width: 1.3rem;
     margin: 15px;
     width: 1.7em;
+    place-self: center;
 }
 
 .sidebar__logo {
@@ -128,27 +137,15 @@
     white-space: nowrap;
     height: 6vh;
     width: 100%;
-    // display: flex;
-    // align-items: center;
     text-decoration: none;
-    // color: white;
     cursor: pointer;
     transition: 0.8s;
 
     display: grid;
-    grid-template-columns: 55px auto;
+    grid-template-columns: 65px auto;
     grid-template-rows: 6vh;
-    
-    // color: #FFCB6B;
-    // color: #C3E88D;
-    // color: #F44336;
-    // color: #82AAFF;
-    // color: #89DDFF;
-    // color: #E84079;
-    // color: #C792EA;
-    // color: #F07178;
-    // color: #00A82D;
-    color: white;
+    align-items: center;
+    color: #FDF6E4;
     
 }
 
@@ -156,12 +153,55 @@
     transition: 0.8s;
     color: black;
     background-color: #FDF6E4;
-    
 }
 
-.sidebar__navlink:active {
-    // color: red;
-    // background-color: #EFAD0F;
+.sidebar__navlink--disable:hover {
+    color: #FDF6E4;
+    background-color: transparent;
+    cursor: default !important;
+}
+
+.custom__select {
+    display: grid;
+    grid-template-columns: 63px auto;
+    grid-template-rows: 6vh;
+    width: 100%;
+}
+
+.custom__select:hover{
+    background-color: #FDF6E4;
+    color: black;
+}
+
+.custom__select:hover select{
+    // background-color: #FDF6E4;
+    color: black !important;
+}
+
+// .fa-chalkboard-teacher {
+//     grid-column: 1 / 2;
+//     font-size: 1.7em;
+//     align-self: center;
+// }
+
+.custom__select select{
+    // display: none;
+    grid-column: 2 / 3;
+    font-size: 1em;
+    font-family: 'Raleway';
+    width: 80%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    outline: none;
+    color: #FDF6E4;
+    padding: none;
+}
+
+.custom__select:hover {
+    transition: 0.8s;
+    color: black;
 }
 
 .sidebar__navlink--active{
@@ -174,40 +214,41 @@
 
 .sidebar__icons {
     grid-column: 1 / 2;
-    grid-row: 1 / 2;
     margin: 15px;
-    
-    align-self: center;
-    // color: #FFCB6B;
-    // color: white;
     font-size: 1.7em !important;
-    // display: flex;
-    // align-items: center;
+    cursor: inherit;
+    place-self: center;
 }
 
 .sidebar__titles {
     grid-column: 2 / 3;
-    display: flex;
-    align-items: center;
+    // color: #FDF6E4;
 }
 
+
+///////////////////// icons
+
 .fa-user-circle {
-//     color: white;
-//   color: #F78C6C;
-color: rgb(0, 120, 218);
-  
-//   color: #F07178
+    color: #FDF6E4;
+}
+
+// .fa-atlas {
+   
+    
+// }
+
+.fa-chalkboard-teacher {
+    color: #01A82D;
+    
 }
 
 .fa-edit {
-    // color: #C3E88D;
     color: #E84079;
 }
 
 .fa-book {
-    // color: #89DDFF;
-    
     color: #01A82D;
+    color: rgb(0, 120, 218);
 }
 
 .fa-sticky-note {
@@ -218,12 +259,16 @@ color: rgb(0, 120, 218);
     color: rgb(255, 111, 0);
 }
 
+.fa-moon {
+    color: rgb(255, 190, 27);
+}
+
 .fa-sign-out-alt {
     color: #F44336;
 }
 
 .fa-arrows-alt-h {
     color: rgb(182, 106, 232);
-    
+    // color: #89DDFF;
 }
 

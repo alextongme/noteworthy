@@ -13,15 +13,28 @@ class Api::UsersController < ApplicationController
       end
     end
 
+    def update
+      # debugger
+      if current_user.update(default_nb_params)
+        render json: ['Success!'], status: 200
+      else
+        render json: current_user.errors.full_messages, status: 422
+      end
+    end
+
     private
     def user_params
       params.require(:user).permit(:password, :email)
     end
 
+    def default_nb_params
+      params.permit(:default_notebook_id)
+    end
+
     def initialize_user(user)
       # debugger
       @notebook = Notebook.new({name: "Your first notebook!"})
-      @note = Note.new({title: "Your first note!", body: "Your first message!"})
+      @note = Note.new({title: "Your first note!", body: "<p><span class='ql-font-monospace ql-size-huge'>Your first message!</span></p>"})
       # debugger
       if (@notebook.save && @note.save)
           user.default_notebook_id = @notebook.id

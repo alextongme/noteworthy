@@ -4,28 +4,14 @@ import {
     REMOVE_NOTEBOOK
 } from "../actions/notebook";
 
-// import {
-//     RECEIVE_NOTE,
-//     REMOVE_NOTE
-// } from "../actions/note";
+import {
+    REMOVE_NOTE
+} from "../actions/note";
 
 export default (prevState = {}, action) => {
     Object.freeze(prevState);
+    let nextState = Object.assign({}, prevState);
     switch(action.type) {
-
-        // case RECEIVE_NOTE:
-        //     let newNotebooks = {};
-        //     Object.values(action.notebooks).forEach((notebook) => {
-        //         newNotebooks[notebook.id] = notebook;
-        //     })
-        //     return Object.assign({}, prevState, newNotebooks);
-        // case REMOVE_NOTE:
-        //     newNotebooks = {};
-        //     Object.values(action.notebooks).forEach((notebook) => {
-        //         newNotebooks[notebook.id] = notebook;
-        //     })
-        //     return Object.assign({}, prevState, newNotebooks);
-
         case RECEIVE_NOTEBOOKS:
             const newNotebooks = {};
             Object.values(action.notebooks).forEach((notebook) => {
@@ -33,16 +19,19 @@ export default (prevState = {}, action) => {
             })
             return Object.assign({}, prevState, newNotebooks);
         case RECEIVE_NOTEBOOK:
-            // debugger
             const newNotebook = { [action.notebook.id]: action.notebook };
             return Object.assign({}, prevState, newNotebook);
-        // case UPDATE_NOTEBOOK:
-        //     const newNotebook = { [action.notebook.id]: action.notebook };
-        //     return Object.assign({}, prevState, newNotebook);
         case REMOVE_NOTEBOOK:
-            let nextState = Object.assign({}, prevState);
-            delete nextState[action.notebookId]
+            delete nextState[action.notebook.id]
             return nextState;
+
+        // when a note is removed, delete the note-id association in the notebook
+        case REMOVE_NOTE:
+            let index = nextState[action.note.notebook_id].note_ids.indexOf(action.note.id)
+            nextState[action.note.notebook_id].note_ids.splice(index, 1)
+            // debugger
+            return nextState;
+    
         default:
             return prevState;
     }

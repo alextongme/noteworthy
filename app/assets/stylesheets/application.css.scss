@@ -22,8 +22,38 @@
 }
 
 @font-face {
+  font-family: 'Fofer';
+  src:font-url('Fofer.otf');
+}
+
+@font-face {
+  font-family: 'HabelDemo';
+  src:font-url('HabelDemo.otf');
+}
+
+@font-face {
+  font-family: 'LemonMilk';
+  src:font-url('lemon_milk/LEMONMILK-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Dearest';
+  src:font-url('Dearest.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Signerica_Fat';
   src:font-url('Signerica_Fat.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ShoppingScriptDemo';
+  src:font-url('ShoppingScriptDemo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NeonAbsoluteSans';
+  src:font-url('neon_abslolute_demo/NeonAbsoluteSans.ttf') format('truetype');
 }
 
 @keyframes neon {

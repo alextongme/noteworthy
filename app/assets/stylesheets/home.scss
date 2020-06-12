@@ -94,7 +94,8 @@
     
     
     // sepia
-    color: rgb(182, 106, 232);
+    // color: rgb(182, 106, 232);
+    color: rgb(255, 190, 27);
 }
 
 .home__h2--left {
@@ -209,7 +210,8 @@
     font-size: 3vw;
     line-height: 8vh;
     // color: black;
-    color: rgb(255, 190, 27);
+    
+    color: #01A82D;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
@@ -252,7 +254,8 @@
 .home__thirdDiv__img {
     font-size: 15vw;
     // width: 15vw;
-    color: rgb(0, 120, 218);
+    // color: rgb(0, 120, 218);
+    color: #89DDFF;
 }
 
 .home__thirdDiv__h1 {
@@ -260,7 +263,8 @@
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 8vh;
-    color: #F07178;
+    // color: #82AAFF;
+    color: rgb(255, 190, 27);
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
@@ -302,7 +306,8 @@
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 8vh;
-    color: rgb(255, 111, 0);
+    // color: rgb(255, 111, 0);
+    color:  #FDF6E4;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
@@ -312,7 +317,9 @@
     font-weight: 700;
     font-size: 1.4vw;
     // line-height: 8vh;
-    color: #FDF6E4;
+    // color: #FDF6E4;
+    // color: rgb(182, 106, 232);
+    color: #01A82D;
     text-align: center;
     // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
@@ -386,12 +393,13 @@
     width: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
     // height: 100%;
 }
 
 .home__fifthDiv__signupForm {
     width: 65%;
-    height: 40vh;
+    // height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -418,12 +426,13 @@
 
 .home__fifthDiv__h1 {
     // color: #b43f5c;
-    color: rgb(182, 106, 232);
+    // color: rgb(182, 106, 232);
+    color: rgb(255, 190, 27);
     text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__fifthDiv__h2 {
-    margin-top: 3.7vh;
+    margin-top: 3vh;
     font-weight: 400;
     // color: #b43f5c;
     color: #FDF6E4;
@@ -432,7 +441,7 @@
 }
 
 .home__fifthDiv__h3 {
-    margin-top: 3.7vh;
+    margin-top: 3vh;
     font-size: 0.8vw;
     color:#FDF6E4;
     // color: #B53F5C;
@@ -498,7 +507,8 @@
     margin-left: 2vw;
     height: 1.9vw;
     opacity: 1;
-    filter: invert(1);
+    // filter: invert(1);
+    filter: invert(95%) sepia(11%) saturate(704%) hue-rotate(317deg) brightness(105%) contrast(98%);
 }
 
 .home__button:hover {
@@ -537,8 +547,8 @@
 .home__footer--copyright {
     margin-top: 1vh;
     // color: black;
-    color: #FDF6E4;
-    font-size: 1.4vh;
+    color: white;
+    font-size: 1vh;
     letter-spacing: 0.08vw;
     font-weight: 100;
     margin-bottom: 3vh;
