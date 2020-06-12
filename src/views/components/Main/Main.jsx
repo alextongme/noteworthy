@@ -22,6 +22,7 @@ class Main extends React.Component {
         // debugger
         this.props.fetchNotes();
         this.props.fetchNotebooks();
+        this.props.fetchTags();
     }
 
     render() {

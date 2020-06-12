@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { signup } from '../../../state/actions/session';
 import Home from './Home.jsx';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = ({ errors, session }) => {
     return {
-        errors: errors.session
+        errors: errors.session,
+        currentUser: session.id
     }
 }
 
