@@ -32,7 +32,7 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 
 ### Organize by Notebooks
 - Choose which notebook you would like to store your note in, each note needs to be in a notebook. <br></br>
-![Specific Notebook](./app/assets/images/readme_images/makeNoteInSpecificNb.gif)
+![Specific Notebook](./app/assets/images/readme_images/makeNoteInSpecificNB.gif)
 - Users can easily change which notebook they are creating a new note on using the dropdown menu in the sidebar.
 - Easily view all of your notes in a specific notebook by visiting the notebook index page through the sidebar and selecting the arrow next to your desired notebook. <br></br>
 ![Expand Notebook](./app/assets/images/readme_images/expandNb.gif)
