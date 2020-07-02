@@ -66,6 +66,7 @@ class NotebookForm extends React.Component {
 
                     <div className="notebookForm__buttonContainer">
                         <button
+                            type="button"
                             className="universal__button notebookForm__button--cancel"
                             onClick={this.props.closeModal}>
                             Cancel
