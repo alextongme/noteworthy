@@ -26,9 +26,7 @@ class NoteEditor extends React.Component {
         this.setState({
             body : content
         })
-        // debugger
         this.length = editor.getLength();
-        // debugger
     }
 
     showToolbar() {
@@ -50,7 +48,7 @@ class NoteEditor extends React.Component {
             // this.autosaveInterval = setInterval(() => (this.props.updateNote(this.state)), 20000);
         }
 
-        // this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
+        this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
     }
     
     componentWillUnmount() {
@@ -58,13 +56,11 @@ class NoteEditor extends React.Component {
         //     this.props.updateNote(this.state);
         //     // clearInterval(this.autosaveInterval);
         }
-        // window.removeEventListener('beforeunload', this.saveOnClose);
+        window.removeEventListener('beforeunload', this.saveOnClose);
     }
 
     trash() {
         this.props.deleteNote(this.props.note.id).then(() => (this.props.history.push('/main/notes') ) );
-            // return (this.history.push('/main/notes'))
-        
     }
 
     render() {
@@ -101,7 +97,13 @@ class NoteEditor extends React.Component {
                             </h2>
                         </NavLink>
                     </div>
+                    <div>
+                        <i 
+                        className="far fa-folder-open noteEditor__button--move" onClick={() => this.props.moveNote()} 
+                        />
+                       
                         <i className="fas fa-trash-alt noteEditor__button--trash" onClick={this.trash} />
+                    </div>
                     
                 </header>
 

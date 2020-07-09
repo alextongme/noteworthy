@@ -8,7 +8,7 @@ import { fetchNotes } from '../../../../../state/actions/note';
 
 import { useSelector, useDispatch } from "react-redux";
 
-const NoteNav = () => {
+const NotesNav = () => {
     const dispatch = useDispatch();
     const notebooks = useSelector(state => state.entities.notebooks);
     const notes = useSelector(state => state.entities.notes);
@@ -55,12 +55,14 @@ const NoteNav = () => {
             return (a.updated_at > b.updated_at ? -1 : 1)}).map((note, idx) => {
                     let path;
                     // debugger
-                    if(match.path === "/main/notes") {
-                        path =`/main/notes/${note.id}`
-                    } else if (match.path === "/main/notebooks/:notebookId/notes") {
-                        path =`/main/notebooks/${match.params.notebookId}/notes/${note.id}`
-                    } else if (match.path === "/main/tags/:tagId/notes") {
-                        path =`/main/tags/${match.params.tagId}/notes/${note.id}`
+                    if(note) {
+                        if(match.path === "/main/notes") {
+                            path =`/main/notes/${note.id}`
+                        } else if (match.path === "/main/notebooks/:notebookId/notes") {
+                            path =`/main/notebooks/${match.params.notebookId}/notes/${note.id}`
+                        } else if (match.path === "/main/tags/:tagId/notes") {
+                            path =`/main/tags/${match.params.tagId}/notes/${note.id}`
+                        }
                     }
 
                     return (
@@ -110,4 +112,4 @@ const NoteNav = () => {
     );
 }
 
-export default NoteNav;
+export default NotesNav;

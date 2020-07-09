@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { updateNote, deleteNote } from '../../../../../state/actions/note';
+import { openModal } from '../../../../../state/actions/modal';
 import NoteEditor from './NoteEditor';
 import {withRouter} from "react-router";
 
@@ -8,7 +9,7 @@ import NotesIntro from '../NotesIntro/NotesIntro'
 
 class NoteEditorContainer extends React.Component {
     render() {
-        const {notebooks, deleteNote, updateNote, note, match, history} = this.props;
+        const {notebooks, deleteNote, updateNote, moveNote, note, match, history} = this.props;
         // debugger
         if(note === undefined || Object.keys(notebooks).length === 0) {
             return (
@@ -21,6 +22,7 @@ class NoteEditorContainer extends React.Component {
             return (
                 <NoteEditor
                     key={match.params.noteId}
+                    moveNote={moveNote}
                     deleteNote={deleteNote}
                     updateNote={updateNote}
                     note={note}
@@ -44,6 +46,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         // fetchNote: (note) => dispatch(fetchNote(note)),
+        moveNote: () => dispatch(openModal("Create notebook")),
         updateNote: (note) => dispatch(updateNote(note)),
         deleteNote: (noteId) => dispatch(deleteNote(noteId))
     }
