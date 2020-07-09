@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { closeModal } from '../../../../state/actions/modal';
 import NotebookCreateContainer from '../Notebooks/NotebookForm/CreateFormContainer';
 import NotebookEditContainer from '../Notebooks/NotebookForm/EditFormContainer';
+import NoteMoveContainer from '../Notes/NoteMove/NoteMove';
 import Tags from '../Tags/Tags'
 
 const Modal = ({modal, closeModal}) => {
@@ -16,6 +17,9 @@ const Modal = ({modal, closeModal}) => {
     switch (modal) {
       case 'Open tags':
         component = <Tags />
+        break;
+      case 'Move note':
+        component = <NoteMoveContainer />;
         break;
       case 'Create notebook':
         component = <NotebookCreateContainer />;

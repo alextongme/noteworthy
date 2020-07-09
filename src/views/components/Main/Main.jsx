@@ -3,6 +3,7 @@ import React from "react";
 import Modal from './Modal/Modal';
 import Sidebar from "./Sidebar/Sidebar";
 import Notebooks from './Notebooks/Notebooks';
+import NotebooksIntro from "./Notebooks/NotebooksIntro/NotebooksIntro";
 
 import NotesNav from "./Notes/NotesNav/NotesNav";
 import NotesIntro from "./Notes/NotesIntro/NotesIntro";
@@ -44,6 +45,12 @@ class Main extends React.Component {
                     path='/main/notebooks/:notebookId/notes' 
                     component={NotesNav}
                 />
+
+                <PrivateRoute
+                    exact path='/main/notebooks/:notebookId/notes' 
+                    component={NotebooksIntro}
+                />
+
                 <PrivateRoute 
                     exact path='/main/notebooks/:notebookId/notes/:noteId' 
                     component={NoteEditorContainer}

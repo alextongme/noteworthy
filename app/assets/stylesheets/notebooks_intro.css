@@ -1,0 +1,29 @@
+.notebooksIntro {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 100%;
+    background-color: #263238;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notebooksIntro__h1 {
+    width: 80%;
+    line-height: 125%;
+    font-family: 'LemonMilk';
+    font-size: 4vw;
+    text-align: center;
+
+    animation: fade;
+    animation-duration: 1s; 
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+
+    color: white;
+}

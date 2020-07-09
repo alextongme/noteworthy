@@ -117,48 +117,11 @@
 }
 
 .home__signupButton {
-//     text-align: center;
-//     color: white;
-//     // background-color: #F4791F;
-    // background-color:#8dbb73;
-    // background-color: #01A82D;
-    // background-color: #C3E88D;
-    // background-color: #20a9f2;
     margin-top: 3.7vh;
-    //     font-family: 'Raleway';
-    //     font-weight: 700;
-    //     font-size: 0.95vw;
-    //     text-decoration: none;
     width: 10vw;
-    // padding: 1vw;
-    //     // border: 0.8vw solid #CB4454;
-    //     border-radius: 0.4vw;
-    //     transition: all 0.5s ease 0s;
-    //     letter-spacing: 0.2vw;
-
-     // sepia
-    // background-color: #FDF6E4;
-     // material
-    // background-color: white;
-    // background-color: #F5B625;
-    // background-color: 	#F47B6D;
-    // background-color: #FFCB6B;
-    // background-color: #C3E88D;
-    // background-color: #F44336;
-    // background-color: #82AAFF;
-    // background-color: #89DDFF;
     background-color: #01A82D;
-    // background-color: #C792EA;
-    // background-color: #F07178;
-
     color: #FDF6E4;
 }
-
-// .home__signupButton:hover {
-//     opacity: 0.8;
-//     border-radius: 1.3vw;
-//     transition: all 0.5s ease 0s;
-// }
 
 .home__content--right {
     margin-top: 15vh;
@@ -173,17 +136,10 @@
     height: 98vh;
 }
 
-// .home__image--rick:hover .home__content--first {
-//     background-color: transparent;
-// }
-
 /////////////// SECOND MIDDLE DIV CONTENT
 .home__content--second {
     height: 100vh;
     scroll-snap-align: start;
-    // background-color: #f9e1c2;
-    // background-color: transparent;
-    // background-color: #F7F7F7;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -192,9 +148,6 @@
     box-sizing: border-box;
     padding-top: 8vh;
     padding-bottom: 8vh;
-    // background-image: image-url('secondDivWallpaper.jpeg');
-    // background-size: contain;
-    // background-color: black;
 }
 
 .home__content--computer {
@@ -203,7 +156,6 @@
 
 .home__secondDiv__img {
     font-size: 15vw;
-    // color: #F783AC;
     color: #F07178;
     cursor: none;
 }
@@ -213,10 +165,7 @@
     font-family: 'CaeciliaLTStd-Bold';
     font-size: 3vw;
     line-height: 8vh;
-    // color: black;
-    
     color: #01A82D;
-    // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 .home__secondDiv__section {
@@ -231,10 +180,8 @@
     font-weight: 400;
     font-size: 1.6vw;
     line-height: 6vh;
-    // color: black;
     color: #FDF6E4;
     text-align: center;
-    // text-shadow: 0.1vw 0.1vw 0.1vw black;
 }
 
 
@@ -242,8 +189,6 @@
 .home__content--third {
     height: 100vh;
     scroll-snap-align: start;
-    // background-color: #AC2F39;
-    // background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -257,8 +202,6 @@
 
 .home__thirdDiv__img {
     font-size: 15vw;
-    // width: 15vw;
-    // color: rgb(0, 120, 218);
     color: #89DDFF;
 }
 
