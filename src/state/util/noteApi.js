@@ -31,6 +31,15 @@ export const updateNote = (note) => {
     }));
 }
 
+// export const moveNote = (notebookId) => {
+//     // debugger
+//     return ($.ajax({
+//         method: "PATCH",
+//         url: `api/notes/${note.id}`,
+//         data: { notebookId }
+//     }));
+// }
+
 export const deleteNote = (noteId) => {
     return ($.ajax({
         method: "DELETE",

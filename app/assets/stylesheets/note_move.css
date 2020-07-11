@@ -1,0 +1,33 @@
+.noteMoveModal {
+    width: 25vw;
+    height: 25vh;
+    background-color: #263238;
+    display: grid;
+    grid-template-rows: 5vh auto;
+}
+
+.noteMoveModal__h1 {
+    grid-row: 1 / 2;
+    color: white;
+}
+
+.noteMoveModal__table {
+    grid-row: 2 / 3;
+    width: 100%;
+    overflow: scroll;
+}
+
+.noteMoveModal__rows {
+    height: 30%;
+    width: 100%;
+    color: white;
+
+    text-align: center;
+}
+
+.noteMoveModal__rows:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+

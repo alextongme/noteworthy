@@ -46,7 +46,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         // fetchNote: (note) => dispatch(fetchNote(note)),
-        moveNote: () => dispatch(openModal("Create notebook")),
+        moveNote: () => dispatch(openModal("Move note")),
         updateNote: (note) => dispatch(updateNote(note)),
         deleteNote: (noteId) => dispatch(deleteNote(noteId))
     }
