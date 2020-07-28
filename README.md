@@ -24,10 +24,14 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 
 ### Document with Notes
 - Personalized welcome screen <br></br>
-![welcome](./app/assets/images/readme_images/loginSplash.png)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/loginSplash.png?raw=true" />
+</p>
 - Users can save notes and mark them down with specific formatting rules like indentation, fonts, sizes, colors, background colors, all with the click of one button.
 - Users can also save photos, videos & links within each note. <br></br>
-![Videos](./app/assets/images/readme_images/videosInEditor.gif)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/videosInEditor.gif?raw=true" />
+</p>
 
 ### Organize by Notebooks
 - Choose which notebook you would like to store your note in, each note needs to be in a notebook. <br></br>
