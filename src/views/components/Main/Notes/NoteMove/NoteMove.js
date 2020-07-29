@@ -1,44 +1,41 @@
-import { connect } from 'react-redux';
-import React from 'react';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useRouteMatch } from 'react-router-dom';
+import { updateNote } from '../../../../../state/actions/note';
+import { closeModal } from '../../../../../state/actions/modal';
 
-import {withRouter} from 'react-router';
+const NoteMove = () => {
+    const dispatch = useDispatch();
+    const match = useRouteMatch("/main/notes/:noteId") || useRouteMatch("/main/notebooks/:notebookId/notes/:noteId");
+   
+    const notebooks = useSelector(state => state.entities.notebooks);
+    const notes = useSelector(state => state.entities.notes);
 
-class NoteMove extends React.Component {
+    const currNote = notes[match.params.noteId];
+    const currNotebook = notes[match.params.noteId].notebook;
 
-    render() {
-        const {moveNote, formType, note, closeModal} = this.props;
-
-        if(!note) return null;
+    const changeNotebook = (notebook) => {
+        currNote.notebook = notebook;
         
-        return (
-            <NotebookForm
-                action={moveNote}
-                formType={formType}
-                note={note}
-                closeModal={closeModal}
-            />
-        )
-    }
+        dispatch(updateNote(currNote));
+        dispatch(closeModal());
+    };
+
+
+    return (
+        <div className="noteMoveModal">
+            <h1 className="noteMoveModal__h1">Move note from "{currNotebook.name}" to:</h1>
+            
+            <section className="noteMoveModal__table">
+                {Object.values(notebooks).map((notebook, idx) => {
+                    if(notebook.id !== currNotebook.id) {
+                        return (<div className="noteMoveModal__rows" key={idx} value={notebook.id} onClick={() => changeNotebook(notebook)}>{notebook.name}</div>);
+                    }
+                })}
+            </section>
+
+        </div>
+    );
 }
 
-const mapStateToProps = (state, ownProps) => {
-    // debugger
-    return {
-        note: state.entities.note[state.ui.dropdown.noteId],
-        formType: "Move note"
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    // debugger
-    return {
-        // fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
-        moveNote: (note) => dispatch(moveNote(note)),
-        closeModal: () => dispatch(closeModal())
-    }
-}
-
-export default withRouter(connect(
-mapStateToProps, 
-mapDispatchToProps,
-)(NoteMove))
+export default NoteMove;

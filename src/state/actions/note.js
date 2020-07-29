@@ -64,8 +64,9 @@ export const deleteNote = (noteId) => (dispatch) => {
     });
 };
 
-// export const deleteNotebook = (notebookId) => (dispatch) => {
-//     return APIUtil.deleteNotebook(notebookId).then((notebook) => {
-//         return dispatch(removeNotebook(notebook));
+// export const moveNote = (notebookId) => (dispatch) => {
+//     return APIUtil.updateNote(notebookId).then((note) => {
+//         // debugger
+//         return dispatch(receiveNote(note));
 //     });
 // };
