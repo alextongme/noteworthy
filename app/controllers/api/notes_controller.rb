@@ -24,12 +24,18 @@ class Api::NotesController < ApplicationController
 
     def update
         @note = Note.find(params[:id])
-
-        if @note.update(note_params)
-            render :show
-        else
-            render json: @note.errors.full_messages, status: 422
-        end
+        
+        newId = params[:note][:notebook][:id]
+       
+            if @note.update(note_params)
+                if newId
+                    update_notebook_note_association(newId, @note.id)
+                end
+                render :show
+            else
+                render json: @note.errors.full_messages, status: 422
+            end
+        
     end
 
     def destroy
@@ -63,6 +69,13 @@ class Api::NotesController < ApplicationController
             note_id: nt_id
         })
         association.save
+    end
+
+    def update_notebook_note_association(ntbk_id, nt_id)
+        notebookNote = NotebookNote.find_by({
+            note_id: nt_id
+        })
+        notebookNote.update({notebook_id: ntbk_id})
     end
 
 end

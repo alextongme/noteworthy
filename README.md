@@ -24,32 +24,47 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 
 ### Document with Notes
 - Personalized welcome screen <br></br>
-![welcome](./app/assets/images/readme_images/loginSplash.png)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/loginSplash.png?raw=true" />
+</p>
 - Users can save notes and mark them down with specific formatting rules like indentation, fonts, sizes, colors, background colors, all with the click of one button.
 - Users can also save photos, videos & links within each note. <br></br>
-![Videos](./app/assets/images/readme_images/videosInEditor.gif)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/videosInEditor.gif?raw=true" />
+</p>
 
 ### Organize by Notebooks
 - Choose which notebook you would like to store your note in, each note needs to be in a notebook. <br></br>
-![Specific Notebook](./app/assets/images/readme_images/makeNoteInSpecificNB.gif)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/makeNoteInSpecificNB.gif?raw=true" />
+</p>
 - Users can easily change which notebook they are creating a new note on using the dropdown menu in the sidebar.
 - Easily view all of your notes in a specific notebook by visiting the notebook index page through the sidebar and selecting the arrow next to your desired notebook. <br></br>
-![Expand Notebook](./app/assets/images/readme_images/expandNb.gif)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/expandNb.gif?raw=true" />
+</p>
 - View notes' content in depth by clicking on the notebook title in the notebooks index page.
 - Delete and rename notebooks with ease, using the dropdown menu button on the notebooks index page, located on each notebook row. <br></br>
-![Delete Notebook](./app/assets/images/readme_images/deletingNotebook.gif)
-![Rename Notebook](./app/assets/images/readme_images/renameNb.gif)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/renameNb.gif?raw=true" />
+</p>
 
 - Navigation changes if user has 0 notebooks. <br></br>
-![No Notebooks](./app/assets/images/readme_images/noNotebooks.gif)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/noNotebooks.gif?raw=true" />
+</p>
 
 ### Dark mode
 - Easily switch between light and dark modes on the note editor, through the sidebar button, if your eyes need a rest or your writing creativity needs a bright boost. <br></br>
-![Dark mode](./app/assets/images/readme_images/darkMode.gif)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/darkMode.gif?raw=true" />
+</p>
 
 ### Organize by Tags
 - Currently tags are only implemented on the demo login, and only existing tags and their corresponding notes can be viewed. <br></br>
-![Tags](./app/assets/images/readme_images/tags.gif)
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/tags.gif?raw=true" />
+</p>
 
 ## Featured Technologies Used
 - React Quill
