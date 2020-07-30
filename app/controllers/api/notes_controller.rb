@@ -25,16 +25,18 @@ class Api::NotesController < ApplicationController
     def update
         @note = Note.find(params[:id])
         
-        newId = params[:note][:notebook][:id]
+        if params[:note][:notebook]
+            newId = params[:note][:notebook][:id]
+        end
        
-            if @note.update(note_params)
-                if newId
-                    update_notebook_note_association(newId, @note.id)
-                end
-                render :show
-            else
-                render json: @note.errors.full_messages, status: 422
+        if @note.update(note_params)
+            if newId
+                update_notebook_note_association(newId, @note.id)
             end
+            render :show
+        else
+            render json: @note.errors.full_messages, status: 422
+        end
         
     end
 

@@ -13,22 +13,11 @@ const NotesNav = () => {
     const notebooks = useSelector(state => state.entities.notebooks);
     const notes = useSelector(state => state.entities.notes);
     const tags = useSelector(state => state.entities.tags);
-    // debugger
-    // useEffect(() => {
-    //     // debugger
-    //     dispatch(fetchNotebooks());
-    //     // debugger
-    //     dispatch(fetchNotes());
-    //     // debugger
-    // }, []);
 
-    
     const match = useRouteMatch();
-    // debugger
     let sortedNotes;
     let selectedNotes = [];
     let notebookName = "All notes";
-    // debugger
 
     /// pick which notes you want, all notes or notes from a specific notebook
     if(Object.keys(notebooks).length === 0) {
