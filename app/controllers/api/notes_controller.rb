@@ -25,7 +25,9 @@ class Api::NotesController < ApplicationController
     def update
         @note = Note.find(params[:id])
         
-        newId = params[:note][:notebook][:id]
+        if params[:note][:notebook]
+            newId = params[:note][:notebook][:id]
+        end
        
             if @note.update(note_params)
                 if newId

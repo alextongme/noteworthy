@@ -6,7 +6,11 @@ class NoteEditor extends React.Component {
     constructor(props) {
         super(props);
         if(props.note) {
-            this.state = props.note;
+            this.state = {
+                id: null,
+                title: "",
+                body: "",
+            }
         }
         this.length = "Loading...";
         this.handleQuillChange = this.handleQuillChange.bind(this);
@@ -44,9 +48,12 @@ class NoteEditor extends React.Component {
     }
 
     componentDidMount() {
-        if(this.props.note) {
-            // this.autosaveInterval = setInterval(() => (this.props.updateNote(this.state)), 20000);
-        }
+        // set the note
+        this.setState({
+            id: this.props.note.id,
+            title: this.props.note.title,
+            body: this.props.note.body
+        })
 
         this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
     }
@@ -97,7 +104,7 @@ class NoteEditor extends React.Component {
                             </h2>
                         </NavLink>
                     </div>
-                    <div>
+                    <div className="noteEditor__header--right">
                         <i 
                         className="far fa-folder-open noteEditor__button--move" onClick={() => this.props.moveNote()} 
                         />

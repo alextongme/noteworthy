@@ -43,6 +43,13 @@
     // line-height: 100%;
 }
 
+.noteEditor__header--right {
+    // border: 1px solid black;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .noteEditor__icons {
     // color: #01A82D;
 
@@ -59,31 +66,28 @@
    
 }
 
-.noteEditor__button--trash {
+.noteEditor__button--move {
     transition: 1s;
     font-size: 1.5em;
-    // opacity: 0;
-    // display: none !important;
     opacity: 1;
+    cursor: pointer;
 }
 
-.fa-trash-alt {
+.noteEditor__button--move:hover {
     color: #F44336;
 }
 
-// .noteEditor__button--trash:hover {
-//     transition: 1s;
-//     color: #01A82D;
-//     font-size: 1.5em;
-// }
 
-// .noteEditor__button--trash--show {
-//     display: inline-block !important;
-//     transition: 1s;
-//     opacity: 1;
-// }
+.noteEditor__button--trash {
+    transition: 1s;
+    font-size: 1.5em;
+    opacity: 1;
+}
 
-
+.noteEditor__button--trash:hover {
+    color: #F44336;
+    font-size: 1.5em;
+}
 
 .noteEditor__input--title {
 
