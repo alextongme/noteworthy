@@ -12,7 +12,6 @@ const NotesNav = () => {
     const dispatch = useDispatch();
     const notebooks = useSelector(state => state.entities.notebooks);
     const notes = useSelector(state => state.entities.notes);
-    // const notes = useSelector( (state: {entities: {notes}} ) => { notes } );
     const tags = useSelector(state => state.entities.tags);
 
     const match = useRouteMatch();
