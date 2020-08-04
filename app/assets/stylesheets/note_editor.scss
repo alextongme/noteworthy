@@ -138,19 +138,41 @@
 }
 
 .noteEditor__tags {
+    // border: 1px solid black;
+    width: 100%;
     grid-row: 4 / 5;
     display: flex;
-    align-items: center;
+}
+
+.noteEditor__form--tag {
+    width: 30%;
+}
+
+.noteEditor__form--input {
+    width: 80%;
+    height: 5vh;
+    box-sizing: border-box;
+}
+
+.noteEditor__tags--rightSection {
+    width: 70%;
+    overflow: scroll;
+    height: 7vh;
+}
+
+.noteEditor__tags--icon:hover {
+    color: red;
 }
 
 .noteEditor__link--tags {
-    // margin-left: 1vw;
+    display: inline-block;
+    padding: 1vw;
     margin-right: 1vw;
-    padding: 0.3vw;
-
+    margin-bottom: 1vh;
     background-color: green;
     color: white;
-    border-radius: 10%;
+    border-radius: 3%;
+    white-space: nowrap;
 }
 
 .noteEditor__footer {

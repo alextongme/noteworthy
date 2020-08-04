@@ -143,7 +143,7 @@ class NoteEditor extends React.Component {
                     placeholder="Title your note"
                     onBlur={() => this.hideToolbarAndSave() }
                     onFocus={() => this.showToolbar()}
-                    maxLength="40"
+                    maxLength="30"
                 />
 
                 <div 
@@ -160,16 +160,31 @@ class NoteEditor extends React.Component {
                 </div>
 
                 <section className="noteEditor__tags">
-                    {this.props.note.tags.map((tag, key) => {
-                        return (<div className="universal__h3 noteEditor__link--tags" key={key} >{tag.name}</div>)
-                    })}
+                    
                     <form onSubmit={this.handleTagSubmit} className="noteEditor__form--tag">
                         <input
                             type="text" 
                             value={this.state.name}
-                            onChange ={this.handleChange('name')} className="universal__input" 
-                            placeholder="Tag name" />
+                            onChange ={this.handleChange('name')} className="universal__input noteEditor__form--input" 
+                            placeholder="Tag name" 
+                            onBlur={() => this.hideToolbarAndSave() }
+                            onFocus={() => this.showToolbar()}
+                            maxLength="30"
+                            />
                     </form>
+
+                    <section className="noteEditor__tags--rightSection">
+                        {this.props.note.tags.map((tag, key) => {
+                            return (<div className="universal__h3 noteEditor__link--tags" key={key} >
+                            {tag.name}
+                            &nbsp;&nbsp;&nbsp;
+                            <i 
+                                className="fas fa-backspace noteEditor__tags--icon" 
+                                // add on click here to remove tag from the note
+                            />
+                            </div>)
+                        })}
+                    </section>
 
                 </section>
 
