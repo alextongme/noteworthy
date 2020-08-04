@@ -34,7 +34,10 @@
 
 .tags__header--icon {
     margin: 20px;
-   
+}
+
+.tags__header--icon:hover {
+    cursor: default;
 }
 
 .tags__grid {

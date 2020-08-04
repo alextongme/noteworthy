@@ -10,12 +10,14 @@ class NoteEditor extends React.Component {
                 id: null,
                 title: "",
                 body: "",
+                name: ""
             }
         }
         this.length = "Loading...";
         this.handleQuillChange = this.handleQuillChange.bind(this);
         this.hideToolbarAndSave = this.hideToolbarAndSave.bind(this);
         this.trash = this.trash.bind(this);
+        this.handleTagSubmit = this.handleTagSubmit.bind(this);
     }
 
     handleChange(field) {
@@ -60,14 +62,31 @@ class NoteEditor extends React.Component {
     
     componentWillUnmount() {
         if(this.props.note) {
-        //     this.props.updateNote(this.state);
+            // this.props.updateNote(this.state);
         //     // clearInterval(this.autosaveInterval);
         }
         window.removeEventListener('beforeunload', this.saveOnClose);
     }
 
+    componentDidUpdate() {
+
+    }
+
     trash() {
         this.props.deleteNote(this.props.note.id).then(() => (this.props.history.push('/main/notes') ) );
+    }
+
+    handleTagSubmit(event) {
+        event.preventDefault();
+        let tempTag = {
+            name: this.state.name,
+            note_id: this.props.noteId
+        };
+        const tag = Object.assign({}, tempTag);
+        this.props.createTag(tag);
+        this.setState({
+            name: ""
+        })
     }
 
     render() {
@@ -130,15 +149,27 @@ class NoteEditor extends React.Component {
                     onBlur={() => this.hideToolbarAndSave() } 
                     onFocus={() => this.showToolbar()}>
                     <ReactQuill 
-                        // className="noteEditor__quill" 
                         theme="snow"
                         value={this.state.body} 
                         onChange={this.handleQuillChange}
                         placeholder={"Start your note..."}
                         modules={modules}
                         formats={formats} />
-                    
                 </div>
+
+                <section className="noteEditor__tags">
+                    {this.props.note.tags.map((tag, key) => {
+                        return (<div className="universal__h3 noteEditor__link--tags" key={key} >{tag.name}</div>)
+                    })}
+                    <form onSubmit={this.handleTagSubmit} className="noteEditor__form--tag">
+                        <input
+                            type="text" 
+                            value={this.state.name}
+                            onChange ={this.handleChange('name')} className="universal__input" 
+                            placeholder="Tag name" />
+                    </form>
+
+                </section>
 
                 <section className="noteEditor__footer">
                    

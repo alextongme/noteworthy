@@ -40,12 +40,11 @@ export const fetchTag = (tagId) => (dispatch) => {
     });
 };
 
-// export const createtag = (tag) => (dispatch) => {
-//     return APIUtil.createtag(tag).then((tag) => {
-//         // debugger
-//         return dispatch(receivetag(tag));
-//     });
-// };
+export const createTag = (tag) => (dispatch) => {
+    return APIUtil.createTag(tag).then((tag) => {
+        return dispatch(receiveTag(tag));
+    });
+};
 
 // export const updatetag = (tag) => (dispatch) => {
 //     // debugger
@@ -55,8 +54,8 @@ export const fetchTag = (tagId) => (dispatch) => {
 //     });
 // };
 
-// export const deletetag = (tagId) => (dispatch) => {
-//     return APIUtil.deletetag(tagId).then((tag) => {
-//         return dispatch(removetag(tag));
-//     });
-// };
+export const deleteTag = (tagId) => (dispatch) => {
+    return APIUtil.deleteTag(tagId).then((tag) => {
+        return dispatch(removeTag(tag));
+    });
+};
