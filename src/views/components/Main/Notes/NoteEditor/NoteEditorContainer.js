@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { updateNote, deleteNote } from '../../../../../state/actions/note';
+import { updateNote, deleteNote, fetchNotes } from '../../../../../state/actions/note';
 import { createTag } from '../../../../../state/actions/tag';
 import { openModal } from '../../../../../state/actions/modal';
 import NoteEditor from './NoteEditor';
@@ -27,6 +27,7 @@ class NoteEditorContainer extends React.Component {
                     moveNote={moveNote}
                     deleteNote={deleteNote}
                     updateNote={updateNote}
+                    fetchNotes={fetchNotes}
                     note={note}
                     notebook={notebook}
                     history = {history}
@@ -50,6 +51,7 @@ const mapDispatchToProps = (dispatch) => {
         moveNote: () => dispatch(openModal("Move note")),
         updateNote: (note) => dispatch(updateNote(note)),
         deleteNote: (noteId) => dispatch(deleteNote(noteId)),
+        fetchNotes: () => dispatch(fetchNotes()),
         createTag: (tag) => dispatch(createTag(tag))
     }
 }

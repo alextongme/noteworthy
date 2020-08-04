@@ -8,6 +8,10 @@ import {
     REMOVE_NOTEBOOK
 } from "../actions/notebook";
 
+import {
+    RECEIVE_TAG
+} from "../actions/tag";
+
 export default (prevState = {}, action) => {
     Object.freeze(prevState);
     // debugger
@@ -37,6 +41,13 @@ export default (prevState = {}, action) => {
         case REMOVE_NOTEBOOK:
             action.notebook.note_ids.forEach((noteId) => {
                 delete nextState[noteId]
+            })
+            return nextState;
+        
+        // when a new tag is added, the note should also update itself with the corresponding tag in its array of "tags"
+        case RECEIVE_TAG:
+            action.tag.note_ids.forEach((noteId) => {
+                nextState[noteId].tags.push(action.tag)
             })
             return nextState;
 

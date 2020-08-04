@@ -31,7 +31,7 @@ export default (prevState = {}, action) => {
             nextState[action.note.notebook_id].note_ids.splice(index, 1)
             // debugger
             return nextState;
-    
+            
         default:
             return prevState;
     }

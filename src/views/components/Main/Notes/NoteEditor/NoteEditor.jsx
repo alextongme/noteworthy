@@ -68,8 +68,10 @@ class NoteEditor extends React.Component {
         window.removeEventListener('beforeunload', this.saveOnClose);
     }
 
-    componentDidUpdate() {
-
+    componentDidUpdate(prevProps, prevState) {
+        if(this.props.note.tags !== prevProps.note.tags) {
+            this.props.fetchNotes();
+        }
     }
 
     trash() {
