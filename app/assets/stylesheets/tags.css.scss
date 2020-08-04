@@ -113,12 +113,14 @@
 .tag__link {
     grid-row: 1 / 2;
     font-family: "Oswald";
-    font-size: 10vh;
+    font-size: 8vh;
     font-weight: 400;
     color: inherit;
-    text-transform: uppercase;
     text-overflow: ellipsis;
+    height: 15vh;
+    width: 100%;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .tag__numOfItems {
@@ -142,6 +144,5 @@
 
 .tag__icon:hover {
     color: red;
-    
 }
 
