@@ -14,14 +14,13 @@ export const fetchTag = (tagId) => {
     );
 }
 
-// export const createtag = (tag) => {
-//     // debugger
-//     return ($.ajax({
-//         method: "POST",
-//         url: `api/tags`,
-//         data: { tag }
-//     }));
-// }
+export const createTag = (tag) => {
+    return ($.ajax({
+        method: "POST",
+        url: `api/tags`,
+        data: { tag }
+    }));
+}
 
 // export const updateDefaulttag = (default_tag_id) => {
 //     return ($.ajax({
@@ -40,9 +39,9 @@ export const fetchTag = (tagId) => {
 //     }));
 // }
 
-// export const deletetag = (tagId) => {
-//     return ($.ajax({
-//         method: "DELETE",
-//         url: `api/tags/${tagId}`,
-//     }));
-// }
+export const deleteTag = (id) => {
+    return ($.ajax({
+        method: "DELETE",
+        url: `api/tags/${id}`,
+    }));
+}

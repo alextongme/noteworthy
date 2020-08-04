@@ -5,55 +5,68 @@ class Api::TagsController < ApplicationController
         @tags = current_user.tags
     end
 
-    # def show
-    #     @notebook = Notebook.find(params[:id])
-    # end
+    def show
+        @tag = Tag.find(params[:id])
+    end
 
-    # def create
-    #     @notebook = Notebook.new(notebook_params)
+    def create
+        if Tag.find_by({name: params[:tag][:name]})
+            @tag = Tag.find_by({name: params[:tag][:name]})
+            create_tag_note_association(@tag.id, params[:tag][:note_id])
+            render :show
+        else
+            @tag = Tag.new(tag_params)
+            @tag.author_id = current_user.id
 
-    #     if @notebook.save
-    #         create_user_notebook_association(current_user.id, @notebook.id)
-    #     else
-    #         render json: @notebook.errors.full_messages, status: 422
-    #     end
-    #     render :show
-    # end
+            if @tag.save
+                create_tag_note_association(@tag.id, params[:tag][:note_id])
+                render :show
+            else
+                render json: @tag.errors.full_messages, status: 422
+            end
+        end
+
+        
+    end
 
     # def update
-    #     @notebook = Notebook.find(params[:id])
+    #     @tag = Tag.find(params[:id])
 
-    #     if @notebook.update(notebook_params)
+    #     # if tag has another note id to add
+    #     if @tag.update(tag_params)
+    #         if params[:tag][:note_id]
+    #             create_note_tag_association(@tag.id, params[:tag][:note_id])
+    #         elsif @tag.note_ids.length === 0
+    #             destroy()
+    #             return
+    #         end
     #         render :show
     #     else
-    #         render json: @notebook.errors.full_messages, status: 422
+    #         render json: @tag.errors.full_messages, status: 422
     #     end
     # end
 
-    # def destroy
-    #     @notebook = Notebook.find(params[:id])
-    #     if @notebook.destroy
-    #         # debugger
-    #         render :show
-    #         # debugger
-    #     else
-    #         render json: @notebook.errors.full_messages, status: 422
-    #     end
-    # end
- 
-    # private
+    def destroy
+        @tag = Tag.find(params[:id])
+        if @tag.destroy
+            render :show
+        else
+            render json: @tag.errors.full_messages, status: 422
+        end
+    end
 
-    # def notebook_params
-    #     # debugger
-    #     params.require(:notebook).permit(:name)
-    # end
+    private
 
-    # def create_user_notebook_association(user_id, ntbk_id)
-    #     association = UserNotebook.new({
-    #         user_id: user_id,
-    #         notebook_id: ntbk_id
-    #     })
-    #     association.save
-    # end
-    
+    def tag_params
+        params.require(:tag).permit(:name)
+    end
+
+    def create_tag_note_association(tag_id, nt_id)
+        association = NoteTag.new({
+            tag_id: tag_id,
+            note_id: nt_id
+        })
+        association.save
+    end
+
 end

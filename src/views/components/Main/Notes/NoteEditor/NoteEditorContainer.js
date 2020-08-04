@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { updateNote, deleteNote } from '../../../../../state/actions/note';
+import { updateNote, deleteNote, fetchNotes } from '../../../../../state/actions/note';
+import { createTag } from '../../../../../state/actions/tag';
 import { openModal } from '../../../../../state/actions/modal';
 import NoteEditor from './NoteEditor';
 import {withRouter} from "react-router";
@@ -9,7 +10,7 @@ import NotesIntro from '../NotesIntro/NotesIntro'
 
 class NoteEditorContainer extends React.Component {
     render() {
-        const {notebooks, deleteNote, updateNote, moveNote, note, match, history} = this.props;
+        const {notebooks, deleteNote, updateNote, moveNote, note, match, history, createTag} = this.props;
         // debugger
         if(note === undefined || Object.keys(notebooks).length === 0) {
             return (
@@ -22,12 +23,15 @@ class NoteEditorContainer extends React.Component {
             return (
                 <NoteEditor
                     key={match.params.noteId}
+                    noteId={match.params.noteId}
                     moveNote={moveNote}
                     deleteNote={deleteNote}
                     updateNote={updateNote}
+                    fetchNotes={fetchNotes}
                     note={note}
                     notebook={notebook}
                     history = {history}
+                    createTag={createTag}
                 />
             )
         }
@@ -35,11 +39,9 @@ class NoteEditorContainer extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         note: state.entities.notes[ownProps.match.params.noteId],
-        // how can i grab the notebook name without grabbing the entire slice of notebooks?
-        notebooks: state.entities.notebooks
+        notebooks: state.entities.notebooks,
     }
 }
 
@@ -48,7 +50,9 @@ const mapDispatchToProps = (dispatch) => {
         // fetchNote: (note) => dispatch(fetchNote(note)),
         moveNote: () => dispatch(openModal("Move note")),
         updateNote: (note) => dispatch(updateNote(note)),
-        deleteNote: (noteId) => dispatch(deleteNote(noteId))
+        deleteNote: (noteId) => dispatch(deleteNote(noteId)),
+        fetchNotes: () => dispatch(fetchNotes()),
+        createTag: (tag) => dispatch(createTag(tag))
     }
 }
 

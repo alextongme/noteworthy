@@ -34,7 +34,10 @@
 
 .tags__header--icon {
     margin: 20px;
-   
+}
+
+.tags__header--icon:hover {
+    // cursor: default;
 }
 
 .tags__grid {
@@ -112,7 +115,6 @@
     font-family: "Oswald";
     font-size: 10vh;
     font-weight: 400;
-    // color: black;
     color: inherit;
     text-transform: uppercase;
     text-overflow: ellipsis;
@@ -132,7 +134,14 @@
     align-self: flex-end;
 }
 
-.tag__footer--container i {
-    color: black;
+.tag__icon {
+    font-size: 3vh;
+    color: white;
+    cursor: pointer !important;
+}
+
+.tag__icon:hover {
+    color: red;
+    
 }
 

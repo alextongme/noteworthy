@@ -1,4 +1,8 @@
 # noteworthy
+## Live Link
+[tongsalex.com/noteworthy](http://tongsalex.com/noteworthy)
+
+## Introduction
 ### Notes worthy for any moment.
 
 noteworthy originally started as a clone of the popular note taking app, [Evernote](https://www.evernote.com), but quickly became its own unique app. Influenced by design aspects from Mattia Astorino's Material theme and functional aspects from Evernote's note taking editor, noteworthy is a new note editor designed to make your daily note taking activities a simple and visually pleasant experience. Document your thoughts and your life, with noteworthy.
@@ -66,6 +70,9 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/tags.gif?raw=true" />
 </p>
 
+## Initial Implementation Timeline
+- 10 Days
+
 ## Featured Technologies Used
 - React Quill
   - noteworthy uses the beautiful rich text editor, React Quill to markdown notes, which alllows users to save their notes with specific formatting rules so that their notes look exactly the way they want them to when they come back. React Quill and noteworthy allow users to save more than just text; videos, pictures & links are all savable filetypes.
@@ -81,3 +88,8 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 - Ruby on Rails
 - PostgreSQL
 - Bcrypt
+
+## Instructions
+1. Execute "npm install" within directory
+2. Run "bundle exec rails s"
+3. Run "npm start"
