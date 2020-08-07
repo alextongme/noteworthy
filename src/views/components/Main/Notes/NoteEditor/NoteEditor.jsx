@@ -177,11 +177,11 @@ class NoteEditor extends React.Component {
                         {this.props.note.tags.map((tag, key) => {
                             return (<div className="universal__h3 noteEditor__link--tags" key={key} >
                             {tag.name}
-                            &nbsp;&nbsp;&nbsp;
+                            {/* &nbsp;&nbsp;&nbsp;
                             <i 
                                 className="fas fa-backspace noteEditor__tags--icon" 
                                 // add on click here to remove tag from the note
-                            />
+                            /> */}
                             </div>)
                         })}
                     </section>

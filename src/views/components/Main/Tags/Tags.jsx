@@ -22,7 +22,7 @@ const Tags = (props) => {
                     <h2 className="universal__h2 tag__numOfItems">{tag.note_ids.length} notes</h2>
 
                     <section className="tag__footer--container">
-                        <i className="fas fa-trash-alt tag__icon" onClick={() => dispatch(deleteTag(tag.id))} />
+                        <i className="fas fa-trash-alt tag__icon" onClick={() => dispatch(deleteTag(tag.id)) } />
                     </section>
 
                 </div>);

@@ -2,7 +2,7 @@
     grid-row: 1 / 2;
     grid-column: 3 / 4;
 
-    grid-template-rows: 70px 80px auto 50px 50px;
+    grid-template-rows: 70px 80px auto 70px 50px;
   
     box-sizing: border-box;
     display: grid;
@@ -116,8 +116,6 @@
 }
 
 .ql-snow .ql-editor {
-    height: inherit !important;
-    // border: 1px solid black !important;
     overflow: scroll;
 }
 
@@ -142,19 +140,25 @@
     width: 100%;
     grid-row: 4 / 5;
     display: flex;
+    justify-content: center;
+    // align-items: center;
 }
 
 .noteEditor__form--tag {
     width: 30%;
+    display: flex;
+    justify-content: center;
 }
 
 .noteEditor__form--input {
+    margin-top: 2vh;
     width: 80%;
     height: 5vh;
     box-sizing: border-box;
 }
 
 .noteEditor__tags--rightSection {
+    margin-top: 2vh;
     width: 70%;
     overflow: scroll;
     height: 7vh;
