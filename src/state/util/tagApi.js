@@ -7,10 +7,10 @@ export const fetchTags = () => {
 }
 
 export const fetchTag = (tagId) => {
-    return ($.ajax({
-        method: "GET",
-        url: `api/tags/${tagId}`,
-    })
+        return ($.ajax({
+            method: "GET",
+            url: `api/tags/${tagId}`,
+        })
     );
 }
 
@@ -18,6 +18,21 @@ export const createTag = (tag) => {
     return ($.ajax({
         method: "POST",
         url: `api/tags`,
+        data: { tag }
+    }));
+}
+
+export const deleteTag = (id) => {
+    return ($.ajax({
+        method: "DELETE",
+        url: `api/tags/${id}`,
+    }));
+}
+
+export const deleteNoteTag = (tag) => {
+    return ($.ajax({
+        method: "DELETE",
+        url: `api/tags/${tag.id}`,
         data: { tag }
     }));
 }
@@ -38,10 +53,3 @@ export const createTag = (tag) => {
 //         data: { tag }
 //     }));
 // }
-
-export const deleteTag = (id) => {
-    return ($.ajax({
-        method: "DELETE",
-        url: `api/tags/${id}`,
-    }));
-}

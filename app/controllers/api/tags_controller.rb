@@ -48,11 +48,17 @@ class Api::TagsController < ApplicationController
 
     def destroy
         @tag = Tag.find(params[:id])
-        if @tag.destroy
+        if params[:tag]
+            delete_tag_note_association(params[:tag][:id], params[:tag][:note_id])
             render :show
         else
-            render json: @tag.errors.full_messages, status: 422
+            if @tag.destroy
+                render json: ["Tag deleted"], status: 200
+            else
+                render json: @tag.errors.full_messages, status: 422
+            end
         end
+        
     end
 
     private
@@ -67,6 +73,15 @@ class Api::TagsController < ApplicationController
             note_id: nt_id
         })
         association.save
+    end
+
+    def delete_tag_note_association(tag_id, nt_id)
+        @association = NoteTag.find_by({
+            tag_id: tag_id,
+            note_id: nt_id
+        })
+
+        @association.destroy
     end
 
 end

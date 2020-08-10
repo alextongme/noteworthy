@@ -55,7 +55,13 @@ export const createTag = (tag) => (dispatch) => {
 // };
 
 export const deleteTag = (tagId) => (dispatch) => {
-    return APIUtil.deleteTag(tagId).then((tag) => {
-        return dispatch(removeTag(tag));
+    return APIUtil.deleteTag(tagId).then((tagId) => {
+        return dispatch(removeTag(tagId));
+    });
+};
+
+export const deleteNoteTag = (tag) => (dispatch) => {
+    return APIUtil.deleteNoteTag(tag).then((tag) => {
+        return dispatch(receiveTag(tag));
     });
 };
