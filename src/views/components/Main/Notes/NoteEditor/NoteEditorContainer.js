@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { updateNote, deleteNote, fetchNotes } from '../../../../../state/actions/note';
-import { createTag } from '../../../../../state/actions/tag';
+import { createTag, deleteNoteTag } from '../../../../../state/actions/tag';
 import { openModal } from '../../../../../state/actions/modal';
 import NoteEditor from './NoteEditor';
 import {withRouter} from "react-router";
@@ -10,7 +10,7 @@ import NotesIntro from '../NotesIntro/NotesIntro'
 
 class NoteEditorContainer extends React.Component {
     render() {
-        const {notebooks, deleteNote, updateNote, moveNote, note, match, history, createTag} = this.props;
+        const {notebooks, deleteNote, updateNote, moveNote, note, match, history, createTag, deleteNoteTag} = this.props;
         // debugger
         if(note === undefined || Object.keys(notebooks).length === 0) {
             return (
@@ -32,6 +32,7 @@ class NoteEditorContainer extends React.Component {
                     notebook={notebook}
                     history = {history}
                     createTag={createTag}
+                    deleteNoteTag={deleteNoteTag}
                 />
             )
         }
@@ -52,7 +53,8 @@ const mapDispatchToProps = (dispatch) => {
         updateNote: (note) => dispatch(updateNote(note)),
         deleteNote: (noteId) => dispatch(deleteNote(noteId)),
         fetchNotes: () => dispatch(fetchNotes()),
-        createTag: (tag) => dispatch(createTag(tag))
+        createTag: (tag) => dispatch(createTag(tag)),
+        deleteNoteTag: (tag) => dispatch(deleteNoteTag(tag))
     }
 }
 

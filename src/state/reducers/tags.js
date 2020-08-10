@@ -22,7 +22,7 @@ export default (prevState = {}, action) => {
             const newTag = { [action.tag.id]: action.tag };
             return Object.assign({}, prevState, newTag);
         case REMOVE_TAG:
-            delete nextState[action.tag.id]
+            delete nextState[action.tagId]
             return nextState;
             
         // // when a note is removed, delete the note-id association in the tag
