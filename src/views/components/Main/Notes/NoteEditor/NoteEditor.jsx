@@ -159,7 +159,7 @@ class NoteEditor extends React.Component {
                         formats={formats} />
                 </div>
 
-                <section className="noteEditor__tags">
+                {/* <section className="noteEditor__tags">
                     
                     <form onSubmit={this.handleTagSubmit} className="noteEditor__form--tag">
                         <input
@@ -189,8 +189,7 @@ class NoteEditor extends React.Component {
                             </div>)
                         })}
                     </section>
-
-                </section>
+                </section> */}
 
                 <section className="noteEditor__footer">
                    

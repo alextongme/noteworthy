@@ -128,14 +128,14 @@ const Sidebar = () => {
                         <i className="fas fa-sticky-note sidebar__icons" /> 
                         <h3 className="sidebar__titles">Notes</h3>
                     </NavLink>
-                    <NavLink
+                    {/* <NavLink
                         to={`/main/tags`}
                         className="sidebar__navlink" 
                         activeClassName="sidebar__navlink--active">
 
                         <i className="fas fa-tags sidebar__icons"></i>
                         <h3 className="sidebar__titles">Tags</h3>
-                    </NavLink>
+                    </NavLink> */}
                 </>);
         }
     }
