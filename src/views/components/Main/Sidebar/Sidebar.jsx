@@ -175,7 +175,7 @@ const Sidebar = () => {
                 
                 {notebookSelector()}
 
-                {darkModeLink()}
+                {/* {darkModeLink()} */}
 
             <li className="sidebar__navlink" onClick={ () => dispatch(logout()) }>
                 <i className="fas fa-sign-out-alt sidebar__icons" />
