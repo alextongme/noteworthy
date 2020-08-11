@@ -58,13 +58,13 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/noNotebooks.gif?raw=true" />
 </p>
 
-### Dark mode
+### Dark mode (Under Construction)
 - Easily switch between light and dark modes on the note editor, through the sidebar button, if your eyes need a rest or your writing creativity needs a bright boost. <br></br>
 <p align="center">
 	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/darkMode.gif?raw=true" />
 </p>
 
-### Organize by Tags
+### Organize by Tags (Under Construction)
 - Currently tags are only implemented on the demo login, and only existing tags and their corresponding notes can be viewed. <br></br>
 <p align="center">
 	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/tags.gif?raw=true" />
