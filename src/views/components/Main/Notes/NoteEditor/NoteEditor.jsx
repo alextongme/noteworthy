@@ -2,6 +2,7 @@ import React from "react";
 import ReactQuill from 'react-quill';
 import {NavLink} from 'react-router-dom';
 
+// *************************** AIRBNB CODING SAMPLE - START ***************************
 class NoteEditor extends React.Component {
     constructor(props) {
         super(props);
@@ -41,6 +42,7 @@ class NoteEditor extends React.Component {
         document.getElementsByClassName('noteEditor__button--trash')[0].classList.add('noteEditor__button--trash--show');
     }
 
+    // Autosaving feature on clicking out of editor
     hideToolbarAndSave() {
         this.props.updateNote(this.state);
         document.getElementsByClassName('ql-snow')[0].classList.remove('ql-toolbar--show');
@@ -48,16 +50,16 @@ class NoteEditor extends React.Component {
         document.getElementsByClassName('noteEditor__button--trash')[0].classList.remove('noteEditor__button--trash--show');
     }
 
+    // Autosaving feature on closing app
     componentDidMount() {
         this.setState({
             id: this.props.note.id,
             title: this.props.note.title,
             body: this.props.note.body
         })
-
         this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
     }
-    
+   
     componentWillUnmount() {
         window.removeEventListener('beforeunload', this.saveOnClose);
     }
@@ -84,6 +86,8 @@ class NoteEditor extends React.Component {
             name: ""
         })
     }
+
+    // *************************** AIRBNB CODING SAMPLE - END ***************************
 
     render() {
         const modules = {
