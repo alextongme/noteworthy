@@ -2,10 +2,11 @@ import React from "react";
 import ReactQuill from 'react-quill';
 import {NavLink} from 'react-router-dom';
 
+// *************************** AIRBNB CODING SAMPLE - START ***************************
 class NoteEditor extends React.Component {
     constructor(props) {
         super(props);
-        if(props.note) {
+        if (props.note) {
             this.state = {
                 id: null,
                 title: "",
@@ -38,10 +39,10 @@ class NoteEditor extends React.Component {
     showToolbar() {
         document.getElementsByClassName('ql-snow')[0].classList.add('ql-toolbar--show');
         document.getElementsByClassName('footer__characterLength')[0].classList.add('footer__characterLength--show');
-
         document.getElementsByClassName('noteEditor__button--trash')[0].classList.add('noteEditor__button--trash--show');
     }
 
+    // Autosaving feature on clicking out of editor
     hideToolbarAndSave() {
         this.props.updateNote(this.state);
         document.getElementsByClassName('ql-snow')[0].classList.remove('ql-toolbar--show');
@@ -49,22 +50,17 @@ class NoteEditor extends React.Component {
         document.getElementsByClassName('noteEditor__button--trash')[0].classList.remove('noteEditor__button--trash--show');
     }
 
+    // Autosaving feature on closing app
     componentDidMount() {
-        // set the note
         this.setState({
             id: this.props.note.id,
             title: this.props.note.title,
             body: this.props.note.body
         })
-
         this.saveOnClose = window.addEventListener('beforeunload', () => this.props.updateNote(this.state));
     }
-    
+   
     componentWillUnmount() {
-        if(this.props.note) {
-            // this.props.updateNote(this.state);
-        //     // clearInterval(this.autosaveInterval);
-        }
         window.removeEventListener('beforeunload', this.saveOnClose);
     }
 
@@ -91,6 +87,8 @@ class NoteEditor extends React.Component {
         })
     }
 
+    // *************************** AIRBNB CODING SAMPLE - END ***************************
+
     render() {
         const modules = {
             toolbar: [
@@ -112,8 +110,7 @@ class NoteEditor extends React.Component {
             'color', 'background',
             'link', 'image', 'video'
         ];
-        
-
+    
         return (
             <div className="noteEditor">
                 <header className="noteEditor__header">
@@ -126,15 +123,10 @@ class NoteEditor extends React.Component {
                         </NavLink>
                     </div>
                     <div className="noteEditor__header--right">
-                        <i 
-                        className="far fa-folder-open noteEditor__button--move" onClick={() => this.props.moveNote()} 
-                        />
-                       
+                        <i className="far fa-folder-open noteEditor__button--move" onClick={() => this.props.moveNote()} />
                         <i className="fas fa-trash-alt noteEditor__button--trash" onClick={this.trash} />
                     </div>
-                    
                 </header>
-
                 <input
                     type='text'
                     className="universal__h2 noteEditor__input--title" 
@@ -145,7 +137,6 @@ class NoteEditor extends React.Component {
                     onFocus={() => this.showToolbar()}
                     maxLength="30"
                 />
-
                 <div 
                     className="noteEditor__quillContainer" 
                     onBlur={() => this.hideToolbarAndSave() } 
@@ -158,41 +149,7 @@ class NoteEditor extends React.Component {
                         modules={modules}
                         formats={formats} />
                 </div>
-
-                {/* <section className="noteEditor__tags">
-                    
-                    <form onSubmit={this.handleTagSubmit} className="noteEditor__form--tag">
-                        <input
-                            type="text" 
-                            value={this.state.name}
-                            onChange ={this.handleChange('name')} className="universal__input noteEditor__form--input" 
-                            placeholder="Tag name" 
-                            onBlur={() => this.hideToolbarAndSave() }
-                            onFocus={() => this.showToolbar()}
-                            maxLength="30"
-                            />
-                    </form>
-
-                    <section className="noteEditor__tags--rightSection">
-                        {this.props.note.tags.map((tag, key) => {
-                            return (<div className="universal__h3 noteEditor__link--tags" key={key} >
-                            {tag.name}
-                            &nbsp;&nbsp;&nbsp;
-                            <i 
-                                className="fas fa-backspace noteEditor__tags--icon" 
-                                onClick = {() => {this.props.deleteNoteTag({
-                                    id: tag.id,
-                                    note_id: this.props.note.id
-                                })}}
-                                // add on click here to remove tag from the note
-                            />
-                            </div>)
-                        })}
-                    </section>
-                </section> */}
-
                 <section className="noteEditor__footer">
-                   
                     <h3 className="universal__h3 footer__characterLength">
                     {this.length} / ∞</h3>
                     <div>
@@ -207,9 +164,7 @@ class NoteEditor extends React.Component {
                         </a>
                     </div>
                 </section>
-
             </div>
-        
         );
     }
 }
