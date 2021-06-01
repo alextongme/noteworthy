@@ -153,13 +153,13 @@ class NoteEditor extends React.Component {
                     <h3 className="universal__h3 footer__characterLength">
                     {this.length} / ∞</h3>
                     <div>
-                        <a href='http://www.tongsalex.com' className ="noteEditor__link--personalWeb">
+                        <a href='https://alextong.me/' className ="noteEditor__link--personalWeb">
                             aT
                         </a>
-                        <a href='http://www.github.com/tongsalex'>
+                        <a href='https://github.com/alextongme/'>
                             <img src={window.github} alt='github' className="noteEditor__button" />
                         </a>
-                        <a href='http://www.linkedin.com/in/tongsalex'>
+                        <a href='https://www.linkedin.com/in/alextongme/'>
                             <img src={window.linkedin} alt='linkedin' className="noteEditor__button" />
                         </a>
                     </div>
