@@ -89,7 +89,7 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 - PostgreSQL
 - Bcrypt
 
-## Instructions
-1. Execute "npm install" within directory
+## Instructions to Run On Your Machine (After Cloning)
+1. Execute "npm install" within root directory
 2. Run "bundle exec rails s"
 3. Run "npm start"
