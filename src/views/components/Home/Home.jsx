@@ -208,13 +208,13 @@ class Home extends React.Component {
                         </section>
 
                         <section className="home__footer--right">
-                            <a href='http://www.tongsalex.com' className ="home__link--personalWeb">
+                            <a href='http://www.alextong.me' className ="home__link--personalWeb">
                                 aT
                             </a>
-                            <a href='http://www.github.com/tongsalex'>
+                            <a href='http://www.github.com/alextongme'>
                                 <img src={window.github} alt='github' className="home__button" />
                             </a>
-                            <a href='http://www.linkedin.com/in/tongsalex'>
+                            <a href='http://www.linkedin.com/in/alextongme'>
                                 <img src={window.linkedin} alt='linkedin' className="home__button" />
                             </a>
                         </section>
