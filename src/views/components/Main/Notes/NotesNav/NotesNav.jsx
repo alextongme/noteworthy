@@ -40,10 +40,9 @@ const NotesNav = () => {
         }
 
         sortedNotes = selectedNotes.sort((a,b) => {
-            //     // sort by updated at
+            // sort by updated at
             return (a.updated_at > b.updated_at ? -1 : 1)}).map((note, idx) => {
                     let path;
-                    // debugger
                     if(note) {
                         if(match.path === "/main/notes") {
                             path =`/main/notes/${note.id}`
@@ -81,8 +80,6 @@ const NotesNav = () => {
                 })
     }
 
-    // debugger
-    
     return (
         <div className="notesNav">
             <header className="notesNav__header universal__h2">
