@@ -89,7 +89,14 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 - PostgreSQL
 - Bcrypt
 
-## Instructions to Run On Your Machine (After Cloning)
-1. Execute "npm install" within root directory
-2. Run "bundle exec rails s"
-3. Run "npm start"
+## Instructions to Run On Your Machine (After Successfully Cloning)
+1. Download npm dependencies: Run `npm install` within root directory
+1. Download ruby gems: Run `bundle install` within root directory
+1. Ensure postgresQL is installed on your computer and server is running. If not, see these instructions:
+1. Open postgresQL: Run `psql` to open shell.
+1. Create databases: Run `rails db:setup` to create databases on your local machine.
+2. Run backend: Run `bundle exec rails s`.
+3. Run frontend: Run `npm start` in a new terminal window.
+
+### For a good breakdown of the structure of this app:
+1. See https://guides.rubyonrails.org/getting_started.html#mvc-and-you for Ruby/Rails backend.

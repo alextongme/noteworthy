@@ -1,47 +1,104 @@
-import React from "react";
-import HeaderIntroContainer from "./HeaderIntro/HeaderIntroContainer";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+
 import { NavLink } from 'react-router-dom';
 import Typist from "react-typist";
 
-class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            password: '',
-        };
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+import HeaderIntro from "./HeaderIntro/HeaderIntro";
+import { detectMobile } from "../utils/utils";
+import { signup } from '../../../state/actions/session';
+
+export default function Home() {
+    // Redux selectors
+    const currentUser = useSelector((state) => state.session.id );
+    const errors = useSelector((state) => state.errors.session );
+
+    // Redux dispatch
+    const dispatch = useDispatch();
+
+    // State vars
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    let signupSheet;
+    let errorOutputs;
+
+    const mapper = {
+        "email" : setEmail,
+        "password" : setPassword
     }
 
-    handleChange(field) {
+    function handleChange(field) {
         return ((event) => {
-            this.setState({
-                [field]: event.currentTarget.value
-            });
+            mapper[field](event.currentTarget.value);
         });
     }
 
-    handleSubmit(event) {
+    function handleSubmit(event) {
         event.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.signup(user);
+        const user = {
+            "email": email,
+            "password": password
+        };
+        dispatch(signup(user));
     }
 
-    renderErrors() {
-        return (
-            <>
-                {this.props.errors.map((error, idx) => {
-                    return (
-                        <p key={idx} className="universal__h3 home__errors">{error}</p>
-                    );
-                })}
-            </>
-        );
+    errorOutputs = (
+        <>
+            {errors.map((error, idx) => 
+                <p key={idx} className="universal__h3 home__errors">{error}</p> 
+            )}
+        </>
+    );
+
+
+    if (!currentUser) {
+        signupSheet = (<li className="home__content home__content--fifth">
+            <section className="home__fifthDiv__section--left">
+                <h1 className="universal__h1 home__fifthDiv__h1">
+                    Sign up for Noteworthy Today
+                </h1>
+                <h2 className="universal__h2 home__fifthDiv__h2">
+                    Capture ideas and inspiration from anywhere and manage tasks with ease.
+                </h2>
+            </section>
+
+            <section className="home__fifthDiv__section--right">
+                <form onSubmit={handleSubmit} 
+                className="home__fifthDiv__signupForm">
+                    <input 
+                        type="text" 
+                        className="universal__input home__signupForm__input" 
+                        value={email} 
+                        onChange={handleChange('email')} 
+                        placeholder="Email" 
+                    />
+                    <input 
+                        type="password" 
+                        className="universal__input home__signupForm__input" 
+                        value={password} 
+                        onChange={handleChange('password')} 
+                        placeholder="New password: 6 characters minimum" 
+                    />
+
+                    <h3 className="universal__h3 home__fifthDiv__h3">
+                        By clicking below, I agree to the <strong>Terms of Service</strong> and <strong>Privacy Policy</strong>.
+                    </h3>
+
+                    {errorOutputs}
+
+                    <input 
+                        type="submit" 
+                        className="universal__button home__signupForm__button" 
+                        value="SIGN UP"
+                    />
+                </form>
+            </section>
+        </li>)
     }
 
-    render() {
-        return (
+    return (
+        detectMobile() ? (<h1>Sorry! This app currently does not work on mobile browsers. Please view this on a desktop.</h1>) :
+        ( 
             <div className="home">
                 <nav className="home__navbar">
                     <div className="home__navbar--left">
@@ -51,7 +108,7 @@ class Home extends React.Component {
 
                         <h1 className="home__h1--logo">noteworthy</h1>
                     </div>
-                    <HeaderIntroContainer className="home-authentication-component" />
+                    <HeaderIntro className="home-authentication-component" />
                 </nav>
 
                 <ul className="home__snapContainer">
@@ -157,49 +214,7 @@ class Home extends React.Component {
                         </section>
                     </li>
 
-                    <li className="home__content home__content--fifth">
-                        <section className="home__fifthDiv__section--left">
-                            <h1 className="universal__h1 home__fifthDiv__h1">
-                                Sign up for Noteworthy Today
-                            </h1>
-                            <h2 className="universal__h2 home__fifthDiv__h2">
-                                Capture ideas and inspiration from anywhere and manage tasks with ease.
-                            </h2>
-                        </section>
-
-                        <section className="home__fifthDiv__section--right">
-                            <form onSubmit={this.handleSubmit} 
-                            className="home__fifthDiv__signupForm">
-                                <input 
-                                    type="text" 
-                                    className="universal__input home__signupForm__input" 
-                                    value={this.state.email} 
-                                    onChange={this.handleChange('email')} 
-                                    placeholder="Email" 
-                                />
-                                <input 
-                                    type="password" 
-                                    className="universal__input home__signupForm__input" 
-                                    value={this.state.password} 
-                                    onChange={this.handleChange('password')} 
-                                    placeholder="New password: 6 characters minimum" 
-                                />
-
-                                <h3 className="universal__h3 home__fifthDiv__h3">
-                                    By clicking below, I agree to the <strong>Terms of Service</strong> and <strong>Privacy Policy</strong>.
-                                </h3>
-
-                                {this.renderErrors()}
-
-                                <input 
-                                    type="submit" 
-                                    className="universal__button home__signupForm__button" 
-                                    value="SIGN UP"
-                                />
-                            </form>
-                        </section>
-                        
-                    </li>
+                    {signupSheet}
 
                     <li className="home__content home__content--footer">
                         <section className="home__footer--left">
@@ -225,8 +240,6 @@ class Home extends React.Component {
                     </li>
                 </ul>
             </div>
-        );
-    }
+        )
+    );
 }
-
-export default Home;

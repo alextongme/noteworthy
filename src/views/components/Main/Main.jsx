@@ -12,7 +12,6 @@ import NoteEditorContainer from "./Notes/NoteEditor/NoteEditorContainer";
 import Tags from './Tags/Tags'
 
 import { PrivateRoute } from '../../../state/util/route';
-// import { Redirect, useHistory } from "react-router-dom";
 
 class Main extends React.Component {
     constructor(props) {
@@ -20,7 +19,6 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchNotes();
         this.props.fetchNotebooks();
         this.props.fetchTags();

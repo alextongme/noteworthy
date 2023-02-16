@@ -1,28 +1,25 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { logout } from '../../../../state/actions/session';
 
-const HeaderIntro = ({currentUser, logout}) => {
-    // show download/login buttons if no current user
-    const sessionLinks = () => {
-        return (
-            <div className="headerIntro__container headerIntro__container--loggedOut">
-                {/* <button className="headerIntro__button--download">download</button> */}
-                <NavLink className="headerIntro__button--login" to="/login">Log in</NavLink>
-            </div>
-        );
-    }
+export default function HeaderIntro() {
+    // Redux
+    const currentUser = useSelector((state) => state.entities.users[state.session.id] )
+    const dispatch = useDispatch();
 
-    const loggedIn = () => {
-        return (
-            <div className="headerIntro__container headerIntro__container--loggedIn">
-                {/* <h2>Hi {currentUser.first_name}!</h2> */}
-                <button className="headerIntro__button--logout" onClick={logout}>Log out</button>
-                <NavLink className="headerIntro__button--login" to="/main/notes">Go to app</NavLink>
-            </div>
-        );
-    }
+    const sessionLinks = (
+        <div className="headerIntro__container headerIntro__container--loggedOut">
+            <NavLink className="headerIntro__button--login" to="/login">Log in</NavLink>
+        </div>
+    );
 
-    return currentUser ? loggedIn() : sessionLinks();
+    const loggedIn = (
+        <div className="headerIntro__container headerIntro__container--loggedIn">
+            <button className="headerIntro__button--logout" onClick={() => dispatch(logout())}>Log out</button>
+            <NavLink className="headerIntro__button--login" to="/main/notes">Go to app</NavLink>
+        </div>
+    );
+
+    return currentUser ? loggedIn : sessionLinks;
 }
-
-export default HeaderIntro;

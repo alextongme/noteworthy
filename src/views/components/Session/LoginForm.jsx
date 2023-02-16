@@ -1,5 +1,43 @@
-import React from 'react';
-import {NavLink} from 'react-router-dom';
+import React, { useState} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+
+// export function LoginForm({lookForUser, login}) {
+//     const [emailFound, setEmailFound] = useState(false);
+//     const [email, setEmail] = useState('');
+//     const [password, setPassword] = useState('');
+
+//     function handleChange(field) {
+//         // return ((event) => {
+//         //     this.setState({
+//         //         [field]: event.currentTarget.value
+//         //     });
+//         // });
+//     }
+
+//     async function handleSubmit(event) {
+//         event.preventDefault();
+
+//         if(emailFound === false) {
+//             await lookForUser(email);
+//             setEmailFound(true);
+//         } else {
+//             const user = {
+//                 "email": email,
+//                 "password": password
+//             };
+//             login(user);
+//         }
+//     }
+
+//     function loginAsDemoUser() {
+
+//     }
+
+//     function showPasswordField() {
+
+//     }
+// }
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -43,7 +81,6 @@ class LoginForm extends React.Component {
             };
             this.props.login(user);
         }
-
     }
 
     renderErrors() {
