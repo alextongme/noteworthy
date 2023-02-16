@@ -100,4 +100,3 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 
 ### For a good breakdown of the structure of this app:
 1. See https://guides.rubyonrails.org/getting_started.html#mvc-and-you for Ruby/Rails backend.
-1. 
