@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { logout } from '../../../../state/actions/session';
 
 export default function HeaderIntro() {
-    // Redux
     const currentUser = useSelector((state) => state.entities.users[state.session.id] )
     const dispatch = useDispatch();
 
