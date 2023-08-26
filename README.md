@@ -1,6 +1,6 @@
 # noteworthy
-## Live Link
-[tongsalex.com/noteworthy](http://tongsalex.com/noteworthy)
+## Live Demo
+[noteworthy](http://note-worthy.herokuapp.com)
 
 ## Introduction
 ### Notes worthy for any moment.
@@ -58,18 +58,6 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/noNotebooks.gif?raw=true" />
 </p>
 
-### Dark mode (Under Construction)
-- Easily switch between light and dark modes on the note editor, through the sidebar button, if your eyes need a rest or your writing creativity needs a bright boost. <br></br>
-<p align="center">
-	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/darkMode.gif?raw=true" />
-</p>
-
-### Organize by Tags (Under Construction)
-- Currently tags are only implemented on the demo login, and only existing tags and their corresponding notes can be viewed. <br></br>
-<p align="center">
-	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/tags.gif?raw=true" />
-</p>
-
 ## Initial Implementation Timeline
 - 10 Days
 
@@ -81,22 +69,78 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 - Javascript Time Ago
   - For documenting how "long ago," your note was last updated, I fed each note's `updated at` timestamp to the Javascript Time Ago technology to give users a more pleasant and readable timestamp.
   
-## Major Technologies Used
+## Technologies Used
+### Frontend
 - React
 - React Router
 - Redux
+
+### Backend
 - Ruby on Rails
 - PostgreSQL
 - Bcrypt
 
-## Instructions to Run On Your Machine (After Successfully Cloning)
-1. Download npm dependencies: Run `npm install` within root directory
-1. Download ruby gems: Run `bundle install` within root directory
-1. Ensure postgresQL is installed on your computer and server is running. If not, see these instructions:
-1. Open postgresQL: Run `psql` to open shell.
-1. Create databases: Run `rails db:setup` to create databases on your local machine.
-2. Run backend: Run `bundle exec rails s`.
-3. Run frontend: Run `npm start` in a new terminal window.
+### Hosting
+- Heroku
 
-### For a good breakdown of the structure of this app:
-1. See https://guides.rubyonrails.org/getting_started.html#mvc-and-you for Ruby/Rails backend.
+## Getting Started
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/alextongme/noteworthy.git
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    cd noteworthy
+    npm install
+    bundle install
+    ```
+
+3. **Create and setup the database:**
+
+    ```bash
+    rails db:create
+    rails db:migrate
+    ```
+
+4. **Start the Rails server and webpack-dev-server:**
+
+    ```bash
+    bundle exec rails server
+    npm start
+    ```
+
+5. **Visit [http://localhost:3000](http://localhost:3000) in your browser.**
+
+## Future Improvements
+### Dark mode
+- Easily switch between light and dark modes on the note editor, through the sidebar button, if your eyes need a rest or your writing creativity needs a bright boost. <br></br>
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/darkMode.gif?raw=true" />
+</p>
+
+### Organize by Tags
+- Currently tags are only implemented on the demo login, and only existing tags and their corresponding notes can be viewed. <br></br>
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/tags.gif?raw=true" />
+</p>
+
+### Sharing
+- Allow users to share notes and collaborate in real-time.
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+MIT
+
+## Contact
+Developer: Alex Tong
+[Email](alextongme@gmail.com)
+[LinkedIn](https://linkedin.com/in/alextongme)
+
+### Links
+- https://guides.rubyonrails.org/getting_started.html#mvc-and-you
