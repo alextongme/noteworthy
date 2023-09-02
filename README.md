@@ -4,8 +4,7 @@
 
 ## Introduction
 ### Notes worthy for any moment.
-
-noteworthy originally started as a clone of the popular note taking app, [Evernote](https://www.evernote.com), but quickly became its own unique app. Influenced by design aspects from Mattia Astorino's Material theme and functional aspects from Evernote's note taking editor, noteworthy is a new note editor designed to make your daily note taking activities a simple and visually pleasant experience. Document your thoughts and your life, with noteworthy.
+- noteworthy originally started as a clone of the popular note taking app, [Evernote](https://www.evernote.com), but quickly became its own unique app. Influenced by design aspects from Mattia Astorino's Material theme and functional aspects from Evernote's note taking editor, noteworthy is a new note editor designed to make your daily note taking activities a simple and visually pleasant experience. Document your thoughts and your life, with noteworthy.
 
 <p align="center">
 	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/home.png?raw=true"/>
@@ -109,6 +108,9 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/tags.gif?raw=true" />
 </p>
 
+### Convert Notebook Menu to Match Tag Menu Styling
+- Use React hooks and ensure entire project is utilizing modern React principles.
+
 ### Sharing
 - Allow users to share notes and collaborate in real-time.
 
@@ -139,15 +141,15 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 </p>
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+- Pull requests are always welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-MIT
+- MIT
 
 ## Contact
-Developer: Alex Tong
-[Email](alextongme@gmail.com)
-[LinkedIn](https://linkedin.com/in/alextongme)
+- Developer: Alex Tong
+- [Email](alextongme@gmail.com)
+- [LinkedIn](https://linkedin.com/in/alextongme)
 
 ### Links
 - https://guides.rubyonrails.org/getting_started.html#mvc-and-you
