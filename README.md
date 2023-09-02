@@ -11,55 +11,28 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/home.png?raw=true"/>
 </p>
 
+## Initial Implementation Timeline
+- 10 Days
+
 ## Features
 ### User Account Signup/Login
 - Users can create accounts to save their notes, notebooks & tags.
-- Users can login (if they have an account) and retrieve their saved data. <br></br>
-<p align="center">
-	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/userAuth.gif?raw=true"/>
-</p>
-
-- Log out with ease. <br></br>
-<p align="center">
-	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/logout.gif?raw=true" />
-</p>
-
+- Users can login (if they have an account) and retrieve their saved data.
+- Log out with ease.
 - Visitors can also browse and see how the app works on a real account through the demo login button.
 
 ### Document with Notes
-- Personalized welcome screen <br></br>
-<p align="center">
-	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/loginSplash.png?raw=true" />
-</p>
+- Personalized welcome screen.
 - Users can save notes and mark them down with specific formatting rules like indentation, fonts, sizes, colors, background colors, all with the click of one button.
-- Users can also save photos, videos & links within each note. <br></br>
-<p align="center">
-	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/videosInEditor.gif?raw=true" />
-</p>
+- Users can also save photos, videos & links within each note.
 
 ### Organize by Notebooks
-- Choose which notebook you would like to store your note in, each note needs to be in a notebook. <br></br>
-<p align="center">
-	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/makeNoteInSpecificNB.gif?raw=true" />
-</p>
+- Choose which notebook you would like to store your note in, each note needs to be in a notebook.
 - Users can easily change which notebook they are creating a new note on using the dropdown menu in the sidebar.
-- Easily view all of your notes in a specific notebook by visiting the notebook index page through the sidebar and selecting the arrow next to your desired notebook. <br></br>
-<p align="center">
-	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/expandNb.gif?raw=true" />
-</p>
+- Easily view all of your notes in a specific notebook by visiting the notebook index page through the sidebar and selecting the arrow next to your desired notebook.
 - View notes' content in depth by clicking on the notebook title in the notebooks index page.
-- Delete and rename notebooks with ease, using the dropdown menu button on the notebooks index page, located on each notebook row. <br></br>
-<p align="center">
-	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/renameNb.gif?raw=true" />
-</p>
-
-- Navigation changes if user has 0 notebooks. <br></br>
-<p align="center">
-	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/noNotebooks.gif?raw=true" />
-</p>
-
-## Initial Implementation Timeline
-- 10 Days
+- Delete and rename notebooks with ease, using the dropdown menu button on the notebooks index page, located on each notebook row.
+- Navigation changes if user has 0 notebooks.
 
 ## Featured Technologies Used
 - React Quill
@@ -69,7 +42,7 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 - Javascript Time Ago
   - For documenting how "long ago," your note was last updated, I fed each note's `updated at` timestamp to the Javascript Time Ago technology to give users a more pleasant and readable timestamp.
   
-## Technologies Used
+## Major Technologies Used
 ### Frontend
 - React
 - React Router
@@ -78,13 +51,12 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 ### Backend
 - Ruby on Rails
 - PostgreSQL
-- Bcrypt
+- Bcrypt (Authentication)
 
 ### Hosting
 - Heroku
 
 ## Getting Started
-
 1. **Clone the repository:**
 
     ```bash
@@ -116,6 +88,15 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 5. **Visit [http://localhost:3000](http://localhost:3000) in your browser.**
 
 ## Future Improvements
+### Write Unit Tests
+- Write unit tests to ensure a bug-free experience.
+
+### Migrate to TypeScript
+- Move codebase to TypeScript.
+
+### Migrate to Modern React
+- Use React hooks and ensure entire project is utilizing modern React principles.
+
 ### Dark mode
 - Easily switch between light and dark modes on the note editor, through the sidebar button, if your eyes need a rest or your writing creativity needs a bright boost. <br></br>
 <p align="center">
@@ -130,6 +111,32 @@ noteworthy originally started as a clone of the popular note taking app, [Everno
 
 ### Sharing
 - Allow users to share notes and collaborate in real-time.
+
+## Screenshots
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/userAuth.gif?raw=true"/>
+</p>
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/logout.gif?raw=true" />
+</p>
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/loginSplash.png?raw=true" />
+</p>
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/videosInEditor.gif?raw=true" />
+</p>
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/makeNoteInSpecificNB.gif?raw=true" />
+</p>
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/expandNb.gif?raw=true" />
+</p>
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/renameNb.gif?raw=true" />
+</p>
+<p align="center">
+	<img width="800" src="https://github.com/tongsalex/noteworthy/blob/master/app/assets/images/readme_images/noNotebooks.gif?raw=true" />
+</p>
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
