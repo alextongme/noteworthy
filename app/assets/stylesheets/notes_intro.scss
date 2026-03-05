@@ -1,61 +1,74 @@
+// ============================================
+// NOTES INTRO (Welcome screen when no note selected)
+// ============================================
+$bg-dark: #1a1e2e;
+$accent-primary: #6c5ce7;
+$accent-primary-light: #a29bfe;
+$accent-secondary: #00cec9;
+$text-inverse: #f5f6fa;
+$text-inverse-muted: rgba(245, 246, 250, 0.6);
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
 .notesIntro {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
-
-    
-    
     height: 100%;
-    // height: 50%;
-    // align-self: center;
-    background-color: #263238;
-
+    background: $bg-dark;
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(108, 92, 231, 0.08) 0%, transparent 70%);
+        border-radius: 50%;
+    }
 }
 
 .notesIntro__welcome {
     width: 100%;
-    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    place-self: center;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
 }
 
 .notesIntro__h1 {
-    width: 80%;
     font-family: 'ShoppingScriptDemo';
-    font-size: 10vw;
+    font-size: clamp(48px, 8vw, 100px);
     text-align: center;
-    transform: rotate(-10deg);
+    transform: rotate(-5deg);
+    animation: introFadeIn 1s ease-out;
+    background: linear-gradient(135deg, $accent-primary-light, $accent-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-    animation: fade;
-    animation-duration: 3s; 
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-play-state: running; 
-
-    color: white;
+@keyframes introFadeIn {
+    from {
+        opacity: 0;
+        transform: rotate(-5deg) translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(-5deg) translateY(0);
+    }
 }
 
 .notesIntro__h2 {
-    width: 80%;
-    // font-family: 'Fofer';
-    font-family: 'LemonMilk';
-    font-size: 1.5vw;
+    font-family: $font-sans;
+    font-size: 16px;
+    font-weight: 500;
     text-align: center;
-    // transform: rotate(-20deg);
-
-    animation: fade;
-    animation-duration: 3s; 
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-play-state: running;
-
-    color: white;
+    color: $text-inverse-muted;
+    animation: introFadeIn 1.2s ease-out;
+    letter-spacing: 0.02em;
 }

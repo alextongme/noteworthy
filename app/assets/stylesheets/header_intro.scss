@@ -1,54 +1,52 @@
-.headerIntro__container  {
-    height: inherit;
-    width: 12%;
-    // border: 1px solid black;
-    margin-right: 11vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+// ============================================
+// HEADER INTRO (Navbar auth buttons)
+// ============================================
+$accent-primary: #6c5ce7;
+$accent-primary-light: #a29bfe;
+$text-inverse: #f5f6fa;
+$text-inverse-muted: rgba(245, 246, 250, 0.6);
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-// .headerIntro__button--download {
-//     // display: none;
-//     background-color: white;
-//     border: 0.1vw solid #269814;
-//     padding: .8vw;
-//     border-radius: 0.1vw;
-//     // font-family: 'CaeciliaLTStd-Bold';
-//     color: #269814;
-// }
+.headerIntro__container {
+    height: inherit;
+    margin-right: 8%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
 
 .headerIntro__button--login {
     text-decoration: none;
-    font-family: "Raleway";
-    font-size: 1.2vw;
-    font-weight: 700;
-    // text-shadow: 0.04vw 0.04vw 0.04vw #000000;
-    // color: #01A82D;
-    // color: white;
-    color: #FDF6E4;
-    transition: all 1s;
+    font-family: $font-sans;
+    font-size: 14px;
+    font-weight: 600;
+    color: $text-inverse;
+    transition: color 0.2s ease;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    &:hover {
+        color: $accent-primary-light;
+        border-color: rgba(108, 92, 231, 0.4);
+        background: rgba(108, 92, 231, 0.08);
+    }
 }
 
 .headerIntro__button--logout {
-    font-family: "Raleway";
-    font-size: 1.2vw;
-    font-weight: 700;
+    font-family: $font-sans;
+    font-size: 14px;
+    font-weight: 600;
     background-color: transparent;
-    border: none;
-    color:#FDF6E4;
-}
-
-.headerIntro__button--login:hover, .headerIntro__button--logout:hover, {
-    transition: all 1s;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 8px 20px;
+    color: $text-inverse-muted;
     cursor: pointer;
-    // text-decoration: underline;
-    text-shadow: none;
-    color: #F5B625;
-}
+    transition: all 0.2s ease;
 
-// .headerIntro__button--login:focus {
-//     text-decoration: none;
-//     text-shadow: none;
-//     color: #EE1C24;
-// }
+    &:hover {
+        color: $text-inverse;
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+}

@@ -1,49 +1,57 @@
-.dropdown {
-    animation-name: stretch--down;
-    animation-duration: 0.3s; 
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-play-state: running; 
+// ============================================
+// DROPDOWN MENU (Notebook actions)
+// ============================================
+$bg-white: #ffffff;
+$accent-primary: #6c5ce7;
+$accent-danger: #ff6b6b;
+$text-dark: #2d3436;
+$text-medium: #636e72;
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$radius-md: 10px;
+$shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
 
+.dropdown {
     position: absolute;
-    right: 4vw;
-    display: block;
+    right: 40px;
     z-index: 5;
-    background-color: #F2F2F2;
-    border-radius: 0.9vw;
-  }
+    background-color: $bg-white;
+    border-radius: $radius-md;
+    box-shadow: $shadow-lg;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    animation: dropdownSlideIn 0.2s ease-out;
+}
+
+@keyframes dropdownSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .dropdown__rows {
     display: flex;
     flex-direction: column;
-//   width: 20vh;
-    background-color: transparent;
-    box-sizing: border-box;
-    // padding: 1vw;
-
 }
-
-// .dropdown__rows:hover {
-//     background-color: black;
-//     color: white;
-//     // cursor: pointer;
-// }
-
 
 .dropdown__button {
     background: transparent;
-    // color: black;
-    font-weight: 400;
+    font-family: $font-sans;
+    font-weight: 500;
+    font-size: 13px;
+    color: $text-medium;
     border: none;
-    border-radius: 0.9vw;
-    background-color: none;
-    padding: 1vw;
+    padding: 10px 20px;
     cursor: pointer;
-}  
+    text-align: left;
+    transition: all 0.15s ease;
 
-.dropdown__button:hover {
-    background-color: black;
-    color: white;
+    &:hover {
+        background-color: rgba(108, 92, 231, 0.06);
+        color: $accent-primary;
+    }
 }

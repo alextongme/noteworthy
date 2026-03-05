@@ -16,6 +16,8 @@
  *= require_tree .
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @font-face {
   font-family: 'CaeciliaLTStd-Bold';
   src:font-url('CaeciliaLTStd-Bold.otf');
@@ -56,112 +58,35 @@
   src:font-url('neon_abslolute_demo/NeonAbsoluteSans.ttf') format('truetype');
 }
 
-@keyframes neon {
-  from {
-    text-shadow:
-    0 0 6px rgba(246, 148, 148, 0.92),
-    0 0 30px rgba(246, 148, 148, 0.34),
-    0 0 12px rgba(255, 0, 0, 0.52),
-    0 0 21px rgba(255, 0, 0,0.92),
-    0 0 34px rgba(255, 0, 0,0.78),
-    0 0 54px rgba(255, 0, 0,0.92);
-  }
-  to {
-    text-shadow:
-    0 0 6px rgba(246, 148, 148 ,0.98),
-    0 0 30px rgba(246, 148, 148 ,0.42),
-    0 0 12px rgba(255, 0, 0,0.58),
-    0 0 22px rgba(255, 0, 0,0.84),
-    0 0 38px rgba(255, 0, 0,0.88),
-    0 0 60px rgba(255, 0, 0,1);
-  }
-}
-
-@keyframes stretch--down {
-  0% {
-    transform: scale(1,0);
-  }
-  50% {
-    transform: scale(1, 0.5);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
-
-@keyframes stretch--right {
-  0% {
-    transform: scale(0, 1);
-  }
-  50% {
-    transform: scale(0.5, 1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
-
+// Animations
 @keyframes fade {
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
 
-/// 3d shadow on boxes
-.threed:hover
-{
-        box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.12), 
-                    4px 4px 4px 4px rgba(0,0,0,0.12), 
-                    6px 6px 6px 6px rgba(0,0,0,0.12), 
-                    10px 10px 10px 10px rgba(0,0,0,0.12),
-                    18px 18px 18px 18px rgba(0,0,0,0.12);
-        -webkit-transform: translateX(-3px);
-        transform: translateX(-3px);
+@keyframes stretch--down {
+  0% { transform: scale(1, 0); opacity: 0; }
+  50% { transform: scale(1, 0.5); }
+  100% { transform: scale(1, 1); opacity: 1; }
 }
 
-// material theme
-.material{
-  background-color: #263238;
-  
-  color: white;
-  color: #FDF6E4;
-
-  color: #F78C6C;
-  color: rgb(255, 111, 0);
-  
-  color: #FFCB6B;
-  color: rgb(255, 190, 27);
-  
-  
-  color: #C3E88D;
-  color: #01A82D;
-  
-  color: rgb(182, 106, 232);
-  color: #C792EA;
-  color: #F07178;
-  
-  color: #F44336;
-  color: #E84079;
-  color: #F44336;
-
-  color: #82AAFF;
-  color: #89DDFF;
-  color: rgb(0, 120, 218);
-
-
-
-  
+@keyframes stretch--right {
+  0% { transform: scale(0, 1); }
+  50% { transform: scale(0.5, 1); }
+  100% { transform: scale(1, 1); }
 }
 
+@keyframes rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); }
+}
 
+// 3D shadow on hover
+.threed:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
 
 a {
   text-decoration: none;

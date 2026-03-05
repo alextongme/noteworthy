@@ -1,149 +1,181 @@
-
+// ============================================
+// NOTE EDITOR (right panel)
+// ============================================
+$bg-white: #ffffff;
+$bg-dark-secondary: #232839;
+$accent-primary: #6c5ce7;
+$accent-primary-light: #a29bfe;
+$accent-danger: #ff6b6b;
+$text-dark: #2d3436;
+$text-medium: #636e72;
+$text-light: #b2bec3;
+$text-inverse: #f5f6fa;
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$radius-sm: 6px;
 
 .noteEditor {
     grid-row: 1 / 2;
     grid-column: 3 / 4;
-
-    grid-template-rows: 70px 80px auto 50px;
-  
-    box-sizing: border-box;
+    grid-template-rows: 56px 64px 1fr 48px;
     display: grid;
-    padding: 30px;
+    padding: 24px 40px;
+    background: $bg-white;
+    animation: editorFadeIn 0.3s ease-out;
 }
 
+@keyframes editorFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+// Dark mode
 .noteEditor--darkMode {
-    background-color: #263238;
+    background-color: $bg-dark-secondary;
 }
 
 .noteEditor--darkMode > * {
-    color: #efe8d7 !important;
+    color: $text-inverse !important;
 }
 
 .noteEditor__h2--header--darkMode {
-    color: #efe8d7 !important;
+    color: $text-inverse !important;
 }
 
 .noteEditor__button--darkMode {
     filter: invert(1);
 }
 
+// Header
 .noteEditor__header {
     display: flex;
     justify-content: space-between;
-    box-sizing: border-box;
+    align-items: center;
     grid-row: 1 / 2;
-    
 }
 
 .noteEditor__header--left {
-    // width: 60%;
     display: flex;
-    // flex-wrap: nowrap;
-    // text-decoration: none;
-    // height: 30px;
-    // line-height: 100%;
+    align-items: center;
+    gap: 8px;
 }
 
 .noteEditor__header--right {
-    // border: 1px solid black;
-    width: 10%;
     display: flex;
-    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
 }
 
 .noteEditor__icons {
-    // color: #01A82D;
-
-    font-size: 1.5em;
-    cursor: none;
+    font-size: 16px;
+    color: $accent-primary;
+    cursor: default;
 }
 
-
 .noteEditor__h2--header {
-    font-size: 1.5em;
-    font-weight: 700;
-    padding-left: 12px;
-    color: black;
-   
+    font-size: 14px;
+    font-family: $font-sans;
+    font-weight: 600;
+    color: $accent-primary;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .noteEditor__button--move {
-    transition: 1s;
-    font-size: 1.5em;
-    opacity: 1;
+    font-size: 18px;
+    color: $text-light;
     cursor: pointer;
-}
+    transition: all 0.2s ease;
+    padding: 6px;
+    border-radius: $radius-sm;
 
-.noteEditor__button--move:hover {
-    color: #F44336;
+    &:hover {
+        color: $accent-primary;
+        background: rgba(108, 92, 231, 0.08);
+    }
 }
-
 
 .noteEditor__button--trash {
-    transition: 1s;
-    font-size: 1.5em;
-    opacity: 1;
+    font-size: 18px;
+    color: $text-light;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 6px;
+    border-radius: $radius-sm;
+
+    &:hover {
+        color: $accent-danger;
+        background: rgba(255, 107, 107, 0.08);
+    }
 }
 
-.noteEditor__button--trash:hover {
-    color: #F44336;
-    font-size: 1.5em;
-}
-
+// Title input
 .noteEditor__input--title {
-
     width: 100%;
     grid-row: 2 / 3;
-
     border: none;
     outline: none;
-    padding-left: 12px;
+    padding: 0 4px;
     background-color: transparent;
+    font-family: $font-sans;
+    font-size: 28px;
+    font-weight: 700;
+    color: $text-dark;
+    letter-spacing: -0.02em;
+
+    &::placeholder {
+        color: $text-light;
+    }
 }
 
+// Quill editor container
 .noteEditor__quillContainer {
     grid-row: 3 / 4;
     overflow: hidden;
-
     display: flex;
 }
 
 .noteEditor__quillContainer > .quill {
-    // height: 100%;
     width: 100%;
 }
 
 .ql-container {
     border: none !important;
+    font-family: $font-sans;
+    font-size: 15px;
 }
 
 .ql-snow .ql-editor {
-    overflow: scroll;
+    overflow-y: auto;
+    padding: 12px 4px;
+    line-height: 1.7;
+    color: $text-dark;
 }
 
 .ql-toolbar {
     border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
     opacity: 0;
-    transition: 1s opacity;
+    transition: opacity 0.3s ease;
     width: 100%;
+    padding: 8px 0 !important;
 }
 
 .ql-toolbar--show {
     opacity: 1;
-    transition: 1s opacity;
 }
 
 .ql-list {
-    width: 3vw !important;
+    width: auto !important;
 }
 
+// Tags section
 .noteEditor__tags {
-    // border: 1px solid black;
     width: 100%;
-    // grid-row: 4 / 5;
     display: flex;
     justify-content: center;
-    // align-items: center;
 }
 
 .noteEditor__form--tag {
@@ -153,99 +185,96 @@
 }
 
 .noteEditor__form--input {
-    margin-top: 2vh;
+    margin-top: 12px;
     width: 80%;
-    height: 5vh;
-    box-sizing: border-box;
+    height: 40px;
 }
 
 .noteEditor__tags--rightSection {
-    margin-top: 2vh;
+    margin-top: 12px;
     width: 70%;
-    overflow: scroll;
-    height: 7vh;
+    overflow-x: auto;
+    height: 48px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 .noteEditor__tags--icon:hover {
-    color: red;
+    color: $accent-danger;
 }
 
 .noteEditor__link--tags {
     display: inline-block;
-    padding: 1vw;
-    margin-right: 1vw;
-    margin-bottom: 1vh;
-    background-color: green;
+    padding: 6px 14px;
+    margin-right: 4px;
+    background: $accent-primary;
     color: white;
-    border-radius: 3%;
+    border-radius: 20px;
     white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: $font-sans;
 }
 
+// Footer
 .noteEditor__footer {
     grid-row: 4 / 5;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    padding-top: 8px;
 }
 
 .footer__characterLength {
     opacity: 0;
-    transition: 1s opacity;
-    font-size: 1.5em;
+    transition: opacity 0.3s ease;
+    font-size: 13px;
+    font-family: $font-sans;
+    color: $text-light;
+    font-weight: 500;
 }
 
-.footer__characterLength--show{
+.footer__characterLength--show {
     opacity: 1;
-    transition: 1s opacity;
 }
-
 
 .noteEditor__button {
-    margin-left: 1vw;
+    margin-left: 12px;
+    width: 18px;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
 
-    width: 1.5em;
-    opacity: 1;
-}
-
-.noteEditor__button:hover {
-    opacity: 0.5;
+    &:hover {
+        opacity: 0.8;
+    }
 }
 
 .noteEditor__link--personalWeb {
     font-family: 'Signerica_Fat';
     text-decoration: none;
+    font-size: 16px;
+    color: $accent-primary-light;
+    transition: color 0.2s ease;
 
-    font-size: 1vw;
-    
-   
-    color: red;
-    animation: neon .08s ease-in-out infinite alternate;
-
+    &:hover {
+        color: $accent-primary;
+    }
 }
 
-.noteEditor__link--personalWeb:hover {
-    animation: none;
-    color:black;
+// Quill content styles
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
 }
 
 .ql-editor .ql-video {
     display: block;
     max-width: 100%;
     width: 100%;
-    // max-height: 100%;
     height: 56.25%;
-    // padding-top: 56?.25%; 
-    // padding-bottom?: 56.25%;
-}
-
-
-// quill editor styles for showing to user
-// bold
-strong {
-    font-weight: bold;
-}
-
-// italics
-em {
-    font-style: italic;
 }

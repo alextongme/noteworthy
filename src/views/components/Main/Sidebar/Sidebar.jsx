@@ -25,11 +25,10 @@ const Sidebar = () => {
     }
 
     function toggleSidebar() {
-        if(document.getElementsByClassName("main")[0].style.gridTemplateColumns === "65px 500px auto") {
-            document.getElementsByClassName("main")[0].style.gridTemplateColumns = "250px 500px auto";
+        if(document.getElementsByClassName("main")[0].style.gridTemplateColumns === "60px 380px 1fr") {
+            document.getElementsByClassName("main")[0].style.gridTemplateColumns = "260px 380px 1fr";
         } else {
-            document.getElementsByClassName("main")[0].style.gridTemplateColumns = "65px 500px auto";
-            
+            document.getElementsByClassName("main")[0].style.gridTemplateColumns = "60px 380px 1fr";
         }
     }
 

@@ -2,12 +2,8 @@
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 250px 500px auto;
+    grid-template-columns: 260px 380px 1fr;
     grid-template-rows: 100vh;
-    transition: all 1s;
+    transition: grid-template-columns 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
 }
-
-// .main:hover {
-//     grid-template-columns: 250px 500vw auto;
-//     transition: all 1s;
-// }

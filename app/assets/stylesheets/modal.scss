@@ -1,20 +1,25 @@
+// ============================================
+// MODAL OVERLAY
+// ============================================
 .modal__background {
     position: fixed;
-    // width: 100vw;
-    // height: 100vh;
-    // background-color: #AAADB1;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: 10;
     width: 100vw;
     height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: modalBgFadeIn 0.2s ease-out;
+}
+
+@keyframes modalBgFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .modal__child {
-    // position: absolute;
-    // transform: translate(-50%, -50%);
-    // left: 50%;
-    // top: 50%;
+    // positioned by flex parent
 }

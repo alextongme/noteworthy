@@ -1,50 +1,67 @@
-.notesNav {
-    animation: fade;
-    animation-duration: 0.8s; 
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-play-state: running; 
+// ============================================
+// NOTES NAVIGATION (middle column)
+// ============================================
+$bg-light: #f8f9fc;
+$bg-light-secondary: #eef0f6;
+$bg-dark-secondary: #232839;
+$accent-primary: #6c5ce7;
+$accent-primary-light: #a29bfe;
+$text-dark: #2d3436;
+$text-medium: #636e72;
+$text-light: #b2bec3;
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$radius-sm: 6px;
 
+.notesNav {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    background-color: #FDF6E4;
+    background-color: $bg-light;
     display: grid;
-    grid-template-rows: 200px auto;
-    box-sizing: border-box;
+    grid-template-rows: 120px 1fr;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .notesNav__h2--noNotes {
     text-align: center;
-
-    line-height: 200%;
-
-    font-size: 1.5vw;
+    line-height: 1.6;
+    font-size: 15px;
+    color: $text-medium;
+    padding: 40px 24px;
 }
 
 .notesNav--darkMode {
-    background-color: #263238;
+    background-color: $bg-dark-secondary;
+    border-right-color: rgba(255, 255, 255, 0.06);
 }
 
 .notesNav--darkMode > * {
-    color: #FDF6E4 !important;
-}
-
-.notesNavClosed {
-    transition: margin-left 0.5s;
-    margin-left: 44px;
+    color: #f5f6fa !important;
 }
 
 .notesNav__header {
     grid-row: 1 / 2;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    justify-content: space-around;
-    padding-left: 36px;
-    padding-right: 1.5vw;
-    color: black;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 28px;
+    color: $text-dark;
+    font-family: $font-sans;
+    font-weight: 700;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .notesNav__navbar {
@@ -53,6 +70,13 @@
     align-items: center;
 }
 
+.notesNav__navbar--left {
+    font-size: 13px;
+    font-weight: 500;
+    color: $text-light;
+}
+
+// Hide scrollbar
 ::-webkit-scrollbar {
     width: 0px;
 }
@@ -61,73 +85,73 @@
     scrollbar-color: transparent;
     scrollbar-width: none;
     grid-row: 2 / 3;
-    overflow: scroll;
-    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    scroll-snap-type: y proximity;
+}
+
+// Note items in list
+.noteNav__LinkContainer {
+    // wrapper
 }
 
 .noteNavItem {
     scroll-snap-align: start;
-    border-top: 0.3px solid #efe8d7;
-    height: 260px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    height: 200px;
     width: 100%;
-
     display: grid;
-    grid-template-rows: 60px auto 60px;
-    color: black;
-    // color: white;
-    padding-left: 40px;
-    padding-right: 40px;
-    box-sizing: border-box;
+    grid-template-rows: 50px 1fr 40px;
+    color: $text-dark;
+    padding: 0 28px;
+    transition: all 0.15s ease;
+
+    &:hover {
+        background: rgba(108, 92, 231, 0.04);
+    }
 }
 
 .noteNavItem--darkMode {
-    color: #efe8d7 !important;
-    border-top: 0.3px solid #192126;
+    color: #f5f6fa !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .noteNavItem--active--darkMode {
-    background-color: #1f292d !important;
-    
+    background-color: rgba(108, 92, 231, 0.12) !important;
 }
 
 .noteNavItem--active {
     width: 100%;
-    color: black;
-    background-color: rgb(255, 233, 167);
-    // background-color: #ffda7c;
-    border: none;
+    color: $text-dark;
+    background: rgba(108, 92, 231, 0.08);
+    border-left: 3px solid $accent-primary;
+    border-bottom: 1px solid rgba(108, 92, 231, 0.1);
 }
-    
-
 
 .noteNavItem__title {
     grid-row: 1 / 2;
-    background-color: transparent;
-    font-family: "Raleway";
-    font-size: 1.3em;
-    margin-top: 30px;
-    // display: flex;
-    align-items: center;
-
-    min-width: 0px;
-    max-width: 200px;
+    font-family: $font-sans;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 20px;
+    min-width: 0;
+    max-width: 280px;
     white-space: nowrap;
-    overflow:hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
+    color: $text-dark;
 }
 
 .noteNavItem__bodyContainer {
     grid-row: 2 / 3;
-    box-sizing: border-box;
     overflow: hidden;
 }
 
-
 .noteNavItem__timestamp {
     grid-row: 3 / 4;
-    font-family: "Raleway";
-    font-size: 0.9em;
-   
+    font-family: $font-sans;
+    font-size: 12px;
+    font-weight: 500;
+    color: $text-light;
     display: flex;
     align-items: center;
 }
@@ -138,5 +162,7 @@
     overflow: hidden;
     cursor: pointer;
     padding: 0;
+    font-size: 13px;
+    color: $text-medium;
+    line-height: 1.5;
 }
-

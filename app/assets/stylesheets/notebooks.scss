@@ -1,54 +1,52 @@
-////////////////////// NOTEBOOKS
-.notebooks {
-    animation: fade;
-    animation-duration: 0.8s; 
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-play-state: running; 
+// ============================================
+// NOTEBOOKS LIST VIEW
+// ============================================
+$bg-light: #f8f9fc;
+$bg-light-secondary: #eef0f6;
+$bg-white: #ffffff;
+$accent-primary: #6c5ce7;
+$accent-primary-light: #a29bfe;
+$accent-success: #00b894;
+$accent-warning: #feca57;
+$text-dark: #2d3436;
+$text-medium: #636e72;
+$text-light: #b2bec3;
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$radius-md: 10px;
 
+.notebooks {
     overflow: hidden;
     grid-row: 1 / 2;
     grid-column: 2 / 4;
-    // transition: margin-left 0.5s;
-    // margin-left: 250px;
-    // padding: 20px;
-    // width: 100%;
-    // height: 100vh;
-    color: black;
-    // background-color: #F8F8F8;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    background: $bg-white;
+    animation: fadeIn 0.4s ease-out;
 }
 
-.notebooksClosed {
-    transition: margin-left 0.5s;
-    margin-left: 44px;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-////////////////////// NOTEBOOKS HEADER
+// Header
 .notebooks__header {
-    font-family: "Raleway";
+    font-family: $font-sans;
     display: flex;
     width: 100%;
-    margin-top: 2vh;
-    height: 5vh;
-    box-sizing: border-box;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    display: flex;
-    justify-content: space-between;
+    height: 72px;
+    min-height: 72px;
+    padding: 0 40px;
     align-items: center;
-    // background-color: #1B1B1B;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .notebooks__h1--title {
-    // font-family: 'CaeciliaLTStd-Bold';
-    color: black;
-    font-size: 1.2vw;
-    // padding-left: 4vw;
+    color: $text-dark;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .notebooks__header--right {
@@ -57,135 +55,120 @@
 }
 
 .notebooks__search {
-    font-size: 0.8vw;
-    font-family: "Raleway";
+    font-size: 13px;
+    font-family: $font-sans;
     font-weight: 400;
-    // margin-right: 4vw;
-    padding: 0.7vw;
-    // border-radius: 1vw;
-    border: 0.01vw solid black;
-}
-
-.notebooks__search:focus {
+    padding: 8px 14px;
+    border: 1px solid $bg-light-secondary;
+    border-radius: 8px;
     outline: none;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+        border-color: $accent-primary;
+        box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.08);
+    }
 }
 
-////////////////////// NOTEBOOKS CONTENT
+// Bottom section
 .notebooks__section--bottom {
-    height: 93vh;
-    width: 100%;
-    display: block;
-    overflow: scroll;
-    // rearrange this! the scroll should be on the table, not this entire section, so users can add notebooks while browsing notebook list.
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 40px;
 }
 
-////////////////// NOTEBOOK CONTENT NAV
+// Nav bar inside notebooks
 .notebooks__nav {
     display: flex;
     justify-content: space-between;
-
-    align-items: flex-end;
-    // display: block;
-    // background-color: red;
-    width: 100%;
-    height: 6vh;
-    box-sizing: border-box;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    // padding-bottom: 3%;
+    align-items: center;
+    height: 56px;
+    padding-top: 12px;
 }
 
 .notebooks__h2--title {
-    // font-family: 'CaeciliaLTStd-Bold';
-    font-family: "Raleway";
-    font-size: 1vw;
+    font-family: $font-sans;
+    font-size: 13px;
+    font-weight: 600;
+    color: $text-medium;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 .notebooks__addContainer {
     display: flex;
-    // align-items: flex-end;
     align-items: center;
-    // cursor: pointer;
+    gap: 8px;
 }
 
 .notebooks__button--addImage {
-    width: 2vw;
-    filter: brightness(0) saturate(100%) invert(30%) sepia(59%) saturate(5655%) hue-rotate(116deg) brightness(95%) contrast(74%);
+    width: 24px;
     cursor: pointer;
-}
+    filter: brightness(0) saturate(100%) invert(40%) sepia(75%) saturate(1000%) hue-rotate(230deg) brightness(100%) contrast(90%);
+    transition: transform 0.2s ease;
 
-.notebooks__button--addImage:hover {
-    filter: brightness(0) saturate(100%) invert(65%) sepia(91%) saturate(798%) hue-rotate(358deg) brightness(99%) contrast(90%);
-    animation: rotation 1.5s infinite linear;
+    &:hover {
+        transform: rotate(90deg);
+    }
 }
 
 .notebooks__button--add {
-    // font-family: 'CaeciliaLTStd-Bold';
-    font-family: "Raleway";
-    font-size: 1vw;
-    color: #008E00;
+    font-family: $font-sans;
+    font-size: 13px;
+    font-weight: 600;
+    color: $accent-primary;
     border: none;
-    // outline: none;
     background-color: transparent;
-    font-weight: 400;
     cursor: pointer;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(108, 92, 231, 0.08);
+    }
 }
 
-.notebooks__button--add:hover {
-    color: #EFAD0F;
-}
-
-///////////////// NOTEBOOK TABLE SECTION
+// Table
 .notebooks__tableContainer {
-    overflow: scroll;
-    box-sizing: border-box;
-    padding-top: 3vh;
+    overflow-y: auto;
+    padding-top: 8px;
     width: 100%;
-    // display: flex;
-    // justify-content: center;
-    padding-left: 2vw;
-    padding-right: 2vw;
 }
 
 .notebooks__table {
-    font-family: "Raleway";
-    border-top: 3px solid black;
+    font-family: $font-sans;
+    border-top: 2px solid $text-dark;
     width: 100%;
-}
-
-.notebooks__tableBody {
 }
 
 .notebooks__tableRow--header {
     width: 100%;
-    // height: 2vh;
-    height: 5vh;
-    background-color: #FDF6E4;
-    // background-color: #F8F8F8;
-    color: black;
+    height: 44px;
+    background-color: $bg-light;
+    color: $text-dark;
     text-align: left;
-    // display: flex;
-    align-items: center;
-    // padding-left: 2%;
 }
 
 .notebooks__tableRow--header:hover {
-    background-color: #F2F2F2;
+    background-color: $bg-light-secondary;
 }
 
 .notebooks__tableCol--header:first-child {
-    padding-left: 2%;
+    padding-left: 16px;
 }
 
 .notebooks__tableCol--header:last-child {
     text-align: right;
-    padding-right: 2%;
+    padding-right: 16px;
 }
 
 .notebooks__tableCol--header {
-    // height: 2%;
     vertical-align: middle;
-    font-size: 0.8vw;
-    font-family: 'Raleway';
-    color: #6d6d6d;
+    font-size: 11px;
+    font-family: $font-sans;
+    font-weight: 600;
+    color: $text-light;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }

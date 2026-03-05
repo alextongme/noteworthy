@@ -1,63 +1,109 @@
+// ============================================
+// NOTEBOOK CREATE/EDIT MODAL FORM
+// ============================================
+$bg-white: #ffffff;
+$accent-primary: #6c5ce7;
+$text-dark: #2d3436;
+$text-medium: #636e72;
+$text-light: #b2bec3;
+$font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$radius-lg: 16px;
+$radius-md: 10px;
+$shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
+
 .notebookForm {
-    background-color: white;
-    width: 40vw;
-    height: 44vh;
-    border-radius: 0.2vw;
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.12), 
-                    4px 4px 4px 4px rgba(0,0,0,0.12), 
-                    6px 6px 6px 6px rgba(0,0,0,0.12), 
-                    10px 10px 10px 10px rgba(0,0,0,0.12),
-                    18px 18px 18px 18px rgba(0,0,0,0.12);
-    box-sizing: border-box;
-    padding: 2vw;
+    background-color: $bg-white;
+    width: 480px;
+    max-width: 90vw;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-xl;
+    padding: 32px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 20px;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .notebookForm__topContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // height: 20%;
+}
+
+.notebookForm__h2--header {
+    font-family: $font-sans;
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .fa-times-circle {
-    font-size: 1.7vw;
+    font-size: 22px;
+    color: $text-light;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $text-dark;
+    }
 }
 
 .notebookForm__form {
-    height: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .notebookForm__label {
-    font-weight: 400;
-    font-size: 0.8vw;
+    font-family: $font-sans;
+    font-weight: 600;
+    font-size: 12px;
+    color: $text-medium;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 .notebookForm__input {
-    margin-top: 1vh;
-    font-size: 1vw;
-    padding: 0.7vw;
-    margin-bottom: 7vh;
+    margin-top: 4px;
+    font-size: 14px;
+    padding: 12px 14px;
+    border-radius: 8px;
 }
 
 .notebookForm__buttonContainer {
-    margin-top: 3vh;
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
 }
 
 .notebookForm__button--submit {
-    // font-weight: 700;
-    font-size: 0.8vw;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 24px;
 }
 
 .notebookForm__button--cancel {
-    // font-weight: 00;
-    border: 1px solid gray;
-    background-color: white;
-    color: black;
-    margin-right: 1vw;
-    font-size: 0.8vw;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: $bg-white;
+    color: $text-medium;
+    border-radius: $radius-md;
+
+    &:hover {
+        background-color: #f5f5f5;
+        color: $text-dark;
+    }
 }
