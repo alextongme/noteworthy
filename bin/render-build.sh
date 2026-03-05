@@ -2,7 +2,7 @@
 set -o errexit
 
 bundle config set --local frozen false
-bundle install
+bundle update
 npm install
 bundle exec rake assets:precompile
 bundle exec rake assets:clean

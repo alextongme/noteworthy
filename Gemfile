@@ -40,6 +40,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
+gem 'net-ftp', require: false
 gem 'matrix'
 gem 'psych', '< 4'
 
