@@ -1,0 +1,26 @@
+databases:
+  - name: noteworthy-db
+    plan: free
+    databaseName: noteworthy
+    user: noteworthy
+
+services:
+  - type: web
+    name: noteworthy
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: noteworthy-db
+          property: connectionURI
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
+      - key: RAILS_LOG_TO_STDOUT
+        value: "true"
+      - key: RAILS_ENV
+        value: production
