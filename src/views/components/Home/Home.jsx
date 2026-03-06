@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
 import { NavLink } from 'react-router-dom';
@@ -15,6 +15,25 @@ export default function Home() {
 
     // Redux dispatch
     const dispatch = useDispatch();
+
+    // Ref for snap container
+    const snapRef = useRef(null);
+
+    // WASD / arrow key navigation
+    useEffect(() => {
+        function handleKeyDown(e) {
+            const container = snapRef.current;
+            if (!container) return;
+            const vh = window.innerHeight;
+            if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {
+                container.scrollBy({ top: vh, behavior: 'smooth' });
+            } else if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') {
+                container.scrollBy({ top: -vh, behavior: 'smooth' });
+            }
+        }
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
 
     // State vars
     const [password, setPassword] = useState('');
@@ -143,7 +162,7 @@ export default function Home() {
                     <HeaderIntro className="home-authentication-component" />
                 </nav>
 
-                <ul className="home__snapContainer">
+                <ul className="home__snapContainer" ref={snapRef}>
                     <li className="home__content home__content--first">
                         <section className="home__content--left">
                             <Typist className="home__h1--left">
@@ -165,6 +184,18 @@ export default function Home() {
                             <img src={window.lionHome} className="home__image--rick" />
 
                         </section>
+
+                        <div className="home__scrollHint">
+                            <div className="home__scrollHint__keys">
+                                <span className="home__scrollHint__key">W</span>
+                                <div className="home__scrollHint__row">
+                                    <span className="home__scrollHint__key">A</span>
+                                    <span className="home__scrollHint__key">S</span>
+                                    <span className="home__scrollHint__key">D</span>
+                                </div>
+                            </div>
+                            <span className="home__scrollHint__label">or arrow keys to navigate</span>
+                        </div>
                     </li>
 
                     <li className="home__content home__content--second">
