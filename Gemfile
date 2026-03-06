@@ -5,6 +5,7 @@ ruby '3.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
+gem 'rack', '~> 2.2.0', '< 2.2.4'
 
 # Ruby 3.1+ compatibility — these were removed from stdlib
 gem 'net-smtp', require: false
