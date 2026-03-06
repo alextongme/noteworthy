@@ -4,7 +4,7 @@ set -o errexit
 export NODE_OPTIONS=--openssl-legacy-provider
 
 bundle config set --local frozen false
-bundle install
+bundle update
 npm install
 bundle exec rake assets:precompile
 bundle exec rake assets:clean
