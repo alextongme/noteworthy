@@ -2,21 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './state/store/store';
 import Root from './routes/root';
+import { checkSession } from './state/util/sessionApi';
+import './styles/index.scss';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   let store;
-  
-  // checks if user is logged in already for configuration of store
-  if(window.currentUser) {
-    const preloadedState = {
-      entities: {
-        users: { [window.currentUser.id]: window.currentUser }
-      },
-      session: { id: window.currentUser.id }
-    };
-    store = configureStore(preloadedState);
-    delete window.currentUser;
-  } else {
+
+  try {
+    const currentUser = await checkSession();
+    if (currentUser && currentUser.id) {
+      const preloadedState = {
+        entities: {
+          users: { [currentUser.id]: currentUser }
+        },
+        session: { id: currentUser.id }
+      };
+      store = configureStore(preloadedState);
+    } else {
+      store = configureStore();
+    }
+  } catch (e) {
     store = configureStore();
   }
 

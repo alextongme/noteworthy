@@ -1,48 +1,28 @@
-export const fetchNotebooks = () => {
-    return ($.ajax({
-        method: "GET",
-        url: "api/notebooks"
-    })
-    );
-}
+import { apiFetch } from './apiHelper';
 
-export const fetchNotebook = (notebookId) => {
-    return ($.ajax({
-        method: "GET",
-        url: `api/notebooks/${notebookId}`,
-    })
-    );
-}
+export const fetchNotebooks = () =>
+    apiFetch('/api/notebooks');
 
-export const createNotebook = (notebook) => {
-    // debugger
-    return ($.ajax({
-        method: "POST",
-        url: `api/notebooks`,
-        data: { notebook }
-    }));
-}
+export const fetchNotebook = (notebookId) =>
+    apiFetch(`/api/notebooks/${notebookId}`);
 
-export const updateDefaultNotebook = (default_notebook_id) => {
-    return ($.ajax({
-        method: "PATCH",
-        url: `api/user`,
-        data: { default_notebook_id }
-    }));
-}
+export const createNotebook = (notebook) =>
+    apiFetch('/api/notebooks', {
+        method: 'POST',
+        body: JSON.stringify({ notebook }),
+    });
 
-export const updateNotebook = (notebook) => {
-    // debugger
-    return ($.ajax({
-        method: "PATCH",
-        url: `api/notebooks/${notebook.id}`,
-        data: { notebook }
-    }));
-}
+export const updateDefaultNotebook = (default_notebook_id) =>
+    apiFetch('/api/user', {
+        method: 'PATCH',
+        body: JSON.stringify({ default_notebook_id }),
+    });
 
-export const deleteNotebook = (notebookId) => {
-    return ($.ajax({
-        method: "DELETE",
-        url: `api/notebooks/${notebookId}`,
-    }));
-}
+export const updateNotebook = (notebook) =>
+    apiFetch(`/api/notebooks/${notebook.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ notebook }),
+    });
+
+export const deleteNotebook = (notebookId) =>
+    apiFetch(`/api/notebooks/${notebookId}`, { method: 'DELETE' });

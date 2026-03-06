@@ -1,32 +1,22 @@
-// our ajax calls to our backend routes
-export const signup = (user) => {
-    // debugger
-    return $.ajax({
-        method: 'POST',
-        url: '/api/user',
-        data: { user }
-    })
-};
+import { apiFetch } from './apiHelper';
 
-export const login = (user) => (
-    $.ajax({
+export const signup = (user) =>
+    apiFetch('/api/auth/register', {
         method: 'POST',
-        url: '/api/session',
-        data: { user }
-    })
-);
-  
-export const logout = () => (
-    $.ajax({
-        method: 'DELETE',
-        url: '/api/session'
-    })
-);
+        body: JSON.stringify({ email: user.email, username: user.username || user.email, password: user.password }),
+    });
 
-export const lookForUser = (email) => {
-    return $.ajax({
-        method: 'GET',
-        url: `/api/session/lookForUser`,
-        data: { email },
-    })
-};
+export const login = (user) =>
+    apiFetch('/api/auth/login', {
+        method: 'POST',
+        body: JSON.stringify({ email: user.email, password: user.password }),
+    });
+
+export const logout = () =>
+    apiFetch('/api/auth/logout', { method: 'POST' });
+
+export const checkSession = () =>
+    apiFetch('/api/auth/session');
+
+export const lookForUser = (email) =>
+    apiFetch(`/api/auth/lookForUser?email=${encodeURIComponent(email)}`);

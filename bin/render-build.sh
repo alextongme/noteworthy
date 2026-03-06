@@ -3,9 +3,9 @@ set -o errexit
 
 export NODE_OPTIONS=--openssl-legacy-provider
 
-bundle config set --local frozen false
-bundle update rails nokogiri globalid --conservative
 npm install
-bundle exec rake assets:precompile
-bundle exec rake assets:clean
-bundle exec rake db:migrate
+npm run build
+
+# Copy public assets (images, fonts) into dist/ so Express serves them
+cp -r public/images dist/images
+cp -r public/fonts dist/fonts

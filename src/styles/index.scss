@@ -1,0 +1,98 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+// Custom Fonts
+@font-face {
+  font-family: 'CaeciliaLTStd-Bold';
+  src: url('/fonts/CaeciliaLTStd-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Fofer';
+  src: url('/fonts/Fofer.otf');
+}
+
+@font-face {
+  font-family: 'HabelDemo';
+  src: url('/fonts/HabelDemo.otf');
+}
+
+@font-face {
+  font-family: 'LemonMilk';
+  src: url('/fonts/lemon_milk/LEMONMILK-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Dearest';
+  src: url('/fonts/Dearest.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Signerica_Fat';
+  src: url('/fonts/Signerica_Fat.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ShoppingScriptDemo';
+  src: url('/fonts/ShoppingScriptDemo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NeonAbsoluteSans';
+  src: url('/fonts/neon_abslolute_demo/NeonAbsoluteSans.ttf') format('truetype');
+}
+
+// Animations
+@keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes stretch--down {
+  0% { transform: scale(1, 0); opacity: 0; }
+  50% { transform: scale(1, 0.5); }
+  100% { transform: scale(1, 1); opacity: 1; }
+}
+
+@keyframes stretch--right {
+  0% { transform: scale(0, 1); }
+  50% { transform: scale(0.5, 1); }
+  100% { transform: scale(1, 1); }
+}
+
+@keyframes rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); }
+}
+
+// 3D shadow on hover
+.threed:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Base styles
+@import 'reset';
+@import 'universal';
+
+// Component styles
+@import 'home';
+@import 'session';
+@import 'main';
+@import 'sidebar';
+@import 'notes_nav';
+@import 'note_editor';
+@import 'notebooks';
+@import 'notebook_item';
+@import 'notebook_form';
+@import 'notebook_note_items';
+@import 'modal';
+@import 'header_intro';
+@import 'notes_intro';
+@import 'dropdown';
+@import 'tags';

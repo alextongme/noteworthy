@@ -5,7 +5,7 @@ const { compare } = require("bcryptjs");
 // EMAIL
 const emailExists = check("email").custom(async (value) => {
     const {rows} = await db.query("SELECT * FROM users WHERE email = $1", [value]);
-    
+
     if (rows.length) {
         throw new Error('There is an existing user with this email already.')
     };
@@ -27,10 +27,10 @@ const validUsername = check("username").isLength({min: 4, max: 24}).withMessage(
 // PASSWORD
 const validPassword = check("password").isLength({min: 6, max: 15}).withMessage('Password must be between 6 and 15 characters');
 
-// LOGIN
-const validLoginFields = check("username").custom(async (value, {req}) => {
-    const user = await db.query("SELECT * FROM users WHERE username = $1", [value]);
-  
+// LOGIN — look up by email (frontend sends email + password)
+const validLoginFields = check("email").custom(async (value, {req}) => {
+    const user = await db.query("SELECT * FROM users WHERE email = $1", [value]);
+
     if (!user.rows.length) {
         throw new Error("User does not exist");
     };
@@ -43,7 +43,15 @@ const validLoginFields = check("username").custom(async (value, {req}) => {
     req.user = user.rows[0];
 });
 
+// USERNAME (optional — only validated if provided)
+const optionalUsernameExists = check("username").optional().custom(async (value) => {
+    const {rows} = await db.query("SELECT * FROM users WHERE username = $1", [value]);
+    if (rows.length) {
+        throw new Error('There is an existing user with this username already.')
+    };
+});
+
 module.exports = {
-    userValidation: [emailExists, validEmail, usernameExists, validUsername, validPassword],
+    userValidation: [emailExists, validEmail, optionalUsernameExists, validPassword],
     loginValidation: [validLoginFields]
 };

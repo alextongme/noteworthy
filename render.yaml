@@ -7,20 +7,16 @@ databases:
 services:
   - type: web
     name: noteworthy
-    runtime: ruby
+    runtime: node
     plan: free
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
+    startCommand: "npm start"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
           name: noteworthy-db
           property: connectionString
-      - key: RAILS_MASTER_KEY
+      - key: JWT_SECRET
         sync: false
-      - key: RAILS_SERVE_STATIC_FILES
-        value: "true"
-      - key: RAILS_LOG_TO_STDOUT
-        value: "true"
-      - key: RAILS_ENV
+      - key: NODE_ENV
         value: production

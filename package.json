@@ -1,17 +1,27 @@
 {
   "name": "noteworthy",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "an evernote clone worthy of its predecessor",
-  "main": "webpack.config.js",
-  "directories": {
-    "test": "test"
-  },
+  "main": "server/app.js",
   "dependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "css-loader": "^5.2.7",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.15.0",
+    "html-webpack-plugin": "^4.5.2",
     "javascript-time-ago": "^2.0.7",
+    "jsonwebtoken": "^9.0.0",
+    "mini-css-extract-plugin": "^1.6.2",
+    "morgan": "^1.10.0",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "pg": "^8.10.0",
     "react": "^16.13.1",
     "react-dom": "^16.2.0",
     "react-quill": "^2.0.0-beta.2",
@@ -23,17 +33,20 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "regenerator-runtime": "^0.13.5",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "sass": "^1.62.0",
+    "sass-loader": "^10.4.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
   },
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --mode=development",
-    "postinstall": "webpack"
+    "build": "NODE_OPTIONS=--openssl-legacy-provider npx webpack --mode production",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider webpack --watch --mode=development",
+    "start": "node server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alex Tong",
   "license": "ISC"

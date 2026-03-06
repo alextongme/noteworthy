@@ -1,26 +1,30 @@
 const express = require("express");
 const router = express.Router();
-const { login, protected, logout } = require("../controllers/auth");
+const db = require("../db");
+const { register, login, session, logout } = require("../controllers/auth");
 const { userAuth } = require("../middlewares/auth");
-
-// VALIDATORS
 const { userValidation, loginValidation } = require("../validators/auth");
+const { validationMiddleware } = require("../middlewares/validations");
 
-require('../middlewares/passport');
+require("../middlewares/passport");
 
-const { register } = require("../controllers/auth");
+router.post("/register", userValidation, validationMiddleware, register);
+router.post("/login", loginValidation, validationMiddleware, login);
+router.post("/logout", logout);
+router.get("/session", userAuth, session);
 
-// MIDDLEWARE
-const { validationMiddleware }  = require("../middlewares/validations");
-
-// POST
-router.post('/register', userValidation, validationMiddleware, register);
-router.post('/login', loginValidation, validationMiddleware, login);
-
-// PROTECTED ROUTES
-// GET ALL USERS
-router.get('/protected', userAuth, protected);
-
-router.get('/logout', userAuth, logout);
+// Check if email exists (used by login form before showing password field)
+router.get("/lookForUser", async (req, res) => {
+    try {
+        const { email } = req.query;
+        const { rows } = await db.query("SELECT id FROM users WHERE email = $1", [email]);
+        if (rows.length) {
+            return res.json(["Email found"]);
+        }
+        return res.status(401).json(["Email not found, please signup!"]);
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+});
 
 module.exports = router;

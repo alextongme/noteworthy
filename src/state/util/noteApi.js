@@ -1,48 +1,22 @@
-export const fetchNotes = () => {
-    // debugger
-    return ($.ajax({
-        method: "GET",
-        url: "api/notes"
-    }));
-}
+import { apiFetch } from './apiHelper';
 
-export const fetchNote = (noteId) => {
-    return ($.ajax({
-        method: "GET",
-        url: `api/notes/${noteId}`,
-    }));
-}
+export const fetchNotes = () =>
+    apiFetch('/api/notes');
 
-export const createNote = (note) => {
-    // debugger
-    return ($.ajax({
-        method: "POST",
-        url: `api/notes`,
-        data: { note }
-    }));
-}
+export const fetchNote = (noteId) =>
+    apiFetch(`/api/notes/${noteId}`);
 
-export const updateNote = (note) => {
-    // debugger
-    return ($.ajax({
-        method: "PATCH",
-        url: `api/notes/${note.id}`,
-        data: { note }
-    }));
-}
+export const createNote = (note) =>
+    apiFetch('/api/notes', {
+        method: 'POST',
+        body: JSON.stringify({ note }),
+    });
 
-// export const moveNote = (notebookId) => {
-//     // debugger
-//     return ($.ajax({
-//         method: "PATCH",
-//         url: `api/notes/${note.id}`,
-//         data: { notebookId }
-//     }));
-// }
+export const updateNote = (note) =>
+    apiFetch(`/api/notes/${note.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ note }),
+    });
 
-export const deleteNote = (noteId) => {
-    return ($.ajax({
-        method: "DELETE",
-        url: `api/notes/${noteId}`,
-    }));
-}
+export const deleteNote = (noteId) =>
+    apiFetch(`/api/notes/${noteId}`, { method: 'DELETE' });

@@ -1,55 +1,22 @@
-export const fetchTags = () => {
-    return ($.ajax({
-        method: "GET",
-        url: "api/tags"
-    })
-    );
-}
+import { apiFetch } from './apiHelper';
 
-export const fetchTag = (tagId) => {
-        return ($.ajax({
-            method: "GET",
-            url: `api/tags/${tagId}`,
-        })
-    );
-}
+export const fetchTags = () =>
+    apiFetch('/api/tags');
 
-export const createTag = (tag) => {
-    return ($.ajax({
-        method: "POST",
-        url: `api/tags`,
-        data: { tag }
-    }));
-}
+export const fetchTag = (tagId) =>
+    apiFetch(`/api/tags/${tagId}`);
 
-export const deleteTag = (id) => {
-    return ($.ajax({
-        method: "DELETE",
-        url: `api/tags/${id}`,
-    }));
-}
+export const createTag = (tag) =>
+    apiFetch('/api/tags', {
+        method: 'POST',
+        body: JSON.stringify({ tag }),
+    });
 
-export const deleteNoteTag = (tag) => {
-    return ($.ajax({
-        method: "DELETE",
-        url: `api/tags/${tag.id}`,
-        data: { tag }
-    }));
-}
+export const deleteTag = (id) =>
+    apiFetch(`/api/tags/${id}`, { method: 'DELETE' });
 
-// export const updateDefaulttag = (default_tag_id) => {
-//     return ($.ajax({
-//         method: "PATCH",
-//         url: `api/user`,
-//         data: { default_tag_id }
-//     }));
-// }
-
-// export const updatetag = (tag) => {
-//     // debugger
-//     return ($.ajax({
-//         method: "PATCH",
-//         url: `api/tags/${tag.id}`,
-//         data: { tag }
-//     }));
-// }
+export const deleteNoteTag = (tag) =>
+    apiFetch(`/api/tags/${tag.id}`, {
+        method: 'DELETE',
+        body: JSON.stringify({ tag }),
+    });
