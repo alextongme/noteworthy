@@ -13,6 +13,7 @@ const NotebooksIntro = () => {
     return (
         <div className="notebooksIntro">
                 <h1 className="notebooksIntro__h1">{notebookName}</h1>
+                <p className="notebooksIntro__subtitle">Select a note from the left to start editing</p>
         </div>
     );
 }

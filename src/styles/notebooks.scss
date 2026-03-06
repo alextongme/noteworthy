@@ -4,10 +4,10 @@
 $bg-light: #f8f9fc;
 $bg-light-secondary: #eef0f6;
 $bg-white: #ffffff;
-$accent-primary: #6c5ce7;
-$accent-primary-light: #a29bfe;
-$accent-success: #00b894;
-$accent-warning: #feca57;
+$accent-primary: #01A82D;
+$accent-primary-light: #21C0FF;
+$accent-success: #269814;
+$accent-warning: #F5B625;
 $text-dark: #2d3436;
 $text-medium: #636e72;
 $text-light: #b2bec3;
@@ -66,7 +66,7 @@ $radius-md: 10px;
 
     &:focus {
         border-color: $accent-primary;
-        box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.08);
+        box-shadow: 0 0 0 3px rgba(1, 168, 45, 0.08);
     }
 }
 
@@ -95,37 +95,24 @@ $radius-md: 10px;
     letter-spacing: 0.06em;
 }
 
-.notebooks__addContainer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.notebooks__button--addImage {
-    width: 24px;
-    cursor: pointer;
-    filter: brightness(0) saturate(100%) invert(40%) sepia(75%) saturate(1000%) hue-rotate(230deg) brightness(100%) contrast(90%);
-    transition: transform 0.2s ease;
-
-    &:hover {
-        transform: rotate(90deg);
-    }
-}
-
 .notebooks__button--add {
     font-family: $font-sans;
     font-size: 13px;
     font-weight: 600;
     color: $accent-primary;
-    border: none;
+    border: 1px solid rgba(1, 168, 45, 0.3);
     background-color: transparent;
     cursor: pointer;
-    padding: 6px 14px;
-    border-radius: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 
     &:hover {
-        background: rgba(108, 92, 231, 0.08);
+        background: rgba(1, 168, 45, 0.08);
+        border-color: $accent-primary;
     }
 }
 

@@ -45,21 +45,11 @@ const Notebooks = () => {
                 <nav className="notebooks__nav">
                     <h2 className="notebooks__h2--title">My notebook list</h2>
 
-                    <div 
-                        className="notebooks__addContainer">
-                        {/* <img 
-                            src={window.addButton} className="notebooks__button--addImage"
-                            onClick={() => dispatch(openModal("Create notebook"))} /> */}
-
-                        <i 
-                            className="fas fa-book sidebar__icons" 
-                            onClick={() => dispatch(openModal("Create notebook"))}/>
-                        <button 
-                            className="notebooks__button--add"
-                            onClick={() => dispatch(openModal("Create notebook"))}>
-                            New notebook
-                        </button>
-                    </div>
+                    <button
+                        className="notebooks__button--add"
+                        onClick={() => dispatch(openModal("Create notebook"))}>
+                        <i className="fas fa-plus" /> New notebook
+                    </button>
 
                 </nav>
                 <div className="notebooks__tableContainer">

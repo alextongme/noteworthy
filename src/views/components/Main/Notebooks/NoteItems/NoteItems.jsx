@@ -1,28 +1,37 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
+import { useDispatch } from "react-redux";
 import * as ComUtil from '../../../utils/utils';
+import { createNote, deleteNote } from '../../../../../state/actions/note';
 
 const NoteItems = ({notebook, notes, users}) => {
-    // debugger
-    const noteItems = notebook.note_ids.map( (note_id, idx) => {
-        // let className;
-        // if(idx % 2 == 0) {
-        //     className = "notebooks__tableRow notebooks__tableRow--even";
-        // } else {
-        //     className = "notebooks__tableRow notebooks__tableRow--odd";
-        // }
-        // const currUser = users[Object.keys(users)[0]];
-        const currUser = Object.values(users)[0];
-        // debugger
-        const currNote = notes[note_id];
-        let cssName;
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const currUser = Object.values(users)[0];
 
+    function handleCreateNote() {
+        const note = { title: "Untitled", body: "", notebook_id: notebook.id };
+        dispatch(createNote(note)).then((obj) => {
+            history.push(`/main/notebooks/${notebook.id}/notes/${obj.note.id}`);
+        });
+    }
+
+    function handleDeleteNote(e, noteId) {
+        e.preventDefault();
+        e.stopPropagation();
+        dispatch(deleteNote(noteId));
+    }
+
+    const noteItems = notebook.note_ids.map( (note_id, idx) => {
+        const currNote = notes[note_id];
+        if (!currNote) return null;
+
+        let cssName;
         if(idx % 2 == 0) {
             cssName = "notebooks__tableRow notebookNoteItems__tableRow--even";
         } else {
             cssName = "notebooks__tableRow notebookNoteItems__tableRow--odd";
         }
-        
 
         const time = () => {
             const timestamp = ComUtil.time(currNote.updated_at);
@@ -34,7 +43,6 @@ const NoteItems = ({notebook, notes, users}) => {
                 <td
                     className="notebooks__tableCol notebookNoteItems__tableCol">
                     <NavLink
-                        // to={`/main/notebooks/${notebook.id}/notes`}
                         to={`/main/notebooks/${notebook.id}/notes/${note_id}`}
                         className="notebookNoteItems__links">
                             {currNote.title}
@@ -58,7 +66,10 @@ const NoteItems = ({notebook, notes, users}) => {
 
                 <td
                     className="notebooks__tableCol notebookNoteItems__tableCol">
-                    {/* <i className="fas fa-running" /> */}
+                    <i
+                        className="fas fa-trash-alt notebookNoteItems__delete"
+                        onClick={(e) => handleDeleteNote(e, note_id)}
+                    />
                 </td>
             </tr>
         );
@@ -67,6 +78,15 @@ const NoteItems = ({notebook, notes, users}) => {
     return (
         <>
             {noteItems}
+            <tr className="notebooks__tableRow notebookNoteItems__tableRow--add">
+                <td colSpan="5" className="notebooks__tableCol notebookNoteItems__addCol">
+                    <button
+                        className="notebookNoteItems__addButton"
+                        onClick={handleCreateNote}>
+                        <i className="fas fa-plus" /> Add note
+                    </button>
+                </td>
+            </tr>
         </>
     );
 }

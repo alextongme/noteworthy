@@ -2,14 +2,14 @@
 // NOTE EDITOR (right panel)
 // ============================================
 $bg-white: #ffffff;
-$bg-dark-secondary: #232839;
-$accent-primary: #6c5ce7;
-$accent-primary-light: #a29bfe;
-$accent-danger: #ff6b6b;
+$bg-dark-secondary: #2c3940;
+$accent-primary: #01A82D;
+$accent-primary-light: #21C0FF;
+$accent-danger: #F07178;
 $text-dark: #2d3436;
 $text-medium: #636e72;
 $text-light: #b2bec3;
-$text-inverse: #f5f6fa;
+$text-inverse: #FDF6E4;
 $font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 $radius-sm: 6px;
 
@@ -26,23 +26,6 @@ $radius-sm: 6px;
 @keyframes editorFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-// Dark mode
-.noteEditor--darkMode {
-    background-color: $bg-dark-secondary;
-}
-
-.noteEditor--darkMode > * {
-    color: $text-inverse !important;
-}
-
-.noteEditor__h2--header--darkMode {
-    color: $text-inverse !important;
-}
-
-.noteEditor__button--darkMode {
-    filter: invert(1);
 }
 
 // Header
@@ -93,7 +76,7 @@ $radius-sm: 6px;
 
     &:hover {
         color: $accent-primary;
-        background: rgba(108, 92, 231, 0.08);
+        background: rgba(1, 168, 45, 0.08);
     }
 }
 
@@ -107,7 +90,7 @@ $radius-sm: 6px;
 
     &:hover {
         color: $accent-danger;
-        background: rgba(255, 107, 107, 0.08);
+        background: rgba(240, 113, 120, 0.08);
     }
 }
 

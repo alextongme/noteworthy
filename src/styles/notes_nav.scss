@@ -3,9 +3,9 @@
 // ============================================
 $bg-light: #f8f9fc;
 $bg-light-secondary: #eef0f6;
-$bg-dark-secondary: #232839;
-$accent-primary: #6c5ce7;
-$accent-primary-light: #a29bfe;
+$bg-dark-secondary: #2c3940;
+$accent-primary: #01A82D;
+$accent-primary-light: #21C0FF;
 $text-dark: #2d3436;
 $text-medium: #636e72;
 $text-light: #b2bec3;
@@ -41,14 +41,6 @@ $radius-sm: 6px;
     padding: 40px 24px;
 }
 
-.notesNav--darkMode {
-    background-color: $bg-dark-secondary;
-    border-right-color: rgba(255, 255, 255, 0.06);
-}
-
-.notesNav--darkMode > * {
-    color: #f5f6fa !important;
-}
 
 .notesNav__header {
     grid-row: 1 / 2;
@@ -106,25 +98,17 @@ $radius-sm: 6px;
     transition: all 0.15s ease;
 
     &:hover {
-        background: rgba(108, 92, 231, 0.04);
+        background: rgba(1, 168, 45, 0.04);
     }
 }
 
-.noteNavItem--darkMode {
-    color: #f5f6fa !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.noteNavItem--active--darkMode {
-    background-color: rgba(108, 92, 231, 0.12) !important;
-}
 
 .noteNavItem--active {
     width: 100%;
     color: $text-dark;
-    background: rgba(108, 92, 231, 0.08);
+    background: rgba(1, 168, 45, 0.08);
     border-left: 3px solid $accent-primary;
-    border-bottom: 1px solid rgba(108, 92, 231, 0.1);
+    border-bottom: 1px solid rgba(1, 168, 45, 0.1);
 }
 
 .noteNavItem__title {

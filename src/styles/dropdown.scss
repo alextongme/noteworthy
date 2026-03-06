@@ -2,8 +2,8 @@
 // DROPDOWN MENU (Notebook actions)
 // ============================================
 $bg-white: #ffffff;
-$accent-primary: #6c5ce7;
-$accent-danger: #ff6b6b;
+$accent-primary: #01A82D;
+$accent-danger: #F07178;
 $text-dark: #2d3436;
 $text-medium: #636e72;
 $font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -51,7 +51,7 @@ $shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
     transition: all 0.15s ease;
 
     &:hover {
-        background-color: rgba(108, 92, 231, 0.06);
+        background-color: rgba(1, 168, 45, 0.06);
         color: $accent-primary;
     }
 }

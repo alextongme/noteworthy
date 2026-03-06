@@ -1,0 +1,299 @@
+// ============================================
+// DRACULA DARK MODE
+// https://draculatheme.com/contribute
+// ============================================
+$drac-bg: #282a36;
+$drac-current: #44475a;
+$drac-fg: #f8f8f2;
+$drac-comment: #6272a4;
+$drac-cyan: #8be9fd;
+$drac-green: #50fa7b;
+$drac-orange: #ffb86c;
+$drac-pink: #ff79c6;
+$drac-purple: #bd93f9;
+$drac-red: #ff5555;
+$drac-yellow: #f1fa8c;
+
+.main--dark-mode {
+
+    // ── Sidebar ──
+    .sidebar {
+        background: $drac-bg;
+        border-right-color: $drac-current;
+    }
+
+    .sidebar__logo { color: $drac-purple; }
+    .sidebar__navlink { color: $drac-comment; }
+    .sidebar__navlink:hover { background: $drac-current; color: $drac-fg; }
+    .sidebar__navlink--active { background: rgba($drac-purple, 0.15); color: $drac-fg; border-right-color: $drac-purple; }
+    .sidebar__navlink--disable:hover { color: $drac-comment; background-color: transparent; }
+
+    .custom__select:hover { background: $drac-current; color: $drac-fg; }
+    .custom__select:hover select { color: $drac-fg !important; }
+    .custom__select select { color: $drac-orange; }
+
+    .fa-user-circle { color: $drac-cyan; }
+    .fa-chalkboard-teacher { color: $drac-green; }
+    .fa-edit { color: $drac-pink; }
+    .fa-book { color: $drac-cyan; }
+    .fa-sticky-note { color: $drac-yellow; }
+    .fa-tags { color: $drac-pink; }
+    .fa-moon { color: $drac-orange; }
+    .fa-sign-out-alt { color: $drac-red; }
+    .fa-arrows-alt-h { color: $drac-purple; }
+    .fa-brain { color: $drac-pink; }
+    .fa-chart-line { color: $drac-cyan; }
+    .fa-pen-nib { color: $drac-orange; }
+    .fa-searchengin { color: $drac-yellow; }
+    .fa-dumbbell { color: $drac-red; }
+
+    // ── Notes Nav (middle column) ──
+    .notesNav {
+        background-color: darken($drac-bg, 2%);
+        border-right-color: $drac-current;
+    }
+
+    .notesNav__header {
+        color: $drac-purple;
+        border-bottom-color: $drac-current;
+    }
+
+    .notesNav__navbar--left { color: $drac-cyan; }
+    .notesNav__h2--noNotes { color: $drac-comment; }
+
+    .noteNavItem {
+        color: $drac-fg;
+        border-bottom-color: $drac-current;
+
+        &:hover { background: rgba($drac-purple, 0.08); }
+    }
+
+    .noteNavItem--active {
+        color: $drac-fg;
+        background: rgba($drac-green, 0.1);
+        border-left-color: $drac-green;
+        border-bottom-color: rgba($drac-green, 0.2);
+    }
+
+    .noteNavItem__title { color: $drac-fg; }
+    .noteNavItem__timestamp { color: $drac-orange; }
+    .ql-bubble .ql-editor { color: $drac-comment; }
+
+    // ── Note Editor (right panel) ──
+    .noteEditor {
+        background: $drac-bg;
+    }
+
+    .noteEditor__icons { color: $drac-pink; }
+    .noteEditor__h2--header {
+        color: $drac-pink;
+        &:hover { color: $drac-cyan; }
+    }
+
+    .noteEditor__button--move {
+        color: $drac-cyan;
+        &:hover { color: $drac-green; background: rgba($drac-green, 0.1); }
+    }
+
+    .noteEditor__button--trash {
+        color: $drac-comment;
+        &:hover { color: $drac-red; background: rgba($drac-red, 0.1); }
+    }
+
+    .noteEditor__input--title {
+        color: $drac-orange;
+        &::placeholder { color: $drac-comment; }
+    }
+
+    .ql-snow .ql-editor { color: $drac-fg; }
+    .ql-toolbar { border-bottom-color: $drac-current !important; }
+
+    // Quill toolbar icons — use multiple Dracula colors
+    .ql-snow .ql-stroke { stroke: $drac-comment !important; }
+    .ql-snow .ql-fill { fill: $drac-comment !important; }
+    .ql-snow .ql-picker { color: $drac-comment !important; }
+    .ql-snow .ql-picker-options { background: $drac-current !important; border-color: $drac-comment !important; }
+    .ql-snow .ql-picker-label:hover .ql-stroke { stroke: $drac-fg !important; }
+    .ql-snow button:hover .ql-stroke { stroke: $drac-pink !important; }
+    .ql-snow button:hover .ql-fill { fill: $drac-pink !important; }
+    .ql-snow button.ql-active .ql-stroke { stroke: $drac-green !important; }
+    .ql-snow button.ql-active .ql-fill { fill: $drac-green !important; }
+    .ql-editor.ql-blank::before { color: $drac-comment !important; }
+
+    // Quill content — style rendered elements
+    .ql-snow .ql-editor {
+        blockquote {
+            border-left-color: $drac-yellow;
+            color: $drac-yellow;
+        }
+
+        pre.ql-syntax {
+            background: $drac-current;
+            color: $drac-green;
+            border-radius: 6px;
+        }
+
+        a { color: $drac-cyan; }
+        strong { color: $drac-orange; }
+        em { color: $drac-pink; }
+        h1, h2, h3 { color: $drac-purple; }
+        .ql-font-monospace { color: $drac-green; }
+    }
+
+    .noteEditor__footer { border-top-color: $drac-current; }
+    .footer__characterLength { color: $drac-cyan; }
+    .noteEditor__button { filter: invert(0.7); }
+
+    .noteEditor__link--tags { background: $drac-pink; color: $drac-bg; }
+    .noteEditor__tags--icon:hover { color: $drac-red; }
+
+    // ── Notebooks view ──
+    .notebooks {
+        background: darken($drac-bg, 2%);
+    }
+
+    .notebooks__header { border-bottom-color: $drac-current; }
+    .notebooks__h1--title { color: $drac-purple; }
+
+    .notebooks__search {
+        background: $drac-current;
+        border-color: $drac-comment;
+        color: $drac-fg;
+        &:focus { border-color: $drac-cyan; box-shadow: 0 0 0 3px rgba($drac-cyan, 0.15); }
+        &::placeholder { color: $drac-comment; }
+    }
+
+    .notebooks__h2--title { color: $drac-pink; }
+
+    .notebooks__button--add {
+        color: $drac-green;
+        border-color: rgba($drac-green, 0.3);
+        &:hover { background: rgba($drac-green, 0.1); border-color: $drac-green; }
+    }
+
+    .notebooks__table { border-top-color: $drac-purple; }
+
+    .notebooks__tableRow--header {
+        background-color: $drac-current;
+        color: $drac-fg;
+        &:hover { background-color: lighten($drac-current, 5%); }
+    }
+
+    .notebooks__tableCol--header { color: $drac-cyan; }
+
+    .notebooks__tableRow--even { background-color: $drac-bg; }
+    .notebooks__tableRow--odd { background-color: darken($drac-bg, 2%); }
+    .notebooks__tableRow:hover { background-color: rgba($drac-purple, 0.08); }
+
+    .notebooks__tableCol { color: $drac-comment; }
+    .notebooks__links {
+        color: $drac-fg;
+        &:hover { color: $drac-cyan; }
+    }
+
+    .fa-running {
+        color: $drac-orange;
+        &:hover { color: $drac-green; }
+    }
+
+    .chevron-right--notebooks,
+    .chevron-down--notebooks {
+        color: $drac-orange;
+        &:hover { color: $drac-cyan; }
+    }
+
+    // ── Notebook note items (expanded) ──
+    .notebookNoteItems__tableRow--even { background-color: $drac-bg; }
+    .notebookNoteItems__tableRow--odd { background-color: darken($drac-bg, 2%); }
+    .notebookNoteItems__links { color: $drac-fg; &:hover { color: $drac-cyan; } }
+    .notebookNoteItems__delete { color: $drac-comment; &:hover { color: $drac-red; } }
+    .notebookNoteItems__addButton { color: $drac-green; }
+
+    // ── Notebook form (modal) ──
+    .notebookForm {
+        background-color: $drac-bg;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        border: 1px solid $drac-current;
+    }
+
+    .notebookForm__h2--header { color: $drac-purple; }
+    .fa-times-circle { color: $drac-comment; &:hover { color: $drac-red; } }
+    .notebookForm__label { color: $drac-cyan; }
+
+    .notebookForm__input {
+        background: $drac-current;
+        border-color: $drac-comment;
+        color: $drac-fg;
+        &:focus { border-color: $drac-purple; box-shadow: 0 0 0 3px rgba($drac-purple, 0.15); }
+    }
+
+    .notebookForm__button--submit {
+        background: $drac-green;
+        color: $drac-bg;
+        &:hover { background: lighten($drac-green, 5%); }
+    }
+
+    .notebookForm__button--cancel {
+        background-color: $drac-current;
+        border-color: $drac-comment;
+        color: $drac-comment;
+        &:hover { background-color: lighten($drac-current, 5%); color: $drac-fg; }
+    }
+
+    // ── Notes Intro / Notebooks Intro ──
+    .notesIntro { background: $drac-bg; }
+    .notesIntro__h1 {
+        background: linear-gradient(135deg, $drac-purple, $drac-pink) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+    }
+    .notesIntro__h2 { color: $drac-comment; }
+
+    .notebooksIntro { background: $drac-bg; }
+    .notebooksIntro__h1 { color: $drac-purple; }
+    .notebooksIntro__subtitle { color: $drac-cyan; }
+
+    // ── Tags ──
+    .tags { background-color: $drac-bg; }
+    .tags__header { color: $drac-pink; }
+
+    .tag__container {
+        background: $drac-current;
+        border-color: rgba($drac-comment, 0.3);
+        color: $drac-fg;
+
+        &:hover { border-color: $drac-purple; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); }
+    }
+
+    // Rotate Dracula colors across tag cards
+    .tag__container--0 { border-left: 3px solid $drac-green; .tag__link { color: $drac-green; } }
+    .tag__container--1 { border-left: 3px solid $drac-orange; .tag__link { color: $drac-orange; } }
+    .tag__container--2 { border-left: 3px solid $drac-yellow; .tag__link { color: $drac-yellow; } }
+    .tag__container--3 { border-left: 3px solid $drac-cyan; .tag__link { color: $drac-cyan; } }
+    .tag__container--4 { border-left: 3px solid $drac-purple; .tag__link { color: $drac-purple; } }
+    .tag__container--5 { border-left: 3px solid $drac-pink; .tag__link { color: $drac-pink; } }
+    .tag__container--6 { border-left: 3px solid $drac-red; .tag__link { color: $drac-red; } }
+    .tag__container--7 { border-left: 3px solid $drac-fg; .tag__link { color: $drac-fg; } }
+
+    .tag__numOfItems { color: $drac-comment; }
+    .tag__icon { color: $drac-comment; &:hover { color: $drac-red; } }
+
+    // ── Modal overlay ──
+    .modal__background { background: rgba(0, 0, 0, 0.7); }
+
+    // ── Universal overrides ──
+    .universal__button {
+        background: $drac-purple;
+        color: $drac-bg;
+        &:hover { background: lighten($drac-purple, 8%); box-shadow: 0 4px 15px rgba($drac-purple, 0.4); }
+        &:active { background: $drac-pink; }
+    }
+
+    .universal__input {
+        background: $drac-current;
+        border-color: $drac-comment;
+        color: $drac-fg;
+        &:focus { border-color: $drac-cyan; box-shadow: 0 0 0 3px rgba($drac-cyan, 0.15); background: $drac-current; }
+        &::placeholder { color: $drac-comment; }
+    }
+}

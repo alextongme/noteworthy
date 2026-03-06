@@ -25,37 +25,23 @@ const Sidebar = () => {
     }
 
     function toggleSidebar() {
-        if(document.getElementsByClassName("main")[0].style.gridTemplateColumns === "60px 380px 1fr") {
+        if(document.getElementsByClassName("main")[0].style.gridTemplateColumns === "56px 380px 1fr") {
             document.getElementsByClassName("main")[0].style.gridTemplateColumns = "260px 380px 1fr";
         } else {
-            document.getElementsByClassName("main")[0].style.gridTemplateColumns = "60px 380px 1fr";
+            document.getElementsByClassName("main")[0].style.gridTemplateColumns = "56px 380px 1fr";
         }
     }
 
     function darkMode() {
-        if(document.getElementsByClassName("noteEditor")[0] && document.getElementsByClassName("notesNav")[0]) {
-            document.getElementsByClassName("noteEditor")[0].classList.toggle("noteEditor--darkMode");
-            document.getElementsByClassName("notesNav")[0].classList.toggle("notesNav--darkMode");
-            Array.from(document.getElementsByClassName("noteNavItem")).forEach((item) => {
-                item.classList.toggle("noteNavItem--darkMode");
-            })
-            document.getElementsByClassName("noteNavItem--active")[0].classList.toggle("noteNavItem--active--darkMode");
-            document.getElementsByClassName("noteEditor__h2--header")[0].classList.toggle("noteEditor__h2--header--darkMode");
-            Array.from(document.getElementsByClassName("noteEditor__button")).forEach((item) => {item.classList.toggle("noteEditor__button--darkMode")});
-        }
+        const main = document.getElementsByClassName("main")[0];
+        if (main) main.classList.toggle("main--dark-mode");
     }
 
     function darkModeLink() {
-        // debugger
-        // console.log(match);
-        if(match) {
-            if(match.isExact || match2.isExact) {
-                return (<li className="sidebar__navlink" onClick={darkMode}>
-                    <i className="fas fas fa-moon sidebar__icons" />
-                    <h3 className="sidebar__titles">Dark mode</h3>
-                </li>);
-            };
-        }
+        return (<li className="sidebar__navlink" onClick={darkMode}>
+            <i className="fas fa-moon sidebar__icons" />
+            <h3 className="sidebar__titles">Tongula Mode</h3>
+        </li>);
     }
     
     function createNoteAndRedirect() {
@@ -174,7 +160,7 @@ const Sidebar = () => {
                 
                 {notebookSelector()}
 
-                {/* {darkModeLink()} */}
+                {darkModeLink()}
 
             <li className="sidebar__navlink" onClick={ () => dispatch(logout()) }>
                 <i className="fas fa-sign-out-alt sidebar__icons" />

@@ -153,14 +153,11 @@ class NoteEditor extends React.Component {
                     <h3 className="universal__h3 footer__characterLength">
                     {this.length} / ∞</h3>
                     <div>
-                        <a href='https://alextong.me/' className ="noteEditor__link--personalWeb">
-                            aT
+                        <a href='https://alextong.me/'>
+                            <img src="/images/count_circle.png" alt='website' className="noteEditor__button" style={{borderRadius: '50%', width: '20px', height: '20px', objectFit: 'cover', filter: 'none'}} />
                         </a>
                         <a href='https://github.com/alextongme/'>
                             <img src={window.github} alt='github' className="noteEditor__button" />
-                        </a>
-                        <a href='https://www.linkedin.com/in/alextongme/'>
-                            <img src={window.linkedin} alt='linkedin' className="noteEditor__button" />
                         </a>
                     </div>
                 </section>

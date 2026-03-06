@@ -1,26 +1,26 @@
 // ============================================
 // DESIGN TOKENS
 // ============================================
-$bg-dark: #1a1e2e;
-$bg-dark-secondary: #232839;
-$bg-dark-tertiary: #2a3042;
+$bg-dark: #263238;
+$bg-dark-secondary: #2c3940;
+$bg-dark-tertiary: #344148;
 $bg-light: #f8f9fc;
 $bg-light-secondary: #eef0f6;
 $bg-white: #ffffff;
 
-$accent-primary: #6c5ce7;
-$accent-primary-light: #a29bfe;
-$accent-primary-dark: #5a4bd1;
-$accent-secondary: #00cec9;
-$accent-danger: #ff6b6b;
-$accent-warning: #feca57;
-$accent-success: #00b894;
+$accent-primary: #01A82D;
+$accent-primary-light: #21C0FF;
+$accent-primary-dark: #018a24;
+$accent-secondary: #89DDFF;
+$accent-danger: #F07178;
+$accent-warning: #F5B625;
+$accent-success: #269814;
 
 $text-dark: #2d3436;
 $text-medium: #636e72;
 $text-light: #b2bec3;
-$text-inverse: #f5f6fa;
-$text-inverse-muted: rgba(245, 246, 250, 0.6);
+$text-inverse: #FDF6E4;
+$text-inverse-muted: rgba(253, 246, 228, 0.6);
 
 $border-light: rgba(0, 0, 0, 0.06);
 $border-dark: rgba(255, 255, 255, 0.08);
@@ -51,6 +51,17 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+a, button, [role="button"],
+input[type="submit"],
+input[type="button"],
+select,
+.sidebar__navlink,
+.notebooks__links,
+.noteNavItem,
+.tag__container {
+    cursor: pointer;
+}
+
 // ============================================
 // BUTTONS
 // ============================================
@@ -78,12 +89,13 @@ body {
 .universal__button:hover {
     background: $accent-primary-dark;
     transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.35);
+    box-shadow: 0 4px 15px rgba(1, 168, 45, 0.35);
 }
 
 .universal__button:active {
     transform: translateY(0);
     box-shadow: none;
+    background: rgb(182, 106, 232);
 }
 
 // ============================================
@@ -105,8 +117,8 @@ body {
 .universal__input:focus {
     outline: none;
     border-color: $accent-primary;
-    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.12);
-    background-color: white;
+    box-shadow: 0 0 0 3px rgba(1, 168, 45, 0.12);
+    background-color: #fcf3cc;
 }
 
 .universal__input::placeholder {

@@ -1,14 +1,14 @@
 // ============================================
 // SESSION (LOGIN / SIGNUP) PAGES
 // ============================================
-$bg-dark: #1a1e2e;
-$bg-dark-secondary: #232839;
-$accent-primary: #6c5ce7;
-$accent-primary-light: #a29bfe;
-$accent-secondary: #00cec9;
-$accent-danger: #ff6b6b;
-$text-inverse: #f5f6fa;
-$text-inverse-muted: rgba(245, 246, 250, 0.6);
+$bg-dark: #263238;
+$bg-dark-secondary: #2c3940;
+$accent-primary: #01A82D;
+$accent-primary-light: #21C0FF;
+$accent-secondary: #89DDFF;
+$accent-danger: #F07178;
+$text-inverse: #FDF6E4;
+$text-inverse-muted: rgba(253, 246, 228, 0.6);
 $font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 $font-display: 'CaeciliaLTStd-Bold', Georgia, serif;
 $radius-md: 10px;
@@ -20,38 +20,17 @@ $radius-lg: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $bg-dark;
+    background-image: url('/images/sessionWallpaper.jpeg');
+    background-size: cover;
     position: relative;
     overflow: hidden;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: -30%;
-        right: -20%;
-        width: 700px;
-        height: 700px;
-        background: radial-gradient(circle, rgba(108, 92, 231, 0.12) 0%, transparent 70%);
-        border-radius: 50%;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -20%;
-        left: -15%;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle, rgba(0, 206, 201, 0.08) 0%, transparent 70%);
-        border-radius: 50%;
-    }
 }
 
 .sessionForm__section--form {
     width: 420px;
     max-width: 90vw;
     padding: 48px 40px;
-    background: rgba(255, 255, 255, 0.04);
+    background-color: rgba(38, 50, 56, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -85,13 +64,8 @@ $radius-lg: 16px;
 
 .sessionForm__logo {
     height: 48px;
-    animation: logoFloat 6s ease-in-out infinite;
-    filter: drop-shadow(0 4px 12px rgba(108, 92, 231, 0.3));
-}
-
-@keyframes logoFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+    animation: rotation 10s infinite linear;
+    filter: drop-shadow(5px 5px 5px #222);
 }
 
 .sessionForm__h1 {
@@ -109,7 +83,7 @@ $radius-lg: 16px;
     font-weight: 400;
     font-family: $font-sans;
     text-align: center;
-    color: $text-inverse-muted;
+    color: $text-inverse;
 }
 
 .sessionForm__h3--create {
@@ -118,7 +92,7 @@ $radius-lg: 16px;
     font-weight: 400;
     font-family: $font-sans;
     text-align: center;
-    color: $text-inverse-muted;
+    color: $text-inverse;
 }
 
 // Form
@@ -149,7 +123,7 @@ $radius-lg: 16px;
     &:focus {
         background: rgba(255, 255, 255, 0.08);
         border-color: $accent-primary;
-        box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+        box-shadow: 0 0 0 3px rgba(1, 168, 45, 0.15);
         outline: none;
     }
 
@@ -178,7 +152,7 @@ $radius-lg: 16px;
     font-weight: 500;
     font-size: 13px;
     padding: 8px 0;
-    color: $accent-danger;
+    color: red;
 }
 
 .sessionForm__button {
@@ -187,7 +161,7 @@ $radius-lg: 16px;
     padding: 13px;
     outline: none;
     color: white;
-    background: $accent-primary;
+    background: #269814;
     border-radius: 8px;
     font-weight: 600;
     font-size: 14px;
@@ -195,21 +169,20 @@ $radius-lg: 16px;
     transition: all 0.25s ease;
 
     &:hover {
-        background: lighten($accent-primary, 5%);
+        background: lighten(#269814, 5%);
         transform: translateY(-1px);
-        box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        box-shadow: 0 4px 15px rgba(1, 168, 45, 0.3);
     }
 }
 
 .sessionForm__button--demo {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: $text-inverse;
+    background: rgb(0, 120, 218);
+    border: none;
+    color: white;
 
     &:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.2);
-        box-shadow: none;
+        background: lighten(rgb(0, 120, 218), 5%);
+        box-shadow: 0 4px 15px rgba(0, 120, 218, 0.3);
         transform: translateY(-1px);
     }
 }
@@ -217,25 +190,27 @@ $radius-lg: 16px;
 // Links
 .sessionForm__login {
     text-decoration: none;
-    color: $accent-primary-light;
+    color: $accent-primary;
     font-size: 14px;
     transition: color 0.2s ease;
 
     &:hover {
-        color: lighten($accent-primary-light, 10%);
+        color: lighten($accent-primary, 15%);
+        cursor: pointer;
     }
 }
 
 .sessionForm__signup {
     margin-top: 12px;
     text-decoration: none;
-    color: $accent-primary-light;
+    color: #269814;
     font-size: 14px;
     font-weight: 500;
     text-align: center;
     transition: color 0.2s ease;
 
     &:hover {
-        color: lighten($accent-primary-light, 10%);
+        color: #CE4FB7;
+        cursor: pointer;
     }
 }

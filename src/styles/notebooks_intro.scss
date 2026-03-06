@@ -1,20 +1,21 @@
 // ============================================
-// NOTES INTRO (Welcome screen when no note selected)
+// NOTEBOOKS INTRO (right panel when notebook selected but no note)
 // ============================================
 $bg-dark: #263238;
 $accent-primary: #01A82D;
 $accent-primary-light: #21C0FF;
-$accent-secondary: #89DDFF;
 $text-inverse: #FDF6E4;
 $text-inverse-muted: rgba(253, 246, 228, 0.6);
 $font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-display: 'CaeciliaLTStd-Bold', Georgia, serif;
 
-.notesIntro {
+.notebooksIntro {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
     height: 100%;
     background: $bg-dark;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -30,45 +31,33 @@ $font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans
     }
 }
 
-.notesIntro__welcome {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
+.notebooksIntro__h1 {
+    font-family: $font-display;
+    font-size: clamp(24px, 3vw, 40px);
+    color: $text-inverse;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: notebooksIntroFadeIn 0.6s ease-out;
+}
+
+.notebooksIntro__subtitle {
+    margin-top: 12px;
+    font-family: $font-sans;
+    font-size: 16px;
+    color: $text-inverse-muted;
+    text-align: center;
     position: relative;
     z-index: 1;
 }
 
-.notesIntro__h1 {
-    font-family: 'ShoppingScriptDemo';
-    font-size: clamp(48px, 8vw, 100px);
-    text-align: center;
-    transform: rotate(-5deg);
-    animation: introFadeIn 1s ease-out;
-    background: linear-gradient(135deg, $accent-primary-light, $accent-secondary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-@keyframes introFadeIn {
+@keyframes notebooksIntroFadeIn {
     from {
         opacity: 0;
-        transform: rotate(-5deg) translateY(16px);
+        transform: translateY(12px);
     }
     to {
         opacity: 1;
-        transform: rotate(-5deg) translateY(0);
+        transform: translateY(0);
     }
-}
-
-.notesIntro__h2 {
-    font-family: $font-sans;
-    font-size: 16px;
-    font-weight: 500;
-    text-align: center;
-    color: $text-inverse-muted;
-    animation: introFadeIn 1.2s ease-out;
-    letter-spacing: 0.02em;
 }
