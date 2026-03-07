@@ -150,3 +150,27 @@ $radius-sm: 6px;
     color: $text-medium;
     line-height: 1.5;
 }
+
+// ============================================
+// MOBILE RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+    .notesNav {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    .notesNav__header {
+        padding: 0 16px;
+        padding-top: 56px;
+    }
+
+    .noteNavItem {
+        padding: 0 16px;
+        height: 160px;
+    }
+
+    .noteNavItem__title {
+        max-width: none;
+    }
+}

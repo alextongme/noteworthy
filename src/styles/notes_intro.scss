@@ -72,3 +72,9 @@ $font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans
     animation: introFadeIn 1.2s ease-out;
     letter-spacing: 0.02em;
 }
+
+@media (max-width: 768px) {
+    .notesIntro {
+        grid-column: 1 / -1;
+    }
+}

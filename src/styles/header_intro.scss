@@ -50,3 +50,16 @@ $font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans
         border-color: rgba(255, 255, 255, 0.3);
     }
 }
+
+@media (max-width: 768px) {
+    .headerIntro__container {
+        margin-right: 16px;
+        gap: 12px;
+    }
+
+    .headerIntro__button--login,
+    .headerIntro__button--logout {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+}

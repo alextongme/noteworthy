@@ -159,3 +159,27 @@ $radius-md: 10px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
+
+// ============================================
+// MOBILE RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+    .notebooks {
+        grid-column: 1 / -1;
+    }
+
+    .notebooks__header {
+        padding: 0 16px;
+        padding-top: 48px;
+        height: auto;
+        min-height: 96px;
+    }
+
+    .notebooks__section--bottom {
+        padding: 0 16px;
+    }
+
+    .notebooks__table {
+        font-size: 13px;
+    }
+}

@@ -24,9 +24,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(passport.initialize());
 
+// GZIP COMPRESSION
+const compression = require("compression");
+app.use(compression());
+
 // STATIC FILES (production: serve webpack build from dist/)
 const distPath = path.join(__dirname, "..", "dist");
-app.use(express.static(distPath));
+app.use(express.static(distPath, {
+    maxAge: '7d',
+    setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.html')) {
+            res.setHeader('Cache-Control', 'no-cache');
+        }
+    }
+}));
 
 // API ROUTES
 app.use("/api/auth", authRoute);

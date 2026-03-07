@@ -83,7 +83,7 @@ $drac-yellow: #f1fa8c;
 
     .noteNavItem__title { color: $drac-fg; }
     .noteNavItem__timestamp { color: $drac-comment; }
-    .ql-bubble .ql-editor { color: $drac-comment; }
+    .ql-bubble .ql-editor { color: rgba($drac-fg, 0.7); }
 
     // ── Note Editor (right panel) ──
     .noteEditor {
@@ -189,7 +189,7 @@ $drac-yellow: #f1fa8c;
     .notebooks__tableRow--odd { background-color: darken($drac-bg, 2%); }
     .notebooks__tableRow:hover { background-color: rgba($drac-purple, 0.08); }
 
-    .notebooks__tableCol { color: $drac-comment; }
+    .notebooks__tableCol { color: rgba($drac-fg, 0.7); }
     .notebooks__links {
         color: $drac-fg;
         &:hover { color: $drac-purple; }

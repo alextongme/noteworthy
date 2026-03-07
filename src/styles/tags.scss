@@ -128,3 +128,24 @@ $tag-colors: (
         color: $accent-danger;
     }
 }
+
+@media (max-width: 768px) {
+    .tags {
+        grid-column: 1 / -1;
+    }
+
+    .tags__header {
+        padding: 0 16px;
+        padding-top: 48px;
+    }
+
+    .tags__grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px 16px;
+    }
+
+    .tag__container {
+        height: 180px;
+        padding: 20px;
+    }
+}

@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import Typist from "react-typist";
 
 import HeaderIntro from "./HeaderIntro/HeaderIntro";
-import { detectMobile } from "../utils/utils";
 import { signup } from '../../../state/actions/session';
 
 export default function Home() {
@@ -148,8 +147,6 @@ export default function Home() {
     }
 
     return (
-        detectMobile() ? (<h1>Sorry! This app currently does not work on mobile browsers. Please view this on a desktop.</h1>) :
-        ( 
             <div className="home">
                 <nav className="home__navbar">
                     <div className="home__navbar--left">
@@ -333,7 +330,7 @@ export default function Home() {
                         <section className="home__fourthDiv__stepsContainer">
                             <div className="home__fourthDiv__steps home__fourthDiv__steps--1">
                                 <div className="home__fourthDiv__stepNumber">1</div>
-                                <img src={window.nLogo} className="home__fourthDiv__icons--logo" />
+                                <i className="fas fa-user-plus home__fourthDiv__icons" />
                                 <h2 className="home__fourthDiv__h2">
                                     SIGN UP
                                 </h2>
@@ -377,6 +374,5 @@ export default function Home() {
                     {signupSheet}
                 </ul>
             </div>
-        )
     );
 }

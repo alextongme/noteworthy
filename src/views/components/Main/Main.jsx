@@ -16,6 +16,7 @@ import { PrivateRoute } from '../../../state/util/route';
 class Main extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { mobileView: 'list' };
     }
 
     componentDidMount() {
@@ -28,6 +29,12 @@ class Main extends React.Component {
 
         return (
             <div className="main">
+                <button className="main__mobileMenuBtn" onClick={() => {
+                    const sidebar = document.querySelector('.sidebar');
+                    if (sidebar) sidebar.classList.toggle('sidebar--mobile-open');
+                }}>
+                    <i className="fas fa-bars"></i>
+                </button>
                 <Modal />
                 {/* <Dropdown /> */}
                 <Sidebar />

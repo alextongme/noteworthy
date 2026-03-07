@@ -521,17 +521,13 @@ $radius-xl: 24px;
     opacity: 0.5;
 }
 
-.home__fourthDiv__icons--logo {
-    width: 40px;
-    padding: 16px;
-    border: 2px solid $accent-warning;
-    border-radius: 50%;
-    background: rgba(245, 182, 37, 0.08);
-}
-
 .home__fourthDiv__icons {
     font-size: 40px;
-    padding: 16px;
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid $accent-warning;
     border-radius: 50%;
     color: $accent-warning;
@@ -703,7 +699,10 @@ $radius-xl: 24px;
 // SHARED LINK BUTTONS (used in fifth section)
 // ============================================
 .home__button {
-    height: 20px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
     opacity: 1;
     filter: invert(95%) sepia(11%) saturate(704%) hue-rotate(317deg) brightness(105%) contrast(98%);
     transition: opacity 0.2s ease;
@@ -714,9 +713,151 @@ $radius-xl: 24px;
 }
 
 .home__button--avatar {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
     filter: none;
     object-fit: cover;
+}
+
+// ============================================
+// MOBILE RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+    .home__navbar {
+        height: 56px;
+        padding: 0 16px;
+    }
+
+    .home__navbar--left {
+        margin-left: 16px;
+        gap: 8px;
+    }
+
+    .home__h1--logo {
+        font-size: 16px;
+    }
+
+    .home__image--logo {
+        width: 24px;
+    }
+
+    // Hero section
+    .home__content--first {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 24px;
+    }
+
+    .home__content--left {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 72px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home__h1--left {
+        width: 100%;
+        font-size: 32px;
+    }
+
+    .home__h2--left {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .home__content--right {
+        display: none;
+    }
+
+    .home__scrollHint {
+        display: none;
+    }
+
+    // Snap container - allow natural scrolling on mobile
+    .home__snapContainer {
+        scroll-snap-type: y proximity;
+    }
+
+    .home__content {
+        min-height: 100vh;
+        height: auto;
+        padding: 80px 24px 40px;
+    }
+
+    .home__content--first {
+        min-height: 100vh;
+    }
+
+    // Features section
+    .home__content--second {
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 24px;
+        gap: 32px;
+    }
+
+    .home__secondDiv__section {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .home__secondDiv__stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    // Data section
+    .home__content--third {
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 24px;
+        gap: 32px;
+    }
+
+    .home__thirdDiv__graphs {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    // How it works section
+    .home__content--fourth {
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 24px;
+    }
+
+    .home__fourthDiv__stepsContainer {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .home__fourthDiv__steps {
+        padding: 24px 20px;
+    }
+
+    // Signup section
+    .home__content--fifth {
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        padding: 80px 24px 60px;
+        gap: 32px;
+    }
+
+    .home__fifthDiv__section--left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home__fifthDiv__section--right {
+        width: 100%;
+    }
+
+    .home__fifthDiv__signupForm {
+        max-width: 100%;
+        padding: 24px;
+    }
+
+    .home__fifthDiv__footer {
+        padding: 12px 24px;
+    }
 }

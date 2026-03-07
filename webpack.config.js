@@ -7,8 +7,20 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].[contenthash:8].js',
     publicPath: '/'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'all',
+        },
+      },
+    },
   },
   resolve: {
     extensions: ['.js', '.jsx', '*']
@@ -45,4 +57,7 @@ module.exports = {
     })
   ],
   devtool: 'source-map',
+  watchOptions: {
+    poll: 1000,
+  },
 };

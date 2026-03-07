@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useHistory, useRouteMatch } from 'react-router-dom';
 import {matchPath} from 'react-router';
 import { useDispatch, useSelector } from "react-redux";
@@ -24,32 +24,52 @@ const Sidebar = () => {
         body: ""
     }
 
+    const [mobileOpen, setMobileOpen] = useState(false);
+
     function toggleSidebar() {
-        if(document.getElementsByClassName("main")[0].style.gridTemplateColumns === "56px 380px 1fr") {
-            document.getElementsByClassName("main")[0].style.gridTemplateColumns = "260px 380px 1fr";
+        const main = document.getElementsByClassName("main")[0];
+        if (window.innerWidth <= 768) {
+            setMobileOpen(prev => !prev);
+        } else if(main.style.gridTemplateColumns === "56px 380px 1fr") {
+            main.style.gridTemplateColumns = "260px 380px 1fr";
         } else {
-            document.getElementsByClassName("main")[0].style.gridTemplateColumns = "56px 380px 1fr";
+            main.style.gridTemplateColumns = "56px 380px 1fr";
         }
     }
+
+    function closeMobileSidebar() {
+        if (window.innerWidth <= 768) {
+            setMobileOpen(false);
+        }
+    }
+
+    const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem('tongula-mode') === 'true');
+
+    useEffect(() => {
+        const main = document.getElementsByClassName("main")[0];
+        if (main && isDarkMode) main.classList.add("main--dark-mode");
+    }, []);
 
     function darkMode() {
         const main = document.getElementsByClassName("main")[0];
         if (main) main.classList.toggle("main--dark-mode");
+        const newValue = !isDarkMode;
+        setIsDarkMode(newValue);
+        localStorage.setItem('tongula-mode', newValue);
     }
 
     function darkModeLink() {
         return (<li className="sidebar__navlink" onClick={darkMode}>
-            <i className="fas fa-moon sidebar__icons" />
-            <h3 className="sidebar__titles">Tongula Mode</h3>
+            <i className={`fas fa-${isDarkMode ? 'sun' : 'moon'} sidebar__icons`} />
+            <h3 className="sidebar__titles">{isDarkMode ? 'Light Mode' : 'Tongula Mode'}</h3>
         </li>);
     }
     
     function createNoteAndRedirect() {
-        // 
+        closeMobileSidebar();
         dispatch(createNote(note)).then((obj) => {
-            // 
             let noteId = obj.note.id;
-            return (history.push(`/main/notes/${noteId}`)) 
+            return (history.push(`/main/notes/${noteId}`))
         })
     }
 
@@ -126,7 +146,7 @@ const Sidebar = () => {
     }
 
     return (
-        <div className="sidebar">
+        <div className={`sidebar ${mobileOpen ? 'sidebar--mobile-open' : ''}`}>
                 <NavLink 
                     to="/home" 
                     className="sidebar__navlink" 

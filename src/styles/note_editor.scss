@@ -261,3 +261,31 @@ em {
     width: 100%;
     height: 56.25%;
 }
+
+// ============================================
+// MOBILE RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+    .noteEditor {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        padding: 16px;
+        padding-top: 56px;
+    }
+
+    .noteEditor__input--title {
+        font-size: 22px;
+    }
+
+    .noteEditor__tags--rightSection {
+        width: 100%;
+    }
+
+    .noteEditor__form--tag {
+        width: 50%;
+    }
+
+    .noteEditor__header--right {
+        gap: 12px;
+    }
+}

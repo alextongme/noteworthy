@@ -5,41 +5,19 @@
 @font-face {
   font-family: 'CaeciliaLTStd-Bold';
   src: url('/fonts/CaeciliaLTStd-Bold.otf');
-}
-
-@font-face {
-  font-family: 'Fofer';
-  src: url('/fonts/Fofer.otf');
-}
-
-@font-face {
-  font-family: 'HabelDemo';
-  src: url('/fonts/HabelDemo.otf');
-}
-
-@font-face {
-  font-family: 'LemonMilk';
-  src: url('/fonts/lemon_milk/LEMONMILK-Regular.otf');
-}
-
-@font-face {
-  font-family: 'Dearest';
-  src: url('/fonts/Dearest.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Signerica_Fat';
   src: url('/fonts/Signerica_Fat.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'ShoppingScriptDemo';
   src: url('/fonts/ShoppingScriptDemo.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'NeonAbsoluteSans';
-  src: url('/fonts/neon_abslolute_demo/NeonAbsoluteSans.ttf') format('truetype');
+  font-display: swap;
 }
 
 // Animations
