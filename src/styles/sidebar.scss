@@ -28,6 +28,7 @@ $radius-sm: 6px;
     overflow: hidden;
     animation: fadeIn 0.5s ease-out;
     min-width: 0;
+    padding-top: 16px;
 }
 
 @keyframes fadeIn {
@@ -209,5 +210,31 @@ $radius-sm: 6px;
 
     &:hover {
         color: $accent-primary-light;
+    }
+}
+
+// ============================================
+// MOBILE RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        z-index: 150;
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: none;
+    }
+
+    .sidebar--mobile-open {
+        transform: translateX(0);
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar__navlink--expand {
+        display: none;
     }
 }
