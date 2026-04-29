@@ -1,9 +1,3 @@
-databases:
-  - name: noteworthy-db
-    plan: free
-    databaseName: noteworthy
-    user: noteworthy
-
 services:
   - type: web
     name: noteworthy
@@ -13,9 +7,7 @@ services:
     startCommand: "npm start"
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: noteworthy-db
-          property: connectionString
+        sync: false
       - key: JWT_SECRET
         sync: false
       - key: NODE_ENV
